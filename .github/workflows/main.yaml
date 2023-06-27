@@ -22,7 +22,7 @@ jobs:
       - run: |
          mkdir ../src
          cp -r ./* ../src/
-         mdbook build ../src/
+         mdbook build /home/runner/work/Obsidian-Notes/
          
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
