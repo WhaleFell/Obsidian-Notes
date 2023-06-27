@@ -1,5 +1,0 @@
-# OPENAI KEY
-
-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
-
-‍
