@@ -22,7 +22,7 @@ jobs:
       - run: |
          cargo install mdbook-auto-gen-summary
          mkdir ../src
-         mdbook-auto-gen-summary gen -t .
+         mdbook-auto-gen-summary gen .
          cp -r ./* ../src/
 
          mdbook init /home/runner/work/Obsidian-Notes
