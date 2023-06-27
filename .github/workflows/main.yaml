@@ -20,9 +20,9 @@ jobs:
           mdbook-version: 'latest'
           
       - run: |
-         pwd
-         ls
-         mdbook build /home/runner/work/Obsidian-Notes/Obsidian-Notes
+         mkdir src
+         cp -r * src/
+         mdbook build
          
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
