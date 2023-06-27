@@ -21,7 +21,7 @@ jobs:
           
       - run: |
          mkdir ../src
-         cp ./* ../src/
+         cp -r ./* ../src/
          mdbook build ../src/
          
       - name: Deploy
