@@ -21,8 +21,9 @@ jobs:
           
       - run: |
          mkdir ../src
+         python3 auto.py .
          cp -r ./* ../src/
-         python3 auto.py /home/runner/work/Obsidian-Notes/src
+
          mdbook init /home/runner/work/Obsidian-Notes
          mdbook build /home/runner/work/Obsidian-Notes/
          
