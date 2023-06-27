@@ -22,6 +22,7 @@ jobs:
       - run: |
          mkdir ../src
          cp -r ./* ../src/
+         mdbook init /home/runner/work/Obsidian-Notes/
          mdbook build /home/runner/work/Obsidian-Notes/
          
       - name: Deploy
