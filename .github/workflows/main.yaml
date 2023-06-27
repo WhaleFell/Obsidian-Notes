@@ -22,7 +22,7 @@ jobs:
       - run: |
          pwd
          ls
-         mdbook build ./
+         mdbook build /home/runner/work/Obsidian-Notes/Obsidian-Notes
          
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
