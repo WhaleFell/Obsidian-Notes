@@ -20,9 +20,9 @@ jobs:
           mdbook-version: 'latest'
           
       - run: |
-         mkdir src
-         mv * src/
-         mdbook build
+         mkdir ../src
+         cp ./* ../src/
+         mdbook build ../src/
          
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
