@@ -20,10 +20,9 @@ jobs:
           mdbook-version: 'latest'
           
       - run: |
-         cargo install mdbook-auto-gen-summary
          mkdir ../src
          cp -r ./* ../src/
-         mdbook-auto-gen-summary gen /home/runner/work/Obsidian-Notes/src
+         python3 auto.py /home/runner/work/Obsidian-Notes/src
          mdbook init /home/runner/work/Obsidian-Notes
          mdbook build /home/runner/work/Obsidian-Notes/
          
