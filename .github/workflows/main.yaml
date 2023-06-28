@@ -20,14 +20,13 @@ jobs:
           mdbook-version: 'latest'
           
       - run: |
-         cargo install book-summary
-         mkdir ../src
-         book-summary -n .
-         cp -r ./* ../src/
+          mkdir ../src
+          python3 auto.py .
+          cp -r ./* ../src/
 
-         mdbook init /home/runner/work/Obsidian-Notes
-         mdbook build /home/runner/work/Obsidian-Notes/
-         
+          mdbook init /home/runner/work/Obsidian-Notes/
+          mdbook build /home/runner/work/Obsidian-Notes/
+          
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
