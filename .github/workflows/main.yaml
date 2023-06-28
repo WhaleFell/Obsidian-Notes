@@ -23,8 +23,6 @@ jobs:
           mkdir ../src
           python3 auto-build-summary.py .
           cp -r ./* ../src/
-
-          mdbook init /home/runner/work/Obsidian-Notes/
           mdbook build /home/runner/work/Obsidian-Notes/
           
       - name: Deploy
