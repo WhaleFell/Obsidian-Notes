@@ -7,6 +7,8 @@ import argparse
 import os
 import re
 from pathlib import Path
+import urllib.parse
+
 
 except_list = [".trash", ".obsidian", ".vscode"]
 
@@ -31,7 +33,9 @@ def output_markdown(dire, base_dir, output_file, append, iter_depth=0):
         if os.path.isdir(file_or_path):  # is dir
             if mdfile_in_dir(file_or_path):
                 # if there is .md files in the folder, output folder name
-                output_file.write('  ' * iter_depth + '- ' + filename + '\n')
+                output_file.write(
+                    '  ' * iter_depth + '# ' + filename + '\n'
+                )
                 output_markdown(file_or_path, base_dir, output_file, append,
                                 iter_depth + 1)  # iteration
         else:  # is file
