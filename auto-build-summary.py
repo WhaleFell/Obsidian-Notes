@@ -6,6 +6,7 @@
 import argparse
 import os
 import re
+from pathlib import Path
 
 except_list = [".trash", ".obsidian", ".vscode"]
 
@@ -21,7 +22,8 @@ def output_markdown(dire, base_dir, output_file, append, iter_depth=0):
     for filename in sort_dir_file(os.listdir(dire), base_dir):
         # add list and sort
         print('Processing ', filename)  # output log
-        file_or_path = os.path.join(dire, filename)
+        # file_or_path = os.path.join(dire, filename)
+        file_or_path = Path(dire, filename).as_posix()
 
         if filename in except_list:
             continue
@@ -35,15 +37,12 @@ def output_markdown(dire, base_dir, output_file, append, iter_depth=0):
         else:  # is file
             if is_markdown_file(filename):
                 # re to find target markdown files, $ for matching end of filename
-                if (filename not in ['SUMMARY.md',
-                                     'SUMMARY-GitBook-auto-summary.md']
+                if (filename not in ['SUMMARY.md', 'SUMMARY-GitBook-auto-summary.md']
                         or iter_depth != 0):  # escape SUMMARY.md at base directory
-                    output_file.write('  ' * iter_depth +
-                                      '- [{}]({})\n'.format(write_md_filename(filename,
-                                                                              append),
-                                                            os.path.join(os.path.relpath(dire, base_dir),
-                                                                         filename)))
                     # iter depth for indent, relpath and join to write link.
+                    output_file.write('  ' * iter_depth +
+                                      '- [{}]({})\n'.format(write_md_filename(filename, append),
+                                                            Path(os.path.relpath(dire, base_dir), filename).as_posix()))
 
 
 def mdfile_in_dir(dire):
