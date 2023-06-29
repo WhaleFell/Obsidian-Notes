@@ -1,0 +1,2125 @@
+<!DOCTYPE HTML>
+<html lang="cn" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>OpenGD77_User_Guide_CN - WhaleFall Obsidian Notes</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="Keep Notes everyday">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> 落落的Notes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../SUMMARY.html"><strong aria-hidden="true">1.1.</strong> SUMMARY</a></li><li class="chapter-item expanded "><a href="../高中事件/index.html"><strong aria-hidden="true">1.2.</strong> 高中事件</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../高中事件/举报中小学教师违规方法论.html"><strong aria-hidden="true">1.2.1.</strong> 举报中小学教师违规方法论</a></li><li class="chapter-item expanded "><a href="../高中事件/举报法律依据.html"><strong aria-hidden="true">1.2.2.</strong> 举报法律依据</a></li><li class="chapter-item expanded "><a href="../高中事件/举报信.html"><strong aria-hidden="true">1.2.3.</strong> 举报信</a></li></ol></li><li class="chapter-item expanded "><a href="../CutBoard/index.html"><strong aria-hidden="true">1.3.</strong> CutBoard</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../CutBoard/无线电爬取脚本.html"><strong aria-hidden="true">1.3.1.</strong> 无线电爬取脚本</a></li></ol></li><li class="chapter-item expanded "><a href="../业余无线电Ham/index.html"><strong aria-hidden="true">1.4.</strong> 业余无线电Ham</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../业余无线电Ham/业余无线电笔记.html"><strong aria-hidden="true">1.4.1.</strong> 业余无线电笔记</a></li><li class="chapter-item expanded "><a href="../业余无线电Ham/OpenGD77_User_Guide_CN.html" class="active"><strong aria-hidden="true">1.4.2.</strong> OpenGD77_User_Guide_CN</a></li><li class="chapter-item expanded "><a href="../业余无线电Ham/Opengd77-Firmware-教程.html"><strong aria-hidden="true">1.4.3.</strong> Opengd77-Firmware-教程</a></li><li class="chapter-item expanded "><a href="../业余无线电Ham/泉盛-K5-音质优化.html"><strong aria-hidden="true">1.4.4.</strong> 泉盛-K5-音质优化</a></li><li class="chapter-item expanded "><a href="../业余无线电Ham/通联日志.html"><strong aria-hidden="true">1.4.5.</strong> 通联日志</a></li><li class="chapter-item expanded "><a href="../业余无线电Ham/广播.html"><strong aria-hidden="true">1.4.6.</strong> 广播</a></li><li class="chapter-item expanded "><a href="../业余无线电Ham/业余无线电采购.html"><strong aria-hidden="true">1.4.7.</strong> 业余无线电采购</a></li><li class="chapter-item expanded "><a href="../业余无线电Ham/广播/index.html"><strong aria-hidden="true">1.4.8.</strong> 广播</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../业余无线电Ham/广播/广播收听报告-2023.05.23.html"><strong aria-hidden="true">1.4.8.1.</strong> 广播收听报告-2023.05.23</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../碎碎念/index.html"><strong aria-hidden="true">1.5.</strong> 碎碎念</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../碎碎念/文案.html"><strong aria-hidden="true">1.5.1.</strong> 文案</a></li><li class="chapter-item expanded "><a href="../碎碎念/猫猫.html"><strong aria-hidden="true">1.5.2.</strong> 猫猫</a></li><li class="chapter-item expanded "><a href="../碎碎念/freedom.html"><strong aria-hidden="true">1.5.3.</strong> freedom</a></li><li class="chapter-item expanded "><a href="../碎碎念/知乎精选.html"><strong aria-hidden="true">1.5.4.</strong> 知乎精选</a></li><li class="chapter-item expanded "><a href="../碎碎念/闲鱼文案模板.html"><strong aria-hidden="true">1.5.5.</strong> 闲鱼文案模板</a></li><li class="chapter-item expanded "><a href="../碎碎念/思源笔记本使用感想.html"><strong aria-hidden="true">1.5.6.</strong> 思源笔记本使用感想</a></li><li class="chapter-item expanded "><a href="../碎碎念/记录.html"><strong aria-hidden="true">1.5.7.</strong> 记录</a></li><li class="chapter-item expanded "><a href="../碎碎念/奇思妙想.html"><strong aria-hidden="true">1.5.8.</strong> 奇思妙想</a></li><li class="chapter-item expanded "><a href="../碎碎念/猫猫/index.html"><strong aria-hidden="true">1.5.9.</strong> 猫猫</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../碎碎念/猫猫/多多.html"><strong aria-hidden="true">1.5.9.1.</strong> 多多</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../English-Study/index.html"><strong aria-hidden="true">1.6.</strong> English-Study</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../English-Study/英语音标学习.html"><strong aria-hidden="true">1.6.1.</strong> 英语音标学习</a></li></ol></li><li class="chapter-item expanded "><a href="../test/index.html"><strong aria-hidden="true">1.7.</strong> test</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../test/思源笔记自动同步测试.html"><strong aria-hidden="true">1.7.1.</strong> 思源笔记自动同步测试</a></li><li class="chapter-item expanded "><a href="../test/落落-OpenWRT-导航页.html"><strong aria-hidden="true">1.7.2.</strong> 落落-OpenWRT-导航页</a></li><li class="chapter-item expanded "><a href="../test/Obsidian-Hexo-模板测试.html"><strong aria-hidden="true">1.7.3.</strong> Obsidian-Hexo-模板测试</a></li></ol></li><li class="chapter-item expanded "><a href="../other/index.html"><strong aria-hidden="true">1.8.</strong> other</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../other/OPENAI-KEY.html"><strong aria-hidden="true">1.8.1.</strong> OPENAI-KEY</a></li><li class="chapter-item expanded "><a href="../other/未命名.html"><strong aria-hidden="true">1.8.2.</strong> 未命名</a></li><li class="chapter-item expanded "><a href="../other/模拟飞行.html"><strong aria-hidden="true">1.8.3.</strong> 模拟飞行</a></li><li class="chapter-item expanded "><a href="../other/写给v友的一段话.html"><strong aria-hidden="true">1.8.4.</strong> 写给v友的一段话</a></li></ol></li><li class="chapter-item expanded "><a href="../博客文章/index.html"><strong aria-hidden="true">1.9.</strong> 博客文章</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../博客文章/博客文章测试.html"><strong aria-hidden="true">1.9.1.</strong> 博客文章测试</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post.html"><strong aria-hidden="true">1.9.2.</strong> 博客文章_post</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/index.html"><strong aria-hidden="true">1.9.3.</strong> 博客文章_post</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Rpi-2.html"><strong aria-hidden="true">1.9.3.1.</strong> Rpi-2</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Freedom-network.html"><strong aria-hidden="true">1.9.3.2.</strong> Freedom-network</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang.html"><strong aria-hidden="true">1.9.3.3.</strong> Golang</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/onedrive-guide.html"><strong aria-hidden="true">1.9.3.4.</strong> onedrive-guide</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Python.html"><strong aria-hidden="true">1.9.3.5.</strong> Python</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Github-workflow.html"><strong aria-hidden="true">1.9.3.6.</strong> Github-workflow</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Samba4-config.html"><strong aria-hidden="true">1.9.3.7.</strong> Samba4-config</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Rpi-3.html"><strong aria-hidden="true">1.9.3.8.</strong> Rpi-3</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Depression-medicine.html"><strong aria-hidden="true">1.9.3.9.</strong> Depression-medicine</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Vim-config.html"><strong aria-hidden="true">1.9.3.10.</strong> Vim-config</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Linux-note.html"><strong aria-hidden="true">1.9.3.11.</strong> Linux-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Hexo-blog-format.html"><strong aria-hidden="true">1.9.3.12.</strong> Hexo-blog-format</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/openwebrx-sdr.html"><strong aria-hidden="true">1.9.3.13.</strong> openwebrx-sdr</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Linux-iptables.html"><strong aria-hidden="true">1.9.3.14.</strong> Linux-iptables</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Kali-Linux-Help.html"><strong aria-hidden="true">1.9.3.15.</strong> Kali-Linux-Help</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Study.html"><strong aria-hidden="true">1.9.3.16.</strong> Study</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/radio-SWshort.html"><strong aria-hidden="true">1.9.3.17.</strong> radio-SWshort</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Server-all.html"><strong aria-hidden="true">1.9.3.18.</strong> Server-all</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Wky-help.html"><strong aria-hidden="true">1.9.3.19.</strong> Wky-help</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Rpi-1.html"><strong aria-hidden="true">1.9.3.20.</strong> Rpi-1</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Study/index.html"><strong aria-hidden="true">1.9.3.21.</strong> Study</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Study/Ancient-poems.html"><strong aria-hidden="true">1.9.3.21.1.</strong> Ancient-poems</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Study/Zhongkao-maths.html"><strong aria-hidden="true">1.9.3.21.2.</strong> Zhongkao-maths</a></li></ol></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Python/index.html"><strong aria-hidden="true">1.9.3.22.</strong> Python</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Python/Python-Generator-Iterator-decorater.html"><strong aria-hidden="true">1.9.3.22.1.</strong> Python-Generator-Iterator-decorater</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Python/Python-Tkinter-GUI.html"><strong aria-hidden="true">1.9.3.22.2.</strong> Python-Tkinter-GUI</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Python/Python-Concurrent.html"><strong aria-hidden="true">1.9.3.22.3.</strong> Python-Concurrent</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Python/Flask-Web-note.html"><strong aria-hidden="true">1.9.3.22.4.</strong> Flask-Web-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Python/Python-async.html"><strong aria-hidden="true">1.9.3.22.5.</strong> Python-async</a></li></ol></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/index.html"><strong aria-hidden="true">1.9.3.23.</strong> Golang</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-id-note.html"><strong aria-hidden="true">1.9.3.23.1.</strong> Golang-id-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-interface-note.html"><strong aria-hidden="true">1.9.3.23.2.</strong> Golang-interface-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-note-catalogue.html"><strong aria-hidden="true">1.9.3.23.3.</strong> Golang-note-catalogue</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-map-note.html"><strong aria-hidden="true">1.9.3.23.4.</strong> Golang-map-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-error-note.html"><strong aria-hidden="true">1.9.3.23.5.</strong> Golang-error-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-datatype-note.html"><strong aria-hidden="true">1.9.3.23.6.</strong> Golang-datatype-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-package-note.html"><strong aria-hidden="true">1.9.3.23.7.</strong> Golang-package-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-const-note.html"><strong aria-hidden="true">1.9.3.23.8.</strong> Golang-const-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-struct-note.html"><strong aria-hidden="true">1.9.3.23.9.</strong> Golang-struct-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-JSON-note.html"><strong aria-hidden="true">1.9.3.23.10.</strong> Golang-JSON-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-method-note.html"><strong aria-hidden="true">1.9.3.23.11.</strong> Golang-method-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-function-note.html"><strong aria-hidden="true">1.9.3.23.12.</strong> Golang-function-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-envbuild-note.html"><strong aria-hidden="true">1.9.3.23.13.</strong> Golang-envbuild-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-project-and-gomod-note.html"><strong aria-hidden="true">1.9.3.23.14.</strong> Golang-project-and-gomod-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-type-keyword-note.html"><strong aria-hidden="true">1.9.3.23.15.</strong> Golang-type-keyword-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-variable-note.html"><strong aria-hidden="true">1.9.3.23.16.</strong> Golang-variable-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-pointer-note.html"><strong aria-hidden="true">1.9.3.23.17.</strong> Golang-pointer-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-goruntine-note.html"><strong aria-hidden="true">1.9.3.23.18.</strong> Golang-goruntine-note</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post/Golang/Golang-HTML-note.html"><strong aria-hidden="true">1.9.3.23.19.</strong> Golang-HTML-note</a></li></ol></li></ol></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">WhaleFall Obsidian Notes</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>​<img src="media/OpenGD77-logo.png" alt="" />​</p>
+<h1 id="opengd77-用户指南"><a class="header" href="#opengd77-用户指南">OpenGD77 用户指南</a></h1>
+<h2 id="适用于-opengd77--opengd77s--opendm1801--opendm1801a--openrd5r--md-9600-rt-90--md-uv380-rt-3s--md-uv390"><a class="header" href="#适用于-opengd77--opengd77s--opendm1801--opendm1801a--openrd5r--md-9600-rt-90--md-uv380-rt-3s--md-uv390">适用于 OpenGD77 / OpenGD77S / OpenDM1801* / OpenDM1801A* / OpenRD5R / MD-9600 (RT-90) / MD-UV380 (RT-3S) / MD-UV390</a></h2>
+<p>翻译：BH4ESK BH4FTP
+校对：BG5IPF BG7XTQ</p>
+<p>获取最新消息或与我们讨论，请到我们的官方论坛 <a href="https://opengd77.com">https://opengd77.com</a></p>
+<p>＃ 该固件不兼容 2022 新版宝锋 DM-1801，或新版 DM-1801A #</p>
+<div>
+<!-- TOC titleSize:2 tabSpaces:2 depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 skip:0 title:1 charForUnorderedList:* -->
+</div>
+<h2 id="目录"><a class="header" href="#目录">目录</a></h2>
+<ul>
+<li><a href="#opengd77-%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97">OpenGD77 用户指南</a>
+<ul>
+<li><a href="#%E9%80%82%E7%94%A8%E4%BA%8E-opengd77--opengd77s--opendm1801--opendm1801a--openrd5r--md-9600-rt-90--md-uv380-rt-3s--md-uv390">适用于 OpenGD77 / OpenGD77S / OpenDM1801</a>​<a href="#%E9%80%82%E7%94%A8%E4%BA%8E-opengd77--opengd77s--opendm1801--opendm1801a--openrd5r--md-9600-rt-90--md-uv380-rt-3s--md-uv390"> / OpenDM1801A</a>​<a href="#%E9%80%82%E7%94%A8%E4%BA%8E-opengd77--opengd77s--opendm1801--opendm1801a--openrd5r--md-9600-rt-90--md-uv380-rt-3s--md-uv390"> / OpenRD5R / MD-9600 (RT-90) / MD-UV380 (RT-3S) / MD-UV390</a></li>
+<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a>
+<ul>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5%E4%B8%8E%E5%85%B6%E4%BB%96%E8%B5%84%E6%BA%90">下载链接与其他资源</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a>
+<ul>
+<li><a href="#%E5%B0%86%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%88%B0%E7%94%B5%E5%8F%B0">将数据传输到电台</a></li>
+</ul>
+</li>
+<li><a href="#%E7%94%B5%E5%8F%B0%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6codeplug%E5%85%BC%E5%AE%B9%E6%80%A7">电台配置文件（Codeplug）兼容性</a></li>
+<li><a href="#%E4%B8%8D%E5%90%8C%E7%94%B5%E5%8F%B0%E4%B9%8B%E9%97%B4%E7%9A%84%E5%9B%BA%E4%BB%B6%E5%B7%AE%E5%BC%82">不同电台之间的固件差异</a></li>
+<li><a href="#%E4%B8%BB%E5%B1%8F%E5%B9%95%E9%A2%91%E7%8E%87%E4%B8%8E%E4%BF%A1%E9%81%93%E7%95%8C%E9%9D%A2">主屏幕（频率与信道界面）</a>
+<ul>
+<li><a href="#%E5%9C%A8%E6%A8%A1%E6%8B%9F%E4%B8%8E%E6%95%B0%E5%AD%97%E6%A8%A1%E5%BC%8F%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2">在模拟与数字模式之间切换</a></li>
+<li><a href="#%E5%9C%A8-dmr-%E6%A8%A1%E5%BC%8F%E4%B8%8B%E5%88%87%E6%8D%A2%E6%97%B6%E9%9A%99">在 DMR 模式下切换时隙</a></li>
+<li><a href="#%E5%9C%A8-fm-%E6%A8%A1%E5%BC%8F%E4%B8%8B%E6%9B%B4%E6%94%B9%E5%B8%A6%E5%AE%BD">在 FM 模式下更改带宽</a></li>
+<li><a href="#%E6%8E%A7%E5%88%B6%E5%8F%91%E5%B0%84%E5%8A%9F%E7%8E%87">控制发射功率</a></li>
+<li><a href="#%E4%BF%A1%E5%8F%B7%E5%BC%BA%E5%BA%A6%E6%9D%A1s-%E8%A1%A8">信号强度条（S 表）</a></li>
+<li><a href="#%E4%BF%A1%E9%81%93%E7%95%8C%E9%9D%A2%E7%9A%84%E7%89%B9%E6%AE%8A%E5%8A%9F%E8%83%BD">信道界面的特殊功能</a>
+<ul>
+<li><a href="#%E5%9C%A8%E5%BD%93%E5%89%8D%E5%8C%BA%E5%9F%9F%E5%86%85%E5%88%87%E6%8D%A2%E4%BF%A1%E9%81%93">在当前区域内切换信道</a></li>
+<li><a href="#%E6%94%B9%E5%8F%98%E5%8C%BA%E5%9F%9F">改变区域</a></li>
+<li><a href="#%E6%98%BE%E7%A4%BA%E4%BF%A1%E9%81%93%E9%A2%91%E7%8E%87">显示信道频率</a></li>
+<li><a href="#%E6%98%BE%E7%A4%BA-fm-%E6%A8%A1%E5%BC%8F%E5%85%B7%E4%BD%93%E4%BF%A1%E9%81%93%E4%BF%A1%E6%81%AF">显示 FM 模式具体信道信息</a></li>
+<li><a href="#%E4%B8%AD%E7%BB%A7%E5%80%92%E9%A2%91%E5%8A%9F%E8%83%BD">中继倒频功能</a></li>
+<li><a href="#%E4%BF%A1%E9%81%93%E7%95%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E8%8F%9C%E5%8D%95">信道界面快捷菜单</a>
+<ul>
+<li><a href="#%E5%A4%8D%E5%88%B6%E4%B8%80%E4%B8%AA%E4%BF%A1%E9%81%93%E9%85%8D%E7%BD%AE%E8%87%B3-vfochannel----vfo">复制一个信道配置至 VFO（Channel --</a>​<a href="#%E5%A4%8D%E5%88%B6%E4%B8%80%E4%B8%AA%E4%BF%A1%E9%81%93%E9%85%8D%E7%BD%AE%E8%87%B3-vfochannel----vfo"> VFO）</a></li>
+<li><a href="#%E5%B0%86-vfo-%E4%BF%A1%E6%81%AF%E5%86%99%E5%85%A5%E5%BD%93%E5%89%8D%E4%BF%A1%E9%81%93vfo----channel">将 VFO 信息写入当前信道（VFO --</a>​<a href="#%E5%B0%86-vfo-%E4%BF%A1%E6%81%AF%E5%86%99%E5%85%A5%E5%BD%93%E5%89%8D%E4%BF%A1%E9%81%93vfo----channel"> Channel）</a></li>
+<li><a href="#%E8%BF%87%E6%BB%A4%E5%99%A8%E8%AE%BE%E7%BD%AEfilter">过滤器设置（Filter）</a></li>
+</ul>
+</li>
+<li><a href="#%E9%A2%91%E7%8E%87%E7%95%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E8%8F%9C%E5%8D%95">频率界面快捷菜单</a>
+<ul>
+<li><a href="#%E9%80%89%E6%8B%A9-vfo-ab">选择 VFO A/B</a></li>
+<li><a href="#%E4%BA%A4%E6%8D%A2%E6%8E%A5%E6%94%B6%E4%B8%8E%E5%8F%91%E5%B0%84%E9%A2%91%E7%8E%87tx----rx">交换接收与发射频率（Tx </a>​<a href="#%E4%BA%A4%E6%8D%A2%E6%8E%A5%E6%94%B6%E4%B8%8E%E5%8F%91%E5%B0%84%E9%A2%91%E7%8E%87tx----rx">--</a>​<a href="#%E4%BA%A4%E6%8D%A2%E6%8E%A5%E6%94%B6%E4%B8%8E%E5%8F%91%E5%B0%84%E9%A2%91%E7%8E%87tx----rx"> Rx）</a></li>
+<li><a href="#%E5%B0%86%E6%8E%A5%E6%94%B6%E9%A2%91%E7%8E%87%E5%A4%8D%E5%88%B6%E5%88%B0%E5%8F%91%E5%B0%84%E9%A2%91%E7%8E%87rx----tx">将接收频率复制到发射频率（Rx --</a>​<a href="#%E5%B0%86%E6%8E%A5%E6%94%B6%E9%A2%91%E7%8E%87%E5%A4%8D%E5%88%B6%E5%88%B0%E5%8F%91%E5%B0%84%E9%A2%91%E7%8E%87rx----tx"> Tx）</a></li>
+<li><a href="#%E5%B0%86%E5%8F%91%E5%B0%84%E9%A2%91%E7%8E%87%E5%A4%8D%E5%88%B6%E5%88%B0%E6%8E%A5%E6%94%B6%E9%A2%91%E7%8E%87tx----rx">将发射频率复制到接收频率（Tx --</a>​<a href="#%E5%B0%86%E5%8F%91%E5%B0%84%E9%A2%91%E7%8E%87%E5%A4%8D%E5%88%B6%E5%88%B0%E6%8E%A5%E6%94%B6%E9%A2%91%E7%8E%87tx----rx"> Rx）</a></li>
+<li><a href="#%E8%BF%87%E6%BB%A4%E5%99%A8filter%E4%BB%85%E9%99%90-dmr-%E6%A8%A1%E5%BC%8F">过滤器（Filter）（</a>​<a href="#%E8%BF%87%E6%BB%A4%E5%99%A8filter%E4%BB%85%E9%99%90-dmr-%E6%A8%A1%E5%BC%8F"><em>仅限 DMR 模式</em></a>​<a href="#%E8%BF%87%E6%BB%A4%E5%99%A8filter%E4%BB%85%E9%99%90-dmr-%E6%A8%A1%E5%BC%8F">）</a></li>
+<li><a href="#%E5%AD%98%E5%82%A8-vfo-%E9%85%8D%E7%BD%AE%E8%87%B3%E6%96%B0%E5%BB%BA%E4%BF%A1%E9%81%93vfo----new-chan">存储 VFO 配置至新建信道（VFO --</a>​<a href="#%E5%AD%98%E5%82%A8-vfo-%E9%85%8D%E7%BD%AE%E8%87%B3%E6%96%B0%E5%BB%BA%E4%BF%A1%E9%81%93vfo----new-chan"> New Chan）</a></li>
+<li><a href="#%E5%93%91%E9%9F%B3%E6%89%AB%E6%8F%8Ftone-scan%E4%BB%85%E9%99%90-fm-%E6%A8%A1%E5%BC%8F">哑音扫描（Tone Scan）（仅限 FM 模式）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E4%B8%8E-dmr-%E6%9C%89%E5%85%B3%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%BE%E7%BD%AE">与 DMR 有关的一些设置</a>
+<ul>
+<li><a href="#%E6%97%B6%E9%9A%99%E9%80%89%E6%8B%A9">时隙选择</a></li>
+<li><a href="#dmr-id%E5%91%BC%E5%8F%B7%E4%B8%8E%E5%A7%93%E5%90%8D%E6%98%BE%E7%A4%BA">DMR ID、呼号与姓名显示</a></li>
+<li><a href="#%E4%B8%BB%E5%8F%AB%E5%88%AB%E5%90%8D%E6%98%BE%E7%A4%BA">主叫别名显示</a></li>
+<li><a href="#%E4%BB%8E%E6%8E%A5%E6%94%B6%E7%BB%84%E5%88%97%E8%A1%A8%E4%B8%AD%E9%80%89%E6%8B%A9%E9%80%9A%E8%AF%9D%E7%BB%84">从接收组列表中选择通话组</a></li>
+<li><a href="#%E4%B8%BA%E8%81%94%E7%B3%BB%E4%BA%BA%E6%88%96%E9%80%9A%E8%AF%9D%E7%BB%84%E6%8C%87%E5%AE%9A%E6%97%B6%E9%9A%99">为联系人或通话组指定时隙</a></li>
+<li><a href="#%E9%80%9A%E8%AF%9D%E7%BB%84%E5%8F%8D%E8%89%B2%E6%98%BE%E7%A4%BA">通话组反色显示</a></li>
+<li><a href="#%E6%89%8B%E5%8A%A8%E8%BE%93%E5%85%A5%E9%80%9A%E8%AF%9D%E7%BB%84%E4%BB%A3%E7%A0%81">手动输入通话组代码</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5%E5%8D%95%E5%91%BC%E5%8F%B7%E7%A0%81">输入单呼号码</a></li>
+<li><a href="#%E9%80%89%E6%8B%A9%E8%81%94%E7%B3%BB%E4%BA%BA">选择联系人</a></li>
+<li><a href="#%E4%B8%B4%E6%97%B6%E4%BF%AE%E6%94%B9%E6%82%A8%E7%9A%84-dmr-id">临时修改您的 DMR ID</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%8E-fm-%E6%9C%89%E5%85%B3%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%BE%E7%BD%AE">与 FM 有关的一些设置</a>
+<ul>
+<li><a href="#fm-%E5%92%8C%E7%AA%84%E5%B8%A6-fm">FM 和窄带 FM</a></li>
+<li><a href="#%E5%93%91%E9%9F%B3%E8%AE%BE%E7%BD%AE">哑音设置</a></li>
+<li><a href="#%E9%9D%99%E5%99%AA">静噪</a></li>
+<li><a href="#1750hz-%E4%B8%AD%E7%BB%A7%E6%93%8D%E4%BD%9C%E9%9F%B3">1750Hz 中继操作音</a></li>
+<li><a href="#%E5%8F%8C%E9%9F%B3%E5%A4%9A%E9%A2%91dtmf%E5%8F%91%E5%B0%84">双音多频（DTMF）发射</a></li>
+<li><a href="#%E5%8F%8C%E9%9F%B3%E5%A4%9A%E9%A2%91dtmf%E5%BA%8F%E5%88%97%E8%BE%93%E5%85%A5%E4%B8%8E%E4%BC%A0%E8%BE%93">双音多频（DTMF）序列输入与传输</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%8E-vfo-%E6%9C%89%E5%85%B3%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%BE%E7%BD%AE">与 VFO 有关的一些设置</a>
+<ul>
+<li><a href="#%E9%A2%91%E7%8E%87%E6%AD%A5%E8%BF%9B">频率步进</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%95%B0%E5%AD%97%E9%94%AE%E8%BE%93%E5%85%A5%E9%A2%91%E7%8E%87">使用数字键输入频率</a></li>
+<li><a href="#%E5%8D%95%E7%8B%AC%E8%B0%83%E6%95%B4%E5%8F%91%E5%B0%84%E9%A2%91%E7%8E%87">单独调整发射频率</a></li>
+<li><a href="#%E9%A2%91%E8%B0%B1%E6%89%AB%E6%8F%8F">频谱扫描</a></li>
+<li><a href="#vfo-%E5%8F%8C%E5%AE%88">VFO 双守</a></li>
+<li><a href="#%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2-vfo-a-%E6%88%96-vfo-b">快速切换 VFO A 或 VFO B</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%9B%91%E5%90%AC%E6%A8%A1%E5%BC%8F">监听模式</a></li>
+<li><a href="#%E5%8F%91%E5%B0%84">发射</a>
+<ul>
+<li><a href="#%E8%B6%85%E6%97%B6%E8%AD%A6%E5%91%8A%E9%9F%B3timeout-warning-beep">超时警告音（Timeout warning beep）</a></li>
+<li><a href="#%E8%B6%85%E6%97%B6%E5%AE%9A%E6%97%B6%E5%99%A8tot">超时定时器（TOT）</a></li>
+</ul>
+</li>
+<li><a href="#%E6%89%AB%E6%8F%8F">扫描</a>
+<ul>
+<li><a href="#%E4%BF%A1%E9%81%93%E6%89%AB%E6%8F%8F">信道扫描</a></li>
+<li><a href="#%E9%A2%91%E7%8E%87%E6%89%AB%E6%8F%8F">频率扫描</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B6%E4%BB%96%E7%95%8C%E9%9D%A2">其他界面</a>
+<ul>
+<li><a href="#%E9%94%81%E5%B1%8F%E7%95%8C%E9%9D%A2">锁屏界面</a></li>
+<li><a href="#%E6%96%87%E5%AD%97%E8%BE%93%E5%85%A5%E7%95%8C%E9%9D%A2">文字输入界面</a></li>
+</ul>
+</li>
+<li><a href="#%E6%8E%A7%E5%88%B6%E6%8C%89%E9%94%AE%E4%B8%8E%E6%8C%89%E9%92%AE">控制按键与按钮</a></li>
+<li><a href="#%E8%8F%9C%E5%8D%95%E7%B3%BB%E7%BB%9F">菜单系统</a></li>
+<li><a href="#%E5%BF%AB%E6%8D%B7%E9%94%AE">快捷键</a></li>
+<li><a href="#%E4%B8%BB%E8%8F%9C%E5%8D%95">主菜单</a>
+<ul>
+<li><a href="#%E5%8C%BA%E5%9F%9Fzone">区域（Zone）</a></li>
+<li><a href="#%E4%BF%A1%E5%8F%B7%E5%BC%BA%E5%BA%A6%E6%8C%87%E7%A4%BA%E5%99%A8rssi">信号强度指示器（RSSI）</a></li>
+<li><a href="#%E7%94%B5%E5%8F%B0%E4%BF%A1%E6%81%AF">电台信息</a>
+<ul>
+<li><a href="#%E7%94%B5%E6%B1%A0%E7%94%B5%E5%8E%8B%E5%92%8C%E7%99%BE%E5%88%86%E6%AF%94">电池电压和百分比</a></li>
+<li><a href="#%E6%97%B6%E9%92%9F">时钟</a></li>
+<li><a href="#%E6%97%A5%E6%9C%9F%E7%95%8C%E9%9D%A2">日期界面</a></li>
+<li><a href="#%E4%BD%8D%E7%BD%AE%E7%95%8C%E9%9D%A2">位置界面</a></li>
+<li><a href="#mcu-%E6%B8%A9%E5%BA%A6">MCU 温度</a></li>
+<li><a href="#%E7%94%B5%E6%B1%A0%E7%94%B5%E5%8E%8B%E5%8E%86%E5%8F%B2">电池电压历史</a></li>
+</ul>
+</li>
+<li><a href="#%E8%81%94%E7%B3%BB%E4%BA%BA">联系人</a>
+<ul>
+<li><a href="#dmr-%E8%81%94%E7%B3%BB%E4%BA%BA">DMR 联系人</a></li>
+<li><a href="#fm-dmtf-%E8%81%94%E7%B3%BB%E4%BA%BA">FM DMTF 联系人</a></li>
+<li><a href="#%E6%96%B0%E8%81%94%E7%B3%BB%E4%BA%BA">新联系人</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9B%9E%E6%BA%AF%E7%95%8C%E9%9D%A2last-heard">回溯界面（Last Heard）</a></li>
+<li><a href="#%E5%9B%BA%E4%BB%B6%E4%BF%A1%E6%81%AFfirmware-info%E5%92%8C%E8%87%B4%E8%B0%A2%E5%90%8D%E5%8D%95">固件信息（Firmware Info）和致谢名单</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9%E8%AE%BE%E7%BD%AEgeneral-options">选项设置（General Options）</a>
+<ul>
+<li><a href="#%E6%8C%89%E9%94%AE%E9%95%BF%E6%8C%89%E6%97%B6%E9%97%B4key-long">按键长按时间（Key long）</a></li>
+<li><a href="#%E6%8C%89%E9%94%AE%E9%87%8D%E5%A4%8D%E9%80%9F%E5%BA%A6key-rpt">按键重复速度（Key rpt）</a></li>
+<li><a href="#%E7%83%AD%E7%82%B9%E6%A8%A1%E5%BC%8Fhotspot">热点模式（Hotspot）</a></li>
+<li><a href="#%E6%B8%A9%E5%BA%A6%E6%A0%A1%E5%87%86">温度校准</a></li>
+<li><a href="#%E7%94%B5%E6%B1%A0%E6%A0%A1%E5%87%86">电池校准</a></li>
+<li><a href="#%E6%97%B6%E9%97%B4%E6%A0%A1%E5%87%86">时间校准</a></li>
+<li><a href="#%E7%9C%81%E7%94%B5%E7%AD%89%E7%BA%A7">省电等级</a></li>
+<li><a href="#%E7%9D%A1%E7%9C%A0">睡眠</a></li>
+<li><a href="#%E5%AE%89%E5%85%A8%E5%BC%80%E6%9C%BA">安全开机</a></li>
+<li><a href="#%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BAapo">自动关机（APO）</a></li>
+<li><a href="#%E5%B8%A6%E6%9C%89%E5%B0%84%E9%A2%91%E7%9A%84%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA">带有射频的自动关机</a></li>
+<li><a href="#%E5%8D%AB%E6%98%9F%E8%B7%9F%E9%9A%8F%E6%A8%A1%E5%BC%8F">卫星跟随模式</a></li>
+</ul>
+</li>
+<li><a href="#%E6%97%A0%E7%BA%BF%E7%94%B5%E9%80%89%E9%A1%B9">无线电选项</a>
+<ul>
+<li><a href="#%E9%A2%91%E6%AE%B5%E9%99%90%E5%88%B6">频段限制</a></li>
+<li><a href="#%E8%BF%87%E6%BB%A4%E5%99%A8%E4%BF%9D%E6%8C%81%E6%97%B6%E9%97%B4">过滤器保持时间</a></li>
+<li><a href="#%E6%89%AB%E6%8F%8F%E5%BB%B6%E8%BF%9F">扫描延迟</a></li>
+<li><a href="#%E6%89%AB%E6%8F%8F%E9%A9%BB%E7%95%99">扫描驻留</a></li>
+<li><a href="#%E6%89%AB%E6%8F%8F%E6%A8%A1%E5%BC%8F">扫描模式</a></li>
+<li><a href="#%E5%BC%80%E6%9C%BA%E6%89%AB%E6%8F%8F">开机扫描</a></li>
+<li><a href="#uhf-%E9%9D%99%E5%99%AA">UHF 静噪</a></li>
+<li><a href="#220-%E9%9D%99%E5%99%AA">220 静噪</a></li>
+<li><a href="#vhf-%E9%9D%99%E5%99%AA">VHF 静噪</a></li>
+<li><a href="#ptt-%E4%BF%9D%E6%8C%81">PTT 保持</a></li>
+<li><a href="#%E4%B8%BB%E5%8F%AB%E5%88%AB%E5%90%8D%E5%8F%91%E5%B0%84">主叫别名发射</a></li>
+<li><a href="#%E5%85%81%E8%AE%B8%E5%8D%95%E5%91%BC">允许单呼</a></li>
+<li><a href="#%E7%94%A8%E6%88%B7%E5%8A%9F%E7%8E%87">用户功率</a></li>
+<li><a href="#dmr-crc">DMR crc</a></li>
+</ul>
+</li>
+<li><a href="#%E6%98%BE%E7%A4%BA%E8%AE%BE%E7%BD%AEdisplay-options">显示设置（Display Options）</a>
+<ul>
+<li><a href="#%E8%83%8C%E5%85%89%E4%BA%AE%E5%BA%A6brightness">背光亮度（Brightness）</a></li>
+<li><a href="#%E5%BE%85%E6%9C%BA%E4%BA%AE%E5%BA%A6min-bright">待机亮度（Min Bright）</a></li>
+<li><a href="#%E5%AF%B9%E6%AF%94%E5%BA%A6contrast">对比度（Contrast）</a></li>
+<li><a href="#%E8%83%8C%E5%85%89%E6%A8%A1%E5%BC%8Fdisplay-mode">背光模式（Display mode）</a></li>
+<li><a href="#%E8%83%8C%E5%85%89%E5%BB%B6%E6%97%B6timeout">背光延时（Timeout）</a></li>
+<li><a href="#%E6%98%BE%E7%A4%BA%E9%A2%9C%E8%89%B2%E6%A8%A1%E5%BC%8Fcolour-mode">显示颜色模式（Colour mode）</a></li>
+<li><a href="#%E8%81%94%E7%B3%BB%E4%BA%BA%E6%98%BE%E7%A4%BA%E9%A1%BA%E5%BA%8Forder">联系人显示顺序（Order）</a></li>
+<li><a href="#%E8%81%94%E7%B3%BB%E4%BA%BA%E6%98%BE%E7%A4%BA%E6%96%B9%E5%BC%8Fcontact">联系人显示方式（Contact）</a></li>
+<li><a href="#%E7%94%B5%E9%87%8F%E5%8D%95%E4%BD%8D">电量单位</a></li>
+<li><a href="#%E4%BF%A1%E6%81%AF">信息</a></li>
+<li><a href="#led-%E7%81%AF">LED 灯</a></li>
+<li><a href="#%E6%97%B6%E5%8C%BA">时区</a></li>
+<li><a href="#%E6%97%B6%E9%97%B4%E6%98%BE%E7%A4%BA%E6%A0%BC%E5%BC%8F">时间显示格式</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A3%B0%E9%9F%B3%E8%AE%BE%E7%BD%AEsound-options">声音设置（Sound Options）</a>
+<ul>
+<li><a href="#%E8%B6%85%E6%97%B6%E8%AD%A6%E5%91%8Atimeout-beep">超时警告（Timeout beep）</a></li>
+<li><a href="#%E8%AD%A6%E5%91%8A%E9%9F%B3%E9%87%8Fbeep-volume">警告音量（Beep volume）</a></li>
+<li><a href="#dmr-%E6%8F%90%E7%A4%BA%E9%9F%B3dmr-beep">DMR 提示音（DMR Beep）</a></li>
+<li><a href="#%E6%8E%A5%E6%94%B6%E6%8F%90%E7%A4%BA%E9%9F%B3">接收提示音</a></li>
+<li><a href="#%E9%80%9A%E8%AF%9D%E8%80%85">通话者</a></li>
+<li><a href="#dmr-%E9%BA%A6%E5%85%8B%E9%A3%8E%E5%A2%9E%E7%9B%8Admr-mic">DMR 麦克风增益（DMR mic）</a></li>
+<li><a href="#fm-%E9%BA%A6%E5%85%8B%E9%A3%8E%E5%A2%9E%E7%9B%8Afm-mic">FM 麦克风增益（FM mic）</a></li>
+<li><a href="#vox-%E9%98%88%E5%80%BCvox-threshold">VOX 阈值（VOX threshold）</a></li>
+<li><a href="#vox-%E5%BB%B6%E8%BF%9Fvox-tail">VOX 延迟（VOX Tail）</a></li>
+<li><a href="#%E6%8F%90%E7%A4%BA%E9%9F%B3">提示音</a></li>
+<li><a href="#dmr-%E6%8E%A5%E6%94%B6%E8%87%AA%E5%8A%A8%E5%A2%9E%E7%9B%8A%E6%8E%A7%E5%88%B6">DMR 接收自动增益控制</a></li>
+<li><a href="#%E5%92%94%E5%97%92%E5%A3%B0%E6%8A%91%E5%88%B6">咔嗒声抑制</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A0%A1%E5%87%86%E7%95%8C%E9%9D%A2">校准界面</a>
+<ul>
+<li><a href="#%E9%A2%91%E7%8E%87%E6%A0%A1%E5%87%86">频率校准</a></li>
+<li><a href="#%E5%8A%9F%E7%8E%87%E6%A0%A1%E5%87%86">功率校准</a></li>
+<li><a href="#%E5%8A%9F%E7%8E%87%E8%B0%83%E6%95%B4">功率调整</a></li>
+<li><a href="#%E9%A2%91%E7%8E%87%E8%B0%83%E6%95%B4">频率调整</a></li>
+<li><a href="#%E5%B7%A5%E5%8E%82%E6%A0%A1%E5%87%86">工厂校准</a></li>
+<li><a href="#%E6%A0%A1%E5%87%86%E6%AD%A5%E9%AA%A4">校准步骤</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BF%A1%E9%81%93%E8%AF%A6%E7%BB%86%E8%AE%BE%E7%BD%AEchannel-details">信道详细设置（Channel Details）</a>
+<ul>
+<li><a href="#%E4%BF%A1%E9%81%93%E5%90%8D%E7%A7%B0">信道名称</a></li>
+<li><a href="#%E6%8E%A5%E6%94%B6%E9%A2%91%E7%8E%87rx">接收频率（RX）</a></li>
+<li><a href="#%E5%8F%91%E5%B0%84%E9%A2%91%E7%8E%87tx">发射频率（TX）</a></li>
+<li><a href="#%E6%A8%A1%E5%BC%8Fmode">模式（Mode）</a></li>
+<li><a href="#dmr-id">DMR ID</a></li>
+<li><a href="#%E8%89%B2%E7%A0%81color-code">色码（Color Code）</a></li>
+<li><a href="#%E6%97%B6%E9%9A%99timeslot">时隙（Timeslot）</a></li>
+<li><a href="#%E6%8E%A5%E6%94%B6%E5%8F%91%E5%B0%84%E7%BB%84txrx-grp">接收/发射组（Tx/RX Grp）</a></li>
+<li><a href="#%E5%8F%91%E5%B0%84%E5%93%91%E9%9F%B3tx-ctcss-or-dcs">发射哑音（Tx CTCSS or DCS）</a></li>
+<li><a href="#%E6%8E%A5%E6%94%B6%E5%93%91%E9%9F%B3rx-ctcss-or-dcs">接收哑音（Rx CTCSS or DCS）</a></li>
+<li><a href="#%E5%B8%A6%E5%AE%BDbandwidth">带宽（Bandwidth）</a></li>
+<li><a href="#%E6%AD%A5%E8%BF%9Bstep">步进（Step）</a></li>
+<li><a href="#%E8%B6%85%E6%97%B6%E5%AE%9A%E6%97%B6%E5%99%A8tot-1">超时定时器（TOT）</a></li>
+<li><a href="#%E8%B7%B3%E8%BF%87%E5%8C%BA%E5%9F%9Fzone-skip">跳过区域（Zone Skip）</a></li>
+<li><a href="#%E8%B7%B3%E8%BF%87%E4%BF%A1%E9%81%93all-skip">跳过信道（All Skip）</a></li>
+<li><a href="#%E5%A3%B0%E6%8E%A7%E5%8F%91%E5%B0%84vox">声控发射（VOX）</a></li>
+<li><a href="#%E4%BF%A1%E9%81%93%E5%8A%9F%E7%8E%87">信道功率</a></li>
+<li><a href="#%E4%BF%A1%E9%81%93%E9%9D%99%E5%99%AA">信道静噪</a></li>
+<li><a href="#%E4%BF%A1%E9%81%93%E6%8F%90%E7%A4%BA%E9%9F%B3">信道提示音</a></li>
+<li><a href="#%E4%BF%A1%E9%81%93%E7%9C%81%E7%94%B5">信道省电</a></li>
+<li><a href="#%E4%BF%9D%E5%AD%98%E5%AF%B9%E4%BF%A1%E9%81%93%E7%9A%84%E6%9B%B4%E6%94%B9">保存对信道的更改</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AF%AD%E8%A8%80">语言</a></li>
+<li><a href="#%E5%8D%AB%E6%98%9F%E7%95%8C%E9%9D%A2">卫星界面</a></li>
+<li><a href="#gps-%E7%95%8C%E9%9D%A2">GPS 界面</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%91%E8%B5%B7%E6%88%96%E6%8E%A5%E6%94%B6%E5%8D%95%E5%91%BC">发起或接收单呼</a>
+<ul>
+<li><a href="#%E6%83%B3%E8%A6%81%E5%8F%91%E8%B5%B7%E5%8D%95%E5%91%BC%E7%9A%84%E8%AF%9D">想要发起单呼的话</a></li>
+<li><a href="#%E5%BD%93%E6%8E%A5%E6%94%B6%E5%88%B0%E4%B8%80%E4%B8%AA%E5%8D%95%E5%91%BC%E6%97%B6">当接收到一个单呼时</a></li>
+</ul>
+</li>
+<li><a href="#%E7%83%AD%E7%82%B9%E6%A8%A1%E5%BC%8Fhotspot-mode">热点模式（Hotspot mode）</a></li>
+<li><a href="#%E9%87%8D%E8%AE%BE%E7%94%B5%E5%8F%B0%E5%90%84%E9%A1%B9%E8%AE%BE%E7%BD%AE">重设电台各项设置</a></li>
+<li><a href="#md-730-%E7%9A%84%E6%93%8D%E4%BD%9C%E6%96%B9%E5%BC%8F">MD-730 的操作方式</a>
+<ul>
+<li><a href="#md730-%E4%BF%A1%E9%81%93%E9%80%9A%E8%AF%9D%E7%BB%84%E6%A8%A1%E5%BC%8F">MD730 信道/通话组模式</a></li>
+<li><a href="#md730-%E6%89%AB%E6%8F%8F%E6%A8%A1%E5%BC%8F">MD730 扫描模式</a></li>
+<li><a href="#md730-%E6%97%B6%E9%9A%99%E6%A8%A1%E5%BC%8F">MD730 时隙模式</a></li>
+<li><a href="#md730-%E8%89%B2%E7%A0%81%E6%A8%A1%E5%BC%8F">MD730 色码模式</a></li>
+<li><a href="#md730-dmr-%E8%BF%87%E6%BB%A4%E6%A8%A1%E5%BC%8F">MD730 DMR 过滤模式</a></li>
+<li><a href="#md730-%E5%8C%BA%E5%9F%9F%E6%A8%A1%E5%BC%8F">MD730 区域模式</a></li>
+<li><a href="#md730-%E5%8A%9F%E7%8E%87%E6%A8%A1%E5%BC%8F">MD730 功率模式</a></li>
+</ul>
+</li>
+<li><a href="#md9600-rt90-%E7%9A%84%E6%93%8D%E4%BD%9C%E6%96%B9%E5%BC%8F">MD9600 RT90 的操作方式</a></li>
+<li><a href="#%E5%AE%A2%E6%88%B7%E7%BC%96%E7%A8%8B%E8%BD%AF%E4%BB%B6cps">客户编程软件（CPS）</a>
+<ul>
+<li><a href="#%E6%A6%82%E8%BF%B0">概述</a>
+<ul>
+<li><a href="#%E6%96%B0%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85">新驱动安装</a></li>
+<li><a href="#opengd77-%E8%8F%9C%E5%8D%95">OpenGD77 菜单</a></li>
+<li><a href="#%E5%9C%A8%E6%82%A8%E5%81%9A%E4%BB%BB%E4%BD%95%E5%85%B6%E4%BB%96%E4%BA%8B%E6%83%85%E4%B9%8B%E5%89%8D%E5%A4%87%E4%BB%BD">在您做任何其他事情之前备份</a></li>
+<li><a href="#%E8%AF%BB%E5%86%99%E6%82%A8%E7%9A%84%E7%94%B5%E5%8F%B0%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">读写您的电台配置文件</a></li>
+<li><a href="#%E5%86%99%E5%85%A5-dmr-id-%E7%94%A8%E6%88%B7%E6%95%B0%E6%8D%AE%E5%BA%93">写入 DMR ID 用户数据库</a></li>
+<li><a href="#%E5%BC%80%E6%9C%BA%E9%93%83%E5%A3%B0">开机铃声</a>
+<ul>
+<li><a href="#%E8%8E%AB%E5%B0%94%E6%96%AF%E7%94%B5%E7%A0%81%E5%BC%80%E6%9C%BA%E9%93%83%E5%A3%B0">莫尔斯电码开机铃声</a></li>
+<li><a href="#%E6%97%8B%E5%BE%8B%E5%92%8C%E9%9F%B3%E7%AC%A6">旋律和音符</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%80%E6%9C%BA%E5%9B%BE%E5%83%8F">开机图像</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div>
+<!-- /TOC -->
+</div>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<p><img src="media/OpenGD77-logo.png" alt="" /></p>
+<h2 id="简介"><a class="header" href="#简介">简介</a></h2>
+<p>本用户指南和固件一样正在开发中。</p>
+<p>当固件的某一部分稳定后，图片与内容会重新更新。</p>
+<p>本项目的目的旨在开发一个功能齐全的、非商用的固件，以代替出厂固件。
+该固件专为<strong>业余无线电</strong>用户使用打造，同时含有一些官方固件所没有的功能。</p>
+<p><em>请注意 :</em></p>
+<ul>
+<li><strong>本固件依然处于开发阶段，仍有一些官方固件支持的关键功能在本固件内不被支持。</strong></li>
+<li>短信息发送与接收功能<strong>目前暂时不支持</strong>，但有可能在将来会被支持。</li>
+<li><strong>不支持</strong>扫描列表功能，因为信道扫描或区域扫描功能提供了几乎相同的功能。</li>
+<li>隐私与加密功能<strong>将永远不会</strong>被支持，因为对于业余电台使用该功能是非法的行为。在某些国家或地区（例如澳大利亚），由于政府与法律要求，开发者被要求在任何加密系统中植入后门，实际上让开发一个含有加密的系统变得违法或者不可能。</li>
+</ul>
+<h3 id="下载链接与其他资源"><a class="header" href="#下载链接与其他资源">下载链接与其他资源</a></h3>
+<p><strong>二进制固件:</strong></p>
+<p><strong>GD-77/GD-77S/DM-1801/RD-5R</strong>
+<a href="https://www.opengd77.com/downloads/GD77/Latest">https://www.opengd77.com/downloads/GD77/Latest</a></p>
+<p><strong>TYT MD-9600 / Retevis RT-90</strong>
+<a href="https://www.opengd77.com/downloads/MD9600/Firmware/Latest">https://www.opengd77.com/downloads/MD9600/Firmware/Latest</a></p>
+<p>MD-9600 / RT-90 在生产过程中使用了多种不同的 PLL 和 IF 芯片。
+您需要安装与您的硬件版本匹配的版本，该版本写在电台顶部的 PCB 上，尽管有时 TYT 更改硬件而不更改 PCB 上的版本。
+对于硬件版本为 4A 的电台，请使用版本 5 固件。
+对于在 PCB 上写有硬件版本 2 的非常旧的电台，可能需要加载版本 1 固件。</p>
+<p>基本上，如果您的电台无法接收或发射，请尝试使用不同的固件硬件版本。</p>
+<p><strong>TYT MD-UV380 / Retevis RT-3S</strong>
+<a href="https://www.opengd77.com/downloads/MDUV380/Firmware/Latest">https://www.opengd77.com/downloads/MDUV380/Firmware/Latest</a></p>
+<p>请注意：名称中带有 JA 的版本是为日本用户本地化的，仅支持日语和英语。</p>
+<ul>
+<li><strong>OpenGD77 客户编程软件（CPS 即写频软件）:</strong>
+<a href="https://www.opengd77.com/downloads/CPS/Latest">https://www.opengd77.com/downloads/CPS/Latest</a></li>
+<li><strong>已发布的固件的最新源代码：</strong>
+<a href="https://www.opengd77.com/downloads/releases">https://www.opengd77.com/downloads/releases</a></li>
+<li><strong>OpenGD77 论坛:</strong>
+<a href="https://www.opengd77.com/">https://www.opengd77.com/</a></li>
+</ul>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h2 id="安装"><a class="header" href="#安装">安装</a></h2>
+<p>本固件可以被安装在以下几部电台：</p>
+<ul>
+<li>特易通 MD-760 （又名 Radioddity GD-77）</li>
+<li>特易通 MD-730 （又名 Radioddity GD-77S）</li>
+<li>宝锋 DM-1801（仅限第 1 版硬件） （又名 宝锋 DM-860）</li>
+<li>宝锋 DM-1801A（仅限第 1 版硬件）</li>
+<li>宝锋 DM-5R Tier II （又名 宝锋 RD-5R）</li>
+<li>特易通 MD-9600 / Retevis RT-90</li>
+<li>特易通 MD-UV380 / Retevis RT-3S</li>
+</ul>
+<p>固件文件必须使用 OpenGD77 CPS 中的“Extras/Firmware Loader”（“附加/固件加载程序”）菜单安装。原厂提供的固件更新工具不能用于刷入 OpenGD77 固件。</p>
+<p>安装本固件的风险由用户自行承担。<strong>请在刷入固件后立即使用 OpenGD77 CPS 对电台进行完整备份</strong>（详见 <em><a href="#%E5%9C%A8%E6%82%A8%E5%81%9A%E4%BB%BB%E4%BD%95%E5%85%B6%E4%BB%96%E4%BA%8B%E6%83%85%E4%B9%8B%E5%89%8D%E5%A4%87%E4%BB%BD">备份</a></em>，如果遇到任何问题，原厂固件通常可以被重新刷入。</p>
+<p><em>请注意 :</em></p>
+<ul>
+<li><em>该固件与宝锋 DM-1801 的新 2022 版本或 DM-1801A 不兼容，因为其使用了完全不同的内部硬件和电子设备。</em></li>
+<li>原厂提供的 CPS 软件与本固件不兼容，请使用 <strong>OpenGD77 CPS</strong>。它可以从本指南的 <a href="#%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5%E4%B8%8E%E5%85%B6%E4%BB%96%E8%B5%84%E6%BA%90">1.1 章节处</a> 下载。包括宝锋、特易通、Retevis 和其他支持的电台必须使用 OpenGD77 CPS。</li>
+</ul>
+<h3 id="将数据传输到电台"><a class="header" href="#将数据传输到电台">将数据传输到电台</a></h3>
+<p>为了安装固件、读写电台配置文件、写入卫星数据、语音提示和 DMR ID 数据库，您必须使用 CPS。</p>
+<ol>
+<li>固件更新模式</li>
+</ol>
+<ul>
+<li>
+<p>通过以下方式使电台进入固件更新模式：</p>
+<ul>
+<li>
+<p>按住如下所示的两个按键（<strong>S1</strong>,<strong>Fn</strong>）并打开电台。</p>
+<ul>
+<li>
+<p>特易通 MD-760、MD-730 或 Radioddity GD-77、GD-77s：</p>
+<ul>
+<li>按住 PTT 按键旁边的<strong>两个小按键</strong>。</li>
+</ul>
+</li>
+<li>
+<p>宝锋 DM-1801 或 DM-1801A 或 DM-860：</p>
+<ul>
+<li>按住 PTT 按键下方的<strong>两个小按键</strong>。</li>
+</ul>
+</li>
+<li>
+<p>宝锋 DM-5R Tier II 或 RD-5R：</p>
+<ul>
+<li>按住橙色 <strong>S1</strong>（Call）和黑色 Fn（<strong>Moni</strong> 或 <strong>S2</strong>）按键（PTT 两侧的按键）。</li>
+</ul>
+</li>
+<li>
+<p>TYT MD-9600 / Retevis RT-90</p>
+<ul>
+<li>按住绿色电源按钮和橙色按钮，同时为电台提供 12V 电源。注意：更新 OpenGD77 固件时不需要断开电源并重新连接。</li>
+</ul>
+</li>
+<li>
+<p>TYT MD-UV380 / Retevis RT-3S</p>
+<ul>
+<li>按住电台侧面顶部的 2 个按钮（<strong>S1</strong> 和 PTT）并打开电台。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="media/PTT-layout.png" alt="按键布局" /><!-- { width=420 } --></p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+- 此时 LCD 屏幕将不显示任何内容。手持电台的 LED 将亮起或闪烁。
+</div>
+<ul>
+<li>
+<p>对于 GD-77/GD-77S/DM-1801 和 DM-5R，不需要安装驱动程序。
+对于所有其他电台，需要安装 STM DFUSe 驱动程序。如果 Windows 没有自动安装驱动程序，您可能需要使用 Windows 设备管理器来查找并安装正确的驱动程序。</p>
+</li>
+<li>
+<p>选择电台类型
+<img src="media/cps_radio_type_menu.png" alt="固件加载器选择电台类型" /></p>
+</li>
+<li>
+<p>固件可从 <a href="#%E5%AE%A2%E6%88%B7%E7%BC%96%E7%A8%8B%E8%BD%AF%E4%BB%B6cps">CPS</a> 中的 Extras 菜单轻松刷入。
+<img src="media/Firmware_loader-01.png" alt="固件加载器菜单访问" /><!-- { width=400 } --></p>
+<ul>
+<li>
+<p>选择您的电台型号。
+<img src="media/Firmware_loader-02.png" alt="固件加载器窗口" /><!-- { width=420 } --></p>
+</li>
+<li>
+<p>出于软件许可的原因，首次使用固件加载器时，您必须点击“Firmware Installation Instructions”（固件安装说明）并按提示进行操作。</p>
+<p>该操作只需执行一次。如果您不这样做就只能在模拟模式下使用电台。</p>
+<p><strong>请注意！不要尝试将原厂固件刷入电台，CPS 只需要用它给本固件增加 DMR 功能。</strong></p>
+<p>成功完成此过程后，固件加载程序的标题栏将显示 [+DMR]</p>
+</li>
+<li>
+<p>点击“Select a file &amp; Update”（选择文件并更新）</p>
+</li>
+<li>
+<p>选择之前下载的 .bin 固件文件。（最新的文件可以在 <a href="#%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5%E4%B8%8E%E5%85%B6%E4%BB%96%E8%B5%84%E6%BA%90">1.1 章节处</a> 给出的下载位置找到）
+所选固件文件将使用官方固件中的数据进行修补，然后刷入电台。</p>
+</li>
+<li>
+<p>刷机完成后，如果电台没有自动重启，请关闭电源并重新打开。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>请注意！ 固件不支持除 GD-77 以外的所有电台使用的原版电台配置文件格式，因此您需要使用 CPS 安装 OpenGD77 格式的电台配置文件，然后才能使用电台的其他功能，VFO 除外（它可以手动更改）</strong></p>
+<ol start="2">
+<li>使用 <a href="#%E5%AE%A2%E6%88%B7%E7%BC%96%E7%A8%8B%E8%BD%AF%E4%BB%B6cps">OpenGD77 CPS</a> 更新电台配置文件（Codeplug）。</li>
+</ol>
+<ul>
+<li>
+<p>此步骤使用串口通信，电台需要正常开机且屏幕处于工作状态。</p>
+<ul>
+<li>如果您在更新固件，请完全关闭电台再开机。</li>
+<li>它使用串口通信，因此必须安装 OpenGD77 驱动程序。在安装 CPS 软件时将会一同安装。</li>
+<li>具体细节详见 <a href="#%E5%AE%A2%E6%88%B7%E7%BC%96%E7%A8%8B%E8%BD%AF%E4%BB%B6cps">CPS 部分</a>。</li>
+</ul>
+</li>
+</ul>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h2 id="电台配置文件codeplug兼容性"><a class="header" href="#电台配置文件codeplug兼容性">电台配置文件（Codeplug）兼容性</a></h2>
+<p>本固件所使用的电台配置文件与官方的略有不同。</p>
+<p>除了 MD760 以外，所有电台用户需要使用 Colin G4EML 编写的工具转换原厂的配置文件格式。（参见 <a href="http://www.gb3gf.co.uk/downloads.html">http://www.gb3gf.co.uk/downloads.html</a>）</p>
+<p>使用该软件可以将原厂专有的电台配置文件导出至 CSV 格式，然后将这些 CSV 文件导入到 Colin 的工具（OpenGD77 版本）中。</p>
+<p>电台配置文件只能使用 <a href="#%E5%AE%A2%E6%88%B7%E7%BC%96%E7%A8%8B%E8%BD%AF%E4%BB%B6cps">OpenGD77 CPS</a> 写入到电台。</p>
+<p>我们还推荐您重新构建您的电台配置文件，删除频率重复但通话组不同的信道。更多信息请参阅本指南末尾的 <a href="#%E6%A6%82%E8%BF%B0">为本固件写入信道与通话组</a>。</p>
+<h2 id="不同电台之间的固件差异"><a class="header" href="#不同电台之间的固件差异">不同电台之间的固件差异</a></h2>
+<p>不是所有受支持的电台都有相同的按键数或屏幕大小，因此操作这些电台会与操作特易通 MD760 有些不同之处。</p>
+<p>此外，并不是所有的电台都支持全部的功能。</p>
+<ul>
+<li>特易通 MD-760（又名 Radioddity GD-77），在 PTT 下方有 2 个按键。<strong>黑色</strong>按键在又称为<strong>SK1</strong>，<strong>蓝色</strong>按键称为<strong>SK2</strong>，在本手册中也称其为<strong>功能</strong>按键。 此电台顶部还有一个<strong>橙色</strong>按键。</li>
+<li>宝锋 DM-5R / RD-5R 的硬件不支持在电台发射时通过 USB 进行通讯，所以热点模式在这部电台上<strong>无法</strong>使用。</li>
+<li>宝锋 DM-5R / RD-5R 没有左右方向键，由 <strong>A/B</strong> 和 <strong>Band</strong> 按键代替<strong>左</strong>方向键和<strong>右</strong>方向键。</li>
+<li>宝锋 DM-5R / RD-5R 没有橙色按键，该功能由<strong>长按</strong>橙色的 <strong>MR/VFO</strong> 代替。</li>
+<li>宝锋 DM-5R / RD-5R 有两个侧键，但是其位置与 MD760 和 DM1801 不同，位于 PTT 上方的是 MD760 上的<strong>黑色</strong>按键（或称为 <strong>SK1</strong>），位于 PTT 下方的是 MD760 上的 <strong>蓝色</strong>按键（或称为 <strong>SK2</strong>）。</li>
+<li>特易通 MD-730 没有键盘或者屏幕，因此操作方式与其他有屏幕的电台完全不同。（<em>见附录 ​</em>​**）</li>
+<li>宝锋 DM-1801 / DM-860 有独立的 <strong>MR/VFO</strong> 按键，可用于切换信道/频率模式，而不需要使用<strong>红色</strong>的菜单键。</li>
+<li>宝锋 DM-1801 / DM-860 也有独立的 <strong>A/B</strong> 按键，用于切换 VFO A/B，而不需要使用电台顶部的<strong>橙色</strong>按键进入快捷菜单再切换。</li>
+<li>特易通 MD-380UV / Retevis RT-3S 没有左右方向键，但在电台顶部有一个旋钮。在频率和信道界面上，上下方向键的功能类似于 GD-77 上的左右方向键。旋钮的功能类似于 GD-77 上的上下方向键，可用于更改频率或信道。在菜单界面中，上下方向键用于上下移动，旋钮用于控制每个设置的值，与 GD-77 上的左右方向键的作用相同。</li>
+<li>特易通 MD-9600 / Retevis RT-90 是一款移动电台，前面板上有按键和麦克风。有关按键映射的信息，请参阅有关 MD-9600 的部分。</li>
+</ul>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h2 id="主屏幕频率与信道界面"><a class="header" href="#主屏幕频率与信道界面">主屏幕（频率与信道界面）</a></h2>
+<p>本固件有两个主屏幕：频率界面（VFO）与信道界面（Channel）。这与原装固件的界面类似，但拥有了更多功能。</p>
+<p>在本固件安装完成后，默认显示频率界面。</p>
+<p><img src="media/vfo-screen.png" alt="频率界面" /></p>
+<p>频率界面显示的发射与接收频率会从电台配置文件中的“<em>VFO A</em>”配置读取。</p>
+<p>无论在频率界面或信道界面，当前模式（<strong>DMR</strong> 或 <strong>FM</strong>）都会显示在屏幕左上角，电量百分比会显示在右上角。</p>
+<p>在 <strong>DMR</strong> 模式中，当前<em>时隙</em>会显示在 <strong>DMR</strong> 右侧，例如时隙 2 会显示为 “<strong>TS2</strong>”，<em>色码</em>会显示在电池左侧，例如色 1 会显示为 “<strong>C1</strong>”，当时隙过滤关闭时，“<strong>TS1</strong>” 或 “<strong>TS2</strong>” 指示器会反色显示。</p>
+<p>当前的发射功率会显示在屏幕顶部中间（例如 “750mW”）。</p>
+<p>在<strong>频率</strong>界面，发射与接收频率都会显示，当处于 DMR 模式的时候，通话组也会同时显示。</p>
+<p><strong>R</strong>（接收频率）左侧的小箭头表示当前控制的是接收频率，使用上下方向键或数字键可以改变接收频率。</p>
+<p>信道界面会在顶部显示与频率界面相同的内容，中间则显示<strong>信道名称</strong>（此处为“<em><strong>Lee Hill</strong></em>”）与<strong>区域</strong>（此处为“<em><strong>Home DMR</strong></em>”）。</p>
+<p>在 DMR 模式下还会显示<strong>通话组</strong>（此处为“<em><strong>ColoradoHD</strong></em>”）。</p>
+<p><img src="media/dmr-screen.png" alt="显示信息" /></p>
+<p>在这两个界面中:</p>
+<ul>
+<li>按压<strong>红色</strong>菜单按键可以在频率界面与信道界面之间切换。（<em>请注意 :</em> 在宝锋 DM-1801 和 DM-5R 上，按压 <strong>MR/VFO</strong> 按键以切换频率/信道界面。）</li>
+<li>按压<strong>绿色</strong>菜单按键进入菜单选项。</li>
+<li>按压<strong>蓝色 + 绿色</strong>组合键快速进入 <a href="#%E4%BF%A1%E9%81%93%E8%AF%A6%E7%BB%86%E8%AE%BE%E7%BD%AEchannel-details">信道详情</a> 界面，该界面同样可以从菜单进入。</li>
+</ul>
+<p><em>请注意 :</em></p>
+<ul>
+<li>VFO 实际上是一种特殊的信道，因此 <a href="#%E4%BF%A1%E9%81%93%E8%AF%A6%E7%BB%86%E8%AE%BE%E7%BD%AEchannel-details">信道详情</a> 界面同样适用于频率界面。</li>
+</ul>
+<h3 id="在模拟与数字模式之间切换"><a class="header" href="#在模拟与数字模式之间切换">在模拟与数字模式之间切换</a></h3>
+<p>按压<strong>蓝色 + 星号</strong>组合键可以在 FM 和 DMR 模式之间切换，该操作适用于任意频率或信道界面。</p>
+<h3 id="在-dmr-模式下切换时隙"><a class="header" href="#在-dmr-模式下切换时隙">在 DMR 模式下切换时隙</a></h3>
+<p>在 DMR 模式下，按压<strong>星号</strong>按键以切换<em>时隙 1</em>与<em>时隙 2</em>并将其设置为临时时隙。</p>
+<p>要清除临时时隙，请长按<strong>星号</strong>按键。</p>
+<h3 id="在-fm-模式下更改带宽"><a class="header" href="#在-fm-模式下更改带宽">在 FM 模式下更改带宽</a></h3>
+<ul>
+<li>在 FM 模式下，按压<strong>星号</strong>按键可在 25kHz 和 12.5kHz 带宽之间切换。</li>
+</ul>
+<h3 id="控制发射功率"><a class="header" href="#控制发射功率">控制发射功率</a></h3>
+<p>固件主要有两种控制输出功率的方法：</p>
+<ol>
+<li><strong>主</strong>功率控制，控制两个 VFO 以及所有信道的功率。</li>
+<li><strong>信道</strong>自定义功率。</li>
+</ol>
+<p>默认情况下，所有信道使用<strong>主</strong>功率设定，但是可以在 CPS（以及<strong>信道详情</strong>界面）中更改此设置，以使各个信道有自己的功率设置。</p>
+<p>当信道有自定义功率设置时，功率将以<strong>粗体</strong>显示。</p>
+<p>在有自定义功率的信道上增加或减少功率是临时的，此更改不会保存到配置文件。因此，更换信道后临时功率设置会丢失。</p>
+<p>要对信道自定义功率进行<strong>永久</strong>更改，您必须打开 **** 界面，然后按压<strong>蓝色 + 绿色</strong>组合键。</p>
+<p>在一个使用<strong>主</strong>功率设置的信道上更改功率，会使得其他使用主信道功率的<strong>所有信道</strong>和<strong>VFO</strong>都改变其功率。</p>
+<p>更改<strong>任一</strong> VFO 的功率也会更改<strong>主</strong>功率设置。</p>
+<ul>
+<li>按压<strong>蓝色 + 右</strong>组合键以增加功率。</li>
+<li>按压<strong>蓝色 + 左</strong>组合键以减小功率。</li>
+</ul>
+<p>功率可以被设置为以下几档：<strong>50mW</strong>、<strong>250mW</strong>、<strong>500mW</strong>、<strong>750mW</strong>、<strong>1W</strong>、<strong>2W</strong>、<strong>3W</strong>、<strong>4W</strong>、<strong>5W</strong> 以及 <strong>+W-</strong>。
+MD-9600 的功率输出更高，功率设置也不同。</p>
+<p>选择 <strong>+W-</strong> 功率档时，功放芯片将以用户电平驱动，该电平可以在选项菜单中更改。</p>
+<p>默认情况下，该电平为芯片的极限值，这将使得电台产生其最大标识功率。</p>
+<p><strong>该功率仅为供应急使用而设计，使用该功能可能会导致功放芯片损坏。</strong></p>
+<p>如果将用户电平设置为较低的值，电台会输出非常小的功率，例如小于 50mW。
+有关详细信息，请参阅用户功率设置菜单。</p>
+<p>要选择 <strong>+W-</strong> 功率档位，首先选择最大功率档位，然后长按<strong>蓝色 + 右</strong>组合键。</p>
+<p><em>请注意 :</em></p>
+<ul>
+<li>功率输出有且只有在您校准了手中的电台之后才准确，而这些电台<strong>在出厂时似乎没有进行非常精确的功率校准</strong>。</li>
+<li>低于 <strong>1W</strong> 设置的功率输出 <strong>不是</strong> 非常准确，因为校准仅包含 <strong>1W</strong> 和 <strong>5W</strong> 的数据。</li>
+<li>在 <strong>1W</strong> 和 <strong>5W</strong> 之间，功放场效应管输出功率与功放驱动电平大致成正比，因此电台的 <strong>2W</strong>、<strong>3W</strong>、<strong>4W</strong> 输出功率<em>大致准确</em>。</li>
+<li>但是，在 <strong>1W</strong> 以下，功放场效应管输出功率<strong>与功放驱动电平不成正比</strong>，并且在不同电台之间<strong>有很大差异</strong>。因此，<strong>1W</strong> 以下的功率精度最多只有 <strong>80% 左右</strong>。</li>
+<li>此外，功放场效应管的最小工作功率阈值非常接近（或有时甚至高于）<strong>50mW</strong>，因此在此功率水平下工作<strong>会产生不需要的杂散发射</strong>。</li>
+<li>在使用 <strong>50mW</strong> 功率<strong>之前</strong>请确认您的功率输出和发射频谱，因为它可能会造成干扰。</li>
+</ul>
+<h3 id="信号强度条s-表"><a class="header" href="#信号强度条s-表">信号强度条（S 表）</a></h3>
+<p>在 FM 与 DMR 模式中，接收信号的强度表现为横跨屏幕一个条形图（S 表）。</p>
+<p>S 表指示在<strong>最右端</strong>时大约为 <strong>S9+40dB</strong>。</p>
+<p>在 DMR 模式中，只有当硬件检测到 DMR 信号时 S 表<strong>才会工作</strong>。</p>
+<p>在 FM 模式中，S 表应一直工作。</p>
+<p><img src="media/signal-meter.png" alt="S表" /></p>
+<p><em>请注意 :</em></p>
+<ul>
+<li>目前，S 表读数<strong>不是</strong>非常准确，因为电台硬件的接收灵敏度<strong>没有经过校准</strong>。</li>
+<li>因此显示的值是基于一台有平均灵敏度的电台进行校准的，不同的电台可能<strong>或多或少</strong>偏离平均值，因此 S 表读数将<strong>高于或低于</strong>绝对正确值。</li>
+</ul>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h3 id="信道界面的特殊功能"><a class="header" href="#信道界面的特殊功能">信道界面的特殊功能</a></h3>
+<p>信道界面显示了当前信道号码（Channel number）与当前区域（Zone）。</p>
+<p><img src="media/channel-and-zone.png" alt="信道和区域" /></p>
+<h4 id="在当前区域内切换信道"><a class="header" href="#在当前区域内切换信道">在当前区域内切换信道<!-- Linebreak --></a></h4>
+<ul>
+<li>按压<strong>上</strong>或<strong>下</strong>方向键可以在当前区域内改变信道，信道号会显示在区域号旁边。</li>
+</ul>
+<h4 id="改变区域"><a class="header" href="#改变区域">改变区域<!-- Linebreak --></a></h4>
+<ul>
+<li>按压<strong>蓝色 + 上</strong>或<strong>蓝色 + 下</strong>组合键分别可以切换上一个/下一个区域。</li>
+</ul>
+<p><img src="media/changing-zones.png" alt="另一个区域" /></p>
+<h4 id="显示信道频率"><a class="header" href="#显示信道频率">显示信道频率<!-- Linebreak --></a></h4>
+<ul>
+<li>在 FM 与 DMR 模式中，您都可以按住<strong>黑色</strong>侧键以显示接收与发射频率。</li>
+</ul>
+<h4 id="显示-fm-模式具体信道信息"><a class="header" href="#显示-fm-模式具体信道信息">显示 FM 模式具体信道信息</a></h4>
+<ul>
+<li>在 FM 模式中，按住<strong>黑色</strong>侧键以显示哑音以及静噪设置。</li>
+</ul>
+<h4 id="中继倒频功能"><a class="header" href="#中继倒频功能">中继倒频功能</a></h4>
+<ul>
+<li>按住<strong>井号</strong>键，频道的发射和接收频率将被交换。信道名称将以反相显示。</li>
+<li>即使信道或区域发生变化，电台仍会保持锁定在中继倒频模式。</li>
+<li>要退出反向中继器模式，请按住<strong>井号</strong>键。</li>
+</ul>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h4 id="信道界面快捷菜单"><a class="header" href="#信道界面快捷菜单">信道界面快捷菜单<!-- Linebreak --></a></h4>
+<ul>
+<li>按压机器顶部<strong>橙色</strong>按键可以调出信道界面的快捷菜单。在该菜单下<strong>橙色</strong>按键和<strong>绿色</strong>按键具有相同的功能，都可以确认当前选项。</li>
+</ul>
+<p><img src="media/channel-quick-menu.png" alt="信道界面快捷菜单" /></p>
+<p><em>请注意 :</em></p>
+<ul>
+<li>宝锋 DM-5R 和 MD-380UV 没有顶部的<strong>橙色</strong>按键。</li>
+</ul>
+<p>宝锋 DM-5R 请长按橙色的 <strong>MR/VFO</strong> 按键以访问该快捷菜单。
+特易通 MD-380UV 请按 <strong>SK1+ 绿色</strong> 组合键。</p>
+<h5 id="复制一个信道配置至-vfochannel----vfo"><a class="header" href="#复制一个信道配置至-vfochannel----vfo">复制一个信道配置至 VFO（Channel --&gt; VFO）<!-- Linebreak --></a></h5>
+<ul>
+<li>按压<strong>橙色</strong>按键，或按压<strong>绿色</strong>按键以复制当前信道配置至频率界面。</li>
+</ul>
+<h5 id="将-vfo-信息写入当前信道vfo----channel"><a class="header" href="#将-vfo-信息写入当前信道vfo----channel">将 VFO 信息写入当前信道（VFO --&gt; Channel）<!-- Linebreak --></a></h5>
+<ul>
+<li>按压<strong>橙色</strong>按键，或按压<strong>绿色</strong>按键以确认，按压<strong>红色</strong>按键以取消。</li>
+</ul>
+<h5 id="过滤器设置filter"><a class="header" href="#过滤器设置filter">过滤器设置（Filter）</a></h5>
+<ul>
+<li>
+<p>FM 模式的<strong>过滤器</strong>设置（哑音）</p>
+<ul>
+<li>使用<strong>右</strong>方向键或者<strong>左</strong>方向键以开启或关闭哑音</li>
+</ul>
+</li>
+<li>
+<p>DMR 模式的<strong>过滤器</strong>设置</p>
+<ul>
+<li>
+<p>使用<strong>右</strong>方向键或者<strong>左</strong>方向键以选择：</p>
+<ul>
+<li><strong>None</strong>：不过滤，用于监听任何频率活动（<strong>混杂</strong>模式）</li>
+<li><strong>TG</strong>：按选中的<em>通话组</em>过滤</li>
+<li><strong>Ct</strong>：按电台配置文件中的<em>单呼联系人</em>过滤</li>
+<li><strong>RxG</strong>：按通话组/接收组列表中的<em>通话组</em>过滤组呼</li>
+</ul>
+</li>
+</ul>
+<p>启用过滤时，屏幕中间上方的“<em>DMR</em>”指示器会反色显示。</p>
+</li>
+<li>
+<p><strong>CC 扫描</strong>（<em>仅限 DMR 模式</em>）（以前称为 <strong>CC 过滤器</strong>）</p>
+<p>即使色码未知，此设置也允许电台接收 DMR 信号。</p>
+<p><strong>但该设置实际上并未禁用色码过滤器</strong>，因为 HR-C6000 芯片不支持在未指定色码的情况下接收 DMR 信号。</p>
+<p>禁用色码过滤器的功能由 Colin G4EML 编写的软件算法执行，其中 HR-C6000 中设置的色码值会在接收到每个 DMR 时隙帧后改变，直到 HR-C6000 报告接收的 DMR 信号的色码与 HR-C6000 中设置的色码相同。</p>
+<p>此功能<strong>不</strong>应用于正常操作，色码匹配检测速度较慢，并且会导致 DMR 信号在算法找到色码之前无法正确接收。</p>
+<ul>
+<li>使用<strong>右</strong>方向键或<strong>左</strong>方向键以开关该功能。</li>
+</ul>
+<p>启用<em>色码</em>扫描时，屏幕上的<em>色码</em>指示会反色显示。</p>
+</li>
+<li>
+<p><strong>时隙过滤（TS Filter）</strong>（<em>仅限 DMR 模式</em>）</p>
+<p>控制电台是否按<em>时隙</em>过滤。</p>
+<ul>
+<li>使用<strong>右</strong>方向键或<strong>左</strong>方向键以开关该功能。</li>
+</ul>
+<p>关闭<em>时隙</em>过滤时，屏幕上的时隙指示会反色显示。</p>
+<p><em>请注意 :</em> 此功能实际上并未禁用过滤器，因为 HR-C6000 芯片不完全支持同时在两个时隙上接收信号。</p>
+<p>此功能使用 Daniel F1RMB 编写的软件算法，该算法最初在两个时隙上同时监听主叫 ID 数据，当一个时隙上出现有效数据时，固件就在该时隙上监听。</p>
+<p>如果在大约 2.5 秒内接收到的时隙上不存在主叫方 ID ，则算法会检查另一个时隙，并在主叫方 ID 数据出现时切换到该时隙。</p>
+</li>
+</ul>
+<h4 id="频率界面快捷菜单"><a class="header" href="#频率界面快捷菜单">频率界面快捷菜单<!-- Linebreak --></a></h4>
+<ul>
+<li>在频率界面，按压机器顶部的<strong>橙色</strong>按键进入快捷菜单，目前该菜单有五个选项。</li>
+</ul>
+<p><img src="media/vfo-quick-menu.png" alt="频率界面快捷菜单" /></p>
+<p><em>请注意 :</em></p>
+<ul>
+<li>宝锋 DM-5R 没有顶部的<strong>橙色</strong>按键，请长按橙色的 <strong>MR/VFO</strong> 按键以访问该快捷菜单。</li>
+</ul>
+<h5 id="选择-vfo-ab"><a class="header" href="#选择-vfo-ab">选择 VFO A/B<!-- Linebreak --></a></h5>
+<ul>
+<li>在频率界面，按压两次<strong>橙色</strong>按键以在 <strong>VFO A</strong> 和 <strong>VFO B</strong> 中快速切换。</li>
+<li>在宝锋 DM-1801 / DM-860 上，该功能由按压一次 <strong>A/B</strong> 按键实现。</li>
+<li>长按<strong>红色</strong>按键也会从 <strong>VFO A</strong> 更改为 <strong>VFO B</strong>，反之亦然。</li>
+</ul>
+<h5 id="交换接收与发射频率tx----rx"><a class="header" href="#交换接收与发射频率tx----rx">交换接收与发射频率（Tx &lt;--&gt; Rx）<!-- Linebreak --></a></h5>
+<p>该功能即倒频功能。</p>
+<ul>
+<li>按压<strong>绿色</strong>或<strong>橙色</strong>按键以确认。</li>
+</ul>
+<h5 id="将接收频率复制到发射频率rx----tx"><a class="header" href="#将接收频率复制到发射频率rx----tx">将接收频率复制到发射频率（Rx --&gt; Tx）<!-- Linebreak --></a></h5>
+<p>将接收频率复制到发射频率。</p>
+<ul>
+<li>按压<strong>绿色</strong>或<strong>橙色</strong>按键以确认。</li>
+</ul>
+<h5 id="将发射频率复制到接收频率tx----rx"><a class="header" href="#将发射频率复制到接收频率tx----rx">将发射频率复制到接收频率（Tx --&gt; Rx）<!-- Linebreak --></a></h5>
+<p>将发射频率复制到接收频率。</p>
+<ul>
+<li>按压<strong>绿色</strong>或<strong>橙色</strong>按键以确认。</li>
+</ul>
+<h5 id="过滤器filter仅限-dmr-模式"><a class="header" href="#过滤器filter仅限-dmr-模式">过滤器（Filter）（<em>仅限 DMR 模式</em>）<!-- Linebreak --></a></h5>
+<p>该功能与 <a href="#%E8%BF%87%E6%BB%A4%E5%99%A8%E8%AE%BE%E7%BD%AEfilter">上述</a> 信道模式操作中描述的过滤器相同。</p>
+<h5 id="存储-vfo-配置至新建信道vfo----new-chan"><a class="header" href="#存储-vfo-配置至新建信道vfo----new-chan">存储 VFO 配置至新建信道（VFO --&gt; New Chan）<!-- Linebreak --></a></h5>
+<p>该选项会将当前 VFO 设置存储至一个新建信道。</p>
+<p>新建信道名称将遵循 &quot;<strong>New channel</strong> <em>NNN</em>&quot; 格式，其中 “<em>NNN</em>” 代表 “<em>All Channels</em>” 区域中下一个可用的信道号码。</p>
+<p>信道也将被添加到信道界面中的当前选择的区域。如果信道界面设置为 “<em>All Channels</em>” 区域，则信道将添加到该区域。</p>
+<h5 id="哑音扫描tone-scan仅限-fm-模式"><a class="header" href="#哑音扫描tone-scan仅限-fm-模式">哑音扫描（Tone Scan）（仅限 FM 模式）<!-- Linebreak --></a></h5>
+<p>该功能可以扫描 <strong>模拟（CTCSS）</strong> 或 <strong>数字（DCS）</strong> 哑音，找到正确的哑音后设置将被存入当前 VFO。</p>
+<p>本功能默认会扫描 <strong>CTCSS 和 DCS</strong> ，但如果您只想扫描 <strong>CTCSS</strong> 或者 <strong>DCS</strong>，按压<strong>右</strong>方向键或<strong>左</strong>方向键以选择对应哑音。</p>
+<ul>
+<li>按压<strong>橙色</strong>或<strong>绿色</strong>按键以确认存入，或按压<strong>红色</strong>按键以取消。</li>
+</ul>
+<p>取消哑音扫描后，接收频率的哑音设置会回到之前的设置。</p>
+<p>若扫描到对应的哑音，接收与发射频率都会被设置为扫描到的哑音。</p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h3 id="与-dmr-有关的一些设置"><a class="header" href="#与-dmr-有关的一些设置">与 DMR 有关的一些设置</a></h3>
+<p>这些功能在频率界面与信道界面都可以使用。</p>
+<h4 id="时隙选择"><a class="header" href="#时隙选择">时隙选择<!-- Linebreak --></a></h4>
+<ul>
+<li>按压<strong>星号</strong>按键可以切换<em>时隙 1</em>与<em>时隙 2</em>。</li>
+</ul>
+<h4 id="dmr-id呼号与姓名显示"><a class="header" href="#dmr-id呼号与姓名显示">DMR ID、呼号与姓名显示<!-- Linebreak --></a></h4>
+<p>当接收到与您设置的<em>色码</em>相同的 DMR 信号时，电台会显示该主叫电台的<strong>通话组</strong>与 <strong>DMR ID</strong>。</p>
+<p><img src="media/talkgroup-and-dmr-id.png" alt="通话组与 DMR ID" /></p>
+<p>若该 DMR ID 已预先加载于电台的 <em>DMR ID 数据库</em>内，则会显示该电台的<strong>呼号</strong>与<strong>姓名</strong>。</p>
+<p><img src="media/callsign-and-name.png" alt="呼号与姓名" /></p>
+<h4 id="主叫别名显示"><a class="header" href="#主叫别名显示">主叫别名显示<!-- Linebreak --></a></h4>
+<p>若收到的信号来自 <em>Brandmeister</em> 网络，且主叫 DMR ID 并未记录在电台的 <em>DMR ID 数据库</em>中，则会显示由 <em>Brandmeister</em> 发来的<strong>主叫别名</strong>。</p>
+<p><img src="media/talker-alias.png" alt="主叫别名" /></p>
+<p>呼号会显示在屏幕中央，额外的信息会显示在屏幕底部，默认情况下该信息是 DMR ID。</p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<p>若主叫电台在 Brandmeister 的 “<em>Self care</em>” 页面 <strong>APRS 栏目</strong> 中输入了任何信息（即别名数据），则该信息会代替 DMR ID 显示在屏幕下方。</p>
+<p><img src="media/talker-alias-data.png" alt="主叫别名数据" /></p>
+<p><em>请注意 :</em></p>
+<ul>
+<li>由于<strong>主叫别名</strong>数据是嵌入在 DMR 语音数据帧中一同传送的，呼号通常会先出现，大约半秒后 DMR ID 与其他文字信息才会被接收到并显示。</li>
+</ul>
+<h4 id="从接收组列表中选择通话组"><a class="header" href="#从接收组列表中选择通话组">从接收组列表中选择通话组<!-- Linebreak --></a></h4>
+<p>按压<strong>左</strong>方向键或<strong>右</strong>方向键，可以循环浏览<strong>通话组列表</strong>中的<em>通话组</em>。在 CPS 中可以为 VFO 或信道分配不同的<strong>通话组列表</strong>。</p>
+<p>该<em>通话组</em>会<strong>同时</strong>应用于接收与发射。</p>
+<ul>
+<li>如果信道没有分配<em>通话组列表</em>，则将使用分配给该信道的联系人，并且<strong>左</strong>方向键和<strong>右</strong>方向键将无效。</li>
+<li>如果信道没有分配<em>通话组列表</em>，并且联系人也分配为 <strong>None</strong> 或 <strong>N/A</strong>，电台将默认使用 <strong>TG 9</strong>。*</li>
+</ul>
+<blockquote>
+<p>* 译者注：意味着如果你不给某个信道分配任何联系人固件默认会使用 TG9。</p>
+</blockquote>
+<p><em>请注意 :</em></p>
+<ul>
+<li>宝锋 DM-5R 没有左右方向键，由 <strong>A/B</strong> 和 <strong>Band</strong> 按键代替<strong>左</strong>方向键和<strong>右</strong>方向键。</li>
+</ul>
+<h4 id="为联系人或通话组指定时隙"><a class="header" href="#为联系人或通话组指定时隙">为联系人或通话组指定时隙<!-- Linebreak --></a></h4>
+<p>CPS 最近新增的一个功能允许您为每个<strong>联系人</strong>或<strong>通话组</strong>指定一个<em>时隙</em>。</p>
+<p>默认状态下，<strong>信道时隙指定功能</strong>是关闭的。这意味着如果您在通话组列表中按压<strong>左</strong>方向键或<strong>右</strong>方向键选择<em>通话组</em>后时，时隙不会改变，仍然是您原来（<em>在 CPS 中</em>）分配给信道的<em>时隙</em>或临时使用<strong>星号</strong>按键手动更改的<em>时隙</em>。</p>
+<p>但是，若某个<strong>联系人</strong>被指定了一个特定时隙（例如时隙 1），选中该联系人时，时隙会自动设置。这就是<strong>信道时隙指定功能</strong>。
+在这种情况下，时隙在信道/频率界面上显示为 <strong>cS</strong>​<em>x</em>（在此示例中为 cS1）。</p>
+<h4 id="通话组反色显示"><a class="header" href="#通话组反色显示">通话组反色显示<!-- Linebreak --></a></h4>
+<p>若<em>通话组</em>标识在您接收到 DMR 信号时反色显示，则表明目前的<em>发送通话组</em>与接收到的<em>通话组</em> <strong>并不相符</strong>，因此当您按下 <strong>PTT</strong> 时，您的信号不会被发射回同一个<em>通话组</em>。</p>
+<p><img src="media/talkgroup-inverse-video.png" alt="通话组反色显示" /></p>
+<p>如果您想要与接收到的信号在同一<em>通话组</em>发射，在通话组反色显示<strong>期间</strong>，按压电台侧边的<strong>蓝色</strong>按键可以将您的<em>发送通话组</em>设置为<em>接收到的通话组</em>。</p>
+<p><img src="media/talkgroup-override.png" alt="通话组临时设置" /></p>
+<h4 id="手动输入通话组代码"><a class="header" href="#手动输入通话组代码">手动输入通话组代码<!-- Linebreak --></a></h4>
+<ul>
+<li>按压数字键盘的<strong>井号</strong>按键输入<em>临时的</em>通话组号码，然后按压<strong>绿色</strong>按键确认。</li>
+</ul>
+<p><img src="media/talkgroup-entry.png" alt="通话组输入界面" /></p>
+<p>若您输入的<strong>通话组</strong>在<em>联系人数据库</em>中，该<strong>通话组</strong>的名称会直接显示，否则会直接显示通话组号码（例如 <strong>TG 98977</strong>）。</p>
+<ul>
+<li>按压任意<strong>左</strong>方向键或<strong>右</strong>方向键可以退出并回到上一个通话组。</li>
+</ul>
+<p>当您<strong>手动输入</strong>通话组时，通话组周围会显示<strong>一圈框线</strong>以提示您当前通话组是临时的，即使显示<em>联系人/通话组名称</em>亦如此。</p>
+<p><img src="media/talkgroup-manually-entered.png" alt="通话组覆盖" /></p>
+<h4 id="输入单呼号码"><a class="header" href="#输入单呼号码">输入单呼号码<!-- Linebreak --></a></h4>
+<ul>
+<li>按压数字键盘<strong>井号</strong>按键两次，然后手动输入需要单呼的 DMR ID。</li>
+</ul>
+<p><img src="media/private-call-entry.png" alt="单呼 DMR ID 输入" /></p>
+<p>在所有的数字键盘输入界面中，按压<strong>红色</strong>按键都可以返回上一个频率或信道界面。</p>
+<h4 id="选择联系人"><a class="header" href="#选择联系人">选择联系人<!-- Linebreak --></a></h4>
+<p>按压数字键盘<strong>井号</strong>按键三次，可以进入联系人选择界面。</p>
+<p><img src="media/contact-selection.png" alt="联系人选择" /></p>
+<p>联系人姓名会显示在屏幕中央（例如 <strong>TG 505 TS2</strong>）<em>通话组</em>或<em>单呼号码</em>会在屏幕底部以较小字体显示。</p>
+<ul>
+<li>按压<strong>上</strong>方向键或<strong>下</strong>方向键可浏览联系人列表。</li>
+<li>按压<strong>绿色</strong>按键以选择该联系人，或按压<strong>红色</strong>按键以取消。</li>
+</ul>
+<p>也可使用该方法发起单呼。</p>
+<p><img src="media/private-call-selection.png" alt="单呼选择" /></p>
+<h4 id="临时修改您的-dmr-id"><a class="header" href="#临时修改您的-dmr-id">临时修改您的 DMR ID<!-- Linebreak --></a></h4>
+<ul>
+<li>在<strong>联系人选择界面</strong>，按压<strong>蓝色 + 井号</strong>组合键，可以为电台输入一个<em>另一个</em> <strong>DMR ID</strong> 临时覆盖电台配置文件中的 DMR ID。（<em>用于测试目的</em>）</li>
+</ul>
+<p><img src="media/user-dmr-id.png" alt="DMR ID 输入界面" /></p>
+<p>此 DMR ID 将用于发射<strong>直到</strong>电台重启或您手动输入另一个 DMR ID。</p>
+<p>若要使更改永久生效，使其写入电台配置文件，按压<strong>蓝色 + 绿色</strong>组合键而不是<strong>绿色</strong>按键来确认 DMR ID。</p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h3 id="与-fm-有关的一些设置"><a class="header" href="#与-fm-有关的一些设置">与 FM 有关的一些设置</a></h3>
+<h4 id="fm-和窄带-fm"><a class="header" href="#fm-和窄带-fm">FM 和窄带 FM<!-- Linebreak --></a></h4>
+<p>对于<strong>25kHz 频宽</strong>的 FM 模式，屏幕左上角会显示“<strong>FM</strong>”。对于<strong>12.5kHz 频宽</strong>的窄带 FM 模式，屏幕左上角会显示“<strong>FMN</strong>”。</p>
+<h4 id="哑音设置"><a class="header" href="#哑音设置">哑音设置<!-- Linebreak --></a></h4>
+<p>信道或 VFO 都可设置哑音。FM 指示旁边显示的“<strong>C</strong>”或“<strong>D</strong>”、“<strong>T</strong>”或“<strong>R</strong>”或“<strong>TR</strong>”代表了不同的哑音设置。</p>
+<p><img src="media/ctcss-tone.png" alt="CSS 状态" /></p>
+<p><strong>C</strong> 代表 CTCSS，<strong>D</strong> 代表 DCS。<strong>T</strong> 代表发射哑音，<strong>R</strong> 代表接收哑音，<strong>TR</strong> 代表接收与发射哑音。</p>
+<p>可以独立设置发射与接收哑音。</p>
+<h4 id="静噪"><a class="header" href="#静噪">静噪<!-- Linebreak --></a></h4>
+<ul>
+<li>按压<strong>左</strong>方向键或<strong>右</strong>方向键，可以设置 FM 静噪等级。</li>
+</ul>
+<p><img src="media/squelch.png" alt="静噪强度" /></p>
+<p>在静噪设置界面，按压<strong>右</strong>方向键会逐渐调高静噪等级，按压<strong>左</strong>方向键会逐渐调低静噪等级。信道界面与频率界面的静噪等级是独立的，可以单独调整。</p>
+<p>可以使用 CPS 中的新功能将每个信道和 VFO 的静噪设置为不同的值，您可以按<strong>5%<strong>​<strong><strong>步长设置从</strong></strong>​</strong>静噪全开</strong>到<strong>静噪全关</strong>之间的任何值。</p>
+<p>在这个例子中静噪被设置为 20%。</p>
+<p>若在频率界面改变静噪等级，即便您关闭或重启了电台，该数值依旧会被记忆。但是在信道界面，改变静噪只是暂时的。</p>
+<p>若要使您设置的静噪对信道永久生效，按压<strong>蓝色 + 绿色</strong>组合键以进入信道详情界面，然后再次按压<strong>蓝色 + 绿色</strong>组合键以将您的设置保存到电台配置文件。</p>
+<p><em>请注意 :</em></p>
+<ul>
+<li>若您设置了接收哑音，则该设置比静噪控制具有更高的优先级，降低静噪等级并不会使您的电台打开静噪。</li>
+</ul>
+<h4 id="1750hz-中继操作音"><a class="header" href="#1750hz-中继操作音">1750Hz 中继操作音<!-- Linebreak --></a></h4>
+<ul>
+<li>在 FM 模式发射期间按压<strong>蓝色</strong>按键可以发射 1750Hz 操作音。*</li>
+</ul>
+<blockquote>
+<p>* 译者注：该功能常用于访问欧洲的中继台。</p>
+</blockquote>
+<h4 id="双音多频dtmf发射"><a class="header" href="#双音多频dtmf发射">双音多频（DTMF）发射<!-- Linebreak --></a></h4>
+<ul>
+<li>在发射过程中按键盘上的任意键（<strong>绿色</strong>和<strong>红色</strong>菜单键除外）可以发射该键的 DTMF 音。</li>
+</ul>
+<p>在 GD-77、RD-5R、DM-1801 和 DM-1801A 上，该声音也同时会从电台扬声器中发出。</p>
+<p>在 MD-380UV 和 MD-9600 上，扬声器会播放音调，但这不是传输的 DTMF 音调，因为这些电台上的硬件不支持通过扬声器播放实际的 DTMF 音调。</p>
+<p>MD-9600 上的 A B C D 麦克风按钮已用于其他功能，例如 A = ESC/红色按钮，因此需要使用以下按键顺序来输入字母 A、B、C 和 D</p>
+<p>上方向键 = A</p>
+<p>SK1 + 上方向键 = B</p>
+<p>下方向键 = C</p>
+<p>SK1 + 下方向键 = D</p>
+<p>请注意：目前 MD-9600 版本的固件无法与 DTMF 同时发射 CTCSS 或 DCS 哑音。</p>
+<h4 id="双音多频dtmf序列输入与传输"><a class="header" href="#双音多频dtmf序列输入与传输">双音多频（DTMF）序列输入与传输<!-- Linebreak --></a></h4>
+<ul>
+<li>按压<strong>井号</strong>按键输入 DTMF 序列（按<strong>蓝色 + 左</strong>组合键，删除一个字符）</li>
+</ul>
+<p><img src="media/dtmf-sequence-entry.png" alt="DTMF 输入界面" /></p>
+<ul>
+<li>按压<strong>蓝色 + 井号</strong>组合键可以在 DTMF 输入和 DTMF 联系人列表界面之间切换。</li>
+</ul>
+<p><img src="media/dtmf-contact-list.png" alt="DTMF 联系人列表界面" /></p>
+<ul>
+<li>按压<strong>绿色</strong>按键发送该序列。</li>
+<li>按压任何按键都将停止当前序列的发送。</li>
+</ul>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h3 id="与-vfo-有关的一些设置"><a class="header" href="#与-vfo-有关的一些设置">与 VFO 有关的一些设置</a></h3>
+<p>频率界面在任何时候都会显示发射与接收频率。</p>
+<p><img src="media/vfo-screen.png" alt="频率界面" /></p>
+<p>当您选中的频率为<strong>接收</strong>频率时，“<strong>R</strong>”左侧会显示一个箭头（<strong>&gt;</strong>），此时改变频率会同时改变发射与接收频率。</p>
+<h4 id="频率步进"><a class="header" href="#频率步进">频率步进<!-- Linebreak --></a></h4>
+<ul>
+<li>按压<strong>上</strong>方向键或<strong>下</strong>方向键将按照 CPS 中为 VFO 定义的频率步进更改频率。</li>
+</ul>
+<p>若要更改频率步进可以按压<strong>蓝色 + 绿色</strong>组合键进入信道详情界面，选择“<strong>Step</strong>”选项进行调整。</p>
+<h4 id="使用数字键输入频率"><a class="header" href="#使用数字键输入频率">使用数字键输入频率<!-- Linebreak --></a></h4>
+<ul>
+<li>按压<strong>任意数字键</strong>可以直接输入频率。</li>
+</ul>
+<p><img src="media/frequency-entry.png" alt="频率输入界面" /></p>
+<p>输入完所有数字后，电台会发出确认提示音并回到频率界面。</p>
+<p>若输入的频率无效，电台会发出错误提示音。</p>
+<p>当您在输入频率时：</p>
+<ul>
+<li>按压<strong>红色</strong>按键可取消当前输入。</li>
+<li>按压<strong>左</strong>方向键可以依次删除输入的数字。</li>
+</ul>
+<h4 id="单独调整发射频率"><a class="header" href="#单独调整发射频率">单独调整发射频率<!-- Linebreak --></a></h4>
+<ul>
+<li>按住电台侧边的<strong>蓝色</strong>按键，然后按压<strong>下</strong>方向键。</li>
+</ul>
+<p>这将切换当前选择的频率至发射频率，并且箭头将移动到“<strong>T</strong>”而不是“<strong>R</strong>”的左侧。</p>
+<p>要再次更改接收频率，请按<strong>蓝色 + 上</strong>组合键。</p>
+<p>当发射频率改变时，接收频率不会改变。</p>
+<p>使用此方法可设置不同的发射和接收频率。这对于卫星操作很有用，因为它允许您进行<strong>跨段操作</strong>以及<strong>异频</strong>。</p>
+<p><em>请注意 :</em></p>
+<ul>
+<li>如果设置了不同的发射和接收频率，并且当前选择输入的是接收频率，则更改频率时也会同时更改发射频率，如果可能，固件将保持两频率之间的频差。</li>
+</ul>
+<p><strong>不会保持频差</strong>的唯一情况是发射频率超出电台硬件支持的频率范围。</p>
+<h4 id="频谱扫描"><a class="header" href="#频谱扫描">频谱扫描<!-- Linebreak --></a></h4>
+<ul>
+<li>长按<strong>井号</strong>按键进入频谱扫描模式。</li>
+</ul>
+<p>电台将开始扫描以当前接收频率为中心的一个频段，并以频谱图的形式显示信号强度。
+扫描的带宽显示在显示屏的左上角，例如 +/- 800kHz</p>
+<ul>
+<li><strong>左</strong>方向键/<strong>右</strong>方向键：降低或提高扫描的中心频率</li>
+<li><strong>蓝色 + 左</strong>组合键/<strong>蓝色 + 右</strong>组合键：更改扫描带宽，即缩放</li>
+<li><strong>下</strong>方向键/<strong>上</strong>方向键：减少/增加虚拟增益</li>
+<li><strong>蓝色 + 下</strong>组合键/<strong>蓝色 + 上</strong>组合键：减少/增加虚拟底噪</li>
+<li><strong>黑色 + 上</strong>组合键/<strong>黑色 + 下</strong>组合键：将虚拟增益/底噪重置为默认值</li>
+</ul>
+<p>进入监听模式（按住蓝色按键）将暂停扫描并在中心频率接收。</p>
+<p><img src="media/vfo-spectrum-scan.png" alt="频谱扫描" /></p>
+<h4 id="vfo-双守"><a class="header" href="#vfo-双守">VFO 双守</a></h4>
+<p>在频率界面快捷菜单中，选择“<strong>Dual Watch</strong>”</p>
+<p>在此模式下，电台将扫描 VFO A 和 VFO B 频率。此时不会显示单个 VFO 的接收和发射频率，而是显示 VFO A 和 VFO B 的接收频率。</p>
+<p>激活此模式时，屏幕的 FM/DMR 区域会闪烁 [DW]</p>
+<p>按任意键退出双守模式。</p>
+<p><em>请注意 :</em></p>
+<p>VFO 双守功能与信道模式中的区域扫描相同。</p>
+<p>VFO A 和 VFO B 具有相同的优先级。</p>
+<p>一旦有信号在一个 VFO 上出现时扫描将停止，此时不会对另一个 VFO 进行采样以确定该频率上是否也有信号。</p>
+<p>VFO A 和 VFO B 不需要都为 FM 或 DMR 模式。可以是 FM、窄带 FM 或 DMR 模式。</p>
+<h4 id="快速切换-vfo-a-或-vfo-b"><a class="header" href="#快速切换-vfo-a-或-vfo-b">快速切换 VFO A 或 VFO B</a></h4>
+<p>切换当前 VFO 的另一种方法是长按<strong>红色</strong>按键。</p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h2 id="监听模式"><a class="header" href="#监听模式">监听模式</a></h2>
+<p>监听模式使您能够不受 DMR 模式下<strong>通话组</strong>、<strong>时隙</strong>或<strong>色码</strong>过滤器以及 FM 模式下<strong>模拟哑音/数字哑音</strong>过滤器或<strong>静噪</strong>的设置限制，收听信号。</p>
+<ul>
+<li>要启用监听模式，请按住<strong>蓝色</strong>按键。</li>
+</ul>
+<p>2 秒后，电台将进入监听模式，并保持在此模式，直到您松开<strong>蓝色</strong>按键。</p>
+<p>监听模式开启时：</p>
+<ul>
+<li>在 <strong>FM 模式</strong>：任何接收<strong>模拟哑音/数字哑音</strong>过滤器被禁用，静噪变为完全打开。</li>
+<li>在 <strong>DMR 模式</strong>：<strong>通话组</strong>、<strong>时隙</strong>和<strong>色码</strong>过滤器被禁用，如果<strong>在 250 毫秒内没有检测到 DMR 信号</strong>，电台将切换到 FM 模式并禁用哑音和静噪。</li>
+</ul>
+<p>松开<strong>蓝色</strong>按键会使电台返回到之前的模式和过滤器配置。</p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h2 id="发射"><a class="header" href="#发射">发射</a></h2>
+<p>在电台发射期间，<em>通话计时器</em>将累加或减少，这取决于信道是否设置了超时定时器。</p>
+<p>如果在 CPS 中或<em>信道详情</em>界面中设置了超时定时器，<em>通话计时器</em>将会倒计时，归零时，会发出哔哔声并停止发射。</p>
+<p>在<strong>DMR 2 代标准</strong>下，只有当中继台激活后，计时器才会开始计数。</p>
+<p>无论在 FM 或 DMR 发射期间，麦克风电平表（VU 表）将以条形图的形式显示在屏幕顶部，显示输入麦克风电平。</p>
+<p><img src="media/dmr-mic-level.png" alt="VU 表" /></p>
+<h3 id="超时警告音timeout-warning-beep"><a class="header" href="#超时警告音timeout-warning-beep">超时警告音（Timeout Warning beep）</a></h3>
+<p>您可以在**声音设置（Sound Options）**菜单中设置超时警告音。当剩余通话时间小于超时警告时间时，对讲机将每 5 秒发出一次哔声。</p>
+<h3 id="超时定时器tot"><a class="header" href="#超时定时器tot">超时定时器（TOT）</a></h3>
+<p>如果为当前信道或 VFO 设置了<strong>超时定时器</strong>，当计时器倒计时归零时，电台将发出警告哔哔声并停止发射。</p>
+<p><img src="media/timeout.png" alt="超时界面" /></p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h2 id="扫描"><a class="header" href="#扫描">扫描</a></h2>
+<p>信道界面与频率界面都支持扫描，不过两者操作略有不同。</p>
+<h3 id="信道扫描"><a class="header" href="#信道扫描">信道扫描</a></h3>
+<ul>
+<li>长按<strong>上</strong>方向键以开始扫描这个区域内的信道。在 MD-9600 上，长按电台前面板上的<strong>上</strong>方向键。</li>
+<li>按压<strong>左</strong>方向键可反转扫描方向。在 MD-9600 上，长按电台前面板上的<strong>下</strong>方向键。</li>
+<li>按压<strong>右</strong>方向键可以将当前信道暂时踢出扫描列表（nuisance delete）。在 MD-9600 上，长按电台麦克风上的<strong>星号</strong>键。</li>
+<li>按压<strong>上</strong>方向键可以将跳过当前信道，继续扫描。在 MD-9600 上，长按电台前面板上的<strong>上</strong>方向键。</li>
+</ul>
+<p>按压任何其他按键以退出扫描。</p>
+<p>在扫描过程中，相应的 <strong>DMR</strong> 或 <strong>FM</strong> 模式标志会闪烁。</p>
+<h3 id="频率扫描"><a class="header" href="#频率扫描">频率扫描</a></h3>
+<p>频率界面的扫描模式有些特殊，长按<strong>上</strong>方向键以进入 VFO 扫描模式。</p>
+<p>当扫描模式开启时，接收频率显示将会被上下区间频率所代替。</p>
+<p>初始的扫描区间将会设置为当前 VFO±1Mhz。</p>
+<p>按压数字键盘可以手动输入上下区间频率。</p>
+<p>例如输入：</p>
+<p><strong>1 4 4 0 0 0 1 4 8 0 0 0</strong></p>
+<p>可将下区间设置为 144.000Mhz，上区间设置为 148.000Mhz。</p>
+<ul>
+<li>要开始扫描，请长按<strong>上</strong>方向键，直到电台发出哔声。</li>
+</ul>
+<p>不在扫描状态时，按压<strong>上</strong>方向键或<strong>下</strong>方向键可以正常调整 VFO 频率。</p>
+<ul>
+<li>按压<strong>左</strong>方向键可反转扫描方向。</li>
+<li>按压<strong>上</strong>方向键可跳过当前 VFO 并继续扫描。</li>
+<li>按压<strong>右</strong>方向键可以将当前频率标记为<em>干扰</em>频率，暂时忽略该频率。</li>
+</ul>
+<p>按任何其他按键将停止扫描</p>
+<ul>
+<li>长按<strong>下</strong>方向键退出扫描模式。</li>
+</ul>
+<h2 id="其他界面"><a class="header" href="#其他界面">其他界面</a></h2>
+<h3 id="锁屏界面"><a class="header" href="#锁屏界面">锁屏界面</a></h3>
+<p>该功能可以锁定键盘。</p>
+<p><img src="media/lock-screen.png" alt="键盘锁定界面" /></p>
+<p>在任意界面，按压<strong>绿色</strong>按键以显示<strong>主菜单</strong>，接着按压数字键盘<strong>星号</strong>按键以锁定数字键盘。</p>
+<p>在主菜单中的任意顶层菜单界面按压数字键盘<strong>星号</strong>按键都可以锁定键盘。</p>
+<ul>
+<li>按住<strong>蓝色</strong>按键并按压数字键盘<strong>星号</strong>按键以解锁。</li>
+</ul>
+<p>您也可以通过按压<strong>绿色</strong>按键以显示<strong>主菜单</strong>，接着按压数字键盘<strong>井号</strong>按键以锁定 <strong>PTT</strong> 按键。通过先锁定 <strong>PTT</strong> 然后锁定键盘，可以同时锁定<strong>键盘</strong>和 <strong>PTT</strong>。</p>
+<p><img src="media/keypad-and-ptt-locked.png" alt="键盘和PTT锁定界面" /></p>
+<h3 id="文字输入界面"><a class="header" href="#文字输入界面">文字输入界面</a></h3>
+<p>本固件支持在新建或编辑联系人时输入英文字母或数字。</p>
+<p><img src="media/text-entry.png" alt="文字输入界面" /></p>
+<ul>
+<li>按压<strong>左</strong>或<strong>右</strong>方向键可以移动光标。</li>
+<li>按压<strong>蓝色 + 左</strong>组合键可以退格，按压<strong>蓝色 + 右</strong>组合键可以输入空格。</li>
+</ul>
+<p>英文字母或数字键盘输入功能与原 GD77 固件相同。</p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h2 id="控制按键与按钮"><a class="header" href="#控制按键与按钮">控制按键与按钮</a></h2>
+<p><img src="media/RadioButtons_CN.jpg" alt="GD-77 cheatsheet" /><!-- { width=600 } --></p>
+<p><img src="media/DM-1801-Cheatsheet-01_CN.svg" alt="DM-1801 cheatsheet" /><!-- { width=600 } --></p>
+<p><img src="media/RD5R-CheatSheet_CN.png" alt="RD-5R cheatsheet" /><!-- { width=600 } --></p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h2 id="菜单系统"><a class="header" href="#菜单系统">菜单系统</a></h2>
+<p>与官方固件相比，本固件使用了一个：针对于业余使用、着重于简单明了、突出常用功能、且经过重大修改的菜单。具体结构请参考下面的菜单图。</p>
+<p><img src="media/menu-roadmap-1.png" alt="" /></p>
+<p><img src="media/menu-roadmap-2.png" alt="" /></p>
+<p><img src="media/menu-roadmap-3.png" alt="" /></p>
+<ul>
+<li>按压<strong>绿色</strong>按键可以进入主菜单，再次按压可进入子菜单或直接退出。</li>
+<li>按压<strong>红色</strong>按键可以返回上一级或直接退出。</li>
+<li>按压<strong>上</strong>或<strong>下</strong>方向键可浏览菜单各选项。</li>
+<li>按压<strong>左</strong>或<strong>右</strong>方向键可以更改菜单选项的值。</li>
+<li>位于电台左侧的<strong>蓝色</strong>按键，或称为<strong>SK2 功能键</strong>，通常会与其他按键搭配使用。</li>
+<li>按压电台顶部的<strong>橙色</strong>按键可以访问快捷菜单。</li>
+</ul>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h2 id="快捷键"><a class="header" href="#快捷键">快捷键</a></h2>
+<p>使用快捷键可以快速访问各个菜单界面。</p>
+<p>通过进入对应菜单并按<strong>蓝色 + 任意数字</strong>组合键，该菜单就被分配了一个快捷键编号。</p>
+<p>在频率或信道界面上按相同的键，例如<strong>蓝色 +2</strong>组合键将再次打开相同的菜单。</p>
+<p>快捷键也可被用于设置菜单中的个别设置。在单个设置上按<strong>蓝色 + 任意数字</strong>组合键，将显示左右箭头和文本“OK”。</p>
+<p>按压<strong>绿色</strong>按键按“OK”，将为该设置创建一个快捷键，但不会更改它。</p>
+<p>按压<strong>左</strong>或<strong>右</strong>方向键，存储一个快捷键用于减少或增加相关设置。</p>
+<p><img src="media/quickkey_individual_setting.png" alt="快捷键设置分配" /></p>
+<p>使用快捷键减少或增加相关设置时将显示特殊界面，包含相关设置及其值。</p>
+<p><img src="media/quickkey_action_individual_setting.png" alt="快捷键设置动作" /></p>
+<p>要将某一个快捷键重新分配给不同的菜单，必须先将其清除。在频率或信道界面上，按<strong>蓝色 + 任意数字</strong>组合键，直到发出哔声序列，表示此时快捷键已被清除。</p>
+<p><em>请注意 :</em></p>
+<p>快捷键不能在菜单内激活，它们只能在频率或信道界面上使用，并且只能分配给菜单或菜单项。</p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h2 id="主菜单"><a class="header" href="#主菜单">主菜单</a></h2>
+<p><img src="media/main-menu.png" alt="主菜单" /></p>
+<h3 id="区域zone"><a class="header" href="#区域zone">区域（Zone）</a></h3>
+<p>此菜单用于选择在 <em>信道界面</em> 中使用的信道组（称为<strong>区域（Zone）</strong>），其操作方式与官方固件基本相同，不同之处在于<strong>全部信道</strong>功能。</p>
+<p><img src="media/zones.png" alt="区域列表" /></p>
+<p>除了您事先在写频软件中定义的区域之外，本固件还会创建一个特殊区域叫做<strong>全部信道（All Channels）</strong>。</p>
+<p><img src="media/all-channels.png" alt="全部信道区域" /></p>
+<p>当您选择**全部信道（All Channels）**这个特殊区域后，主屏幕下方会显示“All Channels”与信道编号。</p>
+<p><img src="media/all-channels-channel-screen.png" alt="已选中全部信道区域" /></p>
+<ul>
+<li>按压<strong>上</strong>或<strong>下</strong>方向键可以浏览所有信道。</li>
+<li>按压任意数字按键可以进入信道跳转模式。</li>
+</ul>
+<p><img src="media/goto-channel-number.png" alt="跳转信道12" /></p>
+<p>在该模式下，您可以输入想要跳转的信道编号，按压<strong>绿色</strong>按键以确认，或<strong>红色</strong>按键以取消。</p>
+<p>请注意，在<em>信道模式</em>中您可以通过按住<strong>蓝色</strong>按键再使用上下方向键来在不同区域之间快速切换。</p>
+<h3 id="信号强度指示器rssi"><a class="header" href="#信号强度指示器rssi">信号强度指示器（RSSI）</a></h3>
+<p>本菜单会显示一个 S 表与具体 RSSI 数值（以 dBm 为单位）</p>
+<p><img src="media/rssi.png" alt="RSSI界面" /></p>
+<p><em>请注意 :</em></p>
+<ul>
+<li>RSSI 读数与 S 表并未经过精确校准，在不同电台上，准确度会有所变化。</li>
+</ul>
+<p>由于 DMR 信号属于脉冲信号，因此在接收到 DMR 信号时，电台显示的 RSSI 数值<strong>并不</strong>准确。</p>
+<p><em>屏幕右上角的数字是由电台硬件直接报告的数值，仅用于开发用途。</em></p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h3 id="电台信息"><a class="header" href="#电台信息">电台信息</a></h3>
+<p>显示有关电台状态的各种信息。</p>
+<h4 id="电池电压和百分比"><a class="header" href="#电池电压和百分比">电池电压和百分比</a></h4>
+<p>显示了电池电压和百分比。</p>
+<p><img src="media/battery.png" alt="电池状态界面" /></p>
+<ul>
+<li>按压<strong>下</strong>方向键显示下一页。</li>
+</ul>
+<h4 id="时钟"><a class="header" href="#时钟">时钟</a></h4>
+<p><img src="media/radioinfo-time.png" alt="实时时钟" /></p>
+<p>以 UTC 或本地时间显示时间，具体取决于“<strong>时间显示选项</strong>”设置。</p>
+<p>要设置时钟，请输入 24 小时制的完整时间 HH MM SS （时分秒），然后按<strong>绿色</strong>菜单键。</p>
+<p>如果想要使用当地时间，<strong>您必须设置时区</strong></p>
+<p><em>请注意：</em></p>
+<p>时钟仅在电台启动或处于休眠模式时保持工作。</p>
+<p>时间精度因电台而异，一般每天大约差 ±5 秒。</p>
+<p>使用选项菜单中的时间校准设置可以部分纠正时间准确性问题。</p>
+<ul>
+<li>按压<strong>下</strong>方向键显示下一页。</li>
+</ul>
+<h4 id="日期界面"><a class="header" href="#日期界面">日期界面</a></h4>
+<p><img src="media/radioinfo-date.png" alt="日期" /></p>
+<p>显示并允许以 UTC 或本地时间输入日期，具体取决于“<strong>时间显示选项</strong>”设置。</p>
+<p>要设置日期，请以 YYYY MM DD（年月日）格式输入完整日期，然后按<strong>绿色</strong>菜单键。</p>
+<p>如果使用本地日期/时间，<strong>您必须设置时区</strong></p>
+<ul>
+<li>按压<strong>下</strong>方向键显示下一页。</li>
+</ul>
+<h4 id="位置界面"><a class="header" href="#位置界面">位置界面</a></h4>
+<p><img src="media/radioinfo-location.png" alt="位置" /></p>
+<p>显示并允许输入经纬度位置。</p>
+<p>此界面当前仅用于卫星功能。</p>
+<p>但将来可能会用于发送 APRS 数据。</p>
+<p>以 DD.DDD DDD.DDD 格式输入完整的纬度/经度 *</p>
+<blockquote>
+<p>* 译者注：经纬度以角度值表示，但是有按时分秒书写与按秒分数书写两种方法。
+例如 39°54′15″N 116°24′27″E 为时分秒，39.90403N 116.40753E 为秒分数。本固件仅支持后一种表达方式，精确到小数点后三位。</p>
+</blockquote>
+<p>要更改南/北半球，请按<strong>下</strong>/<strong>上</strong>方向键。</p>
+<p>要更改西/东半球，请按<strong>蓝色</strong>+<strong>下</strong>/<strong>上</strong>组合键。</p>
+<p>在设置位置之前，此界面将显示消息“未设置”并显示问号代替纬度/经度值。</p>
+<h4 id="mcu-温度"><a class="header" href="#mcu-温度">MCU 温度</a></h4>
+<p>以摄氏度显示 MCU 温度。</p>
+<p><img src="media/temperature.png" alt="温度界面" /></p>
+<ul>
+<li>按压<strong>下</strong>方向键显示下一页。</li>
+</ul>
+<h4 id="电池电压历史"><a class="header" href="#电池电压历史">电池电压历史</a></h4>
+<p>显示了每小时电池电压的历史记录。</p>
+<p><img src="media/battery-graph.png" alt="电池历史图" /></p>
+<ul>
+<li>按压<strong>下</strong>方向键显示下一页。</li>
+</ul>
+<h3 id="联系人"><a class="header" href="#联系人">联系人</a></h3>
+<h4 id="dmr-联系人"><a class="header" href="#dmr-联系人">DMR 联系人</a></h4>
+<p>允许选择、编辑或删除 DMR 联系人。</p>
+<h4 id="fm-dmtf-联系人"><a class="header" href="#fm-dmtf-联系人">FM DMTF 联系人</a></h4>
+<p>允许选择、编辑或删除 FM DTMF 联系人。</p>
+<h4 id="新联系人"><a class="header" href="#新联系人">新联系人</a></h4>
+<p>允许创建新的 DMR 联系人。</p>
+<h3 id="回溯界面last-heard"><a class="header" href="#回溯界面last-heard">回溯界面（Last Heard）</a></h3>
+<p>显示电台最近接收到的 32 个 DMR 电台的记录。</p>
+<p><img src="media/last-heard.png" alt="回溯界面" /></p>
+<ul>
+<li>按压<strong>上</strong>或<strong>下</strong>方向键，可以在列表中循环显示接收到的台站。</li>
+<li>按压<strong>绿色</strong>按键会将所选电台 DMR ID 设置为新的单呼/通话组联系人。</li>
+<li>按住<strong>蓝色</strong>按键可查看通话组和已用时间等详细信息。</li>
+<li>长按<strong>井号</strong>按键清除列表。</li>
+</ul>
+<h3 id="固件信息firmware-info和致谢名单"><a class="header" href="#固件信息firmware-info和致谢名单">固件信息（Firmware Info）和致谢名单</a></h3>
+<p><img src="media/firmware-info.png" alt="固件信息界面" /></p>
+<p>显示固件编译的时间与日期，方括号内是 GitHub 的 commit code。</p>
+<p>要查看 GitHub 上的详细信息，请将代码附加到 <a href="https://github.com/rogerclarkmelbourne/OpenGD77/commit/">https://github.com/rogerclarkmelbourne/OpenGD77/commit/</a> *</p>
+<p>例如 <a href="https://github.com/rogerclarkmelbourne/OpenGD77/commit/a0ebbc7">https://github.com/rogerclarkmelbourne/OpenGD77/commit/a0ebbc7</a></p>
+<blockquote>
+<p>* 译者注：已失效</p>
+</blockquote>
+<p>按压<strong>下</strong>方向键访问致谢名单</p>
+<p><img src="media/credits.png" alt="致谢名单" /></p>
+<p>显示固件创建者的详细信息，对固件做出重大贡献的当前和过去的开发人员。</p>
+<p><em>请注意：</em></p>
+<p>列出帮助开发固件的每个人是不切实际的。</p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h3 id="选项设置general-options"><a class="header" href="#选项设置general-options">选项设置（General Options）</a></h3>
+<p>此选项设置菜单用于更改固件本身的诸多设置。</p>
+<h4 id="按键长按时间key-long"><a class="header" href="#按键长按时间key-long">按键长按时间（Key long）</a></h4>
+<p>此设置控制按键被视为长按/重复按下的时间（<em>以秒为单位</em>）。</p>
+<h4 id="按键重复速度key-rpt"><a class="header" href="#按键重复速度key-rpt">按键重复速度（Key rpt）</a></h4>
+<p>本设置控制您按住某个特定按键后该按键的重复速度。</p>
+<h4 id="热点模式hotspot"><a class="header" href="#热点模式hotspot">热点模式（Hotspot）</a></h4>
+<ul>
+<li><strong>宝锋 RD-5R / DM-5R 不支持热点模式，因为在发射时，其电台硬件无法保证一个可靠的 USB 通信</strong></li>
+</ul>
+<p>本设置控制当连接到 MMDVM 主机时是否进入热点模式，这包括 Pi-Star 或 BlueDV。</p>
+<p>可选项有：</p>
+<ul>
+<li><strong>Off</strong> 关闭，不用于热点模式。</li>
+<li><strong>MMDVM</strong> 用于 Pi-Star 或其他 MMDVM 主机。</li>
+<li><strong>BlueDV</strong> 用于 BlueDV。</li>
+</ul>
+<p>在 MD730 上，若想要使用热点模式，请按住<strong>黑色</strong>侧键并打开电源，电台会在 <strong>MMDVM</strong> 与 <strong>BlueDV</strong> 模式之间切换。</p>
+<h4 id="温度校准"><a class="header" href="#温度校准">温度校准<!-- Linebreak --></a></h4>
+<p>此设置允许您校准内部 MCU 温度传感器。</p>
+<p>范围为 ±10 摄氏度，步长为 0.5 摄氏度。</p>
+<p><em>请注意：</em></p>
+<p>温度值是 MCU 自己测量的值。这不是功放芯片或整个电台的温度。</p>
+<h4 id="电池校准"><a class="header" href="#电池校准">电池校准<!-- Linebreak --></a></h4>
+<p>此设置允许校准电压显示值。范围为 +/- 0.5V。</p>
+<p><em>请注意：</em></p>
+<p>电池电压测量值由 MCU 从内部电池电压获取，可能与电池外部充电端子上的测量值不同，尤其是在电台发射时。</p>
+<p>更改此校准将影响电压和百分比显示。</p>
+<h4 id="时间校准"><a class="header" href="#时间校准">时间校准<!-- Linebreak --></a></h4>
+<p>此设置允许对启动电台时运行的时钟进行校准。</p>
+<p>范围是 ±7，单位是 x/10000，因此值 1 会导致 10,000 秒内变化 1 秒。</p>
+<p>时钟目前是一项实验性功能，不能保证准确。</p>
+<h4 id="省电等级"><a class="header" href="#省电等级">省电等级<!-- Linebreak --></a></h4>
+<p>此设置控制电台的接收省电工作状态。</p>
+<p>可选省电等级范围是 0 到 5。</p>
+<p>接收省电是通过将电台内部接收和其他部分的电路关闭一小段时间来实现的，以减少电流消耗，从而延长电池寿命。</p>
+<p>最小设置为 0，这会禁用省电功能，并使得电台内部接收和其他部分的电路持续通电。</p>
+<p>默认设置为 1，它使用 1:1 的占空比。一次循环总时间为 240 毫秒。 120 毫秒开，120 毫秒关。在此省电等级中，电台空闲 10 秒后才会开始省电。</p>
+<p>此表显示所有省电等级的值</p>
+<div class="table-wrapper"><table><thead><tr><th>等级</th><th>进入省电模式延迟（秒）</th><th>最大延迟（毫秒）</th><th>平均消耗电流（毫安)</th><th>大约电池寿命（小时）</th></tr></thead><tbody>
+<tr><td>0</td><td>不适用</td><td>不适用</td><td>62</td><td>32</td></tr>
+<tr><td>1</td><td>10</td><td>240</td><td>41</td><td>49</td></tr>
+<tr><td>2</td><td>8</td><td>330</td><td>33</td><td>60</td></tr>
+<tr><td>3</td><td>6</td><td>500</td><td>28</td><td>72</td></tr>
+<tr><td>4</td><td>4</td><td>810</td><td>24</td><td>84</td></tr>
+<tr><td>5</td><td>4</td><td>1360</td><td>22</td><td>93</td></tr>
+</tbody></table>
+</div>
+<p>当电台空闲且未接收时，较高的省电等级会降低电流消耗并延长电池寿命。</p>
+<p>一旦电台接收到信号，它就会立即打开所有必要的硬件，并且不再处于省电模式。</p>
+<p>较高的等级可能会导致电台听不到比节电工作周期短的信号，因此您需要在省电与电台灵敏度之间取得平衡。</p>
+<p>电流消耗量不会随着省电等级线性减少，因为电台具有一些核心组件，如 MCU 和稳压器，无论省电等级设置为多少，总是消耗相同的电流。</p>
+<p>尽管默认的等级 1，可以使电流消耗减少约 30%，同时检测信号的损失最小；但等级 2、3 对大多数人来说效果也很好，电台功能没有明显损失。</p>
+<p>等级 4、5 可能会导致检测信号的能力有所下降，但可用于延长电池寿命。</p>
+<h4 id="睡眠"><a class="header" href="#睡眠">睡眠<!-- Linebreak --></a></h4>
+<p><img src="media/options-suspend-on.png" alt="睡眠选项" /></p>
+<p>此设置控制关闭电台的电源/音量旋钮时电台的工作情况。</p>
+<p>为了使时钟持续运行，电台现在有一个“睡眠”模式，可以让 MCU 在所有其他系统关闭的情况下保持低速运行。</p>
+<p>若启用睡眠模式，关闭电源/音量音量旋钮会使电台进入睡眠模式。</p>
+<p>打开电源/音量旋钮将电台从睡眠模式唤醒。</p>
+<p>如果启用了睡眠模式，但在关闭电源/音量旋钮时按住<strong>蓝色</strong>按键，电台将完全切断电源，并且时钟将停止。</p>
+<p>如果未启用睡眠模式，但在关闭电源/音量控制时按住<strong>蓝色</strong>按键，电台将将进入睡眠模式。</p>
+<p><em>请注意：</em></p>
+<p>睡眠模式会消耗大约 20mA 的电池电量，并且会在 3 或 4 天左右使充满电的电池电量耗尽。</p>
+<p>此模式主要用于卫星操作，该操作需要知道准确的时间和日期，以便预测卫星通过并计算卫星多普勒校正频率。</p>
+<h4 id="安全开机"><a class="header" href="#安全开机">安全开机<!-- Linebreak --></a></h4>
+<p>此设置启用后，打开电台前需要按住<strong>黑色</strong>按键，否则将不会开机。此功能可以防止不必要的通电，例如将电台放在背包中时，误开机将会耗尽电池。当启用睡眠模式时，此设置也起作用。</p>
+<p><em>请注意：</em></p>
+<p>即使宝锋 DM-5R 没有睡眠模式，它也可以使用此功能。</p>
+<p>此功能在 MD-9600 / RT-90 上不可用。</p>
+<h4 id="自动关机apo"><a class="header" href="#自动关机apo">自动关机（APO）<!-- Linebreak --></a></h4>
+<p>此设置可以让电台在未使用一段时间后自动关机。</p>
+<p>如果在选定的时间内（30、60、90、120 和 180 分钟）没有任何按键被按下（包括<strong>PTT</strong>），机器将会自动关机。</p>
+<p>电台关闭前一分钟，会显示“<strong>Auto Pwr-Off</strong>”消息并播放通知哔哔声。</p>
+<p><em>请注意：</em></p>
+<ul>
+<li><strong>自动关机</strong> 功能在以下情况不起作用：
+<ul>
+<li>电台正在扫描</li>
+<li>设置了卫星闹钟</li>
+<li>工作在热点模式</li>
+</ul>
+</li>
+<li>如果启用了<strong>自动关机</strong>功能，电池信息（<em>百分比或电压</em>）将以<strong>粗体</strong>显示。</li>
+<li>如果启用了 <a href="#%E5%B8%A6%E6%9C%89%E5%B0%84%E9%A2%91%E7%9A%84%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA"><strong>带有射频的自动关机</strong></a>，当接收到有效信号时，定时器会被重置。</li>
+<li>技术上自动关机功能使用与睡眠模式相同的低功耗模式，因此电台在自动关机后将持续消耗约 16mA，我们目前正在尝试降低此电流，但由于固件无法完全切断所有电台硬件的电源，因此永远不可能像音量/电源旋钮一样完全关闭电台。</li>
+</ul>
+<h4 id="带有射频的自动关机"><a class="header" href="#带有射频的自动关机">带有射频的自动关机<!-- Linebreak --></a></h4>
+<p>如果启用了 <a href="#%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA"><strong>自动关机</strong></a>，<em>自动关机</em>倒计时器会在收到有效射频信号时重置。</p>
+<h4 id="卫星跟随模式"><a class="header" href="#卫星跟随模式">卫星跟随模式<!-- Linebreak --></a></h4>
+<p><img src="media/options-sat-manual.png" alt="卫星选项" /></p>
+<p>此设置用于控制在卫星模式下、极坐标图或实时屏幕上，在当前卫星经过并低于地平线后，电台是否自动切换到下一个可用卫星。</p>
+<p>默认选项为 <strong>Manual</strong>，当前选择的卫星不会改变。</p>
+<p><strong>Auto</strong> 选项可以自动切换到下一个可用卫星。</p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h3 id="无线电选项"><a class="header" href="#无线电选项">无线电选项</a></h3>
+<p>此菜单控制特定于无线电/射频功能的各项设置。</p>
+<h4 id="频段限制"><a class="header" href="#频段限制">频段限制<!-- Linebreak --></a></h4>
+<p>此设置控制电台可以发射的频段范围。</p>
+<p>选项：</p>
+<ul>
+<li><em><strong>OFF</strong></em>：<strong>不限制</strong>频段范围。</li>
+<li><em><strong>ON</strong></em>：应用<strong>美国频段限制</strong>（<strong>这是默认设置</strong>）：
+<ul>
+<li>144MHz - 148MHz</li>
+<li>222MHz - 225MHz</li>
+<li>420MHz - 450MHz</li>
+</ul>
+</li>
+<li><em><strong>CPS</strong></em>：使用<strong>在 CPS</strong> 中设置的 VHF 和 UHF 限制。如果 CPS 频段限制不包含有效值，例如 UHF 频段范围<strong>小于</strong>或<strong>与 VHF 频段范围相交</strong>，电台将使用<strong>默认</strong>设置（如上）</li>
+</ul>
+<p><img src="media/cps-band-limits.png" alt="CPS 频段限制窗口" /></p>
+<p>CPS 频段限制<strong>不影响</strong>整体硬件频段限制，因此<strong>不可能</strong>通过使用超出硬件限制的 CPS 频段限制值来扩展硬件限制。</p>
+<p>硬件频段限制为：</p>
+<ul>
+<li>127MHz - 178MHz,</li>
+<li>190MHz - 282MHz,（在 MD-9600 / RT-90 上不可用）</li>
+<li>380MHz - 564MHz。</li>
+</ul>
+<p>这些限制是因为 <em>AT1846S RF</em> 芯片在此范围之外<strong>将无法可靠运行</strong>，而此范围实际上超出了 AT1846S 公布的频率范围 134MHz - 174MHz、200MHz - 260MHz、400MHz - 520MHz。</p>
+<p>还应注意，电台<strong>没有</strong> 200MHz 频段的功放或接收部分，<strong>在此范围内工作会产生较高杂散发射，通常在一次谐波/基波上出现</strong>。</p>
+<h4 id="过滤器保持时间"><a class="header" href="#过滤器保持时间">过滤器保持时间<!-- Linebreak --></a></h4>
+<p>此功能在<em>时隙</em>过滤被关闭时起作用。</p>
+<p>用于设置电台接收一个特定<em>时隙</em>的持续时间，然后再继续接收另一个<em>时隙</em>。</p>
+<p>这可以防止电台在接收的当前<em>时隙</em>出现长时间停顿或传输间隙时切换到另一个<em>时隙</em>。</p>
+<p>当<strong>时隙</strong>过滤<strong>打开</strong>时，此设置无任何效果。</p>
+<h4 id="扫描延迟"><a class="header" href="#扫描延迟">扫描延迟<!-- Linebreak --></a></h4>
+<p>用于设置在扫描模式期间，恢复扫描前电台在收到信号的频率停留的持续时间。</p>
+<p>这在选择<strong>暂停</strong>作为扫描模式时有效。</p>
+<h4 id="扫描驻留"><a class="header" href="#扫描驻留">扫描驻留<!-- Linebreak --></a></h4>
+<p>用于设置在扫描模式期间，接收器在每个频率上驻留并侦听信号的持续时间。</p>
+<p>默认值为 30 毫秒。</p>
+<p>在 DMR 模式下，如果该值小于 60 毫秒，则强制使用 60 毫秒，因为一个完整 2 时隙 DMR 帧的最短时间是 60 毫秒。</p>
+<p>较长的值有助于扫描弱信号或淡入淡出的信号，但会减少每秒扫描的频率或信道数。</p>
+<h4 id="扫描模式"><a class="header" href="#扫描模式">扫描模式<!-- Linebreak --></a></h4>
+<p>用于设置在扫描模式期间，收到信号时电台如何继续。</p>
+<ul>
+<li><strong>Hold</strong>：接收到信号时保持接收，但不退出扫描模式。</li>
+<li><strong>Pause</strong>：在指定的一段时间内接收该信号（<em>扫描延迟</em>），然后继续扫描。</li>
+<li><strong>Stop</strong>：接收到信号时保持接收，并退出扫描模式。</li>
+</ul>
+<h4 id="开机扫描"><a class="header" href="#开机扫描">开机扫描<!-- Linebreak --></a></h4>
+<p>此设置控制电台是否在开机（启动）时自动开始扫描，默认关闭。</p>
+<h4 id="uhf-静噪"><a class="header" href="#uhf-静噪">UHF 静噪<!-- Linebreak --></a></h4>
+<p>当在信道或频率模式中使用模拟模式时，此设置控制 <strong>430MHz</strong> 的静噪强度。 <strong>默认为 45%</strong>。</p>
+<h4 id="220-静噪"><a class="header" href="#220-静噪">220 静噪<!-- Linebreak --></a></h4>
+<p>当在信道或频率模式中使用模拟模式时，此设置控制 <strong>220MHz</strong> 的静噪强度。 <strong>默认为 45%</strong>。</p>
+<h4 id="vhf-静噪"><a class="header" href="#vhf-静噪">VHF 静噪<!-- Linebreak --></a></h4>
+<p>当在信道或频率模式中使用模拟模式时，此设置控制 <strong>144MHz</strong> 的静噪强度。 <strong>默认为 45%</strong>。</p>
+<h4 id="ptt-保持"><a class="header" href="#ptt-保持">PTT 保持<!-- Linebreak --></a></h4>
+<p>启用 <strong>PTT 保持</strong> 后，<strong>PTT</strong> 开关可以用于切换电台发射/接收状态，PTT 不需要在发射时持续按住。</p>
+<p><em>请注意：</em></p>
+<ul>
+<li>PTT 保持功能<strong>仅在为信道或频率定义了发射超时器之后才起作用</strong>，以防止持续的意外发射。</li>
+</ul>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h4 id="主叫别名发射"><a class="header" href="#主叫别名发射">主叫别名发射<!-- Linebreak --></a></h4>
+<p>启用<em>主叫别名</em>数据的<strong>发射</strong>。</p>
+<p><em>请注意：</em></p>
+<ul>
+<li>主叫别名数据的接收始终可用。不要因为您没有接收到主叫别名数据而启用此功能，它不控制主叫别名数据的接收。</li>
+</ul>
+<p>主叫别名可以在 CPS 中 “<strong>Boot Item</strong>” 菜单下 <strong>Line1</strong> 和 <strong>Line2</strong> 设置，电台显示时两行之间是没有空格的。</p>
+<p><em>请注意：</em></p>
+<ul>
+<li>使用此功能<strong>将导致基于 Motorola 的中继和网络出现问题</strong>，所以只能用于简单网络或 <em>Brandmeister</em> 等其他正确支持主叫别名的网络。</li>
+</ul>
+<h4 id="允许单呼"><a class="header" href="#允许单呼">允许单呼<!-- Linebreak --></a></h4>
+<p>允许接收<strong>单呼</strong>。</p>
+<h4 id="用户功率"><a class="header" href="#用户功率">用户功率<!-- Linebreak --></a></h4>
+<p>当启用 +W- 功率挡时，此设置控制功放芯片功率电平。此设置的值是发送到功放芯片驱动电路的数模转换器中的内部数值。</p>
+<p>默认为可设置的最大值 4100 。因此，默认情况下，+W- 功率挡会使得电台尽可能使用最大功率发射。</p>
+<p>此时输出功率一般大于 5W，这是官方的最大输出功率。</p>
+<p>在 UHF 上，使用特易通 MD-760，在电池满电情况下，输出功率通常在 5.5W 到 6W 左右。</p>
+<p>在 VHF 上，使用特易通 MD-760，在电池满电情况下，输出功率通常在 7W 和 8W 之间。</p>
+<p>此设置功能不仅是让您用大于官方的最大功率的输出（例如用于紧急情况），还可用非常小的功率进行输出。</p>
+<p>若设置为 0 将导致功放芯片完全不工作，但电台中的主射频芯片仍然会产生射频信号。</p>
+<p>来自射频芯片的一些信号可能会泄漏到电台的天线中，而且也一定会通过电台的塑料外壳泄漏出去。</p>
+<p>因此，设置为 0 并不能完全阻止电台产生射频。</p>
+<p>此设置还可用于产生超低功率信号，例如低于 50mW，这在你用本地热点时很有用。</p>
+<p>给定设置值最后产生的功率因电台而异，电池电压和发射频率也会影响最终功率。</p>
+<p>同一个值在不同电台上产生的功率也不同。例如宝锋 DM-5R 的功率与特易通 MD-760 和宝锋 DM-1801 有很大差异，因为射频和功放芯片硬件完全不同。</p>
+<p>功率计是了解每个电台在特定频率、特定用户功率设置和特定电池电压下产生的最终功率输出的唯一方法。</p>
+<h4 id="dmr-crc"><a class="header" href="#dmr-crc">DMR crc<!-- Linebreak --></a></h4>
+<p>此设置禁用 DMR 循环冗余检查，在某些情况下这可能会对收听某些特定网络时有所帮助。</p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h3 id="显示设置display-options"><a class="header" href="#显示设置display-options">显示设置（Display Options）</a></h3>
+<p><img src="media/display-options.png" alt="" /></p>
+<h4 id="背光亮度brightness"><a class="header" href="#背光亮度brightness">背光亮度（Brightness）</a></h4>
+<p>本固件允许用户控制背光亮度，设置范围可以从 0%~100%，其中 10%~100% 以 10% 步进调整，0%~10% 以 1% 步进调整。</p>
+<p>按压<strong>左</strong>或<strong>右</strong>方向键以更改设置，默认设置为 100%</p>
+<h4 id="待机亮度min-bright"><a class="header" href="#待机亮度min-bright">待机亮度（Min Bright）</a></h4>
+<p>本设置控制电台待机时的屏幕亮度，默认设置为 0%，这意味着在电台待机时屏幕将不会开启背光。</p>
+<h4 id="对比度contrast"><a class="header" href="#对比度contrast">对比度（Contrast）</a></h4>
+<p>本固件允许用户修改屏幕对比度，较低的数值意味着更淡的文字显示，较高的数值意味着更黑的文字显示，但同时还会使屏幕背景变得更黑。</p>
+<h4 id="背光模式display-mode"><a class="header" href="#背光模式display-mode">背光模式（Display mode）</a></h4>
+<p>控制屏幕背光模式</p>
+<p><strong>Auto</strong> 自动，背光会根据不同事件而自动点亮，例如接收到信号或按压某个按键。</p>
+<p><strong>Squelch</strong> 静噪，背光会在静噪打开，或接收到 DMR 信号时点亮，在信号消失后延时关闭背光。该时间由背光延时计时器决定，最短不少于五秒。</p>
+<p><strong>Manual</strong> 手动，由用户开启或关闭背光。按压<strong>黑色</strong>侧键以打开或关闭背光。</p>
+<p><strong>None</strong> 无，不开启背光。</p>
+<h4 id="背光延时timeout"><a class="header" href="#背光延时timeout">背光延时（Timeout）</a></h4>
+<p>背光延时计时器，用以控制背光在多久后关闭，默认无，即不会关闭。</p>
+<h4 id="显示颜色模式colour-mode"><a class="header" href="#显示颜色模式colour-mode">显示颜色模式（Colour mode）</a></h4>
+<p>本设置允许您将屏幕设置为反色或正常。反色为背景黑色，字母白色；正常为背景白色，字母黑色。</p>
+<p><em>请注意 :</em> 本功能并不能做到和 MD760 黑色液晶版本完全相同的效果，因为黑色液晶版本使用了与普通正常 LCD 不同的屏幕，因此其黑色背景色是原生的。</p>
+<h4 id="联系人显示顺序order"><a class="header" href="#联系人显示顺序order">联系人显示顺序（Order）</a></h4>
+<p>本设置决定了联系人数据是按什么顺序查找的</p>
+<p><strong>Cc</strong> = 联系人列表
+<strong>Db</strong> = 内置 DMR ID 数据库
+<strong>TA</strong> = 别名数据</p>
+<p>默认顺序为 Cc/Db/TA，意味着当收到一个 DMR ID 时，电台首先会在联系人列表中查找对应联系人，再从写入的 DMR ID 数据库中查找，若都未找到且主叫别名数据存在，则会显示主叫别名。</p>
+<h4 id="联系人显示方式contact"><a class="header" href="#联系人显示方式contact">联系人显示方式（Contact）</a></h4>
+<p>本设置控制了 DMR 呼号或姓名等显示在屏幕上的位置。
+可选项有：</p>
+<p><strong>1 Line</strong> 一行，仅使用屏幕中间一行显示呼号与姓名，当显示超过 16 个字符的别名时，多余字母将被舍弃。</p>
+<p><strong>2 Lines</strong> 两行，呼号显示在屏幕中间一行，姓名以及其他信息显示在屏幕底部一行。本固件会根据空格自动切割呼号与姓名。</p>
+<p><strong>Auto</strong> 自动，若呼号与姓名不超过 16 个字符（即能完整显示在中间一行）则电台仅显示中间一行；若呼号姓名或别名等超过 16 个字符时，则显示两行。</p>
+<p>默认设置为<strong>1 Line</strong></p>
+<h4 id="电量单位"><a class="header" href="#电量单位">电量单位<!-- Linebreak --></a></h4>
+<p>控制电量显示为百分比或电压。</p>
+<p>选项：</p>
+<ul>
+<li><strong>%</strong>：显示电池百分比<em>例如</em> <strong>0%</strong> 到 <strong>100%</strong>。</li>
+<li><strong>V</strong>：显示电池电压<em>例如</em> <strong>8.1V</strong>。</li>
+</ul>
+<p>请注意：此功能不适用于 MD-9600 / RT-90，因为它由外部 12V 供电并且显示屏始终显示电压。</p>
+<h4 id="信息"><a class="header" href="#信息">信息<!-- Linebreak --></a></h4>
+<p>此设置控制电台是否在信道界面的 VFO 上显示附加信息，例如 DMR 时隙或功率文本会以粗体显示。</p>
+<p>选择了 TS 或 Both 时，若联系人时隙覆盖了原先时隙，则时隙值将以粗体显示。</p>
+<p>选择了 Pwr 或 Both 时，若信道特定功率覆盖了原先功率，则功率值将以粗体显示。</p>
+<p>默认设置为关闭，不会显示任何加粗。</p>
+<h4 id="led-灯"><a class="header" href="#led-灯">LED 灯<!-- Linebreak --></a></h4>
+<p>此设置控制电台顶部的绿色/红色 LED 是否亮起。</p>
+<p>默认设置为开，电台顶部的 LED 将在接收时亮绿色，在发送亮红色。</p>
+<p>如果此设置设置为关闭，则 LED 在发送和接收时都不会亮起。</p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h4 id="时区"><a class="header" href="#时区">时区<!-- Linebreak --></a></h4>
+<p><img src="media/timezone.png" alt="时区" /></p>
+<p>显示并允许输入本地时区</p>
+<p>按<strong>左</strong>方向键以 1 小时为单位减少值。</p>
+<p>按<strong>右</strong>方向键以 1 小时为单位增加值。</p>
+<p>如果您的时区不是以 1 小时为基准，请按压<strong>蓝色</strong>按键 + <strong>左</strong>或<strong>右</strong>方向键以 15 分钟为增量调整时区。</p>
+<h4 id="时间显示格式"><a class="header" href="#时间显示格式">时间显示格式<!-- Linebreak --></a></h4>
+<p>此设置控制输入和显示的日期时间是<em>UTC</em>还是<em>本地时</em>。</p>
+<p>若设置为<em>本地时</em>，将使用电台时区设置中的值来计算时钟日期和卫星通过的时间。</p>
+<p>若设置为<em>UTC</em>，则显示的所有日期和时间后面都会有 “UTC” 标识，以表明正在使用 UTC 时间。</p>
+<p>如果选择<em>本地时</em>，则日期和时间后面不显示任何文本以指示正在使用本地时间。</p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h3 id="声音设置sound-options"><a class="header" href="#声音设置sound-options">声音设置（Sound Options）</a></h3>
+<h4 id="超时警告timeout-beep"><a class="header" href="#超时警告timeout-beep">超时警告（Timeout beep）</a></h4>
+<p>本设置控制电台是否在超时定时器归零，或即将归零时时发出“滴~”的警告音。</p>
+<h4 id="警告音量beep-volume"><a class="header" href="#警告音量beep-volume">警告音量（Beep volume）</a></h4>
+<p>本设置控制超时警告与其他提示音的音量。</p>
+<p>可以从 -24dB ~ 6dB 以 3dB 为步进调整。</p>
+<h4 id="dmr-提示音dmr-beep"><a class="header" href="#dmr-提示音dmr-beep">DMR 提示音（DMR Beep）</a></h4>
+<p>本设置控制了接通 DMR 中继或结束发射时的提示音，可选项有：</p>
+<p><strong>Start</strong> 接通，仅当接通中继台时发出提示音</p>
+<p><strong>Stop</strong> 结束，仅当结束发射时发出提示音</p>
+<p><strong>None</strong> 无，不发出任何提示音</p>
+<p><strong>Both</strong> 两者都，接通与结束时都发出提示音</p>
+<p><em>请注意 :</em> 接通 DMR 中继台时发出的提示音是用于确认您已经成功唤醒了中继台，该提示音只会在您电台的扬声器中播放而不会同时以语音数据发射出去。</p>
+<h4 id="接收提示音"><a class="header" href="#接收提示音">接收提示音<!-- Linebreak --></a></h4>
+<p>当接收到信号（FM 和 DMR）时，这会根据射频载波和/或通话者（仅限 DMR）来控制特定提示音的播放。</p>
+<p>选项是：</p>
+<ul>
+<li><strong>无</strong></li>
+<li><strong>载波</strong></li>
+<li><strong>通话者</strong>（请参阅下面的 <a href="#%E9%80%9A%E8%AF%9D%E8%80%85"><em>通话者</em></a> 选项）</li>
+<li><strong>两者都</strong></li>
+</ul>
+<p><em>请注意：</em> 如果选择了 <strong>通话者</strong>，在 FM 中，提示音将与 DMR 的通话者模式相同，而不是常规的<strong>载波</strong>。</p>
+<h4 id="通话者"><a class="header" href="#通话者">通话者<!-- Linebreak --></a></h4>
+<p>这控制 <strong>接收提示音</strong> <em>通话者</em> 选项，可选在通话者结束时发车提示音或在开始和结束时都发出提示音。</p>
+<p>选项是：</p>
+<ul>
+<li><strong>仅结束</strong></li>
+<li><strong>两者都</strong></li>
+</ul>
+<h4 id="dmr-麦克风增益dmr-mic"><a class="header" href="#dmr-麦克风增益dmr-mic">DMR 麦克风增益（DMR mic）</a></h4>
+<p>本设置控制了 DMR 模式下的麦克风增益，更改本设置不会影响 FM 模式下的麦克风增益。</p>
+<p>可以从 -33dB ~ 12dB 以 3dB 为步进进行调整。</p>
+<p>默认设置为 0dB，即与原装固件一致。</p>
+<h4 id="fm-麦克风增益fm-mic"><a class="header" href="#fm-麦克风增益fm-mic">FM 麦克风增益（FM mic）</a></h4>
+<p>本设置控制了 FM 模式下的麦克风增益。可以从 -15 ~ 15 以 1 为步进调整，负值代表比原装固件更少的增益，零代表相同，正值则代表更多。</p>
+<p>顺带一提，由于参数的单位暂时无法确认，本设置参数没有单位。</p>
+<h4 id="vox-阈值vox-threshold"><a class="header" href="#vox-阈值vox-threshold">VOX 阈值（VOX threshold）</a></h4>
+<p>本设置决定了当 VOX（声控发射）开启时触发电台发射的阈值。</p>
+<h4 id="vox-延迟vox-tail"><a class="header" href="#vox-延迟vox-tail">VOX 延迟（VOX Tail）</a></h4>
+<p>本设置决定了当声音低于 VOX 阈值后多久电台才停止发射。</p>
+<h4 id="提示音"><a class="header" href="#提示音">提示音<!-- Linebreak --></a></h4>
+<p>此设置控制按下按键时的<strong>提示音</strong>，并具有以下选项：</p>
+<ul>
+<li>
+<p><strong>静音</strong>：电台按下按键时无提示音</p>
+</li>
+<li>
+<p><strong>哔声</strong>：按下按键时电台会发出哔声。有 2 种不同音高的蜂鸣声。</p>
+<p>在<em>信道</em>或<em>通话组</em>或<em>菜单项目</em>中选择时，当选择列表中的第一项时，会发出<strong>较高音调</strong>的哔声。</p>
+<p>此外，在<em>时隙</em>之间切换时，选择<strong>TS1</strong>时会发出<strong>较高音调</strong>的哔声。</p>
+<p><strong>在 FM 和 DMR 模式之间切换</strong>时，当选择的模式为 <strong>DMR</strong> 时，会发出<strong>较高音调</strong>的哔声。</p>
+<p>更改功率时，选择<strong>最低功率级别</strong>时会发出<strong>较高音调</strong>的哔声。</p>
+</li>
+<li>
+<p>除了哔声，<strong>如果通过 CPS 加载语音提示文件</strong>，固件还支持语音提示。</p>
+<p>有 3 级语音提示：</p>
+<ul>
+<li>“<strong>语音</strong>”，</li>
+<li>“<strong>语音 L2</strong>”</li>
+<li>“<strong>语音 L3</strong>”
+在后两种情况下，L 表示“级别”</li>
+</ul>
+<p>语音级别用于控制是否立即播放语音提示，或者是否需要按压黑色按键来播放对电台的最后一次更改的描述。</p>
+<p>例如：在 <strong>语音</strong> 模式下，即 <strong>级别 1</strong>，在以下操作后会立即发声：</p>
+<ul>
+<li>数字键和#键被按下。</li>
+<li>更改静噪级别。</li>
+<li>浏览主菜单的每一个条目时，或通过电台顶部的橙色按键访问的“<em>快速</em>”菜单时。</li>
+<li>当您更改菜单设置时。</li>
+</ul>
+<p>语音<strong>级别 2</strong>与语音<strong>级别 1</strong>的操作几乎相同，除了如果在播放提示时按下一个键，<strong>会稍微减少下一个提示的详细程度</strong>。</p>
+<p>语音<strong>级别 3</strong>，所有操作<strong>立即</strong>发出语音提示，包括：</p>
+<ul>
+<li>当您在信道模式下使用方向键切换信道时，会提示信道名称；</li>
+<li>当您在 DMR 模式中使用方向键浏览时，会提示通话组名称；</li>
+</ul>
+<p>语音提示可以通过按<strong>黑色</strong>按键<strong>重新播放</strong>。</p>
+<p>例如，如果最后一个语音提示是<em>通话组名称</em>，那么按<strong>黑色</strong>按键将<strong>再次播放通话组名称</strong>。</p>
+<p>在播放语音提示时按<strong>黑色</strong>按键可以<strong>停止播放语音提示</strong>。</p>
+</li>
+</ul>
+<h4 id="dmr-接收自动增益控制"><a class="header" href="#dmr-接收自动增益控制">DMR 接收自动增益控制<!-- Linebreak --></a></h4>
+<p>此设置控制 DMR 音频音量修平功能。</p>
+<p>启用此功能后，固件会监控 DMR 接收的音频的峰值幅度，并调整音频输出增益，使扬声器的音频幅度更稳定。</p>
+<p>默认情况下是禁用的，设置为关闭。</p>
+<p>将此设置为 0dB（增益提升）可启用此功能。</p>
+<p>增加自动增益控制值会附加音频增益。因此，增加该值将会提升整体音量。</p>
+<p>处于高噪声环境中的操作员可以增加此值，使电台扬声器的音量更大，但是如果自动增益控制值增加太多，则会导致音频信号的削波，并在接收某些电台时导致失真。</p>
+<p>与大多数自动增益控制系统一样，音频修平使用采样窗口和电平控制低通滤波，因此音频幅度的正常变化不会被修平。</p>
+<p>也因如此，自动增益控制需要大约 1 秒来调整接收到的每个新 DMR 信号。</p>
+<p>然而接过的每个 DMR 电台的自动增益控制值会被存储为回溯界面数据的一部分，因此，如果再次听到相同电台，会立即应用该电台的最后已知自动增益值，不需要 1 秒即可调整到最佳。</p>
+<p>应当注意，这个控制系统并不完美，音频电平的一些细微变化仍会出现。</p>
+<p>在测试过程中，注意到通过网关从其他网络，或使用手机应用的人，以及其他情况等接收到的信号；通常具有更高的音频电平，有时电台中的输出增益控制硬件无法充分衰减信号以确保音频与来自 DMR 中继的信号处于相同水平。</p>
+<h4 id="咔嗒声抑制"><a class="header" href="#咔嗒声抑制">咔嗒声抑制</a></h4>
+<p>此设置仅适用于 MD-9600 / RT-90，用于控制咔嗒声抑制功能。</p>
+<p>某些型号的 MD-9600 / RT-90 在打开音频放大器时会发出响亮的咔嗒声。为了减少这种情况，可以启用咔嗒声抑制功能，但仍然可以听到轻微的咔嗒声。</p>
+<p>要完全消除咔嗒声，用户需要对电台硬件进行修改。</p>
+<h3 id="校准界面"><a class="header" href="#校准界面">校准界面</a></h3>
+<p>此界面目前仅适用于特易通 MD-UV380 / Retevis RT-3S。</p>
+<p><img src="media/calibration_screen.png" alt="电台校准界面" /></p>
+<h4 id="频率校准"><a class="header" href="#频率校准">频率校准<!-- Linebreak --></a></h4>
+<p>这个界面可以用来调整当前校准点。这是电台将发射的频率，功率调整设置将改变。VHF 有 5 个校准点，UHF 有 8 个校准点。固件在这些点之间进行插值以计算其他频率所需的校准。</p>
+<p>因此如果要校准 2M 频段的功率，必须调整 136.0MHz、145.5MHz 和 155.0MHz 校准点。这是因为 144-148 MHz 跨越多个频点。</p>
+<h4 id="功率校准"><a class="header" href="#功率校准">功率校准<!-- Linebreak --></a></h4>
+<p>对于每个校准点，有 4 个功率等级需要校准。250mW、1W、2W 和 4W</p>
+<h4 id="功率调整"><a class="header" href="#功率调整">功率调整<!-- Linebreak --></a></h4>
+<p>该值控制功放芯片驱动量。 这是一个 8 位二进制数，因此范围为 0 到 255，其中 0 是没有功放驱动，255 是最大功放驱动。</p>
+<h4 id="频率调整"><a class="header" href="#频率调整">频率调整<!-- Linebreak --></a></h4>
+<p>该值调整主频率参考振荡器。这是一个 8 位二进制数，因此范围为 0 到 255。要降低频率，请减小该值；要增加频率，请增大该值。</p>
+<p>请注意：VHF 和 UHF 有单独的参考振荡器。因此频率应调整两次。一次使用 VHF 校准点，一次使用 UHF 校准点。每个频段使用的校准点并不重要，只需对每个频段进行一次频率校准。</p>
+<h4 id="工厂校准"><a class="header" href="#工厂校准">工厂校准<!-- Linebreak --></a></h4>
+<p>该值允许将校准恢复为出厂默认设置。这通常会显示“否”。</p>
+<p>要恢复出厂默认设置，请将其设置为“是”并按绿色按钮。</p>
+<p>应用工厂校准后，此设置将回到“否”。</p>
+<h4 id="校准步骤"><a class="header" href="#校准步骤">校准步骤<!-- Linebreak --></a></h4>
+<ol>
+<li>要校准电台的发射功率，您需要一个功率计和一个假负载。</li>
+<li>将电台连接到功率计。</li>
+<li>将假负载连接到功率计的天线连接处。</li>
+<li>选择所需的发射校准点。</li>
+<li>选择功率级别（例如 250mW）。</li>
+<li>按 PTT 键调整功率校准值，直到功率表显示 250mW。</li>
+<li>对所有其他功率级别重复步骤 5 和 6。</li>
+<li>对所有其他校准点重复步骤 4 到 7。</li>
+</ol>
+<p>功率校准完成后，按<strong>绿色</strong>键退出校准界面，仅在内存中保留当前设置。
+要永久保存设置，请按<strong>蓝色 + 绿色</strong>组合键。</p>
+<p>但是，如要暂时使用正在校准中的功率，例如 通过使用 VFO 发射，按<strong>绿色</strong>键就可以了。在使用 VFO 进行测试后，您可以返回校准界面，您调整的值将被使用。</p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h3 id="信道详细设置channel-details"><a class="header" href="#信道详细设置channel-details">信道详细设置（Channel Details）</a></h3>
+<p><img src="media/channel-details.png" alt="" /></p>
+<h4 id="信道名称"><a class="header" href="#信道名称">信道名称<!-- Linebreak --></a></h4>
+<p>显示或更改信道名称。</p>
+<p>当前文本插入位置会显示一个闪烁的下划线，默认该位置在名称的最后一个文本字符之后。</p>
+<p>按下数字键盘上的相应按钮，输入数字和字母。例如按“2”按钮，最初输入 2，但立即再次按“2”输入字母“A”。</p>
+<p>按 <strong>蓝色 + 左</strong> 组合键，删除一个字符。</p>
+<h4 id="接收频率rx"><a class="header" href="#接收频率rx">接收频率（RX）</a></h4>
+<p>设置当前接收频率，也可使用数字键盘快速输入。</p>
+<h4 id="发射频率tx"><a class="header" href="#发射频率tx">发射频率（TX）</a></h4>
+<p>设置当前发射频率，也可使用数字键盘快速输入。</p>
+<h4 id="模式mode"><a class="header" href="#模式mode">模式（Mode）</a></h4>
+<p>选择 FM（模拟）或 DMR（数字）。</p>
+<h4 id="dmr-id"><a class="header" href="#dmr-id">DMR ID<!-- Linebreak --></a></h4>
+<p>如果信道模式为 DMR，则可以通过键盘输入信道特定的 DMR ID 号码。</p>
+<h4 id="色码color-code"><a class="header" href="#色码color-code">色码（Color Code）</a></h4>
+<p>设置 DMR 使用的颜色码。</p>
+<h4 id="时隙timeslot"><a class="header" href="#时隙timeslot">时隙（Timeslot）</a></h4>
+<p>设置 DMR 使用的时隙。</p>
+<h4 id="接收发射组txrx-grp"><a class="header" href="#接收发射组txrx-grp">接收/发射组（Tx/RX Grp）</a></h4>
+<p>设置当前 DMR 信道指定了哪些接收/发射组。</p>
+<h4 id="发射哑音tx-ctcss-or-dcs"><a class="header" href="#发射哑音tx-ctcss-or-dcs">发射哑音（Tx CTCSS or DCS）</a></h4>
+<p>设置当前 FM 信道/VFO 使用的发射哑音。</p>
+<h4 id="接收哑音rx-ctcss-or-dcs"><a class="header" href="#接收哑音rx-ctcss-or-dcs">接收哑音（Rx CTCSS or DCS）</a></h4>
+<p>设置当前 FM 信道/VFO 使用的接收哑音。</p>
+<p><em>提示 :</em> 对于发射与接收哑音，长按<strong>左</strong>或<strong>右</strong>方向键可以连续跳转。按住<strong>蓝色</strong>再按压<strong>左</strong>或<strong>右</strong>方向键可直接跳转到 CTCSS/DCS/DCSN 开头或末尾。</p>
+<h4 id="带宽bandwidth"><a class="header" href="#带宽bandwidth">带宽（Bandwidth）</a></h4>
+<p>设置当前 FM 信道带宽，可选项有：25Khz, 12.5Khz。</p>
+<h4 id="步进step"><a class="header" href="#步进step">步进（Step）</a></h4>
+<p>设置信道/VFO 频率步进。</p>
+<h4 id="超时定时器tot-1"><a class="header" href="#超时定时器tot-1">超时定时器（TOT）</a></h4>
+<p>打开或关闭发射超时定时器。</p>
+<h4 id="跳过区域zone-skip"><a class="header" href="#跳过区域zone-skip">跳过区域（Zone Skip）</a></h4>
+<p>设置是否在扫描时跳过该信道所在区域。</p>
+<h4 id="跳过信道all-skip"><a class="header" href="#跳过信道all-skip">跳过信道（All Skip）</a></h4>
+<p>设置是否在全信道扫描时跳过该信道。</p>
+<h4 id="声控发射vox"><a class="header" href="#声控发射vox">声控发射（VOX）</a></h4>
+<p>设置是否打开声控发射。</p>
+<h4 id="信道功率"><a class="header" href="#信道功率">信道功率<!-- Linebreak --></a></h4>
+<p>控制分配给信道的自定义功率。</p>
+<p>另请参阅关于控制功率的部分。</p>
+<p><strong>默认情况下</strong>，所有信道将使用<strong>主</strong>功率设置，此选项允许在信道上设置<strong>自定义</strong>功率设置，或为信道设置使用<strong>主</strong>功率设置。</p>
+<h4 id="信道静噪"><a class="header" href="#信道静噪">信道静噪<!-- Linebreak --></a></h4>
+<p>控制分配给信道的自定义静噪。</p>
+<p>另请参阅关于控制静噪的部分。</p>
+<p><strong>默认情况下</strong>，所有信道都将使用<strong>主</strong>静噪设置。这是在静噪设置选项中为信道波段定义的静噪值。</p>
+<p><strong>自定义</strong>静噪设置可以通过按左右箭头键应用于信道。自定义静噪设置以 5% 为步长。</p>
+<h4 id="信道提示音"><a class="header" href="#信道提示音">信道提示音<!-- Linebreak --></a></h4>
+<p>控制是否在信道上播放提示音。</p>
+<p>默认情况下，所有信道都启用提示音，但可以通过将此选项设置为 No 来禁用单个信道上的提示音。</p>
+<h4 id="信道省电"><a class="header" href="#信道省电">信道省电<!-- Linebreak --></a></h4>
+<p>控制省电模式是否在此信道上开启。</p>
+<p>默认情况下，所有信道都启用省电模式，但可以通过将此选项设置为 No 在某个信道上禁用省电模式。</p>
+<h4 id="保存对信道的更改"><a class="header" href="#保存对信道的更改">保存对信道的更改</a></h4>
+<p>按压<strong>绿色</strong>按键以确认更改。</p>
+<p>按压<strong>蓝色</strong>+<strong>绿色</strong>组合键以保存信道/VFO 更改至电台的配置文件。</p>
+<p>按压<strong>红色</strong>按键以取消更改并退出。</p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h3 id="语言"><a class="header" href="#语言">语言</a></h3>
+<p>此设置允许选择屏幕文本的语言。*</p>
+<p><em>请注意 :</em></p>
+<ol>
+<li>这不会改变语音提示的语言，因为语音提示不是主固件文件的一部分，必须使用 OpenGD77 CPS 单独加载。</li>
+<li>并非所有语言都由原始母语翻译者积极维护，因此某些语言的翻译并不完美。
+如果您发现语言翻译有问题，请发帖到 <a href="https://www.opengd77.com">https://www.opengd77.com</a> 论坛，提供更好的翻译。</li>
+</ol>
+<blockquote>
+<p>* 译者注：由于字库问题暂不支持中文</p>
+</blockquote>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h3 id="卫星界面"><a class="header" href="#卫星界面">卫星界面</a></h3>
+<p>此界面使用您输入的位置、日期和时间预测未来 24 小时内业余无线电卫星的过境时间。</p>
+<p>它还可以自动校正发射和接收频率上的多普勒频移，并以各种方式显示卫星的方位角和仰角，包括数字和极坐标图。</p>
+<p>在使用此界面之前，您<strong>必须</strong>在电台信息界面中输入所在位置以及当前时间/日期。</p>
+<p>此外，Keps 的卫星轨道数据<strong>必须</strong>使用 CPS 上传。</p>
+<p>如果您没有设置日期/时间或地点，电台会提示您输入。</p>
+<p>电台重启后，日期和时间将被清除，需要重新输入。</p>
+<p>从 CPS 上传最新的 Keps 也会自动设置日期和时间，因此上传 Keps 比手动设置日期/时间更简单容易。</p>
+<p>使用卫星功能时，您<strong>不需要</strong>设置卫星频率或 CTCSS，因为这些值已经作为 Kep 数据和日期/时间一起从 CPS 上传到电台。</p>
+<p>要更改卫星频率或访问不同的卫星，可以修改 CPS 安装目录下的 satellites.txt。</p>
+<p>对于像 SO-50 这样的卫星，有转发器启动哑音。在发射过程中按黑色按键，可以发射该启动哑音。</p>
+<p>显示的第一个界面是主预测列表。这列出了未来 24 小时内所有卫星的所有过境的预测，按时间顺序显示。</p>
+<p><img src="media/satellite-main-predictions-list.png" alt="位置" /></p>
+<p>由于需要执行的计算数量较多，预测需要几秒钟的时间来计算。在计算时，会显示一个进度条。</p>
+<p>列表出现后，它会显示卫星名称以及卫星出现在地平线上方的时间（称为卫星捕获 - AOS），以及以度为单位的最大仰角。</p>
+<p>如果卫星当前在地平线之上，则在该卫星/过境旁边的界面右侧显示一个黑条。</p>
+<p><img src="media/satellite-main-predictions-list-AOS.png" alt="位置" /></p>
+<p>使用<strong>上</strong>/<strong>下</strong>方向键向上/向下滚动列表。</p>
+<p><em>请注意 :</em></p>
+<p>一些卫星，例如 SO-86 在赤道轨道上，仅经过赤道位置，因此该卫星过境不会出现在该地理区域以外的预测列表中。</p>
+<p>按 <strong>绿色</strong> 按键选择特定卫星/过境，这会显示该卫星/过境的预测<strong>极坐标图</strong>。</p>
+<p><strong>极坐标图</strong></p>
+<p><img src="media/satellite-polar-before-AOS.png" alt="位置" /></p>
+<p>极坐标图显示了从电台位置垂直上方以平面视图显示的卫星路径，外圈为地平线，两个内圈为 30 度和 60 度，中心直接位于头顶位置。</p>
+<p>当卫星位于地平线以下时，会显示一个大的点，即卫星将出现在地平线上的位置。界面左上角会以 HH:MM:SS 或 MM:SS 或 SS s 的形式显示下一次通过的时间，具体取决于距离通过的时间长短。界面左下方显示最大仰角。</p>
+<p>当卫星位于地平线以上时，一个小点会显示卫星的当前位置。当前方位角显示在界面左上角，当前仰角显示在界面左下角，卫星位置显示在极坐标图上。</p>
+<p><img src="media/satellite-polar-mid-pass.png" alt="位置" /></p>
+<p>此外，在同一过境中，显示的信息每秒都会发生变化，以显示卫星的运动以及方位角和仰角的变化。</p>
+<p><img src="media/satellite-polar-mid-pass-2.png" alt="位置" /></p>
+<p>当前 RSSI 信号强度始终显示为垂直条，以便操作员可以调整其天线以获得最大信号。</p>
+<p>在此界面上，可以使用与频率与信道界面上相同的键来调整静噪和功率。</p>
+<p>按<strong>下</strong>方向键进入卫星独立预测界面，或按<strong>上</strong>方向键进入卫星实时数据界面。</p>
+<p><strong>卫星独立预测界面</strong></p>
+<p><img src="media/satellite-individual-passes-1.png" alt="位置" /></p>
+<p>此界面允许查看单个卫星的预测，包括过境时间和最大仰角以及过境持续时间。</p>
+<p>按<strong>右</strong>/<strong>左</strong>方向键逐步查看当前选定卫星的过境预测。</p>
+<p><img src="media/satellite-individual-passes-2.png" alt="位置" /></p>
+<p>按<strong>下</strong>方向键进入卫星实时数据界面，或按<strong>上</strong>方向键进入极坐标图。</p>
+<p><strong>卫星实时数据界面</strong></p>
+<p>无论选择了哪个过境，此界面都显示所选卫星的当前方位角和仰角。</p>
+<p>它还显示当前的发射和接收频率、功率和电池电压。</p>
+<p>负仰角表示当前卫星在地平线以下。</p>
+<p><img src="media/satellite-live-before-AOS.png" alt="位置" /></p>
+<p>信息每秒更新一次。</p>
+<p><img src="media/satellite-live-mid-pass.png" alt="位置" /></p>
+<p><img src="media/satellite-live-mid-pass-2.png" alt="位置" /></p>
+<p>在极坐标图、实时和独立卫星预测界面上。按<strong>蓝色 + 上</strong>/<strong>下</strong>组合键更改为不同的卫星。</p>
+<p><em>请注意 :</em></p>
+<p>如果卫星没有经过当前位置，电台将根据当前选择的界面显示“Pass: None”或“Empty List”。</p>
+<p>例如 IO-86 ，该卫星只经过赤道位置。</p>
+<p><strong>卫星闹钟</strong></p>
+<p>如果想要设置有关特定卫星过境的闹钟：</p>
+<p>距离过境至少 1 分钟前，在任何卫星界面上按蓝色 + 绿色组合键，然后让电台保持在卫星模式即可。</p>
+<p>在卫星出现在地平线上方的 1 分钟前，电台会发出哔哔声。</p>
+<p>闹钟鸣响后按<strong>绿色</strong>按键取消闹钟，重启电台或进入和退出睡眠模式都可删除现有闹钟。</p>
+<p>如果 1 分钟后闹钟没有取消，它会自动停止。</p>
+<p><strong>CPS 集成</strong></p>
+<p>CPS 添加了一项额外功能，用于下载 Kep 的数据并将其上传到电台，以及设置电台的日期/时间。</p>
+<p>想要这样做，请打开 CPS 的 Extras -&gt; OpenGD77 support 界面。通过 USB 写频线连接到电台，确保电台已打开，然后按“Install satellite Keps”按钮。</p>
+<p>CPS 默认从指定的 URL 下载 Kep，如果您想要使用不同的 Kep 数据源，也可以更改 URL。</p>
+<p>导入和上传到电台的卫星数据可以在 satellites.txt 文件中定义，该文件与 CPS 一起安装到其安装目录中。</p>
+<p>该文件是一个标准格式的 CSV 文件，包含卫星目录号、电台中的显示名称、发送/接收频率、发送哑音以及使用启动音的卫星的启动音调。
+您可以根据需要编辑此文件以添加或删除卫星。</p>
+<p>可加载到电台的最大卫星数量为 15 颗，但目前预载数据中有 8 颗卫星。</p>
+<div class="table-wrapper"><table><thead><tr><th>目录号 #</th><th>显示名称</th><th>接收</th><th>发送</th><th>CTCSS</th><th>ArmCTCSS</th></tr></thead><tbody>
+<tr><td>22825U</td><td>AO27</td><td>436795000</td><td>145850000</td><td>0</td><td>0</td></tr>
+<tr><td>43017U</td><td>AO91</td><td>145960000</td><td>435250000</td><td>670</td><td>0</td></tr>
+<tr><td>43137U</td><td>AO92</td><td>145880000</td><td>435350000</td><td>670</td><td>0</td></tr>
+<tr><td>40908U</td><td>CAS3H</td><td>437200000</td><td>144350000</td><td>0</td><td>0</td></tr>
+<tr><td>40931U</td><td>IO86</td><td>435880000</td><td>145880000</td><td>885</td><td>0</td></tr>
+<tr><td>43678U</td><td>PO101</td><td>145900000</td><td>437500000</td><td>1413</td><td>0</td></tr>
+<tr><td>25544U</td><td>ISS</td><td>437800000</td><td>145990000</td><td>670</td><td>0</td></tr>
+<tr><td>27607U</td><td>SO50</td><td>436795000</td><td>145850000</td><td>670</td><td>744</td></tr>
+</tbody></table>
+</div>
+<p>CTCSS 和 ArmCTCSS 值是哑音频率乘以 10，例如 67Hz = 670</p>
+<p><strong>技术说明</strong></p>
+<p>卫星位置和预测计算由电台固件实时生成，当前选择的卫星数据每秒更新一次。</p>
+<p>与其他卫星预测软件（包括 AMSAT 的在线预测页面和其他 PC 应用程序（如 GPredict）相比）， AOS 时间、LOS 时间和持续时间的预测精度大约是 ±5 秒。</p>
+<p>像 GPredict 这样的预测程序通常也不显示与在线 AMSAT 预测完全相同的开始或结束值。</p>
+<p>除非经常更新 Kep 卫星的数据，否则预测不会完全准确。如果可行，应每天更新 Kep 数据，尽管通常卫星不会在几天甚至一周内远离其预测路径太远。</p>
+<p>预测计算是为 OpenGD77 固件编写的特定实现方法，使用的算法来自于 1983 年编写的名为 PLAN13 的原始 AMSAT 预测计算。
+详见 <a href="https://www.amsat.org/amsat/articles/g3ruh/111.html">https://www.amsat.org/amsat/articles/g3ruh/111.html</a></p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h3 id="gps-界面"><a class="header" href="#gps-界面">GPS 界面</a></h3>
+<p>GPS 界面目前仅在特易通 MD-UV380/390 / Retevis RT-3S 和特易通 MD-9600 / Retevis RT-90 上可用，适用于装有 GPS 的电台，或者用户已修改的 MD-9600 （电台连接了和内部或外部 GPS 模块）。</p>
+<p>由于 GPS 接收器在使用过程中会持续消耗 50mA 以上的电流，所以在 MD-UV380/RT-3S 固件中，GPS 接收器默认是不供电的。</p>
+<p>要在电台中使用 GPS 接收器，您必须首先在“常规选项”菜单中启用 GPS。
+如果电台没有安装 GPS，或者 GPS 似乎没有工作，这个选项将显示值“None”。
+如果电台装有 GPS，此选项的值最初将显示为“Off”。
+要使用 GPS，请将此值更改为“On”或“NMEA”。将 GPS 设置为 NMEA 将启用 GPS 模块并将所有 NMEA 数据从 GPS 模块发送到电台的 USB 串行端口。</p>
+<p>请注意：</p>
+<ol>
+<li>设置 GPS 输出 NMEA 数据会阻止 CPS 与电台通信，使用 CPS 时应将 GPS 设置为“Off”或“On”。</li>
+<li>UV380 和 MD9600 的 GPS 接收不是很灵敏，需要很长时间才能获取位置，而且这些电台的 GPS 在室内不工作。</li>
+</ol>
+<p>第一次打开 GPS 后，GPS 界面将显示文本“正在获取”。GPS 正在接收的任何卫星的 UV380 信号强度条也将显示。
+在 MD-9600 版本上，第一个 GPS 界面上没有足够的空间来显示信号强度条，因此它们显示在 GPS 界面的第二页上，按向下箭头按钮即可访问</p>
+<p><img src="media/GPS_acquiring.png" alt="GPS获取" /></p>
+<p>MD-UV380 和 MD-9600 版本在 GPS 界面中也有一个页面，显示任何检测到的 GPS 卫星的极坐标位置，但是在知道 GPS 位置之前此界面不起作用。</p>
+<p>获取 GPS 位置后，将显示位置，包括纬度、经度、高度和精度。</p>
+<p><img src="media/GPS1.png" alt="GPS_1" /></p>
+<p><img src="media/GPS2.png" alt="GPS_2" /></p>
+<p>GPS 会自动更新电台中的实时时钟，且位置用于 DMR APRS 传输。</p>
+<p>在 UV380/RT-3S 上，GPS 卫星 RSSI 条形图采用颜色编码。蓝色代表美国 GPS 卫星，红色代表其他卫星系统。</p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h2 id="发起或接收单呼"><a class="header" href="#发起或接收单呼">发起或接收单呼</a></h2>
+<h3 id="想要发起单呼的话"><a class="header" href="#想要发起单呼的话">想要发起单呼的话</a></h3>
+<p>在任意信道或频率界面：</p>
+<ol>
+<li>按压数字键盘井号键两次进入单呼 ID 输入界面，屏幕上部显示“PC entry”。</li>
+<li>输入想要呼叫的 DMR ID，例如 5053238。</li>
+<li>按压<strong>绿色</strong>按键确认，或按压<strong>红色</strong>按键退出。</li>
+</ol>
+<p><em>请注意 :</em> 若您在输入 ID 时输错了一位，按压<strong>左</strong>方向键可以删除一位数字。</p>
+<p>若您输入的 DMR ID 在内置的数据库内，对应的呼号与姓名会显示在屏幕上。</p>
+<p>若 ID 不在数据库内，则只会显示 ID 号码本身。</p>
+<p><strong>此时电台已进入单呼模式。</strong></p>
+<p>若想回到原来的模式，有以下三个方法：</p>
+<ol>
+<li>按压<strong>蓝色</strong>+<strong>红色</strong>组合键。</li>
+<li>按压<strong>左</strong>或<strong>右</strong>方向键以切换到其他通话组。</li>
+<li>按压数字键盘井号键，并输入通话组代码，按压<strong>绿色</strong>按键确认。</li>
+</ol>
+<p><em>请注意 :</em> 当您处于单呼模式时，通过菜单切换信道或 VFO 都不会使您退出单呼模式。</p>
+<h3 id="当接收到一个单呼时"><a class="header" href="#当接收到一个单呼时">当接收到一个单呼时</a></h3>
+<p>当您接收到一个单呼时，电台会显示以下界面。</p>
+<p><img src="media/accept-call.png" alt="" /></p>
+<p>屏幕中间会显示主叫呼号与姓名（或 ID）</p>
+<p>若想要使电台接受单呼并呼回主叫电台，请按<strong>绿色</strong>按键以接受；您可以按<strong>红色</strong>按键或不理会该提示以拒绝本次呼叫。</p>
+<p>若您接收了此次呼叫，则电台会自动切换至单呼模式，同时显示对方的呼号，姓名等信息，等待您发射。界面如下：</p>
+<p><img src="media/private-call.png" alt="" /></p>
+<p>当您的单呼操作结束后，按压<strong>蓝色</strong>+<strong>红色</strong>组合键可以回到之前的通话组。（或上一节描述的三种方法之一种）</p>
+<h2 id="热点模式hotspot-mode"><a class="header" href="#热点模式hotspot-mode">热点模式（Hotspot mode）</a></h2>
+<p><strong>重要信息</strong></p>
+<p><strong>热点模式目前不支持宝锋 DM5R，因为在 DM5R 发射时无法保证稳定的 USB 通信</strong></p>
+<ul>
+<li>在使用热点模式的时候，连接电台与主机的 USB 线<strong>必须</strong>进行适当保护以避免射频干扰，否则在电台发射时可能会造成 USB 连接被重置，进而导致热点模式停止工作。</li>
+<li><strong>不要</strong>使用原机的天线进行热点模式操作，这样造成的射频干扰问题没法简单的用一个磁环来解决。</li>
+<li>连接一个外部天线。</li>
+<li>在 USB 线缆两端加个磁环以保护线缆免受射频干扰。</li>
+<li>如果您使用树莓派作为主机，请使用一个封闭的铁壳保护树莓派。</li>
+</ul>
+<p>当您使用 USB 写频线连接到一个 MMDVM 主机，例如 PiStar 时，电台就可作为一个 DMR 语音热点工作。</p>
+<p><em>请注意 :</em> 热点模式同时也兼容类似于 BlueDV 这样的软件，但也有可能无法使用。</p>
+<p>想要使用热点模式的话，请先使用写频线连接电台与主机，如图。</p>
+<p><img src="media/hotspot-connections.jpg" alt="" /></p>
+<p>热点模式也支持树莓派 Zero/Zero W，不过您可能需要一条 OTG 线缆。</p>
+<p>在 PiStar 配置界面，Radio/Modem Type 一栏选择 “OpenGD77 DMR hotspot (USB)”</p>
+<p><img src="media/pistar-configuration.png" alt="" /></p>
+<p>若您的 PiStar 并没有这个选项，请更新您的 PiStar。</p>
+<p>当您正确连接后，按住电台的<strong>黑色</strong>侧键并打开电源。若 PiStar 配置正确，您电台屏幕的顶部会显示 “Hotspot” 以提示您已进入热点模式，同时电池电量、色码、功率和接收频率也都会显示，如图。</p>
+<p><img src="media/hotspot-mode.jpg" alt="" /></p>
+<p>若电台没有进入热点模式，重启电台和 PiStar 并重试。</p>
+<p>如果此时电台还无法进入热点模式，请检查 USB 连接。</p>
+<p><em>请注意 :</em> 默认情况下 PiStar 会将电台功率配置为“100”，您可以在专家模式下的 MMDVMHost settings 更改。</p>
+<p>“100”的设置代表了 PiStar 期望电台输出 100% 的功率，对于您的电台来说也就是 5W 满功率输出。显然的，您手中的电台在设计时并未考量长时间、高功率、持续发射的工况。</p>
+<p>您的电台所支持的满功率持续发射时间，会根据不同的操作环境，例如室内温度、天线驻波等等而有所变化。</p>
+<p>设置一个适当的发射功率并确保电台不会过热或烧毁是您自己的责任。</p>
+<p>为了保护电台，若 PiStar 向本固件汇报了“100”的功率设置，则电台会认为您没有正确配置 PiStar 并忽略该功率设置。此时固件会使用普通模式下您设置的功率进行发射。</p>
+<p>若 PiStar 向本固件汇报了任何其他功率设置（例如“50”），则固件会选择对应最接近的功率进行发射。
+以“50”为例，即 5W 的 50%，等于 2.5W，最接近这个值的功率设置是 4W，因此电台会以 4W 进行发射。</p>
+<div class="table-wrapper"><table><thead><tr><th>电台发射功率</th><th>PiStar RFLevel</th></tr></thead><tbody>
+<tr><td>50mW</td><td>1</td></tr>
+<tr><td>250mW</td><td>5</td></tr>
+<tr><td>500mW</td><td>10</td></tr>
+<tr><td>750mW</td><td>15</td></tr>
+<tr><td>1W</td><td>20</td></tr>
+<tr><td>2W</td><td>40</td></tr>
+<tr><td>4W</td><td>80</td></tr>
+<tr><td>5W</td><td>99</td></tr>
+<tr><td>5W++</td><td>不可用</td></tr>
+</tbody></table>
+</div>
+<p>由 PiStar 指定的接收频率会显示在屏幕底部。</p>
+<p><em>请注意 :</em> 在 PiStar 中请不要设置发射/接收频偏，因为您的电台不需要任何频偏设置，且任何频偏都会如实反映在接收频率上，因为 PiStar 实际上会发送已偏移的频率至您的电台。</p>
+<p>当您的电台接收到一个射频 DMR 信号时，机器顶部的指示灯会亮起绿色，主叫呼号及名称（或 DMR ID，如果没有查询到 ID 对应的呼号数据的话）、通话组、接收频率都会显示在电台屏幕上。</p>
+<p><img src="media/hotspot-rx.jpg" alt="" /></p>
+<p>当 PiStar 接收到来自网络的信号并触发您的电台进入发射时，机器顶部的指示灯会亮起红色，屏幕上同样会显示主叫呼号及名称/DMR ID，以及发射频率。</p>
+<h2 id="重设电台各项设置"><a class="header" href="#重设电台各项设置">重设电台各项设置</a></h2>
+<p>按住电台侧边的<strong>蓝色</strong>并打开电台可以恢复各项设置到默认状态。</p>
+<p>按住电台侧边的<strong>蓝色 + 上 + 下</strong>并打开电台可以清除自定义的开机画面和开机声音。</p>
+<p>在 MD730 上，按住电台侧边的<strong>蓝色 + 橙色</strong>并打开电台可以清除自定义的开机声音。</p>
+<h2 id="md-730-的操作方式"><a class="header" href="#md-730-的操作方式">MD-730 的操作方式</a></h2>
+<p>若您要配合 MD730 使用本固件，<strong>必须</strong>使用写频软件写入语音提示。若您不写入语音提示，则电台不会发出任何提示音，这样的情况下几乎无法使用 MD730.</p>
+<p>请参阅相关章节以了解如何写入语音提示。</p>
+<p>MD730 在机顶有一个音量/开关钮与一个 16 位置的旋钮。这个 16 位置的旋钮用于选择当前区域的信道。尽管新版写频软件允许您在一个区域内写入多达 80 个信道，但是 MD730 只能访问前 16 个信道，我们推荐配合 MD730 使用时尽量将每个区域信道控制在 16 个以内。</p>
+<p>MD730 除了没有屏幕与键盘区以外，其侧边按键与 MD760 一样，在此不赘述。</p>
+<p>本固件对于 MD730 的使用提出了“控制模式”概念。在不同“控制模式”中黑色与蓝色按键各自拥有不同的功能，通过按压机顶<strong>橙色</strong>按键可以在不同模式之间切换。</p>
+<h3 id="md730-信道通话组模式"><a class="header" href="#md730-信道通话组模式">MD730 信道/通话组模式</a></h3>
+<p>本模式的语音提示是 &quot;Channel mode&quot;.
+在本模式中，黑色与蓝色按键用于浏览当前信道以及其指定通话组。</p>
+<h3 id="md730-扫描模式"><a class="header" href="#md730-扫描模式">MD730 扫描模式</a></h3>
+<p>本模式与普通版本固件中的信道扫描一样。按压黑色侧键可以开始或结束扫描。</p>
+<h3 id="md730-时隙模式"><a class="header" href="#md730-时隙模式">MD730 时隙模式</a></h3>
+<p>在本模式下按压黑色或蓝色侧键可以在时隙 1 与时隙 2 之间切换。</p>
+<h3 id="md730-色码模式"><a class="header" href="#md730-色码模式">MD730 色码模式</a></h3>
+<p>在本模式下，按压黑色侧键可以使色码递增，按压蓝色按键可以递减。</p>
+<h3 id="md730-dmr-过滤模式"><a class="header" href="#md730-dmr-过滤模式">MD730 DMR 过滤模式</a></h3>
+<p>在本模式下，按压黑色侧键可以向上更改 DMR 模式的过滤设置，按压蓝色侧键则向下更改。请查看 <a href="#dmr%E6%A8%A1%E5%BC%8F%E7%9A%84%E8%BF%87%E6%BB%A4%E8%AE%BE%E7%BD%AE">DMR 模式的过滤设置</a></p>
+<h3 id="md730-区域模式"><a class="header" href="#md730-区域模式">MD730 区域模式</a></h3>
+<p>在本模式下，按压黑色侧键可以选择上一个区域，按压蓝色侧键则选择下一个区域。</p>
+<h3 id="md730-功率模式"><a class="header" href="#md730-功率模式">MD730 功率模式</a></h3>
+<p>在本模式下，按压黑色侧键可以提高一档功率，按压蓝色侧键可以减少一档功率。</p>
+<p><em>请注意 :</em> 与之前所说一致，功率设置数值仅在您校准了功率之后才会准确。</p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h2 id="md9600-rt90-的操作方式"><a class="header" href="#md9600-rt90-的操作方式">MD9600 RT90 的操作方式</a></h2>
+<p>特易通 MD-9600 / Retevis RT-90 使用以下按键</p>
+<p><img src="media/MD9600Controls.jpg" alt="电台校准界面" /></p>
+<p>前面板</p>
+<p>P1 = <strong>SK2</strong></p>
+<p>P2 = <strong>SK1</strong></p>
+<p>P2 =（无功能）</p>
+<p>P4 = *（星号）</p>
+<p>旋钮改变信道或频率，以及菜单设置</p>
+<p>在频率和信道界面上，上下方向键映射到手持电台上的左右方向键。例如：在 FM 模式下，增加和减少静噪。</p>
+<p>在菜单界面上，上下方向键在菜单的范围内上下移动光标</p>
+<p>在信道界面上，<strong>长按</strong>上方向键，开始扫描。</p>
+<p>在扫描过程中按下方向键，反转扫描方向。</p>
+<p>在扫描过程中，*（星号）按钮将频道标记为干扰频道。这与手持电台上的右方向键的功能相同。</p>
+<p>无法通过前面板按钮操作 VFO 扫描。</p>
+<p>在麦克风键盘上</p>
+<p>A/B = 绿色</p>
+<p>A 键 = 红色</p>
+<p>B 键 = 右方向键</p>
+<p>C 键 = 左方向键</p>
+<p><strong>长按</strong> D 键切换 <strong>SK2</strong> 保持，因此可以从麦克风控制 SK2 功能</p>
+<p>在 FM 上输入或直接发射 DTMF 时，以下按键映射用于发送或输入 A、B、C、D 字符。</p>
+<p>上方向键 = A</p>
+<p>SK1 + 上方向键 = B</p>
+<p>下方向键 = C</p>
+<p>SK1 + 下方向键 = D</p>
+<h2 id="客户编程软件cps"><a class="header" href="#客户编程软件cps">客户编程软件（CPS）</a></h2>
+<p><em>请注意 :</em></p>
+<ul>
+<li>您<strong>不能</strong>使用原厂官方的 Radioddity CPS 或 Baofeng CPS 来写入已刷入 OpenGD77 固件的电台。
+如果您想使用 Radioddity CPS，电台需要运行 <strong>Radioddity 官方固件</strong>。将带有您的 ID 和呼号的电台配置文件写入电台后，您可以将固件刷入电台，然后它将读取并使用以前官方固件的电台配置文件。</li>
+</ul>
+<p>请从 <a href="#%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5%E4%B8%8E%E5%85%B6%E4%BB%96%E8%B5%84%E6%BA%90">1.1 节</a> 中给出的位置下载最新的 OpenGD77 CPS</p>
+<p>有关 OpenGD77 CPS 特定的信息，请参阅下一节。本节其余部分的信息同时适用于官方 Radioddity CPS 和 OpenGD77 CPS。</p>
+<h3 id="概述"><a class="header" href="#概述">概述</a></h3>
+<p>该固件简化了通话组的概念，为业余无线电爱好者提供了最大的便利。与大多数商业 DMR 电台不同，它不需要创建多个信道来使用相同的频率与许多不同的传输通话组。更改通话组只需要通过<strong>左</strong>和<strong>右</strong>方向键在您的列表中选择或通过按<strong>井号</strong>键输入<em>临时</em>通话组，就是这么简单。</p>
+<p>在 DMR 模式下，当使用频率模式或区域和信道模式时，您可以使用左/右方向键滚动并在接收组列表中任意选择一个通话组分配给当前信道或频率。</p>
+<p>使用 CPS 对电台进行写频时，首先将您认为希望使用的所有<strong>通话组</strong>添加到<em>联系人</em>列表中。</p>
+<p><img src="media/cps-tg-contacts.png" alt="CPS 通话组联系人列表" /></p>
+<p>接下来创建一个或多个“<strong>通话组列表</strong>”，并向它们添加您希望与不同信道一起使用的<em>通话组</em>。您可以在**许多***通话组列表<em>中拥有相同的</em>通话组*。</p>
+<p><img src="media/cps-TGlists.png" alt="通话组列表" /></p>
+<p>现在设置<strong>信道</strong>。正常输入 DMR 信道的频率、时隙和色码。</p>
+<p>接下来选择您希望用于信道的 <strong>通话组列表</strong>。</p>
+<p>固件可以使用<em>通话组列表</em>过滤传入的 DMR 信号，或者它可以一直运行在“<em>数字监控模式</em>”（又名混杂模式）下。这可以在电台快速菜单设置中的<strong>过滤器</strong>和<strong>DMR 过滤器</strong>进行设置。</p>
+<p><img src="media/cps-channel-tglist.png" alt="信道通话组列表选择" /><!-- { width=600 } --></p>
+<p><em>请注意 :</em></p>
+<ul>
+<li>您必须使用<em>通话组列表</em>来定义要与每个信道一起使用的通话组。因此，您必须至少有<strong>1 个 通话组列表</strong>，并且它必须包含至少<strong>1 个数字联系人</strong>，这是一个<em>通话组</em>。</li>
+</ul>
+<p>最后，在将电台配置文件写入电台之前，将您的电台配置文件保存到您的计算机上，使用标准的 Radioddity CPS 对电台进行写入，然后再将其刷入 OpenGD77，或者，如果您使用的是 CPS 的特殊 OpenGD77 兼容版本，（详细在下一节中）您可以将电台配置文件直接写入已经刷过的 OpenGD77 电台。</p>
+<h4 id="新驱动安装"><a class="header" href="#新驱动安装">新驱动安装<!-- Linebreak --></a></h4>
+<p>CPS 安装程序还将自动安装通信端口驱动程序，但是您也可以通过从 <a href="#%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5%E4%B8%8E%E5%85%B6%E4%BB%96%E8%B5%84%E6%BA%90">第 1.1 节</a> 中给出的位置下载文件来手动安装通信端口驱动程序。</p>
+<p>要安装驱动程序，请下载并解压缩 zip 文件，然后运行 .bat 文件</p>
+<p>安装驱动程序后，Windows 设备管理器应在 Windows 设备管理器的“<em>端口</em>”部分显示“<strong>OpenGD77</strong>”</p>
+<p><img src="media/device-manager-ports.png" alt="设备管理器窗口" /><!-- { width=280 } --></p>
+<h4 id="opengd77-菜单"><a class="header" href="#opengd77-菜单">OpenGD77 菜单<!-- Linebreak --></a></h4>
+<p>在 CPS 中，Extras 菜单下有一个新的菜单项，用于打开 OpenGD77 支持窗口。</p>
+<p><img src="media/cps-opengd77-support.png" alt="OpenGD77 支持窗口" /><!-- { width=480 } --></p>
+<p>从这里您可以<strong>备份</strong>内部<strong>64k EEPROM</strong>和<strong>1MB 闪存</strong>芯片的数据，以及读取和写入电台配置文件。</p>
+<p>存储在闪存芯片（地址 <em>0x8f000</em>）中的校准数据可以在不备份整个闪存的情况下进行备份和恢复。</p>
+<p><em>请注意 :</em></p>
+<ul>
+<li>如果您恢复闪存，您还将<strong>覆盖校准数据</strong>，因为它存储在 1Mb 闪存芯片中。</li>
+</ul>
+<p>您还可以使用此窗口从电台的当前显示中截取屏幕截图。屏幕截图以 PNG 格式保存。</p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h4 id="在您做任何其他事情之前备份"><a class="header" href="#在您做任何其他事情之前备份">在您做任何其他事情之前备份<!-- Linebreak --></a></h4>
+<p>在第一次向电台写入电台配置文件之前，您应该<strong>备份 EEPROM 和 Flash</strong>芯片，并将文件保存在<strong>安全的地方</strong>，以防将来出现问题而需要恢复数据。</p>
+<p><img src="media/Backup-01.png" alt="访问 OpenGD77 支持窗口的菜单项" /></p>
+<p>备份<strong>EEPROM</strong>、<strong>闪存</strong>、<strong>校准数据</strong>、<strong>MCU ROM</strong>和<strong>电台配置文件</strong>。</p>
+<p><img src="media/Backup-02.png" alt="创建各种备份的按钮" /><!-- { width=550 } --></p>
+<h4 id="读写您的电台配置文件"><a class="header" href="#读写您的电台配置文件">读写您的电台配置文件<!-- Linebreak --></a></h4>
+<p>要读取电台配置文件，请按“Read codeplug”按钮，等待所有 3 个数据部分下载，然后关闭 OpenGD77 支持窗口。要写入电台配置文件，请按“Write codeplug”按钮。</p>
+<h4 id="写入-dmr-id-用户数据库"><a class="header" href="#写入-dmr-id-用户数据库">写入 DMR ID 用户数据库<!-- Linebreak --></a></h4>
+<p>固件支持<strong>扩展 DMR ID 信息</strong>，最多 50 个字符，用于呼号、姓名、城市等。</p>
+<p>请将字符数菜单更改为所需的 DMR 呼号和名称长度。</p>
+<p>然后，您可以通过<strong>选择 ID 前缀</strong>将 DMR ID 添加到数据库中。您可以根据您经常听到的前缀继续添加 DMR ID，直到您填满所分配的空间。</p>
+<p><img src="media/cps-dmr-ids.png" alt="DMR IDs 下载窗口" /><!-- { width=550 } --></p>
+<p><em>请注意 :</em></p>
+<ul>
+<li>因为用于 DMR ID 的内存大小是<strong>有限的</strong>，如果您为每个 ID 分配更少的字符，您可以存储更多的 DMR ID。根据实际信息，固件可以在其用户数据库中存储大约 <strong>13,800</strong> 到 <strong>69,600</strong> 个 ID。</li>
+</ul>
+<p>由于固件支持<strong>主叫别名显示</strong>，您可能会觉得这已经足够了。对于未存储在电台用户数据库中的 DMR ID，固件将显示从 DMR 信号流中解码到的呼号和姓名数据。</p>
+<div>
+<div style="page-break-after: always; break-after: page;"></div>
+<h4 id="开机铃声"><a class="header" href="#开机铃声">开机铃声<!-- Linebreak --></a></h4>
+<p>一个音由一对音高和延迟组成。所以 <strong>38,6</strong> 表示播放 <strong>tone 38</strong> (<em>932Hz F#</em>) <strong>6 个时间段</strong>。</p>
+<h5 id="莫尔斯电码开机铃声"><a class="header" href="#莫尔斯电码开机铃声">莫尔斯电码开机铃声<!-- Linebreak --></a></h5>
+<p>打开电台时，您可以使用摩尔斯电码播放呼号。国际电联莫尔斯标准具有以下比率：</p>
+<ul>
+<li><strong>38,6</strong>：划</li>
+<li><strong>0,2</strong>：字符内部的停顿</li>
+<li><strong>38,2</strong>：点</li>
+<li><strong>0,6</strong>：字符之间的停顿</li>
+<li><strong>0,7</strong>：单词之间的停顿（<strong>未在呼号中使用</strong>）</li>
+</ul>
+<p>以下也许更有用：</p>
+<ul>
+<li>
+<p><strong>嗒</strong>：38,6,0,2,</p>
+</li>
+<li>
+<p><strong>嘀</strong>：38,2,0,2,</p>
+<p>并将终止的“<strong>2</strong>”更改为字母之间的<strong>6</strong>。 （<em>最后没有逗号</em>）。</p>
+<p>所以 <strong>KI4</strong> (<em>示例</em>) 将变为：</p>
+<ul>
+<li><strong>38,6,0,2, 38,2,0,2, 38,6,0,6,</strong></li>
+<li><strong>38,2,0,2, 38,2,0,6,</strong></li>
+<li><strong>38,2,0,2, 38,2,0,2, 38,2,0,2, 38,2,0,2, 38,6,0,6</strong></li>
+</ul>
+</li>
+<li>
+<p>完成所有操作后删除空格和回车，然后粘贴到 Extras/OpenGD77 support 下的 Boot Tune 部分</p>
+</li>
+</ul>
+<h5 id="旋律和音符"><a class="header" href="#旋律和音符">旋律和音符<!-- Linebreak --></a></h5>
+<p>作为参考，OpenGD77 中的音调值为：</p>
+<div class="table-wrapper"><table><thead><tr><th><strong>值</strong></th><th><strong>音符</strong></th><th><strong>频率</strong></th><th><strong>(信息)</strong></th><th><strong>值</strong></th><th><strong>音符</strong></th><th><strong>频率</strong></th><th><strong>(信息)</strong></th><th><strong>值</strong></th><th><strong>音符</strong></th><th><strong>频率</strong></th><th><strong>(信息)</strong></th><th><strong>值</strong></th><th><strong>音符</strong></th><th><strong>频率</strong></th><th><strong>(信息)</strong></th></tr></thead><tbody>
+<tr><td><strong>1</strong></td><td>A</td><td>110</td><td>(A2)</td><td>13</td><td>A</td><td>220</td><td></td><td>25</td><td>A</td><td>440</td><td></td><td>37</td><td>A</td><td>880</td><td></td></tr>
+<tr><td><strong>2</strong></td><td>A#</td><td>116.5</td><td></td><td>14</td><td>A#</td><td>223</td><td></td><td>26</td><td>A#</td><td>466</td><td></td><td>38</td><td>A#</td><td>932.3</td><td></td></tr>
+<tr><td><strong>3</strong></td><td>B</td><td>123.5</td><td></td><td>15</td><td>B</td><td>247</td><td></td><td>27</td><td>B</td><td>494</td><td></td><td>39</td><td>B</td><td>987.8</td><td></td></tr>
+<tr><td><strong>4</strong></td><td>C</td><td>130.8</td><td>(C3)</td><td>16</td><td>C</td><td>261</td><td>(C4 mid c)</td><td>28</td><td>C</td><td>587.3</td><td>(C5)</td><td>40</td><td>C</td><td>1046.5</td><td>(C6)</td></tr>
+<tr><td><strong>5</strong></td><td>C#</td><td>138.5</td><td></td><td>17</td><td>C#</td><td>277</td><td></td><td>29</td><td>C#</td><td>554.3</td><td></td><td>41</td><td>C#</td><td>1108.7</td><td></td></tr>
+<tr><td><strong>6</strong></td><td>D</td><td>146.8</td><td></td><td>18</td><td>D</td><td>294</td><td></td><td>30</td><td>D</td><td>587.3</td><td></td><td>42</td><td>D</td><td>1174.7</td><td></td></tr>
+<tr><td><strong>7</strong></td><td>D#</td><td>155.5</td><td></td><td>19</td><td>D#</td><td>311</td><td></td><td>31</td><td>D#</td><td>622.3</td><td></td><td>43</td><td>D#</td><td>1244.5</td><td></td></tr>
+<tr><td><strong>8</strong></td><td>E</td><td>164.8</td><td></td><td>20</td><td>E</td><td>329.6</td><td></td><td>32</td><td>E</td><td>659.3</td><td></td><td>44</td><td>E</td><td>1318.5</td><td></td></tr>
+<tr><td><strong>9</strong></td><td>F</td><td>174.6</td><td></td><td>21</td><td>F</td><td>349</td><td></td><td>33</td><td>F</td><td>698.5</td><td></td><td>45</td><td>F</td><td>1397</td><td></td></tr>
+<tr><td><strong>10</strong></td><td>F#</td><td>185</td><td></td><td>22</td><td>F#</td><td>370</td><td></td><td>34</td><td>F#</td><td>740</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><strong>11</strong></td><td>G</td><td>196</td><td></td><td>23</td><td>G</td><td>392</td><td></td><td>35</td><td>G</td><td>784</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><strong>12</strong></td><td>G#</td><td>207.6</td><td></td><td>24</td><td>G#</td><td>415.3</td><td></td><td>36</td><td>G#</td><td>830.6</td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
+</div>
+<h4 id="开机图像"><a class="header" href="#开机图像">开机图像<!-- Linebreak --></a></h4>
+<p>开机图像需要是 <strong>128 像素宽 x 64 像素高</strong>。它需要是 <strong>1 位 PNG 格式</strong>。 （<em>一些现代绘画程序不支持的索引图像格式</em>）。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../业余无线电Ham/业余无线电笔记.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../业余无线电Ham/Opengd77-Firmware-教程.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../业余无线电Ham/业余无线电笔记.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../业余无线电Ham/Opengd77-Firmware-教程.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

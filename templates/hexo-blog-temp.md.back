@@ -1,0 +1,10 @@
+---
+title: Title
+date: .action{now | date "2006-01-02 15:04:05"}
+updated: .action{now | date "2006-01-02 15:04:05"}
+categories: 
+tags: []
+description: 
+thumbnail: 
+banner_img: 
+---
