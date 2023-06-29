@@ -20,10 +20,11 @@ jobs:
           mdbook-version: 'latest'
           
       - run: |
-          mkdir ../src
+          mkdir .src
+          cp -r * .src
+          mv .src src
           python3 auto-build-summary.py .
-          cp -r ./* ../src/
-          mdbook build /home/runner/work/Obsidian-Notes/
+          mdbook build .
           
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
