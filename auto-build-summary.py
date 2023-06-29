@@ -26,7 +26,7 @@ def generate_summary(root_dir, exclude_dirs=None):
 
         # 获取当前目录相对于根目录的层级
         level = dirpath.replace(root_dir, "").count(os.sep)
-        dirpath = dirpath.replace("\\", "/")
+        dirpath = dirpath.replace("\\", "/").replace(".", "")
 
         # 添加当前目录到摘要
         if level == 0:
@@ -39,11 +39,12 @@ def generate_summary(root_dir, exclude_dirs=None):
 
         # 添加当前目录下的文件到摘要
         for filename in filenames:
+            name = os.path.join(dirpath, filename).replace("\\", "/").replace(".", "")
             if level == 0:
                 break
             if filename.endswith(".md"):
                 summary.append(
-                    f"{'    ' * (level + 1)}- [{os.path.splitext(filename)[0]}]({os.path.join(dirpath, filename)})"
+                    f"{'    ' * (level + 1)}- [{os.path.splitext(filename)[0]}]({name})"
                 )
 
     return "\n".join(summary)
@@ -52,7 +53,16 @@ def generate_summary(root_dir, exclude_dirs=None):
 if __name__ == "__main__":
     # 设置根目录和要排除的目录
     root_dir = "."
-    except_dirs = [".obsidian", ".git", ".trash", ".vscode", "src", ".src", ".github"]
+    except_dirs = [
+        ".obsidian",
+        ".git",
+        ".trash",
+        ".vscode",
+        "src",
+        ".src",
+        ".github",
+        "book",
+    ]
 
     # 生成 SUMMARY.md 文件内容
     summary_content = generate_summary(root_dir, except_dirs)
