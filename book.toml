@@ -1,8 +1,0 @@
-[book]
-title = "WhaleFall Obsidian Notes"
-authors = ["WhaleFall"]
-description = "Keep Notes everyday"
-language = "cn"
-
-[rust]
-edition = "2018"
