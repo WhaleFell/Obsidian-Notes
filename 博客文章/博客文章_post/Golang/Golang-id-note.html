@@ -156,7 +156,7 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall</p>
 <hr />
 <h1 id="go-标识符---关键字---命名规则"><a class="header" href="#go-标识符---关键字---命名规则">Go 标识符 - 关键字 - 命名规则</a></h1>
 <h2 id="标识符"><a class="header" href="#标识符">标识符</a></h2>
-<p>标识符的英文是 identifier,通俗的讲，就是给变量、常量、函数、方法、结构体、数组、切片、接口起名
+<p>标识符的英文是 identifier,通俗的讲，就是给变量、常量、函数、方法、结构体、数组、切片、接口起名<br />
 字。</p>
 <p>标识符的组成:</p>
 <ol>
@@ -203,14 +203,14 @@ Address string
 order:=CustomerOrder{&quot;tom&quot;,&quot;北京海淀&quot;}
 </code></pre>
 <h3 id="接口命名"><a class="header" href="#接口命名">接口命名</a></h3>
-<p>命名规则基本和上面的结构体类型
+<p>命名规则基本和上面的结构体类型<br />
 单个函数的结构名以“er”作为后缀，例如 Reader,Writer.</p>
 <pre><code class="language-go">type Reader interface{
 Read(p [] byte)(n int,err error)
 }
 </code></pre>
 <h3 id="变量命名"><a class="header" href="#变量命名">变量命名</a></h3>
-<p>和结构体类似，变量名称一般遵循驼峰法，首字母根据访问控制原则大写或者小写，但遇到特有名词时，需要遵循以下规则：
+<p>和结构体类似，变量名称一般遵循驼峰法，首字母根据访问控制原则大写或者小写，但遇到特有名词时，需要遵循以下规则：<br />
 如果变量为私有，且特有名词为首个单词，则使用小写，如 appService 若变量类型为 bool 类型，则名称应以 Has,Is,Can 或 Allow 开头</p>
 <pre><code class="language-go">var isExist bool
 var hasConflict bool

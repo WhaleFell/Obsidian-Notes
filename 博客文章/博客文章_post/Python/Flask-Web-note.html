@@ -241,7 +241,7 @@ app.config.from_pyfile('setting.py') # 从配置文件加载
 <pre><code class="language-shell">export 变量名=变量值 # 设置
 echo $变量名 # 读取
 </code></pre>
-<p><strong>Flask 使用环境变量加载配置的本质是通过环境变量值找到配置文件</strong>，再读取配置文件的信息，其使用方式为：
+<p><strong>Flask 使用环境变量加载配置的本质是通过环境变量值找到配置文件</strong>，再读取配置文件的信息，其使用方式为：<br />
 <code>app.config.from_ envvar('环境变量名')</code></p>
 <p><strong>环境变量的值为配置文件的绝对路径</strong>先在终端中执行如下命令：</p>
 <p><code>export PROJECT_ _SETTING= '~/ setting. py'</code></p>
@@ -313,7 +313,7 @@ if __name__ == '__mian__':
 <li>在服务器出现相关错误的时候可以直接将错误信息返回到前端进行展示</li>
 </ol>
 <h3 id="新版启动方式"><a class="header" href="#新版启动方式">新版启动方式</a></h3>
-<p><strong>开发服务器</strong>启动方式：
+<p><strong>开发服务器</strong>启动方式：<br />
 在 1.0 版本之后，Flask 调整了开发服务器的启动方式，由代码编写 app. run() 语句调整为<strong>命令启动 flask</strong></p>
 <p>终端启动：</p>
 <pre><code class="language-shell">export FLASK_APP=main # 设置启动的python文件
@@ -324,7 +324,7 @@ flask run # 在项目文件下执行
 <ul>
 <li><code>flask run -h 0.0.0.0 -p 8000</code> 绑定地址端口</li>
 <li><code>flask run --help</code> 获取帮助</li>
-<li>生产模式与开发模式的控制
+<li>生产模式与开发模式的控制<br />
 通过 <code>FLASK_ENV</code> 环境变量指明
 <ul>
 <li><code>export FLASK_ ENV=production</code> 运行在生产模式，未指明则默认为此方式</li>
@@ -342,7 +342,7 @@ flask run # 在项目文件下执行
 </li>
 <li>
 <p>在应用中的 <code>url_ map</code> 属性中保存着整个 Flask 应用的<strong>路由映射信息</strong>，可以通过读取这个属性获取<strong>路由信息</strong>。</p>
-<p><code>print(app.url_map)</code>
+<p><code>print(app.url_map)</code><br />
 如果想在程序中遍历路由信息，可以采用如下方式：</p>
 <pre><code class="language-python">for rule in app.url_map.iter_rules():
     # endpoint 视图函数的名字
@@ -375,11 +375,11 @@ def index():
 <p><strong>GET</strong>(自带)</p>
 </li>
 <li>
-<p><strong>OPTIONS</strong>(自带)  -&gt; 简化版的 GET 请求用于询问服务器接口信息的
+<p><strong>OPTIONS</strong>(自带) -&gt; 简化版的 GET 请求用于询问服务器接口信息的<br />
 比如接口允许的请求方式允许的</p>
 <blockquote>
-<p>CORS 跨域:
-www.meiduo.site -&gt; api.meiduo.site/users/1
+<p>CORS 跨域:<br />
+&lt;www.meiduo.site&gt; -&gt; api.meiduo.site/users/1<br />
 options api.meiduo.site/uses/1</p>
 </blockquote>
 </li>
@@ -453,14 +453,14 @@ def user_profile():
 <pre><code class="language-python">admin = Blueprint (&quot;admin&quot;,__ name__ , static_folder='static_admin')
 app.register_blueprint (admin, url_prefix='/admin' )
 </code></pre>
-<p>现在就可以使用 <code>/admin/static_admin/&lt;filename&gt;</code> 访问 <code>static_ admin</code> 目录下的静态文件了。
+<p>现在就可以使用 <code>/admin/static_admin/&lt;filename&gt;</code> 访问 <code>static_ admin</code> 目录下的静态文件了。<br />
 也可通过 <code>static_url_path</code> 改变访问路径</p>
 <pre><code class="language-python">admin = Blueprint(&quot;admin&quot;,__name__, static_folder='static_admin' ,static_url_path='/lib')
 app.register_blueprint(admin, url_prefix='/admin')
 </code></pre>
 <h2 id="7-处理请求"><a class="header" href="#7-处理请求">7. 处理请求</a></h2>
 <blockquote>
-<p>在视图编写中需要读取客户端请求携带的数据时，如何才能正确的<strong>取出数据</strong>呢?
+<p>在视图编写中需要读取客户端请求携带的数据时，如何才能正确的<strong>取出数据</strong>呢?<br />
 <strong>请求携带的数据</strong>可能出现在 HTTP 报文中的不同位置，需要<strong>使用不同的方法来获取参数</strong>。</p>
 </blockquote>
 

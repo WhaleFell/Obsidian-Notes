@@ -212,7 +212,7 @@ x = &lt;-ch // 从 ch 取出一个值给 x
 }
 </code></pre>
 <h3 id="检查-channels-是否关闭"><a class="header" href="#检查-channels-是否关闭">检查 Channels 是否关闭</a></h3>
-<p>接收 channels 的语句可以写成：第二个结果的一个 bool ，ture 表示成功从 channels 接收到值，false 表示 channels 已经被关闭并且里面没有值可接收。</p>
+<p>接收 channels 的语句可以写成：第二个结果的一个 bool ，true 表示成功从 channels 接收到值，false 表示 channels 已经被关闭并且里面没有值可接收。</p>
 <pre><code class="language-go">// 方法一
 x, ok := &lt;-channel
 if !ok {

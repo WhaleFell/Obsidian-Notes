@@ -223,7 +223,7 @@ loop.create_task(coro)
 <li>
 <p><code>task=asyncio.current_task(loop=None)</code></p>
 <blockquote>
-<p>返回在某一个指定的 loop 中，<strong>当前正在运行的任务</strong>，<strong>如果没有任务正在运行，则返回 None</strong>；
+<p>返回在某一个指定的 loop 中，<strong>当前正在运行的任务</strong>，<strong>如果没有任务正在运行，则返回 None</strong>；<br />
 如果 loop 为 None，<strong>则默认为在当前的事件循环中获取</strong>.</p>
 </blockquote>
 </li>
@@ -391,7 +391,7 @@ loop.run_until_complete(tasks)
 <p><strong>可变参数允许在调用参数的时候传入多个参数,这些参数在调用时被自动组装为一个 tuple</strong></p>
 <p><code>results = await asyncio.gather(*[tasks])</code></p>
 <p><code>results = await asyncio.gather(task1,task2,task3)</code></p>
-<p><strong>wait 返回 dones 是已经完成的任务，pending 是未完成的任务，都是集合类型</strong>：
+<p><strong>wait 返回 dones 是已经完成的任务，pending 是未完成的任务，都是集合类型</strong>：<br />
 <code>done, pending = yield from asyncio.wait(fs)</code></p>
 </li>
 </ol>
@@ -564,7 +564,7 @@ asyncio.run(main())
 <p>可等待对象有三种主要类型: <strong>协程</strong>, <strong>任务</strong> 和 <strong>Future</strong>.</p>
 </blockquote>
 <h3 id="协程-1"><a class="header" href="#协程-1">协程</a></h3>
-<p><strong>协程函数</strong>: 定义形式为 <code>async def</code> 的函数;
+<p><strong>协程函数</strong>: 定义形式为 <code>async def</code> 的函数;<br />
 <strong>协程对象</strong>: 调用 <strong>协程函数</strong> 所返回的对象。</p>
 <pre><code class="language-python">import asyncio
 
@@ -582,7 +582,7 @@ async def main():
 asyncio.run(main())
 </code></pre>
 <h3 id="任务"><a class="header" href="#任务">任务</a></h3>
-<p><strong>任务</strong>: 被用来 “并行的” 调度协程
+<p><strong>任务</strong>: 被用来 “并行的” 调度协程<br />
 当一个协程通过 <code>asyncio.create_task(coro,*,name=None)</code> 等函数被封装为一个任务，该协程会被 <strong>自动调度</strong> 执行:</p>
 <p>该任务会在 <code>get_running_loop()</code> 返回的循环中执行，如果当前线程没有在运行的循环则会引发 <strong>RuntimeError</strong>。</p>
 <p><code>task.add_done_callback(func)</code> 设置任务完成的回调函数</p>
@@ -624,15 +624,15 @@ if __name__ == &quot;__main__&quot;:
 <p><code>Future</code> 是一种特殊的 低层级 可等待对象，表示一个异步操作的 <strong>最终结果</strong>。</p>
 <p><strong>通常情况下没有必要在应用层级的代码中创建 ​</strong>​**<code>Future</code><strong>​</strong>​ 对象。**</p>
 <h2 id="运行-asyncio-协程"><a class="header" href="#运行-asyncio-协程">运行 Asyncio 协程</a></h2>
-<p><code>asyncio.run(coro, *, debug=False)</code>
-执行 <code>coroutine coro</code> 并返回结果。
+<p><code>asyncio.run(coro, *, debug=False)</code><br />
+执行 <code>coroutine coro</code> 并返回结果。<br />
 此函数会运行传入的协程，负责管理 asyncio 事件循环，终结异步生成器，并关闭线程池。</p>
 <p>当有其他 <code>asyncio</code> 事件循环在同一线程中运行时，此函数不能被调用。</p>
 <p>如果 debug 为 True，事件循环将以调试模式运行。</p>
 <p><strong>此函数总是会创建一个新的事件循环并在结束时关闭之。它应当被用作 asyncio 程序的主入口点，理想情况下应当只被调用一次。</strong></p>
 <h2 id="并发运行任务"><a class="header" href="#并发运行任务">并发运行任务</a></h2>
 <p><code>asyncio.gather(*aws, return_exceptions=False)</code></p>
-<p>并发运行 aws 序列中的可等待对象。
+<p>并发运行 aws 序列中的可等待对象。<br />
 如果 aws 中的某个可等待对象为协程，它将自动被作为一个任务 (asyncio.create_task) 调度。</p>
 <p>如果 <code>return_exceptions</code> 为 False (默认)，所引发的首个异常会立即传播给<strong>等待 gather() 的任务</strong>。aws 序列中的其他可等待对象 不会被取消 并将继续运行。</p>
 <p>如果 return_exceptions 为 True，异常会和成功的结果一样处理，并聚合至结果列表。</p>
@@ -682,8 +682,8 @@ asyncio.run(main())
 </code></pre>
 <h2 id="超时"><a class="header" href="#超时">超时</a></h2>
 <p>协程 (可等待对象) <code>asyncio.wait_for(aw, timeout)</code></p>
-<p>等待 aw 可等待对象 完成，指定 <code>timeout</code> 秒数后超时。
-如果 aw 是一个协程，它将自动被作为任务 ((asyncio.create_task)) 调度。
+<p>等待 aw 可等待对象 完成，指定 <code>timeout</code> 秒数后超时。<br />
+如果 aw 是一个协程，它将自动被作为任务 ((asyncio.create_task)) 调度。<br />
 <code>timeout</code> 可以为 None，也可以为 float 或 int 型数值表示的等待秒数。如果 timeout 为 None，则等待直到完成。</p>
 <p>如果发生超时，任务将取消并引发 asyncio.TimeoutError.</p>
 <p>要避免任务 取消，可以加上 shield()。</p>
@@ -728,7 +728,7 @@ async def main():
 if __name__ == &quot;__main__&quot;:
     asyncio.run(main())
 </code></pre>
-<p>(和男朋友出去喝奶茶了,未完待续,可能会继续写一些应用场景,或者和 Golang 的 Goruntine 进行对比)........
+<p>(和男朋友出去喝奶茶了,未完待续,可能会继续写一些应用场景,或者和 Golang 的 Goruntine 进行对比)……..<br />
 2022/8/24 18:34</p>
 
                     </main>

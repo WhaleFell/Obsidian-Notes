@@ -164,7 +164,7 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall</p>
 </ul>
 <p>Go 中的错误 <strong>也是一种类型</strong> 。错误用内置的 <code>error</code> 类型表示。就像其他类型的，如 <code>int</code>,<code>floate64</code>.错误值可以<strong>存储在变量中，从函数中返回</strong>，等等。</p>
 <h2 id="处理-os-模块异常"><a class="header" href="#处理-os-模块异常">处理 OS 模块异常</a></h2>
-<p>如果一个函数或方法返回一个错误，那么按照惯例，它必须是 <strong>函数返回的最后一个值</strong>。因此，<code>Open</code> 函数返回的值是最后一个值。
+<p>如果一个函数或方法返回一个错误，那么按照惯例，它必须是 <strong>函数返回的最后一个值</strong>。因此，<code>Open</code> 函数返回的值是最后一个值。<br />
 处理错误的惯用方法是将 <strong>返回的错误与 ​</strong>​**<code>nil</code><strong>​</strong>​ 进行比较** 。<code>nil</code> 值表示没有发生错误，而 <code>非nil</code> 值表示出现错误。在我们的例子中，我们检查错误是否为 <code>nil</code>。如果它不是 <code>nil</code> ,我们只需 <strong>打印错误并从主函数返回</strong>。</p>
 <pre><code class="language-go">package main
 import (
@@ -187,7 +187,7 @@ func main() {
 }
 </code></pre>
 <h2 id="错误类型表示"><a class="header" href="#错误类型表示">错误类型表示</a></h2>
-<p>G0 语言通过 <strong>内置的错误接口</strong> 提供了非常简单的错误处理机制。
+<p>G0 语言通过 <strong>内置的错误接口</strong> 提供了非常简单的错误处理机制。<br />
 <strong>定义错误类型</strong> 的构建。错误是一个带有以下定义的接口类型:</p>
 <pre><code class="language-go">type error interface {
     Error() string
@@ -329,7 +329,7 @@ func funB() { //外围函数
 }
 </code></pre>
 <h2 id="什么时候使用错误异常"><a class="header" href="#什么时候使用错误异常">什么时候使用错误/异常</a></h2>
-<p>什么情况下用错误表达，什么情况下用异常表达，就得有一套规则，否则很容易出现一切皆错误或一切皆异常的情况。
+<p>什么情况下用错误表达，什么情况下用异常表达，就得有一套规则，否则很容易出现一切皆错误或一切皆异常的情况。<br />
 以下给出异常处理的作用域（场景）:</p>
 <blockquote>
 <ol>

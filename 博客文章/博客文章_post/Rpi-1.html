@@ -161,10 +161,10 @@ banner_img: http://oss.whaleluo.top/blog/old/20210619154345.jpg</p>
 <h3 id="1-烧写镜像用到的软件-win32-disk-image"><a class="header" href="#1-烧写镜像用到的软件-win32-disk-image">1. 烧写镜像用到的软件： <strong>Win32 Disk Image</strong></a></h3>
 <p><img src="http://oss.whaleluo.top/blog/old/20210619152403.png-picsmall" alt="Zb6CEHnf17oqO5Q" /></p>
 <ul>
-<li>然后在 U 盘的根目录建立一个空白的 <strong>ssh 文件  方便 ssh 远程连接</strong>
+<li>然后在 U 盘的根目录建立一个空白的 <strong>ssh 文件 方便 ssh 远程连接</strong><br />
 <img src="http://oss.whaleluo.top/blog/old/sasw.png-picsmall" alt="FV5qpvWz7LtsOgi" /></li>
-<li>用 <strong>Windows PowerShell</strong> 连接树莓派 ssh
-<code>shift+右键</code> 呼出<strong>Windows PowerShell</strong>
+<li>用 <strong>Windows PowerShell</strong> 连接树莓派 ssh<br />
+<code>shift+右键</code> 呼出<strong>Windows PowerShell</strong><br />
 <strong>完整连接语法</strong>:</li>
 </ul>
 <pre><code class="language-shell">ssh -p 端口号 用户名@主机地址
@@ -173,21 +173,21 @@ banner_img: http://oss.whaleluo.top/blog/old/20210619154345.jpg</p>
 <p>树莓派默认的用户名 <strong>pi</strong> 密码 <strong>raspberry</strong><img src="http://oss.whaleluo.top/blog/old/20210619152448.png-picsmall" alt="QLA74lscbwzRWY2" /></p>
 </blockquote>
 <ul>
-<li>树莓派扩展 TF 卡分区:
+<li>树莓派扩展 TF 卡分区:<br />
 sudo raspi-config --&gt; Advanced options --&gt;Expand Filesystem, 确认重启</li>
 </ul>
 <h3 id="2-启动树莓派-hdmi-功能"><a class="header" href="#2-启动树莓派-hdmi-功能">2. 启动树莓派 HDMI 功能</a></h3>
 <ul>
 <li>
-<p>编辑 <code>config.txt</code> 文件，修改以下参数:
+<p>编辑 <code>config.txt</code> 文件，修改以下参数:<br />
 sudo nano /boot/config.txt</p>
 <ul>
-<li>把下面#注释符号去掉
-hdmi_force_hotplug=1  #启用HDMI热插拔功能
-config_hdmi_boost=4    #启用加强HDMI信号</li>
+<li>把下面#注释符号去掉<br />
+hdmi_force_hotplug=1 #启用HDMI热插拔功能<br />
+config_hdmi_boost=4 #启用加强HDMI信号</li>
 </ul>
 <blockquote>
-<p>不出意外的话应该可以接上，但是我的没有声音输出诶
+<p>不出意外的话应该可以接上，但是我的没有声音输出诶<br />
 注：如果还是不能的话，找到#hdmi_group=1 这句话，把前面的#注释符号去掉，把数字改成 2 强行指定显示器类型：1 是连接老式电视，2 代表连接新电视。</p>
 </blockquote>
 </li>
@@ -223,9 +223,9 @@ sudo nano /etc/ssh/sshd_config
 sudo apt-get install ttf-wqy-zenhei ttf-wqy-microhei
 </code></pre>
 <ul>
-<li>设置终端中文显示: <code>sudo raspi-config</code>:
-选择 change_locale，在 Default locale for the system environment: 中选择 zh_CN.UTF-8。
-往下翻一会儿直到找到 zh_CN UTF-8 把光标移动到前面，然后按下空格键打上 *
+<li>设置终端中文显示: <code>sudo raspi-config</code>:<br />
+选择 change_locale，在 Default locale for the system environment: 中选择 zh_CN.UTF-8。<br />
+往下翻一会儿直到找到 zh_CN UTF-8 把光标移动到前面，然后按下空格键打上 *<br />
 <img src="http://oss.whaleluo.top/blog/old/20210619152513.png-picsmall" alt="3hQeD8k9L1mgTZc" /></li>
 <li>改变键盘布局: <code>sudo dpkg-reconfigure keyboard-configuration</code></li>
 </ul>
@@ -235,7 +235,7 @@ sudo apt-get install ttf-wqy-zenhei ttf-wqy-microhei
 </blockquote>
 <ul>
 <li>安装<strong>Tightvncserver</strong>: <code>sudo apt-get install tightvncserver</code></li>
-<li>安装好之后设置一个<strong>VNC 密码</strong>:  vncpasswd</li>
+<li>安装好之后设置一个<strong>VNC 密码</strong>: vncpasswd</li>
 </ul>
 <blockquote>
 <p>注: 先输入操作密码两次，然后会询问是否设置一个查看 (view-only) 密码，按自己喜欢，一般没必要。</p>
@@ -244,7 +244,7 @@ sudo apt-get install ttf-wqy-zenhei ttf-wqy-microhei
 <li>设置<strong>开机自启动</strong> :</li>
 </ul>
 <blockquote>
-<p>设置<strong>开机启动</strong>，需要在 <strong>/etc/init.d/</strong> 中创建一个文件。例如<strong>tightvncserver</strong>:  (启动脚本的名称，有和程序名一致的习惯)</p>
+<p>设置<strong>开机启动</strong>，需要在 <strong>/etc/init.d/</strong> 中创建一个文件。例如<strong>tightvncserver</strong>: (启动脚本的名称，有和程序名一致的习惯)</p>
 </blockquote>
 <pre><code class="language-sh">sudo nano /etc/init.d/tightvncserver
 # 内容如下:
@@ -298,12 +298,12 @@ sudo service tightvncserver start/stop #关闭/开启服务
 sudo service tightvncserver status #查看服务运行状态
 </code></pre>
 <blockquote>
-<p>附:   vnc 客户端下载
+<p>附: vnc 客户端下载<br />
 <a href="https://www.realvnc.com/en/connect/download/viewer/">vnc官网</a></p>
 </blockquote>
-<p>连接成功惹~:
-<img src="http://oss.whaleluo.top/blog/old/20210619152521.png-picsmall" alt="" />
-<img src="http://oss.whaleluo.top/blog/old/20210619152531.png-picsmall" alt="" />
+<p>连接成功惹~:<br />
+<img src="http://oss.whaleluo.top/blog/old/20210619152521.png-picsmall" alt="" /><br />
+<img src="http://oss.whaleluo.top/blog/old/20210619152531.png-picsmall" alt="" /><br />
 编辑 ./vnc/xstartup 配置文件使其能与 windown 共享剪贴板</p>
 <pre><code class="language-shell">sudo nano .vnc/xstartup
 
@@ -339,7 +339,7 @@ git clone https://github.com.cnpmjs.org/kanaka/noVNC #加速地址
 </code></pre>
 <p><img src="http://oss.whaleluo.top/blog/old/20210619152538.png-picsmall" alt="" /></p>
 <ul>
-<li>尝试访问: <a href="http://raspiberry:6080">http://raspiberry:6080</a> 可
+<li>尝试访问: <a href="http://raspiberry:6080">http://raspiberry:6080</a> 可<br />
 <img src="http://oss.whaleluo.top/blog/old/20210619152542.png-picsmall" alt="" /></li>
 <li>一些<strong>高级设置</strong> :</li>
 </ul>
@@ -361,7 +361,7 @@ su pi -c &quot;/home/pi/noVNC/utils/launch.sh --vnc localhost:5901&quot; &amp;
 sudo apt-get install cockpit
 </code></pre>
 <blockquote>
-<p>安装的依赖有  <strong>一丢丢多</strong></p>
+<p>安装的依赖有 <strong>一丢丢多</strong></p>
 </blockquote>
 <ul>
 <li>默认是用 <code>https</code> 访问，需要修改配置文件使其能 <code>http</code> 访问</li>

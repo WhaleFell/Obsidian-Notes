@@ -174,8 +174,8 @@ var rwc io.ReadWriteCloser
 rwc = os.Stdout // OK: *os.File has Read, Write, Close methods
 rwc = new(bytes.Buffer) // compile error: *bytes.Buffer lacks Close method
 </code></pre>
-<p><img src="http://oss.whaleluo.top/blog/Golang/interface-2.png-picsmall" alt="" />
-<img src="http://oss.whaleluo.top/blog/Golang/interface-4.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/interface-2.png-picsmall" alt="" /><br />
+<img src="http://oss.whaleluo.top/blog/Golang/interface-4.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/interface-3.png-picsmall" alt="" /></p>
 <blockquote>
 <p>Go 语言中接口和类型的实现方式是 <strong>非侵入式</strong> 的,接口定义的方法没有具体代码.</p>
@@ -196,31 +196,31 @@ rwc = new(bytes.Buffer) // compile error: *bytes.Buffer lacks Close method
 </ol>
 <p>鸭子类型:</p>
 <blockquote>
-<p>待补充...</p>
+<p>待补充…</p>
 </blockquote>
 <h2 id="空接口"><a class="header" href="#空接口">空接口</a></h2>
-<p><code>interface{}</code> 不包含任何的方法,所以<strong>任何类型都是空接口的实现类</strong>,因此空接口可以储存任何类型的数值.
+<p><code>interface{}</code> 不包含任何的方法,所以<strong>任何类型都是空接口的实现类</strong>,因此空接口可以储存任何类型的数值.<br />
 <img src="http://oss.whaleluo.top/blog/Golang/interface-7.png-picsmall" alt="" /></p>
 <h3 id="空接口定义任意类型的数据"><a class="header" href="#空接口定义任意类型的数据">空接口定义任意类型的数据</a></h3>
 <p><img src="http://oss.whaleluo.top/blog/Golang/interface-6.png-picsmall" alt="" /></p>
 <h3 id="空接口作为函数的参数"><a class="header" href="#空接口作为函数的参数">空接口作为函数的参数</a></h3>
 <p>表示函数的参数可以是任意类型,相当于 Python 的 <code>typing.Any</code></p>
-<p><img src="http://oss.whaleluo.top/blog/Golang/interface-8.png-picsmall" alt="" />
-<code>fmt</code> 包就是应用了空接口,可以传入任何参数.
+<p><img src="http://oss.whaleluo.top/blog/Golang/interface-8.png-picsmall" alt="" /><br />
+<code>fmt</code> 包就是应用了空接口,可以传入任何参数.<br />
 <code>fmt</code> 包下的 <code>Print</code> 系列函数:</p>
 <pre><code class="language-go">func Print(a ...interface{}) (n int,err error)
 func Printf(format string,a ...interface{}) (n int,err error)
 func Println(a ...interface{}) (n int,err error)
 </code></pre>
 <h3 id="复合数据结构使用空接口"><a class="header" href="#复合数据结构使用空接口">复合数据结构使用空接口</a></h3>
-<p><img src="http://oss.whaleluo.top/blog/Golang/interface-9.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/interface-9.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/interface-10.png-picsmall" alt="" /></p>
 <h2 id="接口嵌套"><a class="header" href="#接口嵌套">接口嵌套</a></h2>
 <p>接口允许多继承.</p>
 <p><img src="http://oss.whaleluo.top/blog/Golang/interface-11.png-picsmall" alt="" /></p>
 <p>如果 Cat 想实现接口 C,不仅要实现接口 C 自己的方法,还要实现接口 C 继承的接口 A B 中的方法.</p>
-<p><img src="http://oss.whaleluo.top/blog/Golang/interface-12.png-picsmall" alt="" />
-<img src="http://oss.whaleluo.top/blog/Golang/interface-13.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/interface-12.png-picsmall" alt="" /><br />
+<img src="http://oss.whaleluo.top/blog/Golang/interface-13.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/insterface-14.png-picsmall" alt="" /></p>
 <h2 id="接口断言"><a class="header" href="#接口断言">接口断言</a></h2>
 <p>前面说过，因为空接口 <code>interface</code> 没有定义任何函数，因此 <code>Go</code> 中 <strong>所有类型都实现了空接口</strong>。当一个函数的形参是 <code>interface{}</code> ，那么在函数中，需要对形参 <strong>进行断言</strong>，从而 <strong>得到它的真实类型</strong>。</p>
@@ -240,7 +240,7 @@ w = new(ByteCounter)
 rw = w.(io.ReadWriter) // panic: *ByteCounter has no Read method
 </code></pre>
 <p>如果一个类型满足下面的这个接口，然后 <code>WriteString(s)</code> 方法就必须和 <code>Write([]byte(s))</code> 有相同的效果。</p>
-<p>Write 方法需要传入一个 byte 切片而我们希望写入的值是一个字符串，所以我们需要使用 <code>[]byte(...)</code> 进行转换。<strong>这个转换分配内存并且做一个拷贝</strong>，但是这个拷贝在转换后几乎立马就被丢弃掉，会影响一丢丢性能。</p>
+<p>Write 方法需要传入一个 byte 切片而我们希望写入的值是一个字符串，所以我们需要使用 <code>[]byte(…)</code> 进行转换。<strong>这个转换分配内存并且做一个拷贝</strong>，但是这个拷贝在转换后几乎立马就被丢弃掉，会影响一丢丢性能。</p>
 <p>我们知道在这个程序中的 w 变量持有的动态类型也有一个<strong>允许字符串高效写入</strong>的 <code>WriteString</code> 方法；这个方法会避免去分配一个临时的拷贝。</p>
 <p>许多满足 io.Writer 接口的重要类型同时也有 WriteString 方法，包括 <code>*bytes.Buffer</code>，<code>*os.File</code> 和 <code>*bufio.Writer</code>。</p>
 <p>我们不能对任意实现 <code>io.Writer</code> 接口类型的变量 w，假设它也拥有 <code>WriteString</code> 方法。但是我们可以定义一个只有这个方法的新接口并且使用类型断言来检测是否 w 的动态类型满足这个新接口。</p>
@@ -276,7 +276,7 @@ if f, ok := w.(*os.File); ok {
     // ...use w...
 }
 </code></pre>
-<p>方法二：使用 <code>switch...case...</code> 语句，断言类型分支。</p>
+<p>方法二：使用 <code>switch…case…</code> 语句，断言类型分支。</p>
 <p>一个类型分支隐式的创建了一个词法块，因此新变量 x 的定义不会和外面块中的 x 变量冲突。每一个 case 也会隐式的创建一个单独的词法块。</p>
 <pre><code class="language-go">switch x := x.(type) {
     case nil:       // ...

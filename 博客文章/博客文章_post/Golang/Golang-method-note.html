@@ -161,11 +161,11 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall</p>
 <p>方法只是一个<strong>函数</strong>，它带有一个<strong>特殊的接收器类型</strong>，它是在 <code>func</code> 关键字和方法名之间编写的。接收器可以是 <code>struct</code> 类型或非 <code>struct</code> 类型。<strong>接收方可以在方法内部访问</strong>。</p>
 <h2 id="对比函数"><a class="header" href="#对比函数">对比函数</a></h2>
 <ul>
-<li>意义
-方法：某个类别的行为功能，需要<strong>指定的接受者调用</strong>.
+<li>意义<br />
+方法：某个类别的行为功能，需要<strong>指定的接受者调用</strong>.<br />
 函数：一段<strong>独立功能</strong>的代码，可以直接调用.</li>
-<li>语法
-方法：方法名可以相同，只要接受者不同.
+<li>语法<br />
+方法：方法名可以相同，只要接受者不同.<br />
 函数：命名不能冲突.</li>
 </ul>
 <blockquote>
@@ -192,7 +192,7 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall</p>
 <pre><code class="language-go">type P *int
 func (P) f() { /* ... */ } // compile error: invalid receiver type
 </code></pre>
-<p><img src="http://oss.whaleluo.top/blog/Golang/method-2.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/method-2.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/method-3.png-picsmall" alt="" /></p>
 <h3 id="注意点"><a class="header" href="#注意点">注意点</a></h3>
 <ol>
@@ -215,9 +215,9 @@ func (c *Counter) Increment() { c.n++ }
 func (c *Counter) Reset() { c.n = 0 }
 </code></pre>
 <h3 id="示例"><a class="header" href="#示例">示例</a></h3>
-<p><code>method</code> 是可以继承的，如果匿名字段实现了一个 <code>method</code>,那么包含这个匿名字段的 <code>struct</code> 也能调用该 <code>method</code>
-<img src="http://oss.whaleluo.top/blog/Golang/method-4.png-picsmall" alt="" />
-<img src="http://oss.whaleluo.top/blog/Golang/method-5.png-picsmall" alt="" />
+<p><code>method</code> 是可以继承的，如果匿名字段实现了一个 <code>method</code>,那么包含这个匿名字段的 <code>struct</code> 也能调用该 <code>method</code><br />
+<img src="http://oss.whaleluo.top/blog/Golang/method-4.png-picsmall" alt="" /><br />
+<img src="http://oss.whaleluo.top/blog/Golang/method-5.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/method-6.png-picsmall" alt="" /></p>
 
                     </main>

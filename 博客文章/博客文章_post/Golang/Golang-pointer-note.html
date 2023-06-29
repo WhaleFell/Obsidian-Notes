@@ -155,27 +155,27 @@ thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall</p>
 <hr />
 <h1 id="go-指针"><a class="header" href="#go-指针">Go 指针</a></h1>
-<p><code>*指针类型</code>: 取指针地址对应的真实值. | 定义一个指针 <code>*p1</code>
-<code>&amp;值</code>: 取值的内存地址.
+<p><code>*指针类型</code>: 取指针地址对应的真实值. | 定义一个指针 <code>*p1</code><br />
+<code>&amp;值</code>: 取值的内存地址.<br />
 <code>var p *int</code>: 定义一个指向 int 类型的指针</p>
 <h2 id="指针初步"><a class="header" href="#指针初步">指针初步</a></h2>
-<p><img src="http://oss.whaleluo.top/blog/Golang/pointer-1.png-picsmall" alt="" />
-<img src="http://oss.whaleluo.top/blog/Golang/pointer-2.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/pointer-1.png-picsmall" alt="" /><br />
+<img src="http://oss.whaleluo.top/blog/Golang/pointer-2.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/pointer-3.png-picsmall" alt="" /></p>
 <hr />
 <p><img src="http://oss.whaleluo.top/blog/Golang/pointer-7.png-picsmall" alt="" /></p>
 <h2 id="数组指针"><a class="header" href="#数组指针">数组指针</a></h2>
-<p>&quot; 首先是一个指针,一个数组的地址.&quot;
-<img src="http://oss.whaleluo.top/blog/Golang/pointer-4.png-picsmall" alt="" />
+<p>&quot; 首先是一个指针,一个数组的地址.&quot;<br />
+<img src="http://oss.whaleluo.top/blog/Golang/pointer-4.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/pointer-5.png-picsmall" alt="" /></p>
 <h2 id="指针数组"><a class="header" href="#指针数组">指针数组</a></h2>
-<p>&quot; 首先是一个数组,存储的数据类型是指针.&quot;
+<p>&quot; 首先是一个数组,存储的数据类型是指针.&quot;<br />
 <img src="http://oss.whaleluo.top/blog/Golang/pointer-6.png-picsmall" alt="" /></p>
 <h2 id="函数指针"><a class="header" href="#函数指针">函数指针</a></h2>
-<p>&quot; 一个指针,指向一个函数的指针.&quot;
+<p>&quot; 一个指针,指向一个函数的指针.&quot;<br />
 <img src="http://oss.whaleluo.top/blog/Golang/pointer-8.png-picsmall" alt="" /></p>
 <h2 id="指针函数"><a class="header" href="#指针函数">指针函数</a></h2>
-<p>&quot; 一个函数,该函数的返回值是一个指针.&quot;
+<p>&quot; 一个函数,该函数的返回值是一个指针.&quot;<br />
 <img src="http://oss.whaleluo.top/blog/Golang/pointer-9.png-picsmall" alt="" /></p>
 <h3 id="普通函数的执行分析"><a class="header" href="#普通函数的执行分析">普通函数的执行分析</a></h3>
 <p><img src="http://oss.whaleluo.top/blog/Golang/pointer-10.png-picsmall" alt="" /></p>
@@ -183,13 +183,13 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall</p>
 <p><img src="http://oss.whaleluo.top/blog/Golang/pointer-11.png-picsmall" alt="" /></p>
 <h2 id="指针作为参数"><a class="header" href="#指针作为参数">指针作为参数</a></h2>
 <h3 id="普通函数的值传递"><a class="header" href="#普通函数的值传递">普通函数的值传递</a></h3>
-<p><img src="http://oss.whaleluo.top/blog/Golang/pointer-12.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/pointer-12.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/pointer-13.png-picsmall" alt="" /></p>
 <h3 id="指针作为参数时的引用传递"><a class="header" href="#指针作为参数时的引用传递">指针作为参数时的引用传递</a></h3>
-<p><img src="http://oss.whaleluo.top/blog/Golang/pointer-14.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/pointer-14.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/pointer-15.png-picsmall" alt="" /></p>
 <h3 id="应用"><a class="header" href="#应用">应用</a></h3>
-<p><img src="http://oss.whaleluo.top/blog/Golang/pointer-16.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/pointer-16.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/pointer-17.png-picsmall" alt="" /></p>
 <blockquote>
 <p>切片本来就是 <strong>引用类型</strong>,<strong>不必传递指针.</strong></p>
@@ -213,7 +213,7 @@ func test(slice []int) {
  fmt.Printf(&quot;离开test()数值:%v 地址:%p\n&quot;, slice, slice)
 }
 </code></pre>
-<p>output:
+<p>output:<br />
 切片地址都是一样的,切片发生的是引用传递</p>
 <pre><code class="language-txt">Hello, World!
 main()数值:[1 2 3 4] 地址:0xc000098000

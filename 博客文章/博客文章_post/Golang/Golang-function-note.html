@@ -170,18 +170,18 @@ fmt.Println(hypot(3,4)) // &quot;5&quot;
 <p>Go 使用控制流机制（如 if 和 return）处理异常，这使得编码人员能更多的关注错误处理。</p>
 <p><img src="http://oss.whaleluo.top/blog/Golang/func-2.png-picsmall" alt="" /></p>
 <h2 id="函数调用过程"><a class="header" href="#函数调用过程">函数调用过程</a></h2>
-<p><img src="http://oss.whaleluo.top/blog/Golang/func-1.png-picsmall" alt="" />
-<img src="http://oss.whaleluo.top/blog/Golang/func-3.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/func-1.png-picsmall" alt="" /><br />
+<img src="http://oss.whaleluo.top/blog/Golang/func-3.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/func-4.png-picsmall" alt="" /></p>
 <h2 id="函数的参数使用"><a class="header" href="#函数的参数使用">函数的参数使用</a></h2>
 <p><img src="http://oss.whaleluo.top/blog/Golang/func-5.png-picsmall" alt="" /></p>
 <h2 id="实参和形参"><a class="header" href="#实参和形参">实参和形参</a></h2>
 <p><img src="http://oss.whaleluo.top/blog/Golang/func-6.png-picsmall" alt="" /></p>
 <h2 id="函数传参"><a class="header" href="#函数传参">函数传参</a></h2>
-<p><img src="http://oss.whaleluo.top/blog/Golang/func-7.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/func-7.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/func-8.png-picsmall" alt="" /></p>
 <h2 id="可变参数"><a class="header" href="#可变参数">可变参数</a></h2>
-<p>参数数量可变的函数称为为可变参数函数。需要在参数列表的最后一个参数类型之前加上省略符号“...”，这表示该函数会接收任意数量的该类型参数。</p>
+<p>参数数量可变的函数称为为可变参数函数。需要在参数列表的最后一个参数类型之前加上省略符号“…”，这表示该函数会接收任意数量的该类型参数。</p>
 <pre><code class="language-go">func sum(vals...int) int
 </code></pre>
 <p>在函数体中,vals 被看作是类型为 []int 的切片。sum 可以接收任意数量的 int 型参数：</p>
@@ -189,7 +189,7 @@ fmt.Println(hypot(3,4)) // &quot;5&quot;
 <pre><code class="language-go">values := []int{1, 2, 3, 4}
 fmt.Println(sum(values...)) // &quot;10&quot;
 </code></pre>
-<p><img src="http://oss.whaleluo.top/blog/Golang/func-9.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/func-9.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/func-10.png-picsmall" alt="" /></p>
 <h2 id="参数传递"><a class="header" href="#参数传递">参数传递</a></h2>
 <p>实参通过值的方式传递，因此函数的 <strong>形参是实参的拷贝</strong> 。对形参进行修改不会影响实参。但是，如果实参包括 <strong>引用类型</strong>，如指针，slice(切片)、map、function、channel 等类型，实参可能会由于函数的间接引用被修改。</p>
@@ -201,7 +201,7 @@ fmt.Println(sum(values...)) // &quot;10&quot;
 <h2 id="函数的返回值"><a class="header" href="#函数的返回值">函数的返回值</a></h2>
 <p><img src="http://oss.whaleluo.top/blog/Golang/func-17.png-picsmall" alt="" /></p>
 <hr />
-<p><img src="http://oss.whaleluo.top/blog/Golang/func-14.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/func-14.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/func-15.png-picsmall" alt="" /></p>
 <blockquote>
 <p>在定义参数返回值的时候已经初始化了.</p>
@@ -210,7 +210,7 @@ fmt.Println(sum(values...)) // &quot;10&quot;
 <p>如果一个函数将所有的返回值都显示的变量名，那么该函数的 return 语句可以省略操作数。这称之为 bare return。</p>
 <p><img src="http://oss.whaleluo.top/blog/Golang/func-16.png-picsmall" alt="" /></p>
 <h3 id="return-语句"><a class="header" href="#return-语句">Return 语句</a></h3>
-<p><img src="http://oss.whaleluo.top/blog/Golang/func-18.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/func-18.png-picsmall" alt="" /><br />
 <code>return</code> 语句：词义 &quot; 返回 &quot;</p>
 <ol>
 <li>一个函数有返回值，那么使用 return 将返回值返回给调用处</li>
@@ -237,10 +237,10 @@ var s float64 = 0.12  // 全局变量定义正确方式
 </code></pre>
 </blockquote>
 <h2 id="递归函数"><a class="header" href="#递归函数">递归函数</a></h2>
-<p><img src="http://oss.whaleluo.top/blog/Golang/func-21.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/func-21.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/func-22.png-picsmall" alt="" /></p>
 <p>递归函数实现 fibonacci 数列 (斐波那契数列)</p>
-<p><img src="http://oss.whaleluo.top/blog/Golang/func-23.png-picsmall" alt="斐波那契数列" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/func-23.png-picsmall" alt="斐波那契数列" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/func-24.png-picsmall" alt="" /></p>
 <h2 id="defer延迟函数"><a class="header" href="#defer延迟函数">defer(延迟函数)</a></h2>
 <p><strong>defer 的词义:&quot; 延迟&quot;,&quot; 推迟&quot;</strong>,在 go 语言中,使用 <code>defer</code> 关键字来延迟一个函数或者方法的执行.</p>
@@ -248,9 +248,9 @@ var s float64 = 0.12  // 全局变量定义正确方式
 <p>defer 语句经常被用于处理成对的操作，如打开、关闭、连接、断开连接、加锁、释放锁。释放资源的 defer 应该直接跟在请求资源的语句后。</p>
 <ol>
 <li>deferi 函数或方法：<strong>一个函数或方法的执行被延迟了。</strong></li>
-<li>defer 的用法:
-对象,close(),临时文件的删除.
-文件.open()
+<li>defer 的用法:<br />
+对象,close(),临时文件的删除.<br />
+文件.open()<br />
 defer close() 关闭文件</li>
 </ol>
 <pre><code class="language-go">package ioutil
@@ -346,10 +346,10 @@ panic(bailout{})
 
 </code></pre>
 <h3 id="栈的结构-先进后出后进先出"><a class="header" href="#栈的结构-先进后出后进先出">栈的结构 (先进后出!后进先出!)</a></h3>
-<p><img src="http://oss.whaleluo.top/blog/Golang/func-25.png-picsmall" alt="" />
-当一个函数有多个延迟调用时，它们被添加到一
+<p><img src="http://oss.whaleluo.top/blog/Golang/func-25.png-picsmall" alt="" /><br />
+当一个函数有多个延迟调用时，它们被添加到一<br />
 个堆栈中，并 Last In First Out(LIFO) <strong>先进后出!后进先出!</strong> 的顺序中执行。</p>
-<p><img src="http://oss.whaleluo.top/blog/Golang/func-26.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/func-26.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/func-27.png-picsmall" alt="" /></p>
 <h3 id="defer-注意点"><a class="header" href="#defer-注意点">Defer 注意点</a></h3>
 <ol>
@@ -369,7 +369,7 @@ fmt.Println(strings.Map(add1, &quot;HAL-9000&quot;)) // &quot;IBM.:111&quot;
 fmt.Println(strings.Map(add1, &quot;VMS&quot;)) // &quot;WNT&quot;
 fmt.Println(strings.Map(add1, &quot;Admix&quot;)) // &quot;Benjy&quot;
 </code></pre>
-<p>函数的类型：
+<p>函数的类型：<br />
 <code>func(参数列表的数据类型)(返回值列表的数据类型)</code></p>
 <p><img src="http://oss.whaleluo.top/blog/Golang/func-31.png-picsmall" alt="" /></p>
 <h3 id="基本类型回顾"><a class="header" href="#基本类型回顾">基本类型回顾</a></h3>
@@ -383,7 +383,7 @@ fmt.Println(strings.Map(add1, &quot;Admix&quot;)) // &quot;Benjy&quot;
 </blockquote>
 <p><img src="http://oss.whaleluo.top/blog/Golang/func-32.png-picsmall" alt="" /></p>
 <h2 id="匿名函数"><a class="header" href="#匿名函数">匿名函数</a></h2>
-<p>拥有函数名的函数只能在包级语法块中被声明，通过函数字面量（function literal），，在任何表达式中表示一个函数值。函数值字面量是一种表达式，它的值被称为匿名函数
+<p>拥有函数名的函数只能在包级语法块中被声明，通过函数字面量（function literal），，在任何表达式中表示一个函数值。函数值字面量是一种表达式，它的值被称为匿名函数<br />
 （anonymous function）。</p>
 <pre><code class="language-go">strings.Map(func(r rune) rune { return r + 1 }, &quot;HAL-9000&quot;)
 </code></pre>
@@ -411,14 +411,14 @@ func main() {
 </code></pre>
 <p><img src="http://oss.whaleluo.top/blog/Golang/func-36.png-picsmall" alt="" /></p>
 <hr />
-<p><img src="http://oss.whaleluo.top/blog/Golang/func-34.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/func-34.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/func-35.png-picsmall" alt="" /></p>
 <h2 id="回调函数"><a class="header" href="#回调函数">回调函数</a></h2>
 <p><img src="http://oss.whaleluo.top/blog/Golang/func-41.png-picsmall" alt="" /></p>
 <hr />
-<p><img src="http://oss.whaleluo.top/blog/Golang/func-37.png-picsmall" alt="" />
-<img src="http://oss.whaleluo.top/blog/Golang/func-38.png-picsmall" alt="" />
-<img src="http://oss.whaleluo.top/blog/Golang/func-39.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/func-37.png-picsmall" alt="" /><br />
+<img src="http://oss.whaleluo.top/blog/Golang/func-38.png-picsmall" alt="" /><br />
+<img src="http://oss.whaleluo.top/blog/Golang/func-39.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/func-40.png-picsmall" alt="" /></p>
 <h2 id="闭包"><a class="header" href="#闭包">闭包</a></h2>
 <h3 id="go-语言支持函数式编程"><a class="header" href="#go-语言支持函数式编程">Go 语言支持函数式编程</a></h3>
@@ -438,8 +438,8 @@ fmt.Println(strings.Map(func(r rune) rune { return r + 1 }, &quot;HAL-9000&quot;
 <p>局部变量的 <strong>生命周期</strong> 会发生改变，正常的局部变量随着函数调用而创建，随着函数的结束而销毁</p>
 <p>但是闭包结构中的外层函数的局部变量并不会随着外层函数的结束销毁，因为内层函数还要<strong>继续使用</strong>。</p>
 <hr />
-<p><img src="http://oss.whaleluo.top/blog/Golang/func-43.png-picsmall" alt="" />
-<img src="http://oss.whaleluo.top/blog/Golang/func-42.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/Golang/func-43.png-picsmall" alt="" /><br />
+<img src="http://oss.whaleluo.top/blog/Golang/func-42.png-picsmall" alt="" /><br />
 <img src="http://oss.whaleluo.top/blog/Golang/func-44.png-picsmall" alt="" /></p>
 <h2 id="捕获迭代变量"><a class="header" href="#捕获迭代变量">捕获迭代变量</a></h2>
 <blockquote>

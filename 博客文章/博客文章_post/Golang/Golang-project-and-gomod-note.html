@@ -165,7 +165,7 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall</p>
 <h2 id="环境变量"><a class="header" href="#环境变量">环境变量</a></h2>
 <ul>
 <li>GOROOT：安装的 <code>go</code> 路径</li>
-<li>GOPATA：项目的根目录 <code>go-test</code>
+<li>GOPATA：项目的根目录 <code>go-test</code><br />
 细心的人注意到，这里有一个 <code>Project GOPATH</code>，还有一个 <code>Global GOPATH</code>，把你的项目配置在 <code>Project GOPATH</code> 里，每个项目都不一样，创建另一个项目时这个路径要配置成新项目的。</li>
 </ul>
 <p><code>Global GOPATH</code> 可以弄一个公共项目，以后就把第三方的包直接装到这里，就可以<strong>自动</strong>在你的项目里引用了。</p>
@@ -244,12 +244,12 @@ golang.org/x/text v0.3.0 = &gt; github.com/golang/text v0.3.0
 <pre><code class="language-shell">&lt;module&gt; &lt;version&gt;/go.mod &lt;hash&gt;
 </code></pre>
 <h3 id="go-mod-命令使用"><a class="header" href="#go-mod-命令使用">Go mod 命令使用</a></h3>
-<p><code>go mod init</code>：初始化 go mod， 生成 go.mod 文件，后可接参数指定 module 名，上面已经演示过。
-<code>go mod download</code>：手动触发下载依赖包到本地 cache（默认为 $GOPATH/pkg/mod 目录）
-<code>go mod graph</code>：打印项目的模块依赖结构
-<code>go mod tidy</code> ：添加缺少的包，且删除无用的包
-<code>go mod verify</code> ：校验模块是否被篡改过
-<code>go mod why</code>：查看为什么需要依赖
+<p><code>go mod init</code>：初始化 go mod， 生成 go.mod 文件，后可接参数指定 module 名，上面已经演示过。<br />
+<code>go mod download</code>：手动触发下载依赖包到本地 cache（默认为 $GOPATH/pkg/mod 目录）<br />
+<code>go mod graph</code>：打印项目的模块依赖结构<br />
+<code>go mod tidy</code> ：添加缺少的包，且删除无用的包<br />
+<code>go mod verify</code> ：校验模块是否被篡改过<br />
+<code>go mod why</code>：查看为什么需要依赖<br />
 <code>go mod vendor</code> ：导出项目所有依赖到 vendor 下</p>
 <p>写入 go.mod 有两种方法：</p>
 <ul>

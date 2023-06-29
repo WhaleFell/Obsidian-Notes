@@ -198,8 +198,8 @@ while i &lt; len(l):
     print(l[i])
     i += 1
 </code></pre>
-<p>上述<strong>迭代取值的方式</strong>只适用于<strong>有索引</strong>的数据类型：<strong>列表、字符串、元组.</strong>
-为了解决基于索引迭代器取值的局限性
+<p>上述<strong>迭代取值的方式</strong>只适用于<strong>有索引</strong>的数据类型：<strong>列表、字符串、元组.</strong><br />
+为了解决基于索引迭代器取值的局限性<br />
 python 必须提供一种能够不<strong>依赖于索引的取值方式</strong>，这就是<strong>迭代器</strong>.</p>
 <h3 id="迭代器详解"><a class="header" href="#迭代器详解">迭代器详解</a></h3>
 <p>但凡内置有 <code>__iter__()</code> 方法的对象都称之为<strong>可迭代的对象</strong>:</p>
@@ -223,8 +223,8 @@ with open('a.txt',mode='w') as f:
     pass
 </code></pre>
 <p><strong>迭代器对象</strong>:</p>
-<p>内置有 <code>__next__</code> 方法并且内置有 <code>__iter__</code> 方法的对象
-迭代器对象 <code>__next()__</code>：得到迭代器的下一个值.
+<p>内置有 <code>__next__</code> 方法并且内置有 <code>__iter__</code> 方法的对象<br />
+迭代器对象 <code>__next()__</code>：得到迭代器的下一个值.<br />
 迭代器对象 <code>__iter__()</code>：得到迭代器的本身，调用和没调用相同.</p>
 <pre><code class="language-python">d={'a':1,'b':2,'c':3}
 d_iterator=d.__iter__()
@@ -265,7 +265,7 @@ while True:
 </code></pre>
 <p>常见<strong>数据类型</strong>的分类:</p>
 <blockquote>
-<p>可迭代对象：<strong>字符串、列表、元组、字典、集合、文件对象</strong>
+<p>可迭代对象：<strong>字符串、列表、元组、字典、集合、文件对象</strong><br />
 迭代器对象：<strong>文件对象</strong></p>
 </blockquote>
 <pre><code class="language-python">s1=''
@@ -451,7 +451,7 @@ t.close() 关闭generator后再调用，会出现StopIteration异常
 <p>可以发现，<code>send</code> 函数和 <code>next</code> 函数的区别就是 <code>send</code> 函数可以在执行 generator 的<strong>过程中</strong>，给<strong>generator</strong>发送消息。<strong>而 next 仅仅是接收 yield 右边的变量值</strong>。</p>
 </blockquote>
 <h3 id="send方法用法"><a class="header" href="#send方法用法"><code>send()</code>​<strong>方法用法</strong></a></h3>
-<ol start="0">
+<ol>
 <li>
 <p><strong>send 过来的数值 = yield next 出来的数值</strong></p>
 </li>
@@ -719,7 +719,7 @@ for i in generator2():
 a , b , c , 0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 11 , 22 , 33 , 44 , 12 , 23 , 34 , 0 , 1 , 2 ,
 '''
 </code></pre>
-<p><code>yield from</code> 后面可以跟的可以是  <strong>“ 生成器 、元组、 列表、range() 函数产生的序列等可迭代对象”</strong></p>
+<p><code>yield from</code> 后面可以跟的可以是 <strong>“ 生成器 、元组、 列表、range() 函数产生的序列等可迭代对象”</strong></p>
 <p>简单地说,<code>yield from  generator</code> 。实际上就是返回<strong>另外一个生成器</strong>。而 <code>yield</code> 只是返回<strong>一个元素</strong>。从这个层面来说，有下面的等价关系：<strong>yield from iterable 本质上等于 for item in iterable: yield item 。</strong></p>
 <h3 id="yield-from-的高级应用"><a class="header" href="#yield-from-的高级应用"><code>yield from</code> 的高级应用</a></h3>
 <h4 id="1-针对-yield-无法获取生成器-return-的返回值"><a class="header" href="#1-针对-yield-无法获取生成器-return-的返回值"><strong>1. 针对 Yield 无法获取生成器 return 的返回值</strong></a></h4>

@@ -214,7 +214,7 @@ for thread in threads:
 </blockquote>
 <blockquote>
 <p><a href="https://www.runoob.com/python3/python3-func-zip.html">Python Zip()函数</a>
-&gt;</p>
+&gt;&gt;</p>
 <blockquote>
 <p><strong>zip()</strong> 函数用于将<strong>可迭代的对象作为参数</strong>，将对象中<strong>对应的元素打包成一个个元组</strong>，然后返回由这些<strong>元组组成的对象</strong>，这样做的好处是<strong>节约了不少的内存</strong>。</p>
 <p>我们可以使用 <code>list()</code> 转换来输出列表。</p>
@@ -239,7 +239,7 @@ with ThreadPoolExecutor(max_workers=10) as pool:
     for url, html in htmls:
         print(url, len(html))
 </code></pre>
-<ol start="2">
+<ol>
 <li><strong>submit 方式提交</strong></li>
 </ol>
 <blockquote>
@@ -398,7 +398,7 @@ if __name__ == &quot;__main__&quot;:
 <li>GIL 只会对<strong>CPU 密集型</strong>的程序产生影响</li>
 <li>如果程序主要是在做<strong>I/O 操作</strong>，比如<strong>处理网络连接</strong>，那么<strong>多线程技术</strong>常常是一个明智的选择</li>
 </ul>
-<ol start="5">
+<ol>
 <li><strong>规避 GIL</strong>的方法</li>
 </ol>
 <ul>
@@ -485,7 +485,7 @@ with lock:
 <h2 id="4-异步协程"><a class="header" href="#4-异步协程">4. 异步协程</a></h2>
 <h3 id="原理"><a class="header" href="#原理">原理</a></h3>
 <blockquote>
-<p>同步：执行 IO 操作时，<strong>必须等待执行完成才得到返回结果</strong>。
+<p>同步：执行 IO 操作时，<strong>必须等待执行完成才得到返回结果</strong>。<br />
 异步：执行 IO 操作时，<strong>不必等待执行就能得到返回结果</strong>。</p>
 </blockquote>
 <p><img src="http://oss.whaleluo.top/blog/old/20210702150837.jpeg-picsmall" alt="" /></p>

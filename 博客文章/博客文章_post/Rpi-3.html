@@ -221,7 +221,7 @@ include snippets/fastcgi-php.conf;
 </ul>
 <pre><code class="language-shell">sudo systemctl restart nginx
 </code></pre>
-<p><strong>重启无报错则修改成功啦:</strong>
+<p><strong>重启无报错则修改成功啦:</strong><br />
 <img src="http://oss.whaleluo.top/blog/old/20210619152804.png-picsmall" alt="" /></p>
 <ul>
 <li>在网站根目录创建一个 php 文件：</li>
@@ -231,7 +231,7 @@ include snippets/fastcgi-php.conf;
 <p>写入以下 php 代码并保存：</p>
 <pre><code class="language-shell">&lt;?php phpinfo(); 
 </code></pre>
-<p>在浏览器中输入树莓派的 IP 地址即可看到 phpinfo:
+<p>在浏览器中输入树莓派的 IP 地址即可看到 phpinfo:<br />
 <img src="http://oss.whaleluo.top/blog/old/20210619152811.png-picsmall" alt="" /></p>
 <h2 id="4安装-mariadb-数据库"><a class="header" href="#4安装-mariadb-数据库"><strong>4.安装 mariaDB 数据库</strong></a></h2>
 <ul>
@@ -245,11 +245,11 @@ include snippets/fastcgi-php.conf;
 <pre><code class="language-shell">sudo mysql_secure_installation 
 </code></pre>
 <blockquote>
-<p>根据提示设置数据库 <code>root用户密码</code>、<code>是否允许外网访问</code> 等，建议用<strong>翻译软件</strong>，一步步翻译。  <code>回车 n Y n Y Y</code></p>
+<p>根据提示设置数据库 <code>root用户密码</code>、<code>是否允许外网访问</code> 等，建议用<strong>翻译软件</strong>，一步步翻译。 <code>回车 n Y n Y Y</code></p>
 </blockquote>
 <ul>
-<li>尝试用<strong>普通用户 pi</strong>登录数据库:
-<code>mysql -u root -p</code>
+<li>尝试用<strong>普通用户 pi</strong>登录数据库:<br />
+<code>mysql -u root -p</code><br />
 输入上一步设置的密码，发现无法登录，错误提示如下:</li>
 </ul>
 <blockquote>
@@ -265,7 +265,7 @@ include snippets/fastcgi-php.conf;
 <p>再次使用普通用户 pi <code>mysql -u root -p</code> 即可通过密码登录数据库，无需 root 权限执行:</p>
 <p><img src="http://oss.whaleluo.top/blog/old/20210619152823.png-picsmall" alt="" /></p>
 <ul>
-<li>设置<strong>数据库密码</strong>
+<li>设置<strong>数据库密码</strong><br />
 <strong>依次执行以下 SQL：</strong></li>
 </ul>
 <pre><code class="language-sql">use mysql;   UPDATE user SET password=password('123456') WHERE user='root';   flush privileges;   exit; 
@@ -277,14 +277,14 @@ include snippets/fastcgi-php.conf;
 <p>根据官方的说法， MariaDB 为了<strong>提高安全性</strong>，默认只监听 127.0.0.1 中的 3306 端口并且禁止了远程的 TCP 链接，我们可以通过下面两步来开启<strong>MySQL 的远程服务</strong></p>
 </blockquote>
 <ol>
-<li>打开文件 <code>sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf</code>，注释掉 bind-address 项，如下:
+<li>打开文件 <code>sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf</code>，注释掉 bind-address 项，如下:<br />
 <img src="http://oss.whaleluo.top/blog/old/20210619152829.png-picsmall" alt="" /></li>
-<li>开启了<strong>MySQL 监听远程连接</strong>的选项，接下来需要给对应的<strong>MySQL 账户分配权限</strong>，允许使用该账户<strong>远程连接</strong>到 MySQL:
+<li>开启了<strong>MySQL 监听远程连接</strong>的选项，接下来需要给对应的<strong>MySQL 账户分配权限</strong>，允许使用该账户<strong>远程连接</strong>到 MySQL:<br />
 查看<strong>用户账号信息</strong>：</li>
 </ol>
 <pre><code class="language-sql">select User,host from mysql.user;
 </code></pre>
-<p><img src="http://oss.whaleluo.top/blog/old/20210619152834.png-picsmall" alt="" />
+<p><img src="http://oss.whaleluo.top/blog/old/20210619152834.png-picsmall" alt="" /><br />
 <strong>root 账户</strong>中的 host 项是<strong>localhost</strong>表示该账号只能进行<strong>本地登录</strong>，我们需要<strong>修改权限</strong>，执行 MySQL 命令:</p>
 <pre><code class="language-sql">GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '123456' WITH GRANT OPTION;FLUSH PRIVILEGES;exit;
 </code></pre>
@@ -312,10 +312,10 @@ include snippets/fastcgi-php.conf;
 </blockquote>
 <h2 id="5安装-phpmyadmin-可视化-mysql-管理工具"><a class="header" href="#5安装-phpmyadmin-可视化-mysql-管理工具">5.安装 <code>phpmyadmin</code> 可视化 MySQL 管理工具</a></h2>
 <blockquote>
-<p><strong>官方网站</strong>:  <a href="https://www.phpmyadmin.net/">phpmyadmin官网</a></p>
+<p><strong>官方网站</strong>: <a href="https://www.phpmyadmin.net/">phpmyadmin官网</a></p>
 <ul>
-<li>用<strong>wget</strong>下载源码包包到 web 目录
-(请自行到官网获取最新下载链接)，截至 2020/8/4 版本为:
+<li>用<strong>wget</strong>下载源码包包到 web 目录<br />
+(请自行到官网获取最新下载链接)，截至 2020/8/4 版本为:<br />
 <strong>phpMyAdmin-5.0.2-all-languages.zip</strong></li>
 </ul>
 </blockquote>
@@ -327,7 +327,7 @@ include snippets/fastcgi-php.conf;
 <pre><code class="language-shell">sudo chmod 777 -R /var/www/html/unzip -d /var/www/html/ ~/phpMyAdmin-5.0.2-all-languages.zip 
 </code></pre>
 <blockquote>
-<p>若 unzip 不受支持请安装
+<p>若 unzip 不受支持请安装<br />
 <strong>sudo apt-get install unzip</strong></p>
 </blockquote>
 <ul>
@@ -335,7 +335,7 @@ include snippets/fastcgi-php.conf;
 </ul>
 <pre><code class="language-shell">cd /var/www/html/mv phpMyAdmin-5.0.2-all-languages phpmyadmincd phpmyadminmv config.sample.inc.php config.inc.phpnano config.inc.php$cfg['AllowArbitraryServer'] = true;
 </code></pre>
-<p>编辑 <code>config.inc.php</code> 文件，修改密钥字段:
+<p>编辑 <code>config.inc.php</code> 文件，修改密钥字段:<br />
 <img src="http://oss.whaleluo.top/blog/old/20210619152859.png-picsmall" alt="" /></p>
 <blockquote>
 <p>修改<strong>blowfish_secret</strong>字段，后面的密钥无仅仅用于加密而已，<strong>尽量足够长</strong>。<strong>当然偷偷插入</strong>​**<del>喜欢的女孩子</del><strong>​</strong>名字也是可以的哦**</p>
@@ -346,11 +346,11 @@ include snippets/fastcgi-php.conf;
 <pre><code class="language-shell">sudo chmod 744 config.inc.php
 </code></pre>
 <ul>
-<li>尝试访问 <a href="http://%E4%BD%A0%E7%9A%84%E6%A0%91%E8%8E%93%E6%B4%BEip/phpmyadmin">http://你的树莓派ip/phpmyadmin</a>
-<img src="http://oss.whaleluo.top/blog/old/20210619152752.png-picsmall" alt="" />
-<strong>启动高级功能</strong> 会新建一个 phpmyadmin 数据库
-<img src="http://oss.whaleluo.top/blog/old/20210619152912.png-picsmall" alt="" />
-<strong>安装成功！</strong>
+<li>尝试访问 <a href="http://%E4%BD%A0%E7%9A%84%E6%A0%91%E8%8E%93%E6%B4%BEip/phpmyadmin">http://你的树莓派ip/phpmyadmin</a><br />
+<img src="http://oss.whaleluo.top/blog/old/20210619152752.png-picsmall" alt="" /><br />
+<strong>启动高级功能</strong> 会新建一个 phpmyadmin 数据库<br />
+<img src="http://oss.whaleluo.top/blog/old/20210619152912.png-picsmall" alt="" /><br />
+<strong>安装成功！</strong><br />
 <img src="http://oss.whaleluo.top/blog/old/20210619152920.png-picsmall" alt="" /></li>
 </ul>
 <h2 id="6搭建多个-nginx-虚拟主机"><a class="header" href="#6搭建多个-nginx-虚拟主机">6.搭建多个 <code>nginx</code> 虚拟主机</a></h2>
@@ -371,7 +371,7 @@ include snippets/fastcgi-php.conf;
 <p><img src="http://oss.whaleluo.top/blog/old/20210619152933.png-picsmall" alt="image-20200805160615360" /></p>
 <pre><code class="language-shell">mkdir /home/pi/nginx-confnano /home/pi/nginx-conf/kodbox.conf
 </code></pre>
-<p>写入以下内容:           <em><strong>(贴出一份完整的 nginx 虚拟主机配置，需要自行修改两个参数)</strong></em></p>
+<p>写入以下内容: <em><strong>(贴出一份完整的 nginx 虚拟主机配置，需要自行修改两个参数)</strong></em></p>
 <pre><code class="language-shell"># 监听端口 两个都要改server { listen 88 default_server; listen [::]:88 default_server; # SSL configuration # # listen 443 ssl default_server; # listen [::]:443 ssl default_server; # # include snippets/snakeoil.conf; root /home/pi/kodbox; #网站根目录位置 # Add index.php to the list if you are using PHP index index.php index.html index.htm index.nginx-debian.html; server_name _; location / {  try_files $uri $uri/ =404; } # pass PHP scripts to FastCGI server # location ~ .*\.php(\/.*)*$ {  include snippets/fastcgi-php.conf;  fastcgi_pass unix:/run/php/php7.3-fpm.sock; }}
 </code></pre>
 <p>重启 <code>nginx</code>，愿一切安好:</p>
@@ -395,7 +395,7 @@ include snippets/fastcgi-php.conf;
 <p><strong>尝试</strong>访问 <code>http://树莓派ip</code> :</p>
 <p><img src="http://oss.whaleluo.top/blog/old/20210619152940.png-picsmall" alt="image-20200807132503823" /></p>
 <blockquote>
-<p>可以看到这些参数都是好   <strong>鸡肋的</strong></p>
+<p>可以看到这些参数都是好 <strong>鸡肋的</strong></p>
 </blockquote>
 <ul>
 <li>修改<strong>php.ini</strong> 仔细看好喽~</li>
@@ -410,7 +410,7 @@ include snippets/fastcgi-php.conf;
 <p><img src="http://oss.whaleluo.top/blog/old/20210619152956.png-picsmall" alt="image-20200807133741086" /></p>
 <p>修改 <em><strong>运行内存限制</strong></em> ，查找：<code>memory_limit</code> <strong>酌情修改为 2000M</strong></p>
 <p><img src="http://oss.whaleluo.top/blog/old/20210619153003.png-picsmall" alt="image-20200807133917750" /></p>
-<p>开启 <em><strong>文件上传</strong></em>  ,查找：<code>file_uploads</code> 更改为 <code>On</code></p>
+<p>开启 <em><strong>文件上传</strong></em> ,查找：<code>file_uploads</code> 更改为 <code>On</code></p>
 <p><img src="http://oss.whaleluo.top/blog/old/20210619153007.png-picsmall" alt="image-20200807134107318" /></p>
 <ul>
 <li>
