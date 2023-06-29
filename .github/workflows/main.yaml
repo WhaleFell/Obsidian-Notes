@@ -24,7 +24,7 @@ jobs:
           cp -r * .src
           mv .src src
           python3 auto-build-summary.py
-          mdbook build .
+          mdbook buildx
           
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
