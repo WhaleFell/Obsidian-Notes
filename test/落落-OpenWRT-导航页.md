@@ -36,12 +36,12 @@ IPv6 测试,测试直连的速度 (仅支持 IPv6 环境)
 
 ### Client Download
 
-电脑端: [V2rayN-PC](v2ray_pc.zip) **此版为 5.0 的最后一版,用于兼容老设备** [GitHub](https://github.com/2dust/v2rayN/releases?page=3)
+电脑端: [V2rayN-PC](v2ray_pc.zip) **此版为 5.0 的最后一版,用于兼容老设备** [GitHub](https://github.com/2dust/v2rayN/releases?page=3)  
 安卓端:[V2rayNG](v2ray_an.apk) **Version: 1.8.4** [GitHub](https://github.com/2dust/v2rayNG/releases)
 
 ### 参数
 
-url: [https://sdr.whaleluo.top:32443/wss/](https://sdr.whaleluo.top:32443/wss/)  <br />id: `5dde3c45-8884-46b2-b0e6-8b04cdc6a578`​  <br />alterid: 0  <br />tls: open  
+url: [https://sdr.whaleluo.top:32443/wss/](https://sdr.whaleluo.top:32443/wss/) <br />id: `5dde3c45-8884-46b2-b0e6-8b04cdc6a578`​ <br />alterid: 0 <br />tls: open  
 
 Content:
 

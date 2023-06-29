@@ -27,7 +27,7 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 ## 环境变量
 
 - GOROOT：安装的 `go` 路径
-- GOPATA：项目的根目录 `go-test`
+- GOPATA：项目的根目录 `go-test`  
   细心的人注意到，这里有一个 `Project GOPATH`，还有一个 `Global GOPATH`，把你的项目配置在 `Project GOPATH` 里，每个项目都不一样，创建另一个项目时这个路径要配置成新项目的。
 
 `Global GOPATH` 可以弄一个公共项目，以后就把第三方的包直接装到这里，就可以**自动**在你的项目里引用了。
@@ -128,12 +128,12 @@ golang.org/x/text v0.3.0 = > github.com/golang/text v0.3.0
 
 ### Go mod 命令使用
 
-`go mod init`：初始化 go mod， 生成 go.mod 文件，后可接参数指定 module 名，上面已经演示过。
-`go mod download`：手动触发下载依赖包到本地 cache（默认为 $GOPATH/pkg/mod 目录）
-`go mod graph`：打印项目的模块依赖结构
-`go mod tidy` ：添加缺少的包，且删除无用的包
-`go mod verify` ：校验模块是否被篡改过
-`go mod why`：查看为什么需要依赖
+`go mod init`：初始化 go mod， 生成 go.mod 文件，后可接参数指定 module 名，上面已经演示过。  
+`go mod download`：手动触发下载依赖包到本地 cache（默认为 $GOPATH/pkg/mod 目录）  
+`go mod graph`：打印项目的模块依赖结构  
+`go mod tidy` ：添加缺少的包，且删除无用的包  
+`go mod verify` ：校验模块是否被篡改过  
+`go mod why`：查看为什么需要依赖  
 `go mod vendor` ：导出项目所有依赖到 vendor 下
 
 写入 go.mod 有两种方法：

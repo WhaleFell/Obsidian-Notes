@@ -40,8 +40,8 @@ rwc = os.Stdout // OK: *os.File has Read, Write, Close methods
 rwc = new(bytes.Buffer) // compile error: *bytes.Buffer lacks Close method
 ```
 
-![](http://oss.whaleluo.top/blog/Golang/interface-2.png-picsmall)
-![](http://oss.whaleluo.top/blog/Golang/interface-4.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/interface-2.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/interface-4.png-picsmall)  
 ![](http://oss.whaleluo.top/blog/Golang/interface-3.png-picsmall)
 
 > Go 语言中接口和类型的实现方式是 **非侵入式** 的,接口定义的方法没有具体代码.
@@ -66,11 +66,11 @@ rwc = new(bytes.Buffer) // compile error: *bytes.Buffer lacks Close method
 
 鸭子类型:
 
-> 待补充...
+> 待补充…
 
 ## 空接口
 
-`interface{}` 不包含任何的方法,所以**任何类型都是空接口的实现类**,因此空接口可以储存任何类型的数值.
+`interface{}` 不包含任何的方法,所以**任何类型都是空接口的实现类**,因此空接口可以储存任何类型的数值.  
 ![](http://oss.whaleluo.top/blog/Golang/interface-7.png-picsmall)
 
 ### 空接口定义任意类型的数据
@@ -81,8 +81,8 @@ rwc = new(bytes.Buffer) // compile error: *bytes.Buffer lacks Close method
 
 表示函数的参数可以是任意类型,相当于 Python 的 `typing.Any`
 
-![](http://oss.whaleluo.top/blog/Golang/interface-8.png-picsmall)
-`fmt` 包就是应用了空接口,可以传入任何参数.
+![](http://oss.whaleluo.top/blog/Golang/interface-8.png-picsmall)  
+`fmt` 包就是应用了空接口,可以传入任何参数.  
 `fmt` 包下的 `Print` 系列函数:
 
 ```go
@@ -93,7 +93,7 @@ func Println(a ...interface{}) (n int,err error)
 
 ### 复合数据结构使用空接口
 
-![](http://oss.whaleluo.top/blog/Golang/interface-9.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/interface-9.png-picsmall)  
 ![](http://oss.whaleluo.top/blog/Golang/interface-10.png-picsmall)
 
 ## 接口嵌套
@@ -104,8 +104,8 @@ func Println(a ...interface{}) (n int,err error)
 
 如果 Cat 想实现接口 C,不仅要实现接口 C 自己的方法,还要实现接口 C 继承的接口 A B 中的方法.
 
-![](http://oss.whaleluo.top/blog/Golang/interface-12.png-picsmall)
-![](http://oss.whaleluo.top/blog/Golang/interface-13.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/interface-12.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/interface-13.png-picsmall)  
 ![](http://oss.whaleluo.top/blog/Golang/insterface-14.png-picsmall)
 
 ## 接口断言
@@ -137,7 +137,7 @@ rw = w.(io.ReadWriter) // panic: *ByteCounter has no Read method
 
 如果一个类型满足下面的这个接口，然后 `WriteString(s)` 方法就必须和 `Write([]byte(s))` 有相同的效果。
 
-Write 方法需要传入一个 byte 切片而我们希望写入的值是一个字符串，所以我们需要使用 `[]byte(...)` 进行转换。**这个转换分配内存并且做一个拷贝**，但是这个拷贝在转换后几乎立马就被丢弃掉，会影响一丢丢性能。
+Write 方法需要传入一个 byte 切片而我们希望写入的值是一个字符串，所以我们需要使用 `[]byte(…)` 进行转换。**这个转换分配内存并且做一个拷贝**，但是这个拷贝在转换后几乎立马就被丢弃掉，会影响一丢丢性能。
 
 我们知道在这个程序中的 w 变量持有的动态类型也有一个**允许字符串高效写入**的 `WriteString` 方法；这个方法会避免去分配一个临时的拷贝。
 
@@ -188,7 +188,7 @@ if w, ok := w.(*os.File); ok {
 }
 ```
 
-方法二：使用 `switch...case...` 语句，断言类型分支。
+方法二：使用 `switch…case…` 语句，断言类型分支。
 
 一个类型分支隐式的创建了一个词法块，因此新变量 x 的定义不会和外面块中的 x 变量冲突。每一个 case 也会隐式的创建一个单独的词法块。
 

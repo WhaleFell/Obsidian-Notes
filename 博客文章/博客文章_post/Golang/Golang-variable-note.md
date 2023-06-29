@@ -171,7 +171,7 @@ func getNameAndAge() (string, int) {
 }
 ```
 
-2. 接收函数返回值
+1. 接收函数返回值
 
 ```go
 package main

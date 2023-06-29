@@ -23,7 +23,7 @@ set GO111MODULE=on  # 包管理
 set GOPROXY=http://goproxy.cn  # 设置镜像源
 ```
 
-3. Vscode 安装 `Go` `Run code` 插件
+1. Vscode 安装 `Go` `Run code` 插件
 
 ## Hello Go
 

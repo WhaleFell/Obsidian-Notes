@@ -36,8 +36,8 @@ Go 使用控制流机制（如 if 和 return）处理异常，这使得编码人
 
 ## 函数调用过程
 
-![](http://oss.whaleluo.top/blog/Golang/func-1.png-picsmall)
-![](http://oss.whaleluo.top/blog/Golang/func-3.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/func-1.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-3.png-picsmall)  
 ![](http://oss.whaleluo.top/blog/Golang/func-4.png-picsmall)
 
 ## 函数的参数使用
@@ -50,12 +50,12 @@ Go 使用控制流机制（如 if 和 return）处理异常，这使得编码人
 
 ## 函数传参
 
-![](http://oss.whaleluo.top/blog/Golang/func-7.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/func-7.png-picsmall)  
 ![](http://oss.whaleluo.top/blog/Golang/func-8.png-picsmall)
 
 ## 可变参数
 
-参数数量可变的函数称为为可变参数函数。需要在参数列表的最后一个参数类型之前加上省略符号“...”，这表示该函数会接收任意数量的该类型参数。
+参数数量可变的函数称为为可变参数函数。需要在参数列表的最后一个参数类型之前加上省略符号“…”，这表示该函数会接收任意数量的该类型参数。
 
 ```go
 func sum(vals...int) int
@@ -70,7 +70,7 @@ values := []int{1, 2, 3, 4}
 fmt.Println(sum(values...)) // "10"
 ```
 
-![](http://oss.whaleluo.top/blog/Golang/func-9.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/func-9.png-picsmall)  
 ![](http://oss.whaleluo.top/blog/Golang/func-10.png-picsmall)
 
 ## 参数传递
@@ -93,7 +93,7 @@ fmt.Println(sum(values...)) // "10"
 
 ---
 
-![](http://oss.whaleluo.top/blog/Golang/func-14.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/func-14.png-picsmall)  
 ![](http://oss.whaleluo.top/blog/Golang/func-15.png-picsmall)
 
 > 在定义参数返回值的时候已经初始化了.
@@ -106,7 +106,7 @@ fmt.Println(sum(values...)) // "10"
 
 ### Return 语句
 
-![](http://oss.whaleluo.top/blog/Golang/func-18.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/func-18.png-picsmall)  
 `return` 语句：词义 " 返回 "
 
 1. 一个函数有返回值，那么使用 return 将返回值返回给调用处
@@ -138,12 +138,12 @@ fmt.Println(sum(values...)) // "10"
 
 ## 递归函数
 
-![](http://oss.whaleluo.top/blog/Golang/func-21.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/func-21.png-picsmall)  
 ![](http://oss.whaleluo.top/blog/Golang/func-22.png-picsmall)
 
 递归函数实现 fibonacci 数列 (斐波那契数列)
 
-![斐波那契数列](http://oss.whaleluo.top/blog/Golang/func-23.png-picsmall)
+![斐波那契数列](http://oss.whaleluo.top/blog/Golang/func-23.png-picsmall)  
 ![](http://oss.whaleluo.top/blog/Golang/func-24.png-picsmall)
 
 ## defer(延迟函数)
@@ -155,9 +155,9 @@ fmt.Println(sum(values...)) // "10"
 defer 语句经常被用于处理成对的操作，如打开、关闭、连接、断开连接、加锁、释放锁。释放资源的 defer 应该直接跟在请求资源的语句后。
 
 1. deferi 函数或方法：**一个函数或方法的执行被延迟了。**
-2. defer 的用法:
-   对象,close(),临时文件的删除.
-   文件.open()
+2. defer 的用法:  
+   对象,close(),临时文件的删除.  
+   文件.open()  
    defer close() 关闭文件
 
 ```go
@@ -278,11 +278,11 @@ panic(bailout{})
 
 ### 栈的结构 (先进后出!后进先出!)
 
-![](http://oss.whaleluo.top/blog/Golang/func-25.png-picsmall)
-当一个函数有多个延迟调用时，它们被添加到一
+![](http://oss.whaleluo.top/blog/Golang/func-25.png-picsmall)  
+当一个函数有多个延迟调用时，它们被添加到一  
 个堆栈中，并 Last In First Out(LIFO) **先进后出!后进先出!** 的顺序中执行。
 
-![](http://oss.whaleluo.top/blog/Golang/func-26.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/func-26.png-picsmall)  
 ![](http://oss.whaleluo.top/blog/Golang/func-27.png-picsmall)
 
 ### Defer 注意点
@@ -310,7 +310,7 @@ fmt.Println(strings.Map(add1, "VMS")) // "WNT"
 fmt.Println(strings.Map(add1, "Admix")) // "Benjy"
 ```
 
-函数的类型：
+函数的类型：  
 `func(参数列表的数据类型)(返回值列表的数据类型)`
 
 ![](http://oss.whaleluo.top/blog/Golang/func-31.png-picsmall)
@@ -333,7 +333,7 @@ fmt.Println(strings.Map(add1, "Admix")) // "Benjy"
 
 ## 匿名函数
 
-拥有函数名的函数只能在包级语法块中被声明，通过函数字面量（function literal），，在任何表达式中表示一个函数值。函数值字面量是一种表达式，它的值被称为匿名函数
+拥有函数名的函数只能在包级语法块中被声明，通过函数字面量（function literal），，在任何表达式中表示一个函数值。函数值字面量是一种表达式，它的值被称为匿名函数  
 （anonymous function）。
 
 ```go
@@ -372,7 +372,7 @@ func main() {
 
 ---
 
-![](http://oss.whaleluo.top/blog/Golang/func-34.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/func-34.png-picsmall)  
 ![](http://oss.whaleluo.top/blog/Golang/func-35.png-picsmall)
 
 ## 回调函数
@@ -381,9 +381,9 @@ func main() {
 
 ---
 
-![](http://oss.whaleluo.top/blog/Golang/func-37.png-picsmall)
-![](http://oss.whaleluo.top/blog/Golang/func-38.png-picsmall)
-![](http://oss.whaleluo.top/blog/Golang/func-39.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/func-37.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-38.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-39.png-picsmall)  
 ![](http://oss.whaleluo.top/blog/Golang/func-40.png-picsmall)
 
 ## 闭包
@@ -419,8 +419,8 @@ fmt.Println(strings.Map(func(r rune) rune { return r + 1 }, "HAL-9000")) // 使�
 
 ---
 
-![](http://oss.whaleluo.top/blog/Golang/func-43.png-picsmall)
-![](http://oss.whaleluo.top/blog/Golang/func-42.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/func-43.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-42.png-picsmall)  
 ![](http://oss.whaleluo.top/blog/Golang/func-44.png-picsmall)
 
 ## 捕获迭代变量

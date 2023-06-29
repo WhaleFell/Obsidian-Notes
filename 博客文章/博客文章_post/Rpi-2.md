@@ -19,7 +19,7 @@ banner_img: http://oss.whaleluo.top/blog/old/20210619154345.jpg
 
 - 树莓派 4B Debian10 系统插上储存设备后默认自动挂载到 `/media` 目录我们先卸载 U 盘：
 
-  查询硬盘状态:   `sudo fdisk -l`
+  查询硬盘状态: `sudo fdisk -l`
 
   ![9XBTemAzD6R8yot](http://oss.whaleluo.top/blog/old/20210619153119.png-picsmall)
 

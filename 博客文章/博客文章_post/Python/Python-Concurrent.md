@@ -65,7 +65,7 @@ for thread in threads:
   >
 
   > [Python Zip()函数](https://www.runoob.com/python3/python3-func-zip.html)
->
+>>
   >> **zip()** 函数用于将**可迭代的对象作为参数**，将对象中**对应的元素打包成一个个元组**，然后返回由这些**元组组成的对象**，这样做的好处是**节约了不少的内存**。
   >>
   >> 我们可以使用 `list()` 转换来输出列表。
@@ -92,7 +92,7 @@ for thread in threads:
           print(url, len(html))
   ```
 
-  2. **submit 方式提交**
+  1. **submit 方式提交**
 
   > **future 模式，更强大**,注意如果用 `as_completed` 顺序是不定的
   >
@@ -253,7 +253,7 @@ for thread in threads:
 - GIL 只会对**CPU 密集型**的程序产生影响
 - 如果程序主要是在做**I/O 操作**，比如**处理网络连接**，那么**多线程技术**常常是一个明智的选择
 
-5. **规避 GIL**的方法
+1. **规避 GIL**的方法
 
 - 规避方法 2： 使用 `multiprocessing` 多进程，对 CPU 密集型计算，单独启动子进程解释器去执行
 - 规避方法 2： ﻿将计算密集型的任务转移到**C 语言**中，因为 C 语言比 Python 快得多，注意要在 C 语言中自己释放 GIL
@@ -355,7 +355,7 @@ with lock:
 
 ### 原理
 
-> 同步：执行 IO 操作时，**必须等待执行完成才得到返回结果**。
+> 同步：执行 IO 操作时，**必须等待执行完成才得到返回结果**。  
 > 异步：执行 IO 操作时，**不必等待执行就能得到返回结果**。
 
 ![](http://oss.whaleluo.top/blog/old/20210702150837.jpeg-picsmall)

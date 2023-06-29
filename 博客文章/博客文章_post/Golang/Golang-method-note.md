@@ -23,11 +23,11 @@ G0 语言中同时有函数和方法。一个方法就是一个**包含了接受
 
 ## 对比函数
 
-- 意义
-  方法：某个类别的行为功能，需要**指定的接受者调用**.
+- 意义  
+  方法：某个类别的行为功能，需要**指定的接受者调用**.  
   函数：一段**独立功能**的代码，可以直接调用.
-- 语法
-  方法：方法名可以相同，只要接受者不同.
+- 语法  
+  方法：方法名可以相同，只要接受者不同.  
   函数：命名不能冲突.
 
 > 方法可以模拟 `class` 继承结构.
@@ -68,7 +68,7 @@ type P *int
 func (P) f() { /* ... */ } // compile error: invalid receiver type
 ```
 
-![](http://oss.whaleluo.top/blog/Golang/method-2.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/method-2.png-picsmall)  
 ![](http://oss.whaleluo.top/blog/Golang/method-3.png-picsmall)
 
 ### 注意点
@@ -99,7 +99,7 @@ func (c *Counter) Reset() { c.n = 0 }
 
 ### 示例
 
-`method` 是可以继承的，如果匿名字段实现了一个 `method`,那么包含这个匿名字段的 `struct` 也能调用该 `method`
-![](http://oss.whaleluo.top/blog/Golang/method-4.png-picsmall)
-![](http://oss.whaleluo.top/blog/Golang/method-5.png-picsmall)
+`method` 是可以继承的，如果匿名字段实现了一个 `method`,那么包含这个匿名字段的 `struct` 也能调用该 `method`  
+![](http://oss.whaleluo.top/blog/Golang/method-4.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/method-5.png-picsmall)  
 ![](http://oss.whaleluo.top/blog/Golang/method-6.png-picsmall)

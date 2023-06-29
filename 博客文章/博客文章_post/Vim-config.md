@@ -16,8 +16,8 @@ banner_img:
 
 ## 配置
 
-> **自用 ​**​**`.vimrc`**​**​ 已上传到 GitHub 仓库**
-> 参考：[WhaleFell/vimrc](https://github.com/WhaleFell/vimrc/blob/main/.vimrc)
+> **自用 ​**​**`.vimrc`**​**​ 已上传到 GitHub 仓库**  
+> 参考：[WhaleFell/vimrc](https://github.com/WhaleFell/vimrc/blob/main/.vimrc)  
 > raw: [https://raw.githubusercontent.com/WhaleFell/vimrc/main/.vimrc](https://raw.githubusercontent.com/WhaleFell/vimrc/main/.vimrc)
 
 设置中文字符集
@@ -268,5 +268,5 @@ endfunction
 
 ## 参考 Reference
 
-[Vim配置文件（.vimrc），Vim配置教程](http://c.biancheng.net/view/3024.html)
+[Vim配置文件（.vimrc），Vim配置教程](http://c.biancheng.net/view/3024.html)  
 [Vim配置-王遗风](https://www.ruanyifeng.com/blog/2018/09/vimrc.html)

@@ -23,10 +23,10 @@ banner_img: http://oss.whaleluo.top/blog/old/20210619154345.jpg
 
 ![Zb6CEHnf17oqO5Q](http://oss.whaleluo.top/blog/old/20210619152403.png-picsmall)
 
-- 然后在 U 盘的根目录建立一个空白的 **ssh 文件  方便 ssh 远程连接**
+- 然后在 U 盘的根目录建立一个空白的 **ssh 文件 方便 ssh 远程连接**  
   ![FV5qpvWz7LtsOgi](http://oss.whaleluo.top/blog/old/sasw.png-picsmall)
-- 用 **Windows PowerShell** 连接树莓派 ssh
-  `shift+右键` 呼出**Windows PowerShell**
+- 用 **Windows PowerShell** 连接树莓派 ssh  
+  `shift+右键` 呼出**Windows PowerShell**  
   **完整连接语法**:
 
 ```shell
@@ -35,19 +35,19 @@ ssh -p 端口号 用户名@主机地址
 
 > 树莓派默认的用户名 **pi** 密码 **raspberry**![QLA74lscbwzRWY2](http://oss.whaleluo.top/blog/old/20210619152448.png-picsmall)
 
-- 树莓派扩展 TF 卡分区:
+- 树莓派扩展 TF 卡分区:  
   sudo raspi-config --> Advanced options -->Expand Filesystem, 确认重启
 
 ### 2. 启动树莓派 HDMI 功能
 
-- 编辑 `config.txt` 文件，修改以下参数:
+- 编辑 `config.txt` 文件，修改以下参数:  
   sudo nano /boot/config.txt
 
-  - 把下面#注释符号去掉
-    hdmi_force_hotplug=1  #启用HDMI热插拔功能
-    config_hdmi_boost=4    #启用加强HDMI信号
+  - 把下面#注释符号去掉  
+    hdmi_force_hotplug=1 #启用HDMI热插拔功能  
+    config_hdmi_boost=4 #启用加强HDMI信号
 
-  > 不出意外的话应该可以接上，但是我的没有声音输出诶
+  > 不出意外的话应该可以接上，但是我的没有声音输出诶  
   > 注：如果还是不能的话，找到#hdmi_group=1 这句话，把前面的#注释符号去掉，把数字改成 2 强行指定显示器类型：1 是连接老式电视，2 代表连接新电视。
   >
 
@@ -89,9 +89,9 @@ sudo apt-get install xfonts-wqy
 sudo apt-get install ttf-wqy-zenhei ttf-wqy-microhei
 ```
 
-- 设置终端中文显示: `sudo raspi-config`:
-  选择 change_locale，在 Default locale for the system environment: 中选择 zh_CN.UTF-8。
-  往下翻一会儿直到找到 zh_CN UTF-8 把光标移动到前面，然后按下空格键打上 *
+- 设置终端中文显示: `sudo raspi-config`:  
+  选择 change_locale，在 Default locale for the system environment: 中选择 zh_CN.UTF-8。  
+  往下翻一会儿直到找到 zh_CN UTF-8 把光标移动到前面，然后按下空格键打上 *  
   ![3hQeD8k9L1mgTZc](http://oss.whaleluo.top/blog/old/20210619152513.png-picsmall)
 - 改变键盘布局: `sudo dpkg-reconfigure keyboard-configuration`
 
@@ -100,13 +100,13 @@ sudo apt-get install ttf-wqy-zenhei ttf-wqy-microhei
 > 注: 这里放弃了树莓派自带的 **realvnc** 因为不支持网页 **novnc** 且功能很少，所以用 **Tightvnc** 代替
 
 - 安装**Tightvncserver**: `sudo apt-get install tightvncserver`
-- 安装好之后设置一个**VNC 密码**:  vncpasswd
+- 安装好之后设置一个**VNC 密码**: vncpasswd
 
 > 注: 先输入操作密码两次，然后会询问是否设置一个查看 (view-only) 密码，按自己喜欢，一般没必要。
 
 - 设置**开机自启动** :
 
-> 设置**开机启动**，需要在 **/etc/init.d/** 中创建一个文件。例如**tightvncserver**:  (启动脚本的名称，有和程序名一致的习惯)
+> 设置**开机启动**，需要在 **/etc/init.d/** 中创建一个文件。例如**tightvncserver**: (启动脚本的名称，有和程序名一致的习惯)
 
 ```sh
 sudo nano /etc/init.d/tightvncserver
@@ -170,12 +170,12 @@ sudo service tightvncserver start/stop #关闭/开启服务
 sudo service tightvncserver status #查看服务运行状态
 ```
 
-> 附:   vnc 客户端下载
+> 附: vnc 客户端下载  
 > [vnc官网](https://www.realvnc.com/en/connect/download/viewer/)
 
-连接成功惹~:
-![](http://oss.whaleluo.top/blog/old/20210619152521.png-picsmall)
-![](http://oss.whaleluo.top/blog/old/20210619152531.png-picsmall)
+连接成功惹~:  
+![](http://oss.whaleluo.top/blog/old/20210619152521.png-picsmall)  
+![](http://oss.whaleluo.top/blog/old/20210619152531.png-picsmall)  
 编辑 ./vnc/xstartup 配置文件使其能与 windown 共享剪贴板
 
 ```shell
@@ -216,7 +216,7 @@ cd noVNC
 
 ![](http://oss.whaleluo.top/blog/old/20210619152538.png-picsmall)
 
-- 尝试访问: [http://raspiberry:6080](http://raspiberry:6080) 可
+- 尝试访问: [http://raspiberry:6080](http://raspiberry:6080) 可  
   ![](http://oss.whaleluo.top/blog/old/20210619152542.png-picsmall)
 - 一些**高级设置** :
 
@@ -245,7 +245,7 @@ sudo apt-get update
 sudo apt-get install cockpit
 ```
 
-> 安装的依赖有  **一丢丢多**
+> 安装的依赖有 **一丢丢多**
 
 - 默认是用 `https` 访问，需要修改配置文件使其能 `http` 访问
 

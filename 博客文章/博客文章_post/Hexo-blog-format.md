@@ -1,17 +1,13 @@
 ---
-
 title: Hexo 博客写作规范约定
-date: 2018-12-11 15:51:48
-updated: 2018-12-11 15:59:48
+date: 2018-12-11T15:51:48.000Z
+updated: 2018-12-11T15:59:48.000Z
 categories: Hexo
-tags: [Hexo, Blog]
-
-# sticky: 100
-
+tags:
+  - Hexo
+  - Blog
 description: 在编写本 Hexo 博客时需要遵循的既定格式，方便规范和索引。
-
-# thumbnail: http://oss.whaleluo.top/blog/old/20210629014311.png
-
+date updated: 2023-06-29 23:18
 ---
 
 # Hexo 博客写作规范约定

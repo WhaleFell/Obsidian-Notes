@@ -89,7 +89,7 @@ loop = asyncio.get_event_loop()
 
 1. `task=asyncio.current_task(loop=None)`
 
-   > 返回在某一个指定的 loop 中，**当前正在运行的任务**，**如果没有任务正在运行，则返回 None**；
+   > 返回在某一个指定的 loop 中，**当前正在运行的任务**，**如果没有任务正在运行，则返回 None**；  
    > 如果 loop 为 None，**则默认为在当前的事件循环中获取**.
    >
 
@@ -252,7 +252,7 @@ Hello again 01 end
 
    `results = await asyncio.gather(task1,task2,task3)`
 
-   **wait 返回 dones 是已经完成的任务，pending 是未完成的任务，都是集合类型**：
+   **wait 返回 dones 是已经完成的任务，pending 是未完成的任务，都是集合类型**：  
    `done, pending = yield from asyncio.wait(fs)`
 
 > 简单来说：**async.wait 会返回两个值:done 和 pending**，done 为已完成的协程 Task，pending 为超时未完成的协程 Task，**需通过 future.result 调用 Task 的 result。**
@@ -449,7 +449,7 @@ async def main():
 
 ### 协程
 
-**协程函数**: 定义形式为 `async def` 的函数;
+**协程函数**: 定义形式为 `async def` 的函数;  
 **协程对象**: 调用 **协程函数** 所返回的对象。
 
 ```python
@@ -471,7 +471,7 @@ asyncio.run(main())
 
 ### 任务
 
-**任务**: 被用来 “并行的” 调度协程
+**任务**: 被用来 “并行的” 调度协程  
 当一个协程通过 `asyncio.create_task(coro,*,name=None)` 等函数被封装为一个任务，该协程会被 **自动调度** 执行:
 
 该任务会在 `get_running_loop()` 返回的循环中执行，如果当前线程没有在运行的循环则会引发 **RuntimeError**。
@@ -525,8 +525,8 @@ if __name__ == "__main__":
 
 ## 运行 Asyncio 协程
 
-`asyncio.run(coro, *, debug=False)`
-执行 `coroutine coro` 并返回结果。
+`asyncio.run(coro, *, debug=False)`  
+执行 `coroutine coro` 并返回结果。  
 此函数会运行传入的协程，负责管理 asyncio 事件循环，终结异步生成器，并关闭线程池。
 
 当有其他 `asyncio` 事件循环在同一线程中运行时，此函数不能被调用。
@@ -539,7 +539,7 @@ if __name__ == "__main__":
 
 `asyncio.gather(*aws, return_exceptions=False)`
 
-并发运行 aws 序列中的可等待对象。
+并发运行 aws 序列中的可等待对象。  
 如果 aws 中的某个可等待对象为协程，它将自动被作为一个任务 (asyncio.create_task) 调度。
 
 如果 `return_exceptions` 为 False (默认)，所引发的首个异常会立即传播给**等待 gather() 的任务**。aws 序列中的其他可等待对象 不会被取消 并将继续运行。
@@ -599,8 +599,8 @@ if name == "error":
 
 协程 (可等待对象) `asyncio.wait_for(aw, timeout)`
 
-等待 aw 可等待对象 完成，指定 `timeout` 秒数后超时。
-如果 aw 是一个协程，它将自动被作为任务 ((asyncio.create_task)) 调度。
+等待 aw 可等待对象 完成，指定 `timeout` 秒数后超时。  
+如果 aw 是一个协程，它将自动被作为任务 ((asyncio.create_task)) 调度。  
 `timeout` 可以为 None，也可以为 float 或 int 型数值表示的等待秒数。如果 timeout 为 None，则等待直到完成。
 
 如果发生超时，任务将取消并引发 asyncio.TimeoutError.
@@ -657,5 +657,5 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-(和男朋友出去喝奶茶了,未完待续,可能会继续写一些应用场景,或者和 Golang 的 Goruntine 进行对比)........
+(和男朋友出去喝奶茶了,未完待续,可能会继续写一些应用场景,或者和 Golang 的 Goruntine 进行对比)……..  
 2022/8/24 18:34

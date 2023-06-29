@@ -100,7 +100,7 @@ func main() {
 
 ### 检查 Channels 是否关闭
 
-接收 channels 的语句可以写成：第二个结果的一个 bool ，ture 表示成功从 channels 接收到值，false 表示 channels 已经被关闭并且里面没有值可接收。
+接收 channels 的语句可以写成：第二个结果的一个 bool ，true 表示成功从 channels 接收到值，false 表示 channels 已经被关闭并且里面没有值可接收。
 
 ```go
 // 方法一

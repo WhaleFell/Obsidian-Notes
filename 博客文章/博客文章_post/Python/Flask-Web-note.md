@@ -105,7 +105,7 @@ app.config[name] # 修改
   echo $变量名 # 读取
   ```
 
-  **Flask 使用环境变量加载配置的本质是通过环境变量值找到配置文件**，再读取配置文件的信息，其使用方式为：
+  **Flask 使用环境变量加载配置的本质是通过环境变量值找到配置文件**，再读取配置文件的信息，其使用方式为：  
   `app.config.from_ envvar('环境变量名')`
 
   **环境变量的值为配置文件的绝对路径**先在终端中执行如下命令：
@@ -176,7 +176,7 @@ app.run(host="0.0.0.0", port=5000, debug=True)
 
 ### 新版启动方式
 
-**开发服务器**启动方式：
+**开发服务器**启动方式：  
 在 1.0 版本之后，Flask 调整了开发服务器的启动方式，由代码编写 app. run() 语句调整为**命令启动 flask**
 
 终端启动：
@@ -192,7 +192,7 @@ flask run # 在项目文件下执行
 
 - `flask run -h 0.0.0.0 -p 8000` 绑定地址端口
 - `flask run --help` 获取帮助
-- 生产模式与开发模式的控制
+- 生产模式与开发模式的控制  
   通过 `FLASK_ENV` 环境变量指明
   - `export FLASK_ ENV=production` 运行在生产模式，未指明则默认为此方式
   - `export FLASK_ ENV=development` 运行在开发模式
@@ -209,7 +209,7 @@ flask run # 在项目文件下执行
 
 - 在应用中的 `url_ map` 属性中保存着整个 Flask 应用的**路由映射信息**，可以通过读取这个属性获取**路由信息**。
 
-  `print(app.url_map)`
+  `print(app.url_map)`  
   如果想在程序中遍历路由信息，可以采用如下方式：
 
   ```python
@@ -242,11 +242,11 @@ flask run # 在项目文件下执行
 ### 请求方式
 
 - **GET**(自带)
-- **OPTIONS**(自带)  -> 简化版的 GET 请求用于询问服务器接口信息的
+- **OPTIONS**(自带) -> 简化版的 GET 请求用于询问服务器接口信息的  
   比如接口允许的请求方式允许的
 
-  > CORS 跨域:
-  > www.meiduo.site -> api.meiduo.site/users/1
+  > CORS 跨域:  
+  > <www.meiduo.site> -> api.meiduo.site/users/1  
   > options api.meiduo.site/uses/1
   >
 
@@ -342,7 +342,7 @@ admin = Blueprint ("admin",__ name__ , static_folder='static_admin')
 app.register_blueprint (admin, url_prefix='/admin' )
 ```
 
-现在就可以使用 `/admin/static_admin/<filename>` 访问 `static_ admin` 目录下的静态文件了。
+现在就可以使用 `/admin/static_admin/<filename>` 访问 `static_ admin` 目录下的静态文件了。  
 也可通过 `static_url_path` 改变访问路径
 
 ```python
@@ -352,5 +352,5 @@ app.register_blueprint(admin, url_prefix='/admin')
 
 ## 7. 处理请求
 
-> 在视图编写中需要读取客户端请求携带的数据时，如何才能正确的**取出数据**呢?
+> 在视图编写中需要读取客户端请求携带的数据时，如何才能正确的**取出数据**呢?  
 > **请求携带的数据**可能出现在 HTTP 报文中的不同位置，需要**使用不同的方法来获取参数**。

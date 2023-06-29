@@ -15,8 +15,8 @@ banner_img: http://oss.whaleluo.top/blog/img/Freedom-network-banner.png-picsmall
 
 ​![Banner](http://oss.whaleluo.top/blog/img/Freedom-network-banner.png-picsmall)​
 
-{% note warning WARNING %}
-WARNING：本文可能随时遭到来自 **中国当局** 方面的审查，对此，您需要清楚知悉文章内部分敏感词的代替表达方式。
+{% note warning WARNING %}  
+WARNING：本文可能随时遭到来自 **中国当局** 方面的审查，对此，您需要清楚知悉文章内部分敏感词的代替表达方式。  
 {% endnote %}
 
 ![KeyWord](http://oss.whaleluo.top/blog/img/Freedom-Network-1.png-picsmall)

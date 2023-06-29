@@ -39,15 +39,15 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 
 ## 两个函数的执行顺序
 
-1. 对于同一个 Go 文件,从上到下执行
+1. 对于同一个 Go 文件,从上到下执行  
    ![](http://oss.whaleluo.top/blog/Golang/package-1.png-picsmall)
-2. 对于同一个 package 中的不同文件,将文件名按字符串进行从小到大排序,之后顺序调用各文件中的 `init()` 函数.
+2. 对于同一个 package 中的不同文件,将文件名按字符串进行从小到大排序,之后顺序调用各文件中的 `init()` 函数.  
    ![](http://oss.whaleluo.top/blog/Golang/package-2.png-picsmall)
 3. 对于不同的 package,如果不相互依赖的话，按照 main 包中 import 的顺序调用其他包中的 `init()` 函数。
-4. 如果 package 存在依赖,调用顺序为最后被依赖的最先被初始化.
-   例如：导入顺序 main->A->B->C ,则初始化顺序为 C->B->A->main ,一次执行对应的 init 方法。main 包总是被最后一个初始化，因为它总是依赖别的包.
+4. 如果 package 存在依赖,调用顺序为最后被依赖的最先被初始化.  
+   例如：导入顺序 main->A->B->C ,则初始化顺序为 C->B->A->main ,一次执行对应的 init 方法。main 包总是被最后一个初始化，因为它总是依赖别的包.  
    ![](http://oss.whaleluo.top/blog/Golang/package-3.png-picsmall)
-5. 避免出现 **循环 import** ,例如：`A->B->C->A`.
+5. 避免出现 **循环 import** ,例如：`A->B->C->A`.  
    一个包被其它多个包 import ,.但只能被初始化一次
 
 ## 总结
@@ -61,9 +61,9 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
    1. 先执行 `init()` 函数，后执行 `main()` 函数
    2. 对于同一个 Go 文件中，调用顺序是**从上到下**的，也就是说，先写的先被执行，后写的后被执行
    3. 对于同一个包下，将文件名按照字符串进行排序，之后顺序调用各个文件中 `init()` 函数
-   4. 对于不同包下.
-      如果不存在依赖，按照 main 包中 import 的顺序来调用对应包中 `init()` 函数如果存在依赖，**最后被依赖的最先被初始化**
-      导入顺序：main 一>A 一>B->C
+   4. 对于不同包下.  
+      如果不存在依赖，按照 main 包中 import 的顺序来调用对应包中 `init()` 函数如果存在依赖，**最后被依赖的最先被初始化**  
+      导入顺序：main 一>A 一>B->C  
       执行顺序：C 一>B->A 一>main
 5. 存在依赖的包之间，不能循环导入
 6. 一个包可以被其他多个包 import ,但是 **只能被初始化一次**。
@@ -71,7 +71,7 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 
 ## 注意
 
-1. 如果仅仅需要导入包时执行**初始化操作**，并不需要使用包内的**其他函数**，常量等资源。则可以在导入包时，**匿名导入**。
+1. 如果仅仅需要导入包时执行**初始化操作**，并不需要使用包内的**其他函数**，常量等资源。则可以在导入包时，**匿名导入**。  
    这个操作经常是让**很多人费解**的一个操作符
 
 ```go
@@ -82,8 +82,8 @@ import (
 )
 ```
 
-2. 管理外部包
-   Go 允许 import 不同代码库的代码。对于 import 要导入的外部的包，可以使用 `Go get` 命令取下来放到 `GOPATHS` 对应的目录中去。
+1. 管理外部包  
+   Go 允许 import 不同代码库的代码。对于 import 要导入的外部的包，可以使用 `Go get` 命令取下来放到 `GOPATHS` 对应的目录中去。  
    举个例子，比如说我们想通过 Go 语言连接 mysql 数据库，那么需要先下载 mysql 的数据包，打开终端并输入以下命令：
 
 ```shell
@@ -94,6 +94,6 @@ go get github.com/go-sql-driver/mysql
 
 > 如果有多个 `GOPATHS` 目录,默认下载到第一个目录下.
 
-3. 我们可以通过 `go install` 来编译包文件。
-   我们知道一个非 main 包在编译后会生成一个。a 文件 (在临时目录下生成)。除非使用 go install 安装到 `$GOROOT` 或 `$GOPATH` 下，否则你看不到 a,用于后续可执行程序链接使用。
+1. 我们可以通过 `go install` 来编译包文件。  
+   我们知道一个非 main 包在编译后会生成一个。a 文件 (在临时目录下生成)。除非使用 go install 安装到 `$GOROOT` 或 `$GOPATH` 下，否则你看不到 a,用于后续可执行程序链接使用。  
    比如 Go 标准库中的包对应的源码部分路径在：`$GROOT/src`,而标准库中包编译后的 a 文件路径在 `$GROOT/pkg/darwin_amd64` 下。

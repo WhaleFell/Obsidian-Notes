@@ -29,8 +29,8 @@ banner_img: http://oss.whaleluo.top/blog/old/20220329204745.png
      将树莓派的网线插到一体机的 PC 端口后再查询一次：`arp -a`
 3. 利用 **Putty** 连接玩客云。
 
-   SSH 远程账号 `root`  ：密码 1234
-   宝塔账号 `onecloud`  ：密码 123456
+   SSH 远程账号 `root` ：密码 1234  
+   宝塔账号 `onecloud` ：密码 123456
 
 ## 玩客云配置
 
@@ -61,7 +61,7 @@ sudo apt update
 sudo apu upgrade
 ```
 
-2. **卸载自带的宝塔面板**
+1. **卸载自带的宝塔面板**
 
    ```shell
    apt-get install wget git nginx -y
@@ -69,7 +69,7 @@ sudo apu upgrade
    sh bt-uninstall.sh
    ```
 
-3. **部署 ​**​**`Frpc`**​**​ 内网穿透**
+2. **部署 ​**​**`Frpc`**​**​ 内网穿透**
 
    **下载并解压**
 
@@ -142,7 +142,7 @@ sudo apu upgrade
    sudo systemctl enable frpc  # 设置开机自启
    ```
 
-4. **Python** 调优
+3. **Python** 调优
 
    **Python** 更换国内 `pip` 源：
 
@@ -162,7 +162,7 @@ sudo apu upgrade
    pip3 install httpx  # 测试
    ```
 
-5. 部署**校园网自动登录 ​**​**`FRPC`**​**​ 配置自动获取脚本**
+4. 部署**校园网自动登录 ​**​**`FRPC`**​**​ 配置自动获取脚本**
 
    > 项目地址：[AdminWhaleFall/rpi-ping: 树莓派自动上传信息工具. (github.com)](https://github.com/AdminWhaleFall/rpi-ping)
    >

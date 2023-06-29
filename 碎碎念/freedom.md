@@ -1,6 +1,6 @@
 [https://github.com/hello-world-1989/where-to-say](https://github.com/hello-world-1989/where-to-say)
 
-https://www.vpngate.net/cn/
+<https://www.vpngate.net/cn/>
 
 # Where-to-say
 
