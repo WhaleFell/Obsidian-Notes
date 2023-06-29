@@ -20,10 +20,10 @@ jobs:
           mdbook-version: 'latest'
           
       - run: |
+          python3 auto-build-summary.py
           mkdir .src
           cp -r * .src
           mv .src src
-          python3 auto-build-summary.py
           mdbook build
           
       - name: Deploy

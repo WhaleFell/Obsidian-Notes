@@ -61,3 +61,5 @@ if __name__ == "__main__":
     with open(os.path.join(root_dir, "SUMMARY.md"), "w", encoding="utf8") as f:
         f.write("# 落落的Notes\n\n")
         f.write(summary_content)
+
+    print("done!")
