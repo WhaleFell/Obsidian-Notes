@@ -23,7 +23,7 @@ jobs:
           mkdir .src
           cp -r * .src
           mv .src src
-          python3 auto-build-summary.py .
+          python3 auto-build-summary.py
           mdbook build .
           
       - name: Deploy
