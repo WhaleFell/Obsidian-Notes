@@ -62,6 +62,8 @@ if __name__ == "__main__":
         ".src",
         ".github",
         "book",
+        "assets",
+        "templates",
     ]
 
     # 生成 SUMMARY.md 文件内容
