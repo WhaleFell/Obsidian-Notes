@@ -27,13 +27,12 @@ jobs:
           git checkout main
 
           # 创建一个新分支并切换到该分支
-          git checkout -b new_branch
+          git checkout -b hexo
 
           # 移动博客文章/博客文章_post目录到新分支的根目录
           git mv 博客文章/博客文章_post/* .
           git rm -rf 博客文章
 
-          git checkout hexo
           if [[ -n $(git status --porcelain) ]]; then
               git commit -m "Move 博客文章/博客文章_post to new branch"
           fi
