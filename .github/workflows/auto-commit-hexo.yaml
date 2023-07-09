@@ -23,9 +23,11 @@ jobs:
 
       - name: New Branch to pull
         run: |
-          git subtree split --prefix=博客文章/博客文章_post -b Hexo_post
-          git checkout Hexo_post
-          git add .
+          git checkout --orphan hexo
+          git rm -rf .
+          git add 博客文章/博客文章_post
+          git commit -m "Initial commit"
+          git checkout hexo
           if [[ -n $(git status --porcelain) ]]; then
               git commit -m "Obsidian Update"
           fi
