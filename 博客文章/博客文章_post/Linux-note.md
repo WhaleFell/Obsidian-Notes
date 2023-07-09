@@ -44,6 +44,26 @@ fdisk -l
 df -h
 ```
 
+### 备份与目录迁移
+
+#### 使用 tar.gz 
+
+备份打包：
+
+```shell
+tar -czvf backup.tar.gz /path/to/directory
+```
+
+这将使用 `tar` 命令将指定目录打包成一个压缩文件 `backup.tar.gz`。你可以将 `/path/to/directory` 替换为要备份的目录路径。使用 `-c` 参数表示创建新的备份，`-z` 参数表示使用 gzip 压缩，`-v` 参数表示显示备份过程中的详细信息。
+
+还原备份：
+
+```shell
+tar -xzvf backup.tar.gz -C /path/to/destination
+```
+
+这将使用 `tar` 命令解压缩备份文件 `backup.tar.gz` 并将文件还原到目标目录 `/path/to/destination`。使用 `-x` 参数表示解压缩，`-z` 参数表示使用 gzip 解压缩，`-v` 参数表示显示还原过程中的详细信息，`-C` 参数指定还原到的目标目录。
+
 ## 进程相关
 
 ### 开机自启动某个脚本

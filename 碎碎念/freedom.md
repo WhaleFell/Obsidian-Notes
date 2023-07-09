@@ -1,8 +1,6 @@
-[https://github.com/hello-world-1989/where-to-say](https://github.com/hello-world-1989/where-to-say)
-
-<https://www.vpngate.net/cn/>
-
 # Where-to-say
+
+[https://github.com/hello-world-1989/where-to-say](https://github.com/hello-world-1989/where-to-say)
 
 爆料渠道，发声渠道
 
@@ -22,6 +20,9 @@
 
 如果无法发送，可以发送到 [我的邮箱](mailto:free.vpn.list@hotmail.com)，将代为发送到您指定的媒体
 
-‍
+## free VPN 
+<https://www.vpngate.net/cn/>
+
+v2ray scribeurl：[https://justmysocks3.net/members/getsub.php?service=81247&id=18fd2458-9ecb-4394-875c-e2353fbdfbfc](https://justmysocks3.net/members/getsub.php?service=81247&id=18fd2458-9ecb-4394-875c-e2353fbdfbfc)
 
 ‍
