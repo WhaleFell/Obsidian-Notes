@@ -23,7 +23,7 @@ jobs:
 
       - name: New Branch to pull
         run: |
-          git subtree split --prefix=博客文章\博客文章_post -b Hexo_post
+          git subtree split --prefix=博客文章/博客文章_post -b Hexo_post
           git checkout Hexo_post
           git add .
           if [[ -n $(git status --porcelain) ]]; then
@@ -37,5 +37,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
-          directory: /source/__post/
+          directory: 博客文章/博客文章_post
           repository: WhaleFell/HexoBlogSource
