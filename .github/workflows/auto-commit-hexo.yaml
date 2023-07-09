@@ -24,7 +24,7 @@ jobs:
       - name: New Branch to pull
         run: |
           git checkout --orphan hexo
-          git rm -rf .
+          git rm -rf . >/dev/null 2>&1
           git add 博客文章/博客文章_post
           git commit -m "Initial commit"
           git checkout hexo
