@@ -17,13 +17,18 @@ jobs:
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git commit -a -m "Add changes" 2>/dev/null
+          if [[ -n $(git status --porcelain) ]]; then
+              git commit -m "Obsidian Update"
+          fi
 
       - name: New Branch to pull
         run: |
           git checkout -b temp-branch
           git add .
-          git commit -m "Obsidian Update" 2>/dev/null
+          if [[ -n $(git status --porcelain) ]]; then
+              git commit -m "Obsidian Update"
+          fi
+          
           
 
       - name: Push to target repository
