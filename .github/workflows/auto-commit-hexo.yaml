@@ -31,9 +31,7 @@ jobs:
 
           # 移动博客文章/博客文章_post目录到新分支的根目录
           git mv 博客文章/博客文章_post/* .
-          git mv 博客文章/博客文章_post/.gitignore .
           git rm -rf 博客文章
-
 
           git checkout hexo
           if [[ -n $(git status --porcelain) ]]; then
