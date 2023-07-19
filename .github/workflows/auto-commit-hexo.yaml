@@ -17,27 +17,18 @@ jobs:
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git config --global --add safe.directory /github/workspace
           if [[ -n $(git status --porcelain) ]]; then
               git commit -m "Obsidian Update"
           fi
 
-      - name: New Branch to pull
+      - name: Git clone HexoBlogSource and cp .md file
         run: |
-          # 切换到原来的 main 分支
-          git checkout main
-
-          # 创建一个新分支并切换到该分支
-          git checkout -b hexo
-
-          # 移动博客文章/博客文章_post目录到新分支的根目录
-          git mv 博客文章/博客文章_post/* .
-          git rm -rf 博客文章
-
+          git clone https://github.com/WhaleFell/HexoBlogSource ./HexoBlogSource/
+          cp -r ./博客文章/_post/* ./HexoBlogSource/source/_posts/
+          git add .
           if [[ -n $(git status --porcelain) ]]; then
-              git commit -m "Move 博客文章/博客文章_post to new branch"
+              git commit -m "Obsidian Upload!"
           fi
-          
           
 
       - name: Push to target repository
@@ -45,5 +36,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
-          directory: 博客文章/博客文章_post
+          directory: ./HexoBlogSource/
           repository: WhaleFell/HexoBlogSource
