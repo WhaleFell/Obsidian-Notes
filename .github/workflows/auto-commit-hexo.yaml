@@ -6,45 +6,23 @@ on:
       - main
 
 jobs:
-  submit:
-    name: cp and config git
+  copy-file:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
 
-      - name: git config
-        env:
-          MY_EMAIL: whalefell9420@outlook.com
-          MY_NAME: whalefell
-        run: |
-          git config --global user.email $MY_EMAIL
-          git config --global user.name $MY_NAME
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
-
-      - name: Git clone HexoBlogSource and cp .md file
-        working-directory: .
-        run: |
-          git clone https://github.com/WhaleFell/HexoBlogSource ./HexoBlogSource/
-          cp -r ./博客文章/_post/* ./HexoBlogSource/source/_posts/
-          cd ./HexoBlogSource
-          git add .
-          if [[ -n $(git status --porcelain) ]]; then
-            git commit -m "Obsidian Upload!"
-          fi
-      
-      - name: check dir
-        run: |
-          pwd
-          ls
-  
-      - name: Commit & Push changes
-        uses: actions-js/push@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      
+    - name: Pushes test file
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        source_file: '博客文章/_post/*'
+        destination_repo: 'WhaleFell/HexoBlogSource'
+        destination_folder: 'source/_posts'
+        user_email: 'whalefell9420@outlook.com'
+        user_name: 'whalefell9420'
+        commit_message: 'Obsidian upload'
 
 
     
