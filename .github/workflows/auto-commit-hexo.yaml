@@ -14,13 +14,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Deploy
+      - name: git config
         env:
           MY_EMAIL: whalefell9420@outlook.com
           MY_NAME: whalefell
         run: |
           git config --global user.email $MY_EMAIL
           git config --global user.name $MY_NAME
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
       - name: Git clone HexoBlogSource and cp .md file
         working-directory: .
