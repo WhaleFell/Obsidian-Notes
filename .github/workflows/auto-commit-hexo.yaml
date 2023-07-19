@@ -17,7 +17,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
       with:
-        source_file: '博客文章/_post/*'
+        source_file: '博客文章/_post/'
         destination_repo: 'WhaleFell/HexoBlogSource'
         destination_folder: 'source/_posts'
         user_email: 'whalefell9420@outlook.com'
