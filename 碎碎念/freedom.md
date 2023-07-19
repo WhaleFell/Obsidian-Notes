@@ -20,7 +20,8 @@
 
 如果无法发送，可以发送到 [我的邮箱](mailto:free.vpn.list@hotmail.com)，将代为发送到您指定的媒体
 
-## free VPN 
+## Free VPN
+
 <https://www.vpngate.net/cn/>
 
 v2ray scribeurl：[https://justmysocks3.net/members/getsub.php?service=81247&id=18fd2458-9ecb-4394-875c-e2353fbdfbfc](https://justmysocks3.net/members/getsub.php?service=81247&id=18fd2458-9ecb-4394-875c-e2353fbdfbfc)
