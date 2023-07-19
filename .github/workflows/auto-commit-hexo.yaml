@@ -23,7 +23,7 @@ jobs:
         source_file: '博客文章/_post/'
         destination_repo: 'WhaleFell/HexoBlogSource'
         destination_folder: 'source/_posts'
-        user_email: 'whalefell9420@outlook.com'
+        user_email: 'whalefall9420@outlook.com'
         user_name: 'whalefell'
         commit_message: 'Obsidian upload'
 
