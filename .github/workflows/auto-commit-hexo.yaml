@@ -44,6 +44,10 @@ jobs:
         shell: bash
         working-directory: ./HexoBlogSource
     steps:
+      - name: check dir
+        run: |
+          pwd
+          ls
 
       - name: Commit & Push changes
         uses: actions-js/push@master
