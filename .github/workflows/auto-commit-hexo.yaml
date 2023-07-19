@@ -39,12 +39,12 @@ jobs:
     needs: submit
     name: commit
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
+    # defaults:
+      # run:
+        # shell: bash
         # working-directory: ./HexoBlogSource
     steps:
-      
+
       - name: Change to repository directory
         run: cd ./HexoBlogSource/
 
