@@ -1,0 +1,519 @@
+<!DOCTYPE HTML>
+<html lang="cn" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Golang-interface-note - WhaleFall Obsidian Notes</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="Keep Notes everyday">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../../index.html"><strong aria-hidden="true">1.</strong> 落落的Notes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../SUMMARY.html"><strong aria-hidden="true">1.1.</strong> SUMMARY</a></li><li class="chapter-item expanded "><a href="../../../CutBoard/index.html"><strong aria-hidden="true">1.2.</strong> CutBoard</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../CutBoard/无线电爬取脚本.html"><strong aria-hidden="true">1.2.1.</strong> 无线电爬取脚本</a></li></ol></li><li class="chapter-item expanded "><a href="../../../博客文章/index.html"><strong aria-hidden="true">1.3.</strong> 博客文章</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../博客文章/博客文章测试.html"><strong aria-hidden="true">1.3.1.</strong> 博客文章测试</a></li><li class="chapter-item expanded "><a href="../../../博客文章/博客文章_post.html"><strong aria-hidden="true">1.3.2.</strong> 博客文章_post</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/index.html"><strong aria-hidden="true">1.3.3.</strong> _post</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../博客文章/_post/openwebrx-sdr.html"><strong aria-hidden="true">1.3.3.1.</strong> openwebrx-sdr</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Rpi-3.html"><strong aria-hidden="true">1.3.3.2.</strong> Rpi-3</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Samba4-config.html"><strong aria-hidden="true">1.3.3.3.</strong> Samba4-config</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Study.html"><strong aria-hidden="true">1.3.3.4.</strong> Study</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Linux-note.html"><strong aria-hidden="true">1.3.3.5.</strong> Linux-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Kali-Linux-Help.html"><strong aria-hidden="true">1.3.3.6.</strong> Kali-Linux-Help</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Rpi-1.html"><strong aria-hidden="true">1.3.3.7.</strong> Rpi-1</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Hexo-blog-format.html"><strong aria-hidden="true">1.3.3.8.</strong> Hexo-blog-format</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Freedom-network.html"><strong aria-hidden="true">1.3.3.9.</strong> Freedom-network</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Vim-config.html"><strong aria-hidden="true">1.3.3.10.</strong> Vim-config</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/clash-proxy-guide.html"><strong aria-hidden="true">1.3.3.11.</strong> clash-proxy-guide</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Github-workflow.html"><strong aria-hidden="true">1.3.3.12.</strong> Github-workflow</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Linux-iptables.html"><strong aria-hidden="true">1.3.3.13.</strong> Linux-iptables</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/onedrive-guide.html"><strong aria-hidden="true">1.3.3.14.</strong> onedrive-guide</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Python.html"><strong aria-hidden="true">1.3.3.15.</strong> Python</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/openwrt-lede-build-notes.html"><strong aria-hidden="true">1.3.3.16.</strong> openwrt-lede-build-notes</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Depression-medicine.html"><strong aria-hidden="true">1.3.3.17.</strong> Depression-medicine</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang.html"><strong aria-hidden="true">1.3.3.18.</strong> Golang</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Wky-help.html"><strong aria-hidden="true">1.3.3.19.</strong> Wky-help</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/radio-SWshort.html"><strong aria-hidden="true">1.3.3.20.</strong> radio-SWshort</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Server-all.html"><strong aria-hidden="true">1.3.3.21.</strong> Server-all</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Rpi-2.html"><strong aria-hidden="true">1.3.3.22.</strong> Rpi-2</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Study/index.html"><strong aria-hidden="true">1.3.3.23.</strong> Study</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../博客文章/_post/Study/Ancient-poems.html"><strong aria-hidden="true">1.3.3.23.1.</strong> Ancient-poems</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Study/Zhongkao-maths.html"><strong aria-hidden="true">1.3.3.23.2.</strong> Zhongkao-maths</a></li></ol></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Python/index.html"><strong aria-hidden="true">1.3.3.24.</strong> Python</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../博客文章/_post/Python/Python-Generator-Iterator-decorater.html"><strong aria-hidden="true">1.3.3.24.1.</strong> Python-Generator-Iterator-decorater</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Python/Python-async.html"><strong aria-hidden="true">1.3.3.24.2.</strong> Python-async</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Python/Flask-Web-note.html"><strong aria-hidden="true">1.3.3.24.3.</strong> Flask-Web-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Python/Python-Concurrent.html"><strong aria-hidden="true">1.3.3.24.4.</strong> Python-Concurrent</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Python/Python-Tkinter-GUI.html"><strong aria-hidden="true">1.3.3.24.5.</strong> Python-Tkinter-GUI</a></li></ol></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/index.html"><strong aria-hidden="true">1.3.3.25.</strong> Golang</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-const-note.html"><strong aria-hidden="true">1.3.3.25.1.</strong> Golang-const-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-goruntine-note.html"><strong aria-hidden="true">1.3.3.25.2.</strong> Golang-goruntine-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-package-note.html"><strong aria-hidden="true">1.3.3.25.3.</strong> Golang-package-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-interface-note.html" class="active"><strong aria-hidden="true">1.3.3.25.4.</strong> Golang-interface-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-project-and-gomod-note.html"><strong aria-hidden="true">1.3.3.25.5.</strong> Golang-project-and-gomod-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-error-note.html"><strong aria-hidden="true">1.3.3.25.6.</strong> Golang-error-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-method-note.html"><strong aria-hidden="true">1.3.3.25.7.</strong> Golang-method-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-envbuild-note.html"><strong aria-hidden="true">1.3.3.25.8.</strong> Golang-envbuild-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-datatype-note.html"><strong aria-hidden="true">1.3.3.25.9.</strong> Golang-datatype-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-function-note.html"><strong aria-hidden="true">1.3.3.25.10.</strong> Golang-function-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-type-keyword-note.html"><strong aria-hidden="true">1.3.3.25.11.</strong> Golang-type-keyword-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-HTML-note.html"><strong aria-hidden="true">1.3.3.25.12.</strong> Golang-HTML-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-variable-note.html"><strong aria-hidden="true">1.3.3.25.13.</strong> Golang-variable-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-pointer-note.html"><strong aria-hidden="true">1.3.3.25.14.</strong> Golang-pointer-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-JSON-note.html"><strong aria-hidden="true">1.3.3.25.15.</strong> Golang-JSON-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-id-note.html"><strong aria-hidden="true">1.3.3.25.16.</strong> Golang-id-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-struct-note.html"><strong aria-hidden="true">1.3.3.25.17.</strong> Golang-struct-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-map-note.html"><strong aria-hidden="true">1.3.3.25.18.</strong> Golang-map-note</a></li><li class="chapter-item expanded "><a href="../../../博客文章/_post/Golang/Golang-note-catalogue.html"><strong aria-hidden="true">1.3.3.25.19.</strong> Golang-note-catalogue</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../../English-Study/index.html"><strong aria-hidden="true">1.4.</strong> English-Study</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../English-Study/英语音标学习.html"><strong aria-hidden="true">1.4.1.</strong> 英语音标学习</a></li></ol></li><li class="chapter-item expanded "><a href="../../../Study/index.html"><strong aria-hidden="true">1.5.</strong> Study</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../Study/Physical/index.html"><strong aria-hidden="true">1.5.1.</strong> Physical</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../Study/Physical/第5讲-力的正交分解.html"><strong aria-hidden="true">1.5.1.1.</strong> 第5讲-力的正交分解</a></li><li class="chapter-item expanded "><a href="../../../Study/Physical/第二讲-比例问题.html"><strong aria-hidden="true">1.5.1.2.</strong> 第二讲-比例问题</a></li><li class="chapter-item expanded "><a href="../../../Study/Physical/第六讲.html"><strong aria-hidden="true">1.5.1.3.</strong> 第六讲</a></li><li class="chapter-item expanded "><a href="../../../Study/Physical/第7讲.html"><strong aria-hidden="true">1.5.1.4.</strong> 第7讲</a></li><li class="chapter-item expanded "><a href="../../../Study/Physical/第一讲-运动的描述.html"><strong aria-hidden="true">1.5.1.5.</strong> 第一讲-运动的描述</a></li></ol></li><li class="chapter-item expanded "><a href="../../../Study/Chemistry/index.html"><strong aria-hidden="true">1.5.2.</strong> Chemistry</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../Study/Chemistry/第一讲-离子反应的基础概念.html"><strong aria-hidden="true">1.5.2.1.</strong> 第一讲-离子反应的基础概念</a></li></ol></li><li class="chapter-item expanded "><a href="../../../Study/Math/index.html"><strong aria-hidden="true">1.5.3.</strong> Math</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../Study/Math/函数.html"><strong aria-hidden="true">1.5.3.1.</strong> 函数</a></li><li class="chapter-item expanded "><a href="../../../Study/Math/第一讲-集合与常用逻辑用语.html"><strong aria-hidden="true">1.5.3.2.</strong> 第一讲-集合与常用逻辑用语</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../../other/index.html"><strong aria-hidden="true">1.6.</strong> other</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../other/OPENAI-KEY.html"><strong aria-hidden="true">1.6.1.</strong> OPENAI-KEY</a></li><li class="chapter-item expanded "><a href="../../../other/未命名.html"><strong aria-hidden="true">1.6.2.</strong> 未命名</a></li><li class="chapter-item expanded "><a href="../../../other/写给v友的一段话.html"><strong aria-hidden="true">1.6.3.</strong> 写给v友的一段话</a></li><li class="chapter-item expanded "><a href="../../../other/模拟飞行.html"><strong aria-hidden="true">1.6.4.</strong> 模拟飞行</a></li></ol></li><li class="chapter-item expanded "><a href="../../../业余无线电Ham/index.html"><strong aria-hidden="true">1.7.</strong> 业余无线电Ham</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../业余无线电Ham/通联日志.html"><strong aria-hidden="true">1.7.1.</strong> 通联日志</a></li><li class="chapter-item expanded "><a href="../../../业余无线电Ham/Opengd77-Firmware-教程.html"><strong aria-hidden="true">1.7.2.</strong> Opengd77-Firmware-教程</a></li><li class="chapter-item expanded "><a href="../../../业余无线电Ham/广播.html"><strong aria-hidden="true">1.7.3.</strong> 广播</a></li><li class="chapter-item expanded "><a href="../../../业余无线电Ham/泉盛-K5-音质优化.html"><strong aria-hidden="true">1.7.4.</strong> 泉盛-K5-音质优化</a></li><li class="chapter-item expanded "><a href="../../../业余无线电Ham/业余无线电笔记.html"><strong aria-hidden="true">1.7.5.</strong> 业余无线电笔记</a></li><li class="chapter-item expanded "><a href="../../../业余无线电Ham/业余无线电采购.html"><strong aria-hidden="true">1.7.6.</strong> 业余无线电采购</a></li><li class="chapter-item expanded "><a href="../../../业余无线电Ham/附近航空频率.html"><strong aria-hidden="true">1.7.7.</strong> 附近航空频率</a></li><li class="chapter-item expanded "><a href="../../../业余无线电Ham/广播/index.html"><strong aria-hidden="true">1.7.8.</strong> 广播</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../业余无线电Ham/广播/广播收听报告-2023.05.23.html"><strong aria-hidden="true">1.7.8.1.</strong> 广播收听报告-2023.05.23</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../../test/index.html"><strong aria-hidden="true">1.8.</strong> test</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../test/落落-OpenWRT-导航页.html"><strong aria-hidden="true">1.8.1.</strong> 落落-OpenWRT-导航页</a></li><li class="chapter-item expanded "><a href="../../../test/思源笔记自动同步测试.html"><strong aria-hidden="true">1.8.2.</strong> 思源笔记自动同步测试</a></li><li class="chapter-item expanded "><a href="../../../test/Obsidian-Hexo-模板测试.html"><strong aria-hidden="true">1.8.3.</strong> Obsidian-Hexo-模板测试</a></li></ol></li><li class="chapter-item expanded "><a href="../../../高中事件/index.html"><strong aria-hidden="true">1.9.</strong> 高中事件</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../高中事件/举报中小学教师违规方法论.html"><strong aria-hidden="true">1.9.1.</strong> 举报中小学教师违规方法论</a></li><li class="chapter-item expanded "><a href="../../../高中事件/举报法律依据.html"><strong aria-hidden="true">1.9.2.</strong> 举报法律依据</a></li><li class="chapter-item expanded "><a href="../../../高中事件/举报信.html"><strong aria-hidden="true">1.9.3.</strong> 举报信</a></li></ol></li><li class="chapter-item expanded "><a href="../../../碎碎念/index.html"><strong aria-hidden="true">1.10.</strong> 碎碎念</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../碎碎念/freedom.html"><strong aria-hidden="true">1.10.1.</strong> freedom</a></li><li class="chapter-item expanded "><a href="../../../碎碎念/猫猫.html"><strong aria-hidden="true">1.10.2.</strong> 猫猫</a></li><li class="chapter-item expanded "><a href="../../../碎碎念/文案.html"><strong aria-hidden="true">1.10.3.</strong> 文案</a></li><li class="chapter-item expanded "><a href="../../../碎碎念/奇思妙想.html"><strong aria-hidden="true">1.10.4.</strong> 奇思妙想</a></li><li class="chapter-item expanded "><a href="../../../碎碎念/闲鱼文案模板.html"><strong aria-hidden="true">1.10.5.</strong> 闲鱼文案模板</a></li><li class="chapter-item expanded "><a href="../../../碎碎念/记录.html"><strong aria-hidden="true">1.10.6.</strong> 记录</a></li><li class="chapter-item expanded "><a href="../../../碎碎念/思源笔记本使用感想.html"><strong aria-hidden="true">1.10.7.</strong> 思源笔记本使用感想</a></li><li class="chapter-item expanded "><a href="../../../碎碎念/知乎精选.html"><strong aria-hidden="true">1.10.8.</strong> 知乎精选</a></li><li class="chapter-item expanded "><a href="../../../碎碎念/猫猫/index.html"><strong aria-hidden="true">1.10.9.</strong> 猫猫</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../碎碎念/猫猫/多多.html"><strong aria-hidden="true">1.10.9.1.</strong> 多多</a></li></ol></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">WhaleFall Obsidian Notes</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: Golang 学习笔记——Go 接口
+date: 2022-05-16 18:30:48
+updated: 2022-05-16 18:30:48
+categories: Golang
+tags: [Golang, Coding]
+description:
+thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall</p>
+<hr />
+<h1 id="go-接口"><a class="header" href="#go-接口">Go 接口</a></h1>
+<p><strong>面向对象</strong> 世界中的接口的一般定义是 &quot;<strong>接口定义对象的行为</strong>&quot;。它表示让指定对象应该做什么。实现这种行为的方法（实现细节）是<strong>针对对象</strong>的。</p>
+<p>在 <code>Go</code> 中，接口是 <strong>一组方法签名</strong>。当类型为接口中的所有方法提供定义时，它被称为 <strong>实现接口</strong>。它与 OOP 非常相似。接口指定了类型 <strong>应该具有</strong> 的方法，类型决定了 <strong>如何实现</strong> 这些方法。</p>
+<blockquote>
+<p>它把所有的具有共性的方法定义在一起，任何其他类型只要实现了这些方法就是实现了这个接口</p>
+<p>接口定义了一组方法，如果某个对象实现了某个接口的所有方法，则此对象就实现了该接口。</p>
+</blockquote>
+<h2 id="图示"><a class="header" href="#图示">图示</a></h2>
+<p><img src="http://oss.whaleluo.top/blog/Golang/interface-1.png-picsmall" alt="" /></p>
+<h2 id="示例"><a class="header" href="#示例">示例</a></h2>
+<p><strong>表达一个类型属于某个接口只要这个类型实现这个接口。</strong></p>
+<pre><code class="language-go">var w io.Writer
+w = os.Stdout // OK: *os.File has Write method
+w = new(bytes.Buffer) // OK: *bytes.Buffer has Write method
+w = time.Second // compile error: time.Duration lacks Write method
+
+var rwc io.ReadWriteCloser
+rwc = os.Stdout // OK: *os.File has Read, Write, Close methods
+rwc = new(bytes.Buffer) // compile error: *bytes.Buffer lacks Close method
+</code></pre>
+<p><img src="http://oss.whaleluo.top/blog/Golang/interface-2.png-picsmall" alt="" /><br />
+<img src="http://oss.whaleluo.top/blog/Golang/interface-4.png-picsmall" alt="" /><br />
+<img src="http://oss.whaleluo.top/blog/Golang/interface-3.png-picsmall" alt="" /></p>
+<blockquote>
+<p>Go 语言中接口和类型的实现方式是 <strong>非侵入式</strong> 的,接口定义的方法没有具体代码.</p>
+</blockquote>
+<h2 id="通过接口模拟多态"><a class="header" href="#通过接口模拟多态">通过接口模拟多态</a></h2>
+<h3 id="多态的定义"><a class="header" href="#多态的定义">多态的定义</a></h3>
+<p>&quot; 一个事物的多种形态 &quot;</p>
+<p><img src="http://oss.whaleluo.top/blog/Golang/interface-5.png-picsmall" alt="" /></p>
+<p>就一个接口的实现:</p>
+<ol>
+<li>看成 <strong>实现本身的类型</strong>，能够访问 <strong>实现类中的属性和方法</strong>.</li>
+<li>看成 <strong>对应的接口类型</strong>，那就 <strong>只能够访问接口中的方法</strong>.</li>
+</ol>
+<p>接口的用法：</p>
+<ol>
+<li>一个函数如果接受 <strong>接口类型作为参数</strong>，那么实际上 <strong>可以传入该接口的任意实现类</strong> 对象作为参数。</li>
+<li>定义一个类型为 <strong>接口类型</strong>，实际上可以 <strong>赋值为任意实现类的对象</strong>.</li>
+</ol>
+<p>鸭子类型:</p>
+<blockquote>
+<p>待补充…</p>
+</blockquote>
+<h2 id="空接口"><a class="header" href="#空接口">空接口</a></h2>
+<p><code>interface{}</code> 不包含任何的方法,所以<strong>任何类型都是空接口的实现类</strong>,因此空接口可以储存任何类型的数值.<br />
+<img src="http://oss.whaleluo.top/blog/Golang/interface-7.png-picsmall" alt="" /></p>
+<h3 id="空接口定义任意类型的数据"><a class="header" href="#空接口定义任意类型的数据">空接口定义任意类型的数据</a></h3>
+<p><img src="http://oss.whaleluo.top/blog/Golang/interface-6.png-picsmall" alt="" /></p>
+<h3 id="空接口作为函数的参数"><a class="header" href="#空接口作为函数的参数">空接口作为函数的参数</a></h3>
+<p>表示函数的参数可以是任意类型,相当于 Python 的 <code>typing.Any</code></p>
+<p><img src="http://oss.whaleluo.top/blog/Golang/interface-8.png-picsmall" alt="" /><br />
+<code>fmt</code> 包就是应用了空接口,可以传入任何参数.<br />
+<code>fmt</code> 包下的 <code>Print</code> 系列函数:</p>
+<pre><code class="language-go">func Print(a ...interface{}) (n int,err error)
+func Printf(format string,a ...interface{}) (n int,err error)
+func Println(a ...interface{}) (n int,err error)
+</code></pre>
+<h3 id="复合数据结构使用空接口"><a class="header" href="#复合数据结构使用空接口">复合数据结构使用空接口</a></h3>
+<p><img src="http://oss.whaleluo.top/blog/Golang/interface-9.png-picsmall" alt="" /><br />
+<img src="http://oss.whaleluo.top/blog/Golang/interface-10.png-picsmall" alt="" /></p>
+<h2 id="接口嵌套"><a class="header" href="#接口嵌套">接口嵌套</a></h2>
+<p>接口允许多继承.</p>
+<p><img src="http://oss.whaleluo.top/blog/Golang/interface-11.png-picsmall" alt="" /></p>
+<p>如果 Cat 想实现接口 C,不仅要实现接口 C 自己的方法,还要实现接口 C 继承的接口 A B 中的方法.</p>
+<p><img src="http://oss.whaleluo.top/blog/Golang/interface-12.png-picsmall" alt="" /><br />
+<img src="http://oss.whaleluo.top/blog/Golang/interface-13.png-picsmall" alt="" /><br />
+<img src="http://oss.whaleluo.top/blog/Golang/insterface-14.png-picsmall" alt="" /></p>
+<h2 id="接口断言"><a class="header" href="#接口断言">接口断言</a></h2>
+<p>前面说过，因为空接口 <code>interface</code> 没有定义任何函数，因此 <code>Go</code> 中 <strong>所有类型都实现了空接口</strong>。当一个函数的形参是 <code>interface{}</code> ，那么在函数中，需要对形参 <strong>进行断言</strong>，从而 <strong>得到它的真实类型</strong>。</p>
+<p><img src="http://oss.whaleluo.top/blog/Golang/interface-15.png-picsmall" alt="" /></p>
+<p>方法一: 通过 <code>x.(T)</code> 的方式断言</p>
+<pre><code class="language-go">var w io.Writer
+w = os.Stdout
+f := w.(*os.File)      // success: f == os.Stdout
+c := w.(*bytes.Buffer) // panic: interface holds *os.File, not *bytes.Buffer
+</code></pre>
+<p><strong>如果断言的类型 T 是一个接口类型</strong>，然后类型断言检查是否 x 的动态类型满足 T。如果这个检查成功了，动态值没有获取到；这个结果仍然是一个有相同动态类型（type）和值部分（value）的接口值，但是结果为类型 T。</p>
+<p>用于判断 <code>x.(T)</code> x 是否满足 T 接口。</p>
+<pre><code class="language-go">var w io.Writer // io.Writer 接口
+w = os.Stdout // os.Stdout接口 实现了 io.Writer 接口
+rw := w.(io.ReadWriter) // success: *os.File has both Read and Write
+w = new(ByteCounter)
+rw = w.(io.ReadWriter) // panic: *ByteCounter has no Read method
+</code></pre>
+<p>如果一个类型满足下面的这个接口，然后 <code>WriteString(s)</code> 方法就必须和 <code>Write([]byte(s))</code> 有相同的效果。</p>
+<p>Write 方法需要传入一个 byte 切片而我们希望写入的值是一个字符串，所以我们需要使用 <code>[]byte(…)</code> 进行转换。<strong>这个转换分配内存并且做一个拷贝</strong>，但是这个拷贝在转换后几乎立马就被丢弃掉，会影响一丢丢性能。</p>
+<p>我们知道在这个程序中的 w 变量持有的动态类型也有一个<strong>允许字符串高效写入</strong>的 <code>WriteString</code> 方法；这个方法会避免去分配一个临时的拷贝。</p>
+<p>许多满足 io.Writer 接口的重要类型同时也有 WriteString 方法，包括 <code>*bytes.Buffer</code>，<code>*os.File</code> 和 <code>*bufio.Writer</code>。</p>
+<p>我们不能对任意实现 <code>io.Writer</code> 接口类型的变量 w，假设它也拥有 <code>WriteString</code> 方法。但是我们可以定义一个只有这个方法的新接口并且使用类型断言来检测是否 w 的动态类型满足这个新接口。</p>
+<pre><code class="language-go">func writeString(w io.Writer, s string) (n int, err error) {
+    // 定义一个实现了 WriteString 方法的接口
+    type stringWriter interface {
+        WriteString(string) (n int, err error)
+    }
+    // 检查 w 是否实现了 WriteString 方法
+    if sw, ok := w.(stringWriter); ok {
+        // 实现了就调用这个方法
+        return sw.WriteString(s) // avoid a copy
+    }
+    // 没有实现 WriteString 方法就回退到使用 w.Write 方法
+    return w.Write([]byte(s)) // allocate temporary copy
+}
+</code></pre>
+<p>它太有用了以致于标准库将它作为 <code>io.WriteString</code> 函数提供。<strong>这是向一个 io.Writer 接口写入字符串的推荐方法。</strong></p>
+<p>上面的 writeString 函数使用一个<strong>类型断言来获知一个普遍接口类型的值是否满足一个更加具体的接口类型</strong>；并且如果满足，它会使用这个更具体接口的行为。</p>
+<p><strong>如果断言操作的对象是一个 nil 接口值</strong>，那么不论被断言的类型是什么这个类型断言都会失败。</p>
+<p><img src="http://oss.whaleluo.top/blog/Golang/interface-16.png-picsmall" alt="通过x.(T)方式断言" /></p>
+<pre><code class="language-go">var w io.Writer = os.Stdout
+f, ok := w.(*os.File)      // success:  ok, f == os.Stdout
+b, ok := w.(*bytes.Buffer) // failure: !ok, b == nil
+
+// 更简洁的结构
+if f, ok := w.(*os.File); ok {
+    // ...use f...
+}
+</code></pre>
+<p>当类型断言的操作对象是一个变量时，if 内层其实是声明了一个同名的新的本地变量，外层原来的 w 不会被改变。</p>
+<pre><code class="language-go">if w, ok := w.(*os.File); ok {
+    // ...use w...
+}
+</code></pre>
+<p>方法二：使用 <code>switch…case…</code> 语句，断言类型分支。</p>
+<p>一个类型分支隐式的创建了一个词法块，因此新变量 x 的定义不会和外面块中的 x 变量冲突。每一个 case 也会隐式的创建一个单独的词法块。</p>
+<pre><code class="language-go">switch x := x.(type) {
+    case nil:       // ...
+    case int, uint: // ...
+    case bool:      // ...
+    case string:    // ...
+    default:        // ...
+}
+</code></pre>
+<p><img src="http://oss.whaleluo.top/blog/Golang/interface-17.png-picsmall" alt="" /></p>
+<h2 id="接口值"><a class="header" href="#接口值">接口值</a></h2>
+<p>接口值由两部分组成：一个具体的类型（type）和这个类型的值（value）。**接口是动态类型。**一个接口值可以持有任意大的动态值。实现了这个接口的类型都可以赋值这个接口。</p>
+<p><img src="http://oss.whaleluo.top/blog/img/20221229121130.png-picsmall" alt="" /></p>
+<p>定义一个 nil 接口：</p>
+<pre><code class="language-go">var w io.Writer // 空接口
+w.Writer([]byte(&quot;hello&quot;)) // panic: nil pointer
+// 可以通过 w == nil 判断接口值是否为空
+</code></pre>
+<p>将 <code>*os.File</code> 类型赋值给变量 w，因为 <code>*os.File</code> 实现了 <code>io.Writer</code> 接口，所以赋值合法。赋值过程调用了一个 <strong>具体类型到接口类型</strong> 的隐式转换（变成 T 类型 <code>T(type)</code> ） <code>io.Writer(os.Stdout)</code></p>
+<pre><code class="language-go">w = os.Stdout
+// 隐式转换 
+io.Writer(os.Stdout)
+</code></pre>
+<p>接口的 value 持有 <code>os.Stdout</code> 的拷贝，这是一个代表处理标准输出的 <code>os.File</code> 类型的指针。</p>
+<p><img src="http://oss.whaleluo.top/blog/img/20221229122508.png-picsmall" alt="接口的赋值" /></p>
+<p>调用一个包含 <code>*os.File</code> 类型指针的接口值的 <code>Write</code> 方法，得 <code>(*os.File).Write</code> 方法被调用。这个调用输出 “hello”。</p>
+<pre><code class="language-go">w.Write([]byte(&quot;hello&quot;)) // &quot;hello&quot;
+(*os.File).Write // 等效
+</code></pre>
+<p>当我们处理错误或者调试的过程中，得知接口值的动态类型是非常有帮助的。所以我们使用 <code>fmt</code> 包的 <code>%T</code> 动作，在 fmt 包内部，使用反射来获取接口动态类型的名称。</p>
+<pre><code class="language-go">var w io.Writer
+fmt.Printf(&quot;%T\n&quot;, w) // &quot;&lt;nil&gt;&quot;
+w = os.Stdout
+fmt.Printf(&quot;%T\n&quot;, w) // &quot;*os.File&quot;
+w = new(bytes.Buffer)
+fmt.Printf(&quot;%T\n&quot;, w) // &quot;*bytes.Buffer&quot;
+</code></pre>
+<h3 id="一个包含-nil-指针的接口不是-nil-接口"><a class="header" href="#一个包含-nil-指针的接口不是-nil-接口">⚠️一个包含 Nil 指针的接口不是 Nil 接口</a></h3>
+<p>一个不包含任何值的 nil 接口值：</p>
+<p><img src="http://oss.whaleluo.top/blog/img/20221229121130.png-picsmall" alt="一个不包含任何值的 nil 接口值" /></p>
+<p>一个刚好包含 nil 指针的接口值：</p>
+<p><img src="http://oss.whaleluo.top/blog/img/20221229123705.png-picsmall" alt="" /></p>
+<pre><code class="language-go">var w io.Writer
+w = new(bytes.Buffer)  // new函数返回类型的初始化值的指针 nil w: *bytes.Buffer
+// w not nil
+</code></pre>
+<pre><code class="language-go">func main() {
+    var w io.Writer
+    w = new(bytes.Buffer)
+    fmt.Printf(&quot;w: %T\n&quot;, w)
+    if w == nil{
+        fmt.Println(&quot;w is nil&quot;)
+    } else {
+        fmt.Println(&quot;w not nil&quot;)
+    }
+}
+
+// output:
+// w: *bytes.Buffer
+// w not nil
+</code></pre>
+<h2 id="应用"><a class="header" href="#应用">应用</a></h2>
+<h3 id="sortinterface-接口"><a class="header" href="#sortinterface-接口"><code>sort.Interface</code> 接口</a></h3>
+<p>在很多语言中，排序算法都是和序列数据类型关联，但 Go 语言的 <code>sort.Sort</code> 函数不会对具体的序列和它的元素做限定。它使用一个接口类型 <code>sort.Interface</code> 来指定通用的序列算法。</p>
+<p>一个内置的排序算法需要知道三个东西：序列的长度，表示两个元素比较的结果，一种交换两个元素的方式；这就是 <code>sort.Interface</code> 接口的三个方法：</p>
+<pre><code class="language-go">package sort
+type Interface interface {
+    Len() int // 序列长度
+    Less(i, j int) bool // 两个元素比较的结果
+    Swap(i, j int) // 交换两个元素
+}
+</code></pre>
+<p>排列字符串切片：</p>
+<pre><code class="language-go">sort.Sort(StringSlice(names)) // 将切片转换为实现 `sort.Interface` 接口的类型
+sort.Strings(names) // 简化
+</code></pre>
+<h3 id="httphandler-接口"><a class="header" href="#httphandler-接口"><code>http.Handler</code> 接口</a></h3>
+<p><u><em>net/http</em></u></p>
+<pre><code class="language-go">package http
+type Handler interface { 
+    ServeHTTP(w ResponseWriter, r*Request)
+} 
+func ListenAndServe(address string, h Handler) error
+</code></pre>
+<p><code>ListenAndServe</code> 函数需要一个例如“localhost:8000”的服务器地址，和一个所有请求都可以分派的 Handler 接口实例。它会一直运行，直到这个服务因为一个错误而失败（或者启动失败），它的返回值一定是一个非空的错误。</p>
+<p>使用不同的 URL 触发不同的行为</p>
+<pre><code class="language-go">func (db database) ServeHTTP(w http.ResponseWriter, req *http.Request) {
+switch req.URL.Path {
+case &quot;/list&quot;:
+    for item, price := range db {
+    fmt.Fprintf(w, &quot;%s: %s\n&quot;, item, price)
+    }
+case &quot;/price&quot;:
+    // Quary 方法可以将 http 请求参数解析为一个 map
+    item := req.URL.Query().Get(&quot;item&quot;)
+    price, ok := db[item]
+    if !ok {
+    w.WriteHeader(http.StatusNotFound) // 404
+    fmt.Fprintf(w, &quot;no such item: %q\n&quot;, item)
+    return
+    }
+    fmt.Fprintf(w, &quot;%s\n&quot;, price)
+default:
+    w.WriteHeader(http.StatusNotFound) // 404
+    fmt.Fprintf(w, &quot;no such page: %s\n&quot;, req.URL)
+}
+}
+</code></pre>
+<p>现在 handler 基于 URL 的路径部分（<code>req.URL.Path</code>）来决定执行什么逻辑。如果不能识别，调用 <code>w.WriteHeader(http.StatusNotFound)</code> 返回客户端一个 HTTP 404 错误。</p>
+<p><code>http.ResponseWriter</code> 是另一个接口。它在 <code>io.Writer</code> 上增加了发送 HTTP 相应头的方法。另外，还可以使用 <code>http.Error</code> 函数。</p>
+<pre><code class="language-go">http.Error(w, msg, http.StatusNotFound)
+</code></pre>
+<p>net/http 包提供了一个请求多路器 <code>ServeMux</code> 来简化 URL 和 handlers 的联系（路由映射）。一个 ServeMux 将一批 <code>http.Handler</code> 聚集到一个单一 <code>http.Handler</code> 中。</p>
+<pre><code class="language-go">func main() {
+    mux := http.NewServeMux()
+    mux.Handle(&quot;/list&quot;, http.HandlerFunc(db.list))
+    mux.Handle(&quot;/price&quot;, http.HandlerFunc(db.price))
+    log.Fatal(http.ListenAndServe(&quot;localhost:8000&quot;, mux))
+}
+</code></pre>
+<p>所以 <code>db.list</code> 是一个实现了 handler 类似行为的函数，但是因为它没有方法，所以它不满足 <code>http.Handler</code> 接口并且不能直接传给 <code>mux.Handle</code>。</p>
+<p>语句 <code>http.HandlerFunc(db.list)</code> 是一个转换而非一个函数调用，因为 <code>http.HandlerFunc</code> 是一个类型。它有如下的定义：</p>
+<pre><code class="language-go">package http
+type HandlerFunc func(w ResponseWriter, r *Request)
+func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request) {
+    f(w, r)
+}
+</code></pre>
+<p>因为 handler 通过这种方式注册非常普遍，ServeMux 有一个方便的 HandleFunc 方法，它帮我们简化 handler 注册代码成这样：</p>
+<pre><code class="language-go">mux.HandleFunc(&quot;/list&quot;, db.list)
+mux.HandleFunc(&quot;/price&quot;, db.price)
+</code></pre>
+<p>为了方便，net/http 包提供了一个全局的 ServeMux 实 DefaultServerMux 和包级别的 <code>http.Handle</code> 和 <code>http.HandleFunc</code> 函数。现在，为了使用 DefaultServeMux 作为服务器的主 handler，我们不需要将它传给 ListenAndServe 函数；nil 值就可以工作。</p>
+<p>使用包级别的 <code>http.HandleFunc</code> 注册路由：</p>
+<pre><code class="language-go">func main() {
+    db := database{&quot;shoes&quot;: 50, &quot;socks&quot;: 5}
+    http.HandleFunc(&quot;/list&quot;, db.list)
+    http.HandleFunc(&quot;/price&quot;, db.price)
+    log.Fatal(http.ListenAndServe(&quot;localhost:8000&quot;, nil))
+}
+</code></pre>
+<p>最后，web 服务器在一个新的协程 Goruntine 中调用每一个 handler，所以当 handler 获取其它协程的共享变量时一定要使用预防措施比如 <strong>锁机制</strong>。</p>
+<h3 id="error-接口"><a class="header" href="#error-接口">Error 接口</a></h3>
+<pre><code class="language-go">type error interface {
+    Error() string
+}
+</code></pre>
+<p>创建一个 error 最简单的方法就是 <code>error.New</code> 函数，其实整个 error 包只有 4 行：</p>
+<pre><code class="language-go">package errors
+func New(text string) error { return &amp;errorString{text} }
+type errorString struct { text string }
+func (e *errorString) Error() string { return e.text }
+</code></pre>
+<p>指针类型 <code>*errorString</code> 满足 error 接口而非 <code>errorString</code> 类型，承载 <code>errorString</code> 的类型是一个结构体而非一个字符串，所以每个 New 函数的调用都分配了一个独一无二的错误示例。</p>
+<pre><code class="language-go">fmt.Println(errors.New(&quot;EOF&quot;) == errors.New(&quot;EOF&quot;)) // &quot;false&quot;
+</code></pre>
+<p>有一个方便的封装函数 <code>fmt.Errorf</code>，允许对错误信息进行字符串格式化 ：</p>
+<pre><code class="language-go">package fmt
+import &quot;errors&quot;
+func Errorf(format string, args ...interface{}) error {
+    return errors.New(Sprintf(format, args...))
+}
+</code></pre>
+<p><a href="https://www.cnblogs.com/cheyunhua/p/16007219.html">详解 Go 语言的 rune 类型</a></p>
+<h2 id="建议"><a class="header" href="#建议">建议</a></h2>
+<p>当设计一个新的包时，小白 Gopher 总是先创建一套接口，然后再定义一些满足它们的具体类型。这种方式的结果就是有很多的接口，它们中的每一个仅只有一个实现。<strong>接口只有当有两个或两个以上的具体类型必须以相同的方式进行处理时才需要</strong>。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../博客文章/_post/Golang/Golang-package-note.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../../博客文章/_post/Golang/Golang-project-and-gomod-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../博客文章/_post/Golang/Golang-package-note.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../../博客文章/_post/Golang/Golang-project-and-gomod-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr.min.js"></script>
+        <script src="../../../mark.min.js"></script>
+        <script src="../../../searcher.js"></script>
+
+        <script src="../../../clipboard.min.js"></script>
+        <script src="../../../highlight.js"></script>
+        <script src="../../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

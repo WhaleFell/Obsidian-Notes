@@ -1,0 +1,502 @@
+<!DOCTYPE HTML>
+<html lang="cn" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Rpi-1 - WhaleFall Obsidian Notes</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="Keep Notes everyday">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> 落落的Notes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../SUMMARY.html"><strong aria-hidden="true">1.1.</strong> SUMMARY</a></li><li class="chapter-item expanded "><a href="../../CutBoard/index.html"><strong aria-hidden="true">1.2.</strong> CutBoard</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../CutBoard/无线电爬取脚本.html"><strong aria-hidden="true">1.2.1.</strong> 无线电爬取脚本</a></li></ol></li><li class="chapter-item expanded "><a href="../../博客文章/index.html"><strong aria-hidden="true">1.3.</strong> 博客文章</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../博客文章/博客文章测试.html"><strong aria-hidden="true">1.3.1.</strong> 博客文章测试</a></li><li class="chapter-item expanded "><a href="../../博客文章/博客文章_post.html"><strong aria-hidden="true">1.3.2.</strong> 博客文章_post</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/index.html"><strong aria-hidden="true">1.3.3.</strong> _post</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../博客文章/_post/openwebrx-sdr.html"><strong aria-hidden="true">1.3.3.1.</strong> openwebrx-sdr</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Rpi-3.html"><strong aria-hidden="true">1.3.3.2.</strong> Rpi-3</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Samba4-config.html"><strong aria-hidden="true">1.3.3.3.</strong> Samba4-config</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Study.html"><strong aria-hidden="true">1.3.3.4.</strong> Study</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Linux-note.html"><strong aria-hidden="true">1.3.3.5.</strong> Linux-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Kali-Linux-Help.html"><strong aria-hidden="true">1.3.3.6.</strong> Kali-Linux-Help</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Rpi-1.html" class="active"><strong aria-hidden="true">1.3.3.7.</strong> Rpi-1</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Hexo-blog-format.html"><strong aria-hidden="true">1.3.3.8.</strong> Hexo-blog-format</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Freedom-network.html"><strong aria-hidden="true">1.3.3.9.</strong> Freedom-network</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Vim-config.html"><strong aria-hidden="true">1.3.3.10.</strong> Vim-config</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/clash-proxy-guide.html"><strong aria-hidden="true">1.3.3.11.</strong> clash-proxy-guide</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Github-workflow.html"><strong aria-hidden="true">1.3.3.12.</strong> Github-workflow</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Linux-iptables.html"><strong aria-hidden="true">1.3.3.13.</strong> Linux-iptables</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/onedrive-guide.html"><strong aria-hidden="true">1.3.3.14.</strong> onedrive-guide</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Python.html"><strong aria-hidden="true">1.3.3.15.</strong> Python</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/openwrt-lede-build-notes.html"><strong aria-hidden="true">1.3.3.16.</strong> openwrt-lede-build-notes</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Depression-medicine.html"><strong aria-hidden="true">1.3.3.17.</strong> Depression-medicine</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang.html"><strong aria-hidden="true">1.3.3.18.</strong> Golang</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Wky-help.html"><strong aria-hidden="true">1.3.3.19.</strong> Wky-help</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/radio-SWshort.html"><strong aria-hidden="true">1.3.3.20.</strong> radio-SWshort</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Server-all.html"><strong aria-hidden="true">1.3.3.21.</strong> Server-all</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Rpi-2.html"><strong aria-hidden="true">1.3.3.22.</strong> Rpi-2</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Study/index.html"><strong aria-hidden="true">1.3.3.23.</strong> Study</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../博客文章/_post/Study/Ancient-poems.html"><strong aria-hidden="true">1.3.3.23.1.</strong> Ancient-poems</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Study/Zhongkao-maths.html"><strong aria-hidden="true">1.3.3.23.2.</strong> Zhongkao-maths</a></li></ol></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Python/index.html"><strong aria-hidden="true">1.3.3.24.</strong> Python</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../博客文章/_post/Python/Python-Generator-Iterator-decorater.html"><strong aria-hidden="true">1.3.3.24.1.</strong> Python-Generator-Iterator-decorater</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Python/Python-async.html"><strong aria-hidden="true">1.3.3.24.2.</strong> Python-async</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Python/Flask-Web-note.html"><strong aria-hidden="true">1.3.3.24.3.</strong> Flask-Web-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Python/Python-Concurrent.html"><strong aria-hidden="true">1.3.3.24.4.</strong> Python-Concurrent</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Python/Python-Tkinter-GUI.html"><strong aria-hidden="true">1.3.3.24.5.</strong> Python-Tkinter-GUI</a></li></ol></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/index.html"><strong aria-hidden="true">1.3.3.25.</strong> Golang</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-const-note.html"><strong aria-hidden="true">1.3.3.25.1.</strong> Golang-const-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-goruntine-note.html"><strong aria-hidden="true">1.3.3.25.2.</strong> Golang-goruntine-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-package-note.html"><strong aria-hidden="true">1.3.3.25.3.</strong> Golang-package-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-interface-note.html"><strong aria-hidden="true">1.3.3.25.4.</strong> Golang-interface-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-project-and-gomod-note.html"><strong aria-hidden="true">1.3.3.25.5.</strong> Golang-project-and-gomod-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-error-note.html"><strong aria-hidden="true">1.3.3.25.6.</strong> Golang-error-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-method-note.html"><strong aria-hidden="true">1.3.3.25.7.</strong> Golang-method-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-envbuild-note.html"><strong aria-hidden="true">1.3.3.25.8.</strong> Golang-envbuild-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-datatype-note.html"><strong aria-hidden="true">1.3.3.25.9.</strong> Golang-datatype-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-function-note.html"><strong aria-hidden="true">1.3.3.25.10.</strong> Golang-function-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-type-keyword-note.html"><strong aria-hidden="true">1.3.3.25.11.</strong> Golang-type-keyword-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-HTML-note.html"><strong aria-hidden="true">1.3.3.25.12.</strong> Golang-HTML-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-variable-note.html"><strong aria-hidden="true">1.3.3.25.13.</strong> Golang-variable-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-pointer-note.html"><strong aria-hidden="true">1.3.3.25.14.</strong> Golang-pointer-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-JSON-note.html"><strong aria-hidden="true">1.3.3.25.15.</strong> Golang-JSON-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-id-note.html"><strong aria-hidden="true">1.3.3.25.16.</strong> Golang-id-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-struct-note.html"><strong aria-hidden="true">1.3.3.25.17.</strong> Golang-struct-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-map-note.html"><strong aria-hidden="true">1.3.3.25.18.</strong> Golang-map-note</a></li><li class="chapter-item expanded "><a href="../../博客文章/_post/Golang/Golang-note-catalogue.html"><strong aria-hidden="true">1.3.3.25.19.</strong> Golang-note-catalogue</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../English-Study/index.html"><strong aria-hidden="true">1.4.</strong> English-Study</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../English-Study/英语音标学习.html"><strong aria-hidden="true">1.4.1.</strong> 英语音标学习</a></li></ol></li><li class="chapter-item expanded "><a href="../../Study/index.html"><strong aria-hidden="true">1.5.</strong> Study</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Study/Physical/index.html"><strong aria-hidden="true">1.5.1.</strong> Physical</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Study/Physical/第5讲-力的正交分解.html"><strong aria-hidden="true">1.5.1.1.</strong> 第5讲-力的正交分解</a></li><li class="chapter-item expanded "><a href="../../Study/Physical/第二讲-比例问题.html"><strong aria-hidden="true">1.5.1.2.</strong> 第二讲-比例问题</a></li><li class="chapter-item expanded "><a href="../../Study/Physical/第六讲.html"><strong aria-hidden="true">1.5.1.3.</strong> 第六讲</a></li><li class="chapter-item expanded "><a href="../../Study/Physical/第7讲.html"><strong aria-hidden="true">1.5.1.4.</strong> 第7讲</a></li><li class="chapter-item expanded "><a href="../../Study/Physical/第一讲-运动的描述.html"><strong aria-hidden="true">1.5.1.5.</strong> 第一讲-运动的描述</a></li></ol></li><li class="chapter-item expanded "><a href="../../Study/Chemistry/index.html"><strong aria-hidden="true">1.5.2.</strong> Chemistry</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Study/Chemistry/第一讲-离子反应的基础概念.html"><strong aria-hidden="true">1.5.2.1.</strong> 第一讲-离子反应的基础概念</a></li></ol></li><li class="chapter-item expanded "><a href="../../Study/Math/index.html"><strong aria-hidden="true">1.5.3.</strong> Math</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Study/Math/函数.html"><strong aria-hidden="true">1.5.3.1.</strong> 函数</a></li><li class="chapter-item expanded "><a href="../../Study/Math/第一讲-集合与常用逻辑用语.html"><strong aria-hidden="true">1.5.3.2.</strong> 第一讲-集合与常用逻辑用语</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../other/index.html"><strong aria-hidden="true">1.6.</strong> other</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../other/OPENAI-KEY.html"><strong aria-hidden="true">1.6.1.</strong> OPENAI-KEY</a></li><li class="chapter-item expanded "><a href="../../other/未命名.html"><strong aria-hidden="true">1.6.2.</strong> 未命名</a></li><li class="chapter-item expanded "><a href="../../other/写给v友的一段话.html"><strong aria-hidden="true">1.6.3.</strong> 写给v友的一段话</a></li><li class="chapter-item expanded "><a href="../../other/模拟飞行.html"><strong aria-hidden="true">1.6.4.</strong> 模拟飞行</a></li></ol></li><li class="chapter-item expanded "><a href="../../业余无线电Ham/index.html"><strong aria-hidden="true">1.7.</strong> 业余无线电Ham</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../业余无线电Ham/通联日志.html"><strong aria-hidden="true">1.7.1.</strong> 通联日志</a></li><li class="chapter-item expanded "><a href="../../业余无线电Ham/Opengd77-Firmware-教程.html"><strong aria-hidden="true">1.7.2.</strong> Opengd77-Firmware-教程</a></li><li class="chapter-item expanded "><a href="../../业余无线电Ham/广播.html"><strong aria-hidden="true">1.7.3.</strong> 广播</a></li><li class="chapter-item expanded "><a href="../../业余无线电Ham/泉盛-K5-音质优化.html"><strong aria-hidden="true">1.7.4.</strong> 泉盛-K5-音质优化</a></li><li class="chapter-item expanded "><a href="../../业余无线电Ham/业余无线电笔记.html"><strong aria-hidden="true">1.7.5.</strong> 业余无线电笔记</a></li><li class="chapter-item expanded "><a href="../../业余无线电Ham/业余无线电采购.html"><strong aria-hidden="true">1.7.6.</strong> 业余无线电采购</a></li><li class="chapter-item expanded "><a href="../../业余无线电Ham/附近航空频率.html"><strong aria-hidden="true">1.7.7.</strong> 附近航空频率</a></li><li class="chapter-item expanded "><a href="../../业余无线电Ham/广播/index.html"><strong aria-hidden="true">1.7.8.</strong> 广播</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../业余无线电Ham/广播/广播收听报告-2023.05.23.html"><strong aria-hidden="true">1.7.8.1.</strong> 广播收听报告-2023.05.23</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../test/index.html"><strong aria-hidden="true">1.8.</strong> test</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../test/落落-OpenWRT-导航页.html"><strong aria-hidden="true">1.8.1.</strong> 落落-OpenWRT-导航页</a></li><li class="chapter-item expanded "><a href="../../test/思源笔记自动同步测试.html"><strong aria-hidden="true">1.8.2.</strong> 思源笔记自动同步测试</a></li><li class="chapter-item expanded "><a href="../../test/Obsidian-Hexo-模板测试.html"><strong aria-hidden="true">1.8.3.</strong> Obsidian-Hexo-模板测试</a></li></ol></li><li class="chapter-item expanded "><a href="../../高中事件/index.html"><strong aria-hidden="true">1.9.</strong> 高中事件</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../高中事件/举报中小学教师违规方法论.html"><strong aria-hidden="true">1.9.1.</strong> 举报中小学教师违规方法论</a></li><li class="chapter-item expanded "><a href="../../高中事件/举报法律依据.html"><strong aria-hidden="true">1.9.2.</strong> 举报法律依据</a></li><li class="chapter-item expanded "><a href="../../高中事件/举报信.html"><strong aria-hidden="true">1.9.3.</strong> 举报信</a></li></ol></li><li class="chapter-item expanded "><a href="../../碎碎念/index.html"><strong aria-hidden="true">1.10.</strong> 碎碎念</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../碎碎念/freedom.html"><strong aria-hidden="true">1.10.1.</strong> freedom</a></li><li class="chapter-item expanded "><a href="../../碎碎念/猫猫.html"><strong aria-hidden="true">1.10.2.</strong> 猫猫</a></li><li class="chapter-item expanded "><a href="../../碎碎念/文案.html"><strong aria-hidden="true">1.10.3.</strong> 文案</a></li><li class="chapter-item expanded "><a href="../../碎碎念/奇思妙想.html"><strong aria-hidden="true">1.10.4.</strong> 奇思妙想</a></li><li class="chapter-item expanded "><a href="../../碎碎念/闲鱼文案模板.html"><strong aria-hidden="true">1.10.5.</strong> 闲鱼文案模板</a></li><li class="chapter-item expanded "><a href="../../碎碎念/记录.html"><strong aria-hidden="true">1.10.6.</strong> 记录</a></li><li class="chapter-item expanded "><a href="../../碎碎念/思源笔记本使用感想.html"><strong aria-hidden="true">1.10.7.</strong> 思源笔记本使用感想</a></li><li class="chapter-item expanded "><a href="../../碎碎念/知乎精选.html"><strong aria-hidden="true">1.10.8.</strong> 知乎精选</a></li><li class="chapter-item expanded "><a href="../../碎碎念/猫猫/index.html"><strong aria-hidden="true">1.10.9.</strong> 猫猫</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../碎碎念/猫猫/多多.html"><strong aria-hidden="true">1.10.9.1.</strong> 多多</a></li></ol></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">WhaleFall Obsidian Notes</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: 😃 树莓派折腾手册 (一)——准备系统 😃
+date: 2021-06-18 19:37:48
+updated: 2021-06-18 19:37:48
+categories: Linux
+tags: [Respi, Linux]
+description:
+thumbnail: http://oss.whaleluo.top/blog/old/20210619154345.jpg
+banner_img: http://oss.whaleluo.top/blog/old/20210619154345.jpg</p>
+<hr />
+<h1 id="-树莓派折腾手册-一准备系统-"><a class="header" href="#-树莓派折腾手册-一准备系统-">😃 树莓派折腾手册 (一)——准备系统 😃</a></h1>
+<h2 id="烧录官方-debian-10-buster-系统镜像"><a class="header" href="#烧录官方-debian-10-buster-系统镜像">烧录官方 <code>Debian 10 buster</code> 系统镜像</a></h2>
+<p>先用 <strong>SDFormatter</strong> 格式化一下内存卡叭:</p>
+<p><img src="http://oss.whaleluo.top/blog/old/20210619152409.png-picsmall" alt="hZkDB8qxtRgQz3S" /></p>
+<h3 id="1-烧写镜像用到的软件-win32-disk-image"><a class="header" href="#1-烧写镜像用到的软件-win32-disk-image">1. 烧写镜像用到的软件： <strong>Win32 Disk Image</strong></a></h3>
+<p><img src="http://oss.whaleluo.top/blog/old/20210619152403.png-picsmall" alt="Zb6CEHnf17oqO5Q" /></p>
+<ul>
+<li>然后在 U 盘的根目录建立一个空白的 <strong>ssh 文件 方便 ssh 远程连接</strong><br />
+<img src="http://oss.whaleluo.top/blog/old/sasw.png-picsmall" alt="FV5qpvWz7LtsOgi" /></li>
+<li>用 <strong>Windows PowerShell</strong> 连接树莓派 ssh<br />
+<code>shift+右键</code> 呼出<strong>Windows PowerShell</strong><br />
+<strong>完整连接语法</strong>:</li>
+</ul>
+<pre><code class="language-shell">ssh -p 端口号 用户名@主机地址
+</code></pre>
+<blockquote>
+<p>树莓派默认的用户名 <strong>pi</strong> 密码 <strong>raspberry</strong><img src="http://oss.whaleluo.top/blog/old/20210619152448.png-picsmall" alt="QLA74lscbwzRWY2" /></p>
+</blockquote>
+<ul>
+<li>树莓派扩展 TF 卡分区:<br />
+sudo raspi-config --&gt; Advanced options --&gt;Expand Filesystem, 确认重启</li>
+</ul>
+<h3 id="2-启动树莓派-hdmi-功能"><a class="header" href="#2-启动树莓派-hdmi-功能">2. 启动树莓派 HDMI 功能</a></h3>
+<ul>
+<li>
+<p>编辑 <code>config.txt</code> 文件，修改以下参数:<br />
+sudo nano /boot/config.txt</p>
+<ul>
+<li>把下面#注释符号去掉<br />
+hdmi_force_hotplug=1 #启用HDMI热插拔功能<br />
+config_hdmi_boost=4 #启用加强HDMI信号</li>
+</ul>
+<blockquote>
+<p>不出意外的话应该可以接上，但是我的没有声音输出诶<br />
+注：如果还是不能的话，找到#hdmi_group=1 这句话，把前面的#注释符号去掉，把数字改成 2 强行指定显示器类型：1 是连接老式电视，2 代表连接新电视。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="树莓派-debian-10-buster-换清华源"><a class="header" href="#树莓派-debian-10-buster-换清华源">树莓派 <code>Debian 10 buster</code> 换清华源</a></h2>
+<pre><code class="language-shell">sudo nano /etc/apt/sources.list
+deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main non-free contrib
+deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main non-free contrib
+
+sudo nano /etc/apt/sources.list.d/raspi.list
+deb http://mirrors.tuna.tsinghua.edu.cn/raspberrypi/ buster main ui
+</code></pre>
+<ul>
+<li>更新源列表: <code>sudo apt-get update</code></li>
+<li>更新软件版本，升级软件包: <code>sudo apt-get upgrade</code></li>
+</ul>
+<h2 id="树莓派-rasp-config-相关设置"><a class="header" href="#树莓派-rasp-config-相关设置">树莓派 <code>rasp-config</code> 相关设置</a></h2>
+<h3 id="1-设置-piroot-用户密码并解锁"><a class="header" href="#1-设置-piroot-用户密码并解锁">1. 设置 pi，root 用户密码，并解锁</a></h3>
+<pre><code class="language-shell">#树莓派修改密码，顺便解锁root用户
+sudo passwd pi
+sudo passwd root
+#解锁root用户
+sudo passwd --unlock root
+#如果想在终端直接用root用户登录，编辑
+sudo nano /etc/ssh/sshd_config
+修改 PermitRootLogin without-password 为 PermitRootLogin yes
+</code></pre>
+<h3 id="2-respi-本地化操作"><a class="header" href="#2-respi-本地化操作">2. <strong>respi 本地化</strong>操作</a></h3>
+<ul>
+<li>安装中文字体，提供几个 Linux 中文字体库:</li>
+</ul>
+<pre><code class="language-shell">sudo apt-get install xfonts-wqy
+sudo apt-get install ttf-wqy-zenhei ttf-wqy-microhei
+</code></pre>
+<ul>
+<li>设置终端中文显示: <code>sudo raspi-config</code>:<br />
+选择 change_locale，在 Default locale for the system environment: 中选择 zh_CN.UTF-8。<br />
+往下翻一会儿直到找到 zh_CN UTF-8 把光标移动到前面，然后按下空格键打上 *<br />
+<img src="http://oss.whaleluo.top/blog/old/20210619152513.png-picsmall" alt="3hQeD8k9L1mgTZc" /></li>
+<li>改变键盘布局: <code>sudo dpkg-reconfigure keyboard-configuration</code></li>
+</ul>
+<h3 id="3-设置-vnc-桌面-连接"><a class="header" href="#3-设置-vnc-桌面-连接">3. 设置 Vnc 桌面 连接</a></h3>
+<blockquote>
+<p>注: 这里放弃了树莓派自带的 <strong>realvnc</strong> 因为不支持网页 <strong>novnc</strong> 且功能很少，所以用 <strong>Tightvnc</strong> 代替</p>
+</blockquote>
+<ul>
+<li>安装<strong>Tightvncserver</strong>: <code>sudo apt-get install tightvncserver</code></li>
+<li>安装好之后设置一个<strong>VNC 密码</strong>: vncpasswd</li>
+</ul>
+<blockquote>
+<p>注: 先输入操作密码两次，然后会询问是否设置一个查看 (view-only) 密码，按自己喜欢，一般没必要。</p>
+</blockquote>
+<ul>
+<li>设置<strong>开机自启动</strong> :</li>
+</ul>
+<blockquote>
+<p>设置<strong>开机启动</strong>，需要在 <strong>/etc/init.d/</strong> 中创建一个文件。例如<strong>tightvncserver</strong>: (启动脚本的名称，有和程序名一致的习惯)</p>
+</blockquote>
+<pre><code class="language-sh">sudo nano /etc/init.d/tightvncserver
+# 内容如下:
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          tightvncserver
+# Required-Start:    $local_fs
+# Required-Stop:     $local_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start/stop tightvncserver
+### END INIT INFO
+
+# More details see:
+# http://www.penguintutor.com/linux/tightvnc
+
+### Customize this entry
+# Set the USER variable to the name of the user to start tightvncserver under
+export USER='pi'
+### End customization required
+
+eval cd ~$USER
+
+case &quot;$1&quot; in
+  start)
+    # 启动命令行。此处自定义分辨率、控制台号码或其它参数。
+    su $USER -c '/usr/bin/tightvncserver -depth 16 -geometry 800x600 :1'
+    echo &quot;Starting TightVNC server for $USER &quot;
+    ;;
+  stop)
+    # 终止命令行。此处控制台号码与启动一致。
+    su $USER -c '/usr/bin/tightvncserver -kill :1'
+    echo &quot;Tightvncserver stopped&quot;
+    ;;
+  *)
+    echo &quot;Usage: /etc/init.d/tightvncserver {start|stop}&quot;
+    exit 1
+    ;;
+esac
+exit 0
+</code></pre>
+<p>然后给<strong>tightvncserver 文件</strong>加<strong>执行权限</strong>：</p>
+<pre><code class="language-shell">sudo chmod 755 /etc/init.d/tightvncserver
+</code></pre>
+<p>并更新<strong>开机启动列表</strong>：</p>
+<pre><code class="language-shell">sudo update-rc.d tightvncserver defaults
+</code></pre>
+<p>一些<strong>service 命令</strong> :</p>
+<pre><code class="language-shell">sudo service tightvncserver restart #重启服务
+sudo service tightvncserver start/stop #关闭/开启服务
+sudo service tightvncserver status #查看服务运行状态
+</code></pre>
+<blockquote>
+<p>附: vnc 客户端下载<br />
+<a href="https://www.realvnc.com/en/connect/download/viewer/">vnc官网</a></p>
+</blockquote>
+<p>连接成功惹~:<br />
+<img src="http://oss.whaleluo.top/blog/old/20210619152521.png-picsmall" alt="" /><br />
+<img src="http://oss.whaleluo.top/blog/old/20210619152531.png-picsmall" alt="" /><br />
+编辑 ./vnc/xstartup 配置文件使其能与 windown 共享剪贴板</p>
+<pre><code class="language-shell">sudo nano .vnc/xstartup
+
+#在后方追加
+vncconfig -nowin -iconic &amp;
+#重启Tightvncserver
+sudo service tightvncserver restart
+</code></pre>
+<h3 id="4部署novnc-网页"><a class="header" href="#4部署novnc-网页">4.部署<strong>novnc 网页</strong></a></h3>
+<blockquote>
+<p>方便在网页上控制树莓派屏幕，但是<strong>不支持 realvnc</strong></p>
+</blockquote>
+<ul>
+<li>安装 <strong>git 支持</strong></li>
+</ul>
+<pre><code class="language-shell">sudo apt-get install git
+</code></pre>
+<ul>
+<li><strong>克隆</strong> novnc 项目:</li>
+</ul>
+<blockquote>
+<p>在中国大陆听说~~加上 ​~~​~~**<del>​~~​ 就可以加速 ​~~​</del><strong>克隆</strong><del>​~~​ 速度丫</del> 改口 应换成 <a href="https://github.com.cnpmjs.org/">https://github.com.cnpmjs.org/</a></p>
+</blockquote>
+<pre><code class="language-shell">git clone https://github.com/kanaka/noVNC #源地址
+git clone https://github.com.cnpmjs.org/kanaka/noVNC #加速地址
+</code></pre>
+<ul>
+<li>运行 <strong>novnc</strong> 并设置<strong>开机自启动</strong>:</li>
+</ul>
+<pre><code class="language-shell">cd noVNC
+# 初始化可能有点点慢
+./utils/launch.sh --vnc localhost:5901 #监听5901 vnc端口
+</code></pre>
+<p><img src="http://oss.whaleluo.top/blog/old/20210619152538.png-picsmall" alt="" /></p>
+<ul>
+<li>尝试访问: <a href="http://raspiberry:6080">http://raspiberry:6080</a> 可<br />
+<img src="http://oss.whaleluo.top/blog/old/20210619152542.png-picsmall" alt="" /></li>
+<li>一些<strong>高级设置</strong> :</li>
+</ul>
+<pre><code class="language-shell">./utils/websockify --web ./ 8787 localhost:5901  #修改6080默认端口
+./utils/websockify --web ./ 8787 192.168.1.10:5901 #可以讲localhost改成所有安装了vncserver的IP地址
+</code></pre>
+<p><strong>连接速度太慢可以安装 Python 的 numpy 库解决</strong></p>
+<ul>
+<li>设置<strong>开机启动</strong>：</li>
+</ul>
+<pre><code class="language-shell">#编辑开机启动项
+sudo nano /etc/rc.local
+#以pi用户运行程序
+su pi -c &quot;/home/pi/noVNC/utils/launch.sh --vnc localhost:5901&quot; &amp;
+</code></pre>
+<p><img src="http://oss.whaleluo.top/blog/old/20210619152617.png-picsmall" alt="fEVci5dlNCMaUs4" /></p>
+<h3 id="5安装-cockpit-web-可视化管理"><a class="header" href="#5安装-cockpit-web-可视化管理">5.安装 <code>cockpit</code> Web 可视化管理</a></h3>
+<pre><code class="language-shell">sudo apt-get update
+sudo apt-get install cockpit
+</code></pre>
+<blockquote>
+<p>安装的依赖有 <strong>一丢丢多</strong></p>
+</blockquote>
+<ul>
+<li>默认是用 <code>https</code> 访问，需要修改配置文件使其能 <code>http</code> 访问</li>
+</ul>
+<pre><code class="language-shell">sudo nano /etc/cockpit/cockpit.conf #这个文件默认是不存在的需要新建
+
+[WebService]
+AllowUnencrypted=true
+LoginTitle=鲸云pi
+</code></pre>
+<ul>
+<li>配置<strong>开机启动</strong></li>
+</ul>
+<pre><code class="language-shell">sudo systemctl enable cockpit.socket
+sudo systemctl start cockpit.socket
+</code></pre>
+<ul>
+<li>
+<p>页面</p>
+<p><img src="http://oss.whaleluo.top/blog/old/20210619152626.png-picsmall" alt="image-20200805174634421" /></p>
+</li>
+</ul>
+<h2 id="python-设置"><a class="header" href="#python-设置">Python 设置</a></h2>
+<h3 id="概况"><a class="header" href="#概况">概况</a></h3>
+<blockquote>
+<p>树莓派默认安装了两个版本的<strong>Python</strong></p>
+</blockquote>
+<p><img src="http://oss.whaleluo.top/blog/old/20210619152632.png-picsmall" alt="" /></p>
+<h3 id="树莓派-pip-换源"><a class="header" href="#树莓派-pip-换源">树莓派 Pip 换源</a></h3>
+<blockquote>
+<p><strong>pip</strong>更换为<strong>国内源</strong>，可以大大的提高安装成功率和速度。不管你用的是<strong>pip3 还是 pip，方法都是一样的</strong></p>
+</blockquote>
+<pre><code class="language-shell">mkdir ~/.pip
+nano ~/.pip/pip.conf
+
+#写入
+[global]
+timeout = 5000
+index-url = https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+[install]
+use-mirrors = true
+mirrors = https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+</code></pre>
+<ul>
+<li><strong>更新 pip 版本</strong></li>
+</ul>
+<pre><code class="language-shell">python3 -m pip install --upgrade pip
+</code></pre>
+<p><img src="http://oss.whaleluo.top/blog/old/20210619152649.png-picsmall" alt="seVOiSZrBKgE827" /></p>
+<ul>
+<li><strong>树莓派指定 Python 版本安装模块</strong></li>
+</ul>
+<pre><code class="language-shell">sudo pip3 install XXX   #Python3版本
+sudo pip install XXX   #Python2版本
+</code></pre>
+<h2 id="部署-zsh"><a class="header" href="#部署-zsh">部署 Zsh</a></h2>
+<pre><code class="language-shell">sh -c &quot;$(wget -O- https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)&quot;
+
+git clone https://github.com.cnpmjs.org/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+ git clone https://github.com.cnpmjs.org/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+ 
+ ZSH_DISABLE_COMPFIX=true
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../博客文章/_post/Kali-Linux-Help.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../博客文章/_post/Hexo-blog-format.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../博客文章/_post/Kali-Linux-Help.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../博客文章/_post/Hexo-blog-format.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
