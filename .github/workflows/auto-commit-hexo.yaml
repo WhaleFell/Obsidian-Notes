@@ -40,3 +40,4 @@ jobs:
           branch: main
           directory: ./HexoBlogSource/
           repository: WhaleFell/HexoBlogSource
+        
