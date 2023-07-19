@@ -33,26 +33,19 @@ jobs:
           if [[ -n $(git status --porcelain) ]]; then
             git commit -m "Obsidian Upload!"
           fi
-
       
-  commit:
-    needs: submit
-    name: commit
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: HexoBlogSource
-    steps:
       - name: check dir
         run: |
           pwd
           ls
-
+  
       - name: Commit & Push changes
         uses: actions-js/push@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      
+
 
     
     
