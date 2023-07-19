@@ -39,21 +39,16 @@ jobs:
     needs: submit
     name: commit
     runs-on: ubuntu-latest
-    # defaults:
-      # run:
-        # shell: bash
-        # working-directory: ./HexoBlogSource
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./HexoBlogSource
     steps:
 
-      - name: Change to repository directory
-        run: cd ./HexoBlogSource/
-
-      - name: Push to target repository
-        uses: ad-m/github-push-action@master
+      - name: Commit & Push changes
+        uses: actions-js/push@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-          repository: WhaleFell/HexoBlogSource
 
     
     
