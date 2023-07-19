@@ -42,7 +42,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./HexoBlogSource
+        working-directory: HexoBlogSource
     steps:
       - name: check dir
         run: |
