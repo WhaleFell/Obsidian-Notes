@@ -20,9 +20,9 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source_file: '博客文章/_post/'
+        source_file: '博客文章/_posts/'
         destination_repo: 'WhaleFell/HexoBlogSource'
-        destination_folder: 'source/_posts'
+        destination_folder: 'source/'
         user_email: 'whalefall9420@outlook.com'
         user_name: 'WhaleFell'
         commit_message: 'Obsidian upload'
