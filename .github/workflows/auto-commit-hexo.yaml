@@ -14,23 +14,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: git config
+      - name: Deploy
+        env:
+          MY_EMAIL: whalefell9420@outlook.com
+          MY_NAME: whalefell
         run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add .
-          if [[ -n $(git status --porcelain) ]]; then
-            git commit -m "Obsidian Update"
-          fi
+          git config --global user.email $MY_EMAIL
+          git config --global user.name $MY_NAME
+          npm run deploy
 
       - name: Git clone HexoBlogSource and cp .md file
         working-directory: .
         run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
           git clone https://github.com/WhaleFell/HexoBlogSource ./HexoBlogSource/
           cp -r ./博客文章/_post/* ./HexoBlogSource/source/_posts/
-          cd ./HexoBlogSource/
+          cd ./HexoBlogSource
           git add .
           if [[ -n $(git status --porcelain) ]]; then
             git commit -m "Obsidian Upload!"
