@@ -13,12 +13,12 @@ jobs:
       uses: actions/checkout@v2
 
     - name: test
-      run: echo "${{ API_TOKEN_GITHUB }}"
+      run: echo "${{ env.API_TOKEN_GITHUB }}"
 
     - name: Pushes test file
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
-        API_TOKEN_GITHUB: ${{ API_TOKEN_GITHUB }}
+        API_TOKEN_GITHUB: ${{ env.API_TOKEN_GITHUB }}
       with:
         source_file: '博客文章/_post/'
         destination_repo: 'WhaleFell/HexoBlogSource'
