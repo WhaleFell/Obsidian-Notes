@@ -159,7 +159,7 @@ vim /etc/sysctl.conf
 net.ipv4.ip_forward=1
 
 # 重启network服务
-systemctl restart network
+systemctl restart ****network
 
 # 查看是否修改成功
 sysctl net.ipv4.ip_forward

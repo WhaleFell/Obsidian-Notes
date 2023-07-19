@@ -452,7 +452,7 @@ Running the container with `--network host`​ *might* improve network performan
 docker running
 
 ```sh
-docker run -d -p 8080:80 \
+docker run -d -p 8080:8080 \
 --name nginx-proxy \
 --restart=always \
 -v /root/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \
@@ -582,6 +582,53 @@ location /note/ {
 
 ### 添加证书
 
+#### 使用 acme.sh 申请证书
+
+```shell
+# 配置 Docker 为 daemon
+docker run -d \
+-v /root/acme/:/acme.sh \
+-e "CF_Key=e1c57d011aae471eaca549607a2f74154cbe5" \
+-e "CF_Email=whalefall9420@outlook.com" \
+--restart=always \
+--name=acme.sh \
+--net=host \
+neilpang/acme.sh daemon
+
+# 进入 docker shell
+docker exec -it acme.sh sh
+
+# 设置自动更新
+docker exec acme.sh --upgrade --auto-upgrade 
+
+# 使用 letsencrypt 签发证书
+docker exec acme.sh --set-default-ca --server letsencrypt --issue --dns dns_cf -d *.whaleluo.top -d www.whaleluo.top
+
+# 导出 nginx 使用的证书
+docker exec acme.sh --install-cert -d whaleluo.top --key-file /acme.sh/private.key --fullchain-file /acme.sh/cert.pem
+
+# 导出 uhttpd 使用的证书
+acme.sh --install-cert -d *.whaleluo.top \
+--cert-file      /acme.sh/uhttpd.crt  \
+--key-file       /acme.sh/uhttpd.key  \
+
+# 容器会自动更新 crantab 每天0点检查证书 `crontab -l`
+/acme.sh # acme.sh --cron --home "/root/.acme.sh" --config-home "/acme.sh"
+[Wed Jul 19 02:31:31 UTC 2023] ===Starting cron===
+[Wed Jul 19 02:31:31 UTC 2023] Already uptodate!
+[Wed Jul 19 02:31:31 UTC 2023] Upgrade success!
+[Wed Jul 19 02:31:31 UTC 2023] Auto upgraded to: 3.0.6
+[Wed Jul 19 02:31:32 UTC 2023] Renew: '*.whaleluo.top'
+[Wed Jul 19 02:31:32 UTC 2023] Renew to Le_API=https://acme-v02.api.letsencrypt.org/directory
+[Wed Jul 19 02:31:32 UTC 2023] Skip, Next renewal time is: 2023-09-14T17:18:24Z
+[Wed Jul 19 02:31:32 UTC 2023] Add '--force' to force to renew.
+[Wed Jul 19 02:31:32 UTC 2023] Skipped *.whaleluo.top_ecc
+[Wed Jul 19 02:31:32 UTC 2023] ===End cron===
+
+```
+
+#### Nginx 配置
+
 ```nginx
 user  nginx;
 worker_processes  auto;
@@ -607,7 +654,7 @@ http {
         listen 80 ssl http2;
         server_name _;
 
-        ssl                      off;
+        ssl                      on;
         ssl_certificate     /usr/local/nginx/cert/cert.pem;
         ssl_certificate_key  /usr/local/nginx/cert/private.key;
       
@@ -674,7 +721,7 @@ http {
 		listen 8080 ssl http2;
 		server_name _;
 
-		ssl off;
+		# ssl off;
 		ssl_certificate /usr/local/nginx/cert/cert.pem;
 		ssl_certificate_key /usr/local/nginx/cert/private.key;
 
@@ -839,6 +886,19 @@ http {
 
 	}
 }
+```
+
+## OpenWRT 
+
+x86 官方源
+
+```shell
+src/gz openwrt_core http://downloads.openwrt.org/releases/21.02.0/targets/x86/64/packages  
+src/gz openwrt_base https://downloads.openwrt.org/snapshots/packages/x86_64/base  
+src/gz openwrt_luci    https://downloads.openwrt.org/snapshots/packages/x86_64/luci  
+src/gz openwrt_packages https://downloads.openwrt.org/snapshots/packages/x86_64/packages  
+src/gz openwrt_routing https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/routing  
+src/gz openwrt_telephony https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/telephony
 ```
 
 ## 引用 Reference
