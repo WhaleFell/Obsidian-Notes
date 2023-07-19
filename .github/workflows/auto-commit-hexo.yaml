@@ -42,8 +42,12 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./HexoBlogSource
+        # working-directory: ./HexoBlogSource
     steps:
+      
+      - name: Change to repository directory
+        run: cd ./HexoBlogSource/
+
       - name: Push to target repository
         uses: ad-m/github-push-action@master
         with:
