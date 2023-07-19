@@ -30,9 +30,9 @@ jobs:
               git commit -m "Obsidian Upload!"
           fi
           
-
+      # https://github.com/marketplace/actions/github-push#troubleshooting
       - name: Push to target repository
-        uses: ad-m/github-push-action@v0.5.0
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
