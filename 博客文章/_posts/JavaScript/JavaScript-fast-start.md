@@ -333,7 +333,7 @@ var myVar=myFunction();
 - 在函数中，this 表示全局对象。
 - 在函数中，在严格模式下，this 是未定义的 (undefined)。
 - 在事件中，this 表示接收事件的元素。
-- 类似 call() 和 apply() 方法可以将 this 引用到任何对象。
+- 类似 call() 和 apply() 方法可以将 this 引用到任何对象。（#1）
 
 ```javascript
 // 单独使用 this 在浏览器中，window 就是该全局对象为 [**object Window**]:
@@ -348,6 +348,24 @@ var person = {
     return this.firstName + " " + this.lastName;
   }
 };
+```
+
+显式函数绑定：
+
+在 JavaScript 中函数也是对象，对象则有方法，apply 和 call 就是函数对象的方法。这两个方法异常强大，他们允许切换函数执行的上下文环境（context），即 this 绑定的对象。  
+在下面实例中，当我们使用 person2 作为参数来调用 person1.fullName 方法时, **this** 将指向 person2, 即便它是 person1 的方法：
+
+```javascript
+var person1 = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+var person2 = {
+  firstName:"John",
+  lastName: "Doe",
+}
+person1.fullName.call(person2);  // 返回 "John Doe"
 ```
 
 ## 异常处理 （Exception handling）
@@ -366,3 +384,37 @@ try {
     …    //结束处理
 }
 ```
+
+## javascript:void(0) 含义
+
+javascript:void(0) 中最关键的是 **void** 关键字， **void** 是 JavaScript 中非常重要的关键字，**该操作符指定要计算一个表达式但是不返回值。**
+
+```javascript
+void(func())
+javascript:void(func())
+
+function getValue(){
+   var a,b,c;
+   a = void ( b = 5, c = 7 ); // 运行 b = 5, c = 7 但不赋值给 a
+   // a = undefind
+   document.write('a = ' + a + ' b = ' + b +' c = ' + c );
+}
+```
+
+## JavaScript asynchronous 异步
+
+JavaScript 中的异步操作函数往往通过 **回调函数** 来实现异步任务的结果处理。  
+回调函数就是一个函数，它是在我们启动一个异步任务的时候就告诉它：等你完成了这个任务之后要干什么。这样一来主线程几乎不用关心异步任务的状态了，他自己会善始善终。
+
+```javascript
+function print() {
+    document.getElementById("demo").innerHTML="RUNOOB!";
+}
+setTimeout(print, 3000);
+
+setTimeout(function () {
+    document.getElementById("demo").innerHTML="RUNOOB!";
+}, 3000);
+```
+
+[JavaScript Promise | 菜鸟教程](https://www.runoob.com/js/js-promise.html)
