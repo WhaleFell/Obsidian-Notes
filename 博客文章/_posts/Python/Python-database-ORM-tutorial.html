@@ -198,6 +198,8 @@ banner_img:</li>
 <pre><code class="language-python">from sqlalchemy import create_engine
 engine = create_engine(&quot;sqlite+pysqlite:///:memory:&quot;, echo=True)
 </code></pre>
+<h3 id="connect-mysql-server"><a class="header" href="#connect-mysql-server">Connect mysql server</a></h3>
+<p>reference: <a href="https://docs.sqlalchemy.org/en/20/dialects/mysql.html">MySQL and MariaDB — SQLAlchemy 2.0 Documentation</a></p>
 <h2 id="transactions-事务操作"><a class="header" href="#transactions-事务操作">Transactions 事务操作</a></h2>
 <h3 id="core-engine-connect"><a class="header" href="#core-engine-connect">Core Engine Connect</a></h3>
 <pre><code class="language-python">from sqlalchemy import text
@@ -532,7 +534,7 @@ async def async_main() -&gt; None:
 
 asyncio.run(async_main())
 </code></pre>
-<h3 id="complete-example-完整示例"><a class="header" href="#complete-example-完整示例">Complete example 完整示例：</a></h3>
+<h3 id="complete-example-完整示例"><a class="header" href="#complete-example-完整示例">Complete example 完整示例</a></h3>
 <pre><code class="language-python">from __future__ import annotations
 
 import asyncio
@@ -646,11 +648,47 @@ asyncio.run(async_main())
 <p>多年来，它是使用 SQLAlchemy ORM 时唯一的 SQL 接口。从版本 2.0 开始，一种全新的工作方式现已成为标准方法，其中适用于 Core 的相同 <code>select()</code> 构造也适用于 ORM，为构建查询提供一致的接口。</p>
 <p>从旧版本迁移到 2.0 <a href="https://docs.sqlalchemy.org/en/20/changelog/migration_20.html#migration-20-query-usage">SQLAlchemy 2.0 - Major Migration Guide — SQLAlchemy 2.0 Documentation</a></p>
 <p>SQLAlchemy 2.0 中最大的明显变化是使用 <code>Session.execute()</code> 与 <code>select()</code> 结合使用来运行 ORM 查询，而不是使用 <code>Session.query()</code> 。正如其他地方提到的，没有计划实际删除 <code>Session.query()</code> API 本身，因为它现在是通过在内部使用新 API 来实现的，它将保留为旧版 API，并且这两个 API 都可以自由使用。</p>
+<h2 id="sqlalchemy-extansion-扩展"><a class="header" href="#sqlalchemy-extansion-扩展">SQLAlchemy Extansion 扩展</a></h2>
+<h3 id="sqlalchemy-utils"><a class="header" href="#sqlalchemy-utils">Sqlalchemy-utils</a></h3>
+<p>看样子比较老了。</p>
+<p><a href="https://github.com/kvesteri/sqlalchemy-utils">GitHub - kvesteri/sqlalchemy-utils: Various utility functions and datatypes for SQLAlchemy.</a></p>
+<blockquote>
+<p>Various utility <strong>functions</strong> and <strong>datatypes</strong> for SQLAlchemy. SQLAlchemy 的各种实用函数和数据类型。</p>
+</blockquote>
 <h2 id="qa"><a class="header" href="#qa">Q&amp;A</a></h2>
 <h3 id="is-the-session-thread-safe-线程安全-is-asyncsession-safe异步并发安全-to-share-in-concurrent-tasks"><a class="header" href="#is-the-session-thread-safe-线程安全-is-asyncsession-safe异步并发安全-to-share-in-concurrent-tasks">Is the Session thread-safe (线程安全)? Is AsyncSession safe(异步并发安全) to share in concurrent tasks?<a href="https://docs.sqlalchemy.org/en/20/orm/session_basics.html#is-the-session-thread-safe-is-asyncsession-safe-to-share-in-concurrent-tasks" title="Permalink to this heading">¶</a></a></h3>
 <p><code>Session</code> 是一个可变的、有状态的对象，<code>session</code> 的实例就无法在并发线程或异步任务之间共享。 <code>Session</code> 旨在以非并发方式使用。</p>
 <p>在设计并发数据库应用程序时，适当的模型是 <strong>每个并发任务/线程都处理自己的数据库事务 <code>Session</code></strong>。</p>
 <p>确保这种使用的最佳方法是在线程或任务内部的顶级 Python 函数中本地使用 <strong>标准上下文管理器</strong> 模式。</p>
+<h3 id="sqlalchemyexccompileerror-varcharvarchar-变长字符串-requires-a-length-on-dialect方言-mysql"><a class="header" href="#sqlalchemyexccompileerror-varcharvarchar-变长字符串-requires-a-length-on-dialect方言-mysql">sqlalchemy.exc.CompileError: VARCHAR(varchar 变长字符串) Requires a length on dialect(方言) mysql</a></h3>
+<p><a href="https://stackoverflow.com/questions/16472725/invalidrequesterror-varchar-requires-a-length-on-dialect-mysql">python - InvalidRequestError: VARCHAR requires a length on dialect mysql - Stack Overflow</a></p>
+<p>official docs: <a href="https://docs.sqlalchemy.org/en/20/orm/mapping_styles.html#imperative-mapping">ORM Mapped Class Overview — SQLAlchemy 2.0 Documentation</a></p>
+<p>在 mysql 中使用 <strong>变长字符串</strong> 时需要使用 <code>String(100)</code> 来定义字符串长度：</p>
+<pre><code class="language-python">class TGForwardConfig(Base):
+    __tablename__ = 'forward_config'
+
+    id: Mapped[int] = mapped_column(primary_key=True, doc=&quot;主键&quot;)
+    source: Mapped[int] = mapped_column(doc=&quot;源群聊ID&quot;)
+    dest: Mapped[int] = mapped_column(doc=&quot;目标群聊ID&quot;)
+    forward_history_count: Mapped[int] = mapped_column(doc=&quot;转发历史信息的数量&quot;)
+    interval_second: Mapped[int] = mapped_column(doc=&quot;间隔时间单位 s&quot;, default=20)
+
+    remove_word: Mapped[Optional[str]] = mapped_column(
+        String(100), doc=&quot;删除的文字,用,分隔&quot;, nullable=True)
+    cut_word: Mapped[Optional[str]] = mapped_column(
+        String(100), doc=&quot;截断词,用 , 分隔&quot;, nullable=True)
+    skip_word: Mapped[Optional[str]] = mapped_column(
+        String(100), doc=&quot;跳过词,用 , 分隔&quot;, nullable=True)
+    add_text: Mapped[Optional[str]] = mapped_column(
+        String(100), doc=&quot;跳过语,用 , 分隔&quot;, nullable=True)
+</code></pre>
+<h3 id="default-timestamp"><a class="header" href="#default-timestamp">Default timestamp</a></h3>
+<p><a href="https://stackoverflow.com/questions/13370317/sqlalchemy-default-datetime">python - SQLAlchemy default DateTime - Stack Overflow</a></p>
+<p>使用 <code>server_default</code> 而不是 <code>default</code> ，因此值将由数据库本身处理。</p>
+<pre><code class="language-python">create_at: Mapped[datetime] = mapped_column(
+	server_default=func.now(), default=None, nullable=False
+)
+</code></pre>
 
                     </main>
 
