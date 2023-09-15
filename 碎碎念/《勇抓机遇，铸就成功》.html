@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html lang="cn" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>《勇抓机遇，铸就成功》 - WhaleFall Obsidian Notes</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="Keep Notes everyday">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> 落落的Notes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../SUMMARY.html"><strong aria-hidden="true">1.1.</strong> SUMMARY</a></li><li class="chapter-item expanded "><a href="../业余无线电Ham/index.html"><strong aria-hidden="true">1.2.</strong> 业余无线电Ham</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../业余无线电Ham/业余无线电采购.html"><strong aria-hidden="true">1.2.1.</strong> 业余无线电采购</a></li><li class="chapter-item expanded "><a href="../业余无线电Ham/广播.html"><strong aria-hidden="true">1.2.2.</strong> 广播</a></li><li class="chapter-item expanded "><a href="../业余无线电Ham/业余无线电笔记.html"><strong aria-hidden="true">1.2.3.</strong> 业余无线电笔记</a></li><li class="chapter-item expanded "><a href="../业余无线电Ham/通联日志.html"><strong aria-hidden="true">1.2.4.</strong> 通联日志</a></li><li class="chapter-item expanded "><a href="../业余无线电Ham/泉盛-K5-音质优化.html"><strong aria-hidden="true">1.2.5.</strong> 泉盛-K5-音质优化</a></li><li class="chapter-item expanded "><a href="../业余无线电Ham/附近航空频率.html"><strong aria-hidden="true">1.2.6.</strong> 附近航空频率</a></li><li class="chapter-item expanded "><a href="../业余无线电Ham/Opengd77-Firmware-教程.html"><strong aria-hidden="true">1.2.7.</strong> Opengd77-Firmware-教程</a></li><li class="chapter-item expanded "><a href="../业余无线电Ham/广播/index.html"><strong aria-hidden="true">1.2.8.</strong> 广播</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../业余无线电Ham/广播/广播收听报告-2023.05.23.html"><strong aria-hidden="true">1.2.8.1.</strong> 广播收听报告-2023.05.23</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../碎碎念/index.html"><strong aria-hidden="true">1.3.</strong> 碎碎念</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../碎碎念/记录.html"><strong aria-hidden="true">1.3.1.</strong> 记录</a></li><li class="chapter-item expanded "><a href="../碎碎念/freedom.html"><strong aria-hidden="true">1.3.2.</strong> freedom</a></li><li class="chapter-item expanded "><a href="../碎碎念/《勇抓机遇，铸就成功》.html" class="active"><strong aria-hidden="true">1.3.3.</strong> 《勇抓机遇，铸就成功》</a></li><li class="chapter-item expanded "><a href="../碎碎念/福芝talk.html"><strong aria-hidden="true">1.3.4.</strong> 福芝talk</a></li><li class="chapter-item expanded "><a href="../碎碎念/文案.html"><strong aria-hidden="true">1.3.5.</strong> 文案</a></li><li class="chapter-item expanded "><a href="../碎碎念/手机卡分销.html"><strong aria-hidden="true">1.3.6.</strong> 手机卡分销</a></li><li class="chapter-item expanded "><a href="../碎碎念/知乎精选.html"><strong aria-hidden="true">1.3.7.</strong> 知乎精选</a></li><li class="chapter-item expanded "><a href="../碎碎念/思源笔记本使用感想.html"><strong aria-hidden="true">1.3.8.</strong> 思源笔记本使用感想</a></li><li class="chapter-item expanded "><a href="../碎碎念/猫猫.html"><strong aria-hidden="true">1.3.9.</strong> 猫猫</a></li><li class="chapter-item expanded "><a href="../碎碎念/手机卡分销类型.html"><strong aria-hidden="true">1.3.10.</strong> 手机卡分销类型</a></li><li class="chapter-item expanded "><a href="../碎碎念/闲鱼文案模板.html"><strong aria-hidden="true">1.3.11.</strong> 闲鱼文案模板</a></li><li class="chapter-item expanded "><a href="../碎碎念/online-class.html"><strong aria-hidden="true">1.3.12.</strong> online-class</a></li><li class="chapter-item expanded "><a href="../碎碎念/奇思妙想.html"><strong aria-hidden="true">1.3.13.</strong> 奇思妙想</a></li><li class="chapter-item expanded "><a href="../碎碎念/猫猫/index.html"><strong aria-hidden="true">1.3.14.</strong> 猫猫</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../碎碎念/猫猫/多多.html"><strong aria-hidden="true">1.3.14.1.</strong> 多多</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../CutBoard/index.html"><strong aria-hidden="true">1.4.</strong> CutBoard</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../CutBoard/无线电爬取脚本.html"><strong aria-hidden="true">1.4.1.</strong> 无线电爬取脚本</a></li></ol></li><li class="chapter-item expanded "><a href="../other/index.html"><strong aria-hidden="true">1.5.</strong> other</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../other/OPENAI-KEY.html"><strong aria-hidden="true">1.5.1.</strong> OPENAI-KEY</a></li><li class="chapter-item expanded "><a href="../other/未命名.html"><strong aria-hidden="true">1.5.2.</strong> 未命名</a></li><li class="chapter-item expanded "><a href="../other/写给v友的一段话.html"><strong aria-hidden="true">1.5.3.</strong> 写给v友的一段话</a></li><li class="chapter-item expanded "><a href="../other/模拟飞行.html"><strong aria-hidden="true">1.5.4.</strong> 模拟飞行</a></li></ol></li><li class="chapter-item expanded "><a href="../Study/index.html"><strong aria-hidden="true">1.6.</strong> Study</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Study/Physical/index.html"><strong aria-hidden="true">1.6.1.</strong> Physical</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Study/Physical/第六讲.html"><strong aria-hidden="true">1.6.1.1.</strong> 第六讲</a></li><li class="chapter-item expanded "><a href="../Study/Physical/第一讲-运动的描述.html"><strong aria-hidden="true">1.6.1.2.</strong> 第一讲-运动的描述</a></li><li class="chapter-item expanded "><a href="../Study/Physical/第二讲-比例问题.html"><strong aria-hidden="true">1.6.1.3.</strong> 第二讲-比例问题</a></li><li class="chapter-item expanded "><a href="../Study/Physical/第7讲.html"><strong aria-hidden="true">1.6.1.4.</strong> 第7讲</a></li><li class="chapter-item expanded "><a href="../Study/Physical/第5讲-力的正交分解.html"><strong aria-hidden="true">1.6.1.5.</strong> 第5讲-力的正交分解</a></li></ol></li><li class="chapter-item expanded "><a href="../Study/Chemistry/index.html"><strong aria-hidden="true">1.6.2.</strong> Chemistry</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Study/Chemistry/第一讲-离子反应的基础概念.html"><strong aria-hidden="true">1.6.2.1.</strong> 第一讲-离子反应的基础概念</a></li></ol></li><li class="chapter-item expanded "><a href="../Study/Math/index.html"><strong aria-hidden="true">1.6.3.</strong> Math</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Study/Math/函数.html"><strong aria-hidden="true">1.6.3.1.</strong> 函数</a></li><li class="chapter-item expanded "><a href="../Study/Math/第一讲-集合与常用逻辑用语.html"><strong aria-hidden="true">1.6.3.2.</strong> 第一讲-集合与常用逻辑用语</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../test/index.html"><strong aria-hidden="true">1.7.</strong> test</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../test/Obsidian-Hexo-模板测试.html"><strong aria-hidden="true">1.7.1.</strong> Obsidian-Hexo-模板测试</a></li><li class="chapter-item expanded "><a href="../test/落落-OpenWRT-导航页.html"><strong aria-hidden="true">1.7.2.</strong> 落落-OpenWRT-导航页</a></li><li class="chapter-item expanded "><a href="../test/思源笔记自动同步测试.html"><strong aria-hidden="true">1.7.3.</strong> 思源笔记自动同步测试</a></li></ol></li><li class="chapter-item expanded "><a href="../English-Study/index.html"><strong aria-hidden="true">1.8.</strong> English-Study</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../English-Study/英语音标学习.html"><strong aria-hidden="true">1.8.1.</strong> 英语音标学习</a></li></ol></li><li class="chapter-item expanded "><a href="../高中事件/index.html"><strong aria-hidden="true">1.9.</strong> 高中事件</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../高中事件/举报信.html"><strong aria-hidden="true">1.9.1.</strong> 举报信</a></li><li class="chapter-item expanded "><a href="../高中事件/举报中小学教师违规方法论.html"><strong aria-hidden="true">1.9.2.</strong> 举报中小学教师违规方法论</a></li><li class="chapter-item expanded "><a href="../高中事件/举报法律依据.html"><strong aria-hidden="true">1.9.3.</strong> 举报法律依据</a></li></ol></li><li class="chapter-item expanded "><a href="../博客文章/index.html"><strong aria-hidden="true">1.10.</strong> 博客文章</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../博客文章/博客文章测试.html"><strong aria-hidden="true">1.10.1.</strong> 博客文章测试</a></li><li class="chapter-item expanded "><a href="../博客文章/博客文章_post.html"><strong aria-hidden="true">1.10.2.</strong> 博客文章_post</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/index.html"><strong aria-hidden="true">1.10.3.</strong> _posts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../博客文章/_posts/Rpi-1.html"><strong aria-hidden="true">1.10.3.1.</strong> Rpi-1</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/openwebrx-sdr.html"><strong aria-hidden="true">1.10.3.2.</strong> openwebrx-sdr</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Freedom-network.html"><strong aria-hidden="true">1.10.3.3.</strong> Freedom-network</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Samba4-config.html"><strong aria-hidden="true">1.10.3.4.</strong> Samba4-config</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/vscode-shortcut-key.html"><strong aria-hidden="true">1.10.3.5.</strong> vscode-shortcut-key</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Rpi-2.html"><strong aria-hidden="true">1.10.3.6.</strong> Rpi-2</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/onedrive-guide.html"><strong aria-hidden="true">1.10.3.7.</strong> onedrive-guide</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Github-workflow.html"><strong aria-hidden="true">1.10.3.8.</strong> Github-workflow</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/how-to-ues-free-ChatGPT-in-China.html"><strong aria-hidden="true">1.10.3.9.</strong> how-to-ues-free-ChatGPT-in-China</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Vim-config.html"><strong aria-hidden="true">1.10.3.10.</strong> Vim-config</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Hexo-blog-format.html"><strong aria-hidden="true">1.10.3.11.</strong> Hexo-blog-format</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/clash-proxy-guide.html"><strong aria-hidden="true">1.10.3.12.</strong> clash-proxy-guide</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/cpp-guide-book.html"><strong aria-hidden="true">1.10.3.13.</strong> cpp-guide-book</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Linux-note.html"><strong aria-hidden="true">1.10.3.14.</strong> Linux-note</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Kali-Linux-Help.html"><strong aria-hidden="true">1.10.3.15.</strong> Kali-Linux-Help</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Rpi-3.html"><strong aria-hidden="true">1.10.3.16.</strong> Rpi-3</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Wky-help.html"><strong aria-hidden="true">1.10.3.17.</strong> Wky-help</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Depression-medicine.html"><strong aria-hidden="true">1.10.3.18.</strong> Depression-medicine</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Linux-iptables.html"><strong aria-hidden="true">1.10.3.19.</strong> Linux-iptables</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/openwrt-lede-build-notes.html"><strong aria-hidden="true">1.10.3.20.</strong> openwrt-lede-build-notes</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Server-all.html"><strong aria-hidden="true">1.10.3.21.</strong> Server-all</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/radio-SWshort.html"><strong aria-hidden="true">1.10.3.22.</strong> radio-SWshort</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Python/index.html"><strong aria-hidden="true">1.10.3.23.</strong> Python</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../博客文章/_posts/Python/Python-async.html"><strong aria-hidden="true">1.10.3.23.1.</strong> Python-async</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Python/Python-Concurrent.html"><strong aria-hidden="true">1.10.3.23.2.</strong> Python-Concurrent</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Python/Python-Generator-Iterator-decorater.html"><strong aria-hidden="true">1.10.3.23.3.</strong> Python-Generator-Iterator-decorater</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Python/Python-database-ORM-tutorial.html"><strong aria-hidden="true">1.10.3.23.4.</strong> Python-database-ORM-tutorial</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Python/Python-Tkinter-GUI.html"><strong aria-hidden="true">1.10.3.23.5.</strong> Python-Tkinter-GUI</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Python/python-black-magic.html"><strong aria-hidden="true">1.10.3.23.6.</strong> python-black-magic</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Python/Flask-Web-note.html"><strong aria-hidden="true">1.10.3.23.7.</strong> Flask-Web-note</a></li></ol></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/index.html"><strong aria-hidden="true">1.10.3.24.</strong> Golang</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-package-note.html"><strong aria-hidden="true">1.10.3.24.1.</strong> Golang-package-note</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-method-note.html"><strong aria-hidden="true">1.10.3.24.2.</strong> Golang-method-note</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-interface-note.html"><strong aria-hidden="true">1.10.3.24.3.</strong> Golang-interface-note</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-function-note.html"><strong aria-hidden="true">1.10.3.24.4.</strong> Golang-function-note</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-JSON-note.html"><strong aria-hidden="true">1.10.3.24.5.</strong> Golang-JSON-note</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-envbuild-note.html"><strong aria-hidden="true">1.10.3.24.6.</strong> Golang-envbuild-note</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-struct-note.html"><strong aria-hidden="true">1.10.3.24.7.</strong> Golang-struct-note</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-pointer-note.html"><strong aria-hidden="true">1.10.3.24.8.</strong> Golang-pointer-note</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-error-note.html"><strong aria-hidden="true">1.10.3.24.9.</strong> Golang-error-note</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-project-and-gomod-note.html"><strong aria-hidden="true">1.10.3.24.10.</strong> Golang-project-and-gomod-note</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-variable-note.html"><strong aria-hidden="true">1.10.3.24.11.</strong> Golang-variable-note</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-map-note.html"><strong aria-hidden="true">1.10.3.24.12.</strong> Golang-map-note</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-const-note.html"><strong aria-hidden="true">1.10.3.24.13.</strong> Golang-const-note</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-type-keyword-note.html"><strong aria-hidden="true">1.10.3.24.14.</strong> Golang-type-keyword-note</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-goruntine-note.html"><strong aria-hidden="true">1.10.3.24.15.</strong> Golang-goruntine-note</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-datatype-note.html"><strong aria-hidden="true">1.10.3.24.16.</strong> Golang-datatype-note</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-id-note.html"><strong aria-hidden="true">1.10.3.24.17.</strong> Golang-id-note</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-note-catalogue.html"><strong aria-hidden="true">1.10.3.24.18.</strong> Golang-note-catalogue</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Golang/Golang-HTML-note.html"><strong aria-hidden="true">1.10.3.24.19.</strong> Golang-HTML-note</a></li></ol></li><li class="chapter-item expanded "><a href="../博客文章/_posts/JavaScript/index.html"><strong aria-hidden="true">1.10.3.25.</strong> JavaScript</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../博客文章/_posts/JavaScript/JavaScript-fast-start.html"><strong aria-hidden="true">1.10.3.25.1.</strong> JavaScript-fast-start</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/JavaScript/vue-guide.html"><strong aria-hidden="true">1.10.3.25.2.</strong> vue-guide</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/JavaScript/nodejs-fast-start.html"><strong aria-hidden="true">1.10.3.25.3.</strong> nodejs-fast-start</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/JavaScript/TypeScript-fast-start.html"><strong aria-hidden="true">1.10.3.25.4.</strong> TypeScript-fast-start</a></li></ol></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Study/index.html"><strong aria-hidden="true">1.10.3.26.</strong> Study</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../博客文章/_posts/Study/Zhongkao-maths.html"><strong aria-hidden="true">1.10.3.26.1.</strong> Zhongkao-maths</a></li><li class="chapter-item expanded "><a href="../博客文章/_posts/Study/Ancient-poems.html"><strong aria-hidden="true">1.10.3.26.2.</strong> Ancient-poems</a></li></ol></li></ol></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">WhaleFall Obsidian Notes</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="勇抓机遇铸就成功"><a class="header" href="#勇抓机遇铸就成功">《勇抓机遇，铸就成功》</a></h1>
+<h2 id="topic"><a class="header" href="#topic">Topic</a></h2>
+<p>村超篮球赛的“燃”，火出圈，流量为王，流量密码，<strong>偶然性中存在的必然性</strong>。</p>
+<p>如今的中国正处于一个日新月异、飞速发展的时代，它赋予我们很多机会，我们应未雨绸缪，提前做好规划与准备，在机遇降临之际，勇抓机遇，铸就成功。</p>
+<p>举例：屠呦呦、李子柒</p>
+<h2 id="正文"><a class="header" href="#正文">正文</a></h2>
+<p>《勇抓机遇，铸就成功》</p>
+<p>近日，在贵州乡村举办的乡村篮球联赛迅速火爆了全网，网民把它称作“村 BA”、“村超”。和往常正儿八经的篮球比赛不同的是，它是由民众自发组织、没有广告、不收门票、从球员到彩票全部由普通人构成的业余足球联赛，借助抖音、快手等互联网新媒体直播平台，实现线上线下双创收，火爆全网的同时，又给当地带来了客观的收入。</p>
+<p>一方面，有人认为这是纯粹的偶然，只是吃了国家后疫情时代拉动内需的红利。另一方面，有人认为“村超”的成功是偶然，也是必然，其流量密码在于全民参与，有民众基础，朴实而接地气，有新媒体直播平台的加持，更在于当地政府恰到好处的给予宣传引导、政策扶持，才最终成就了贵州“村超”出圈的必然。任何事物都有两面性，在面对别人的成功时，我们应当看到的，不是他人一夜成名的机缘巧合，而是他们幕后的汗水与付出。</p>
+<p>马云，阿里巴巴创始人，是中国著名的商人、民族企业家，坐拥百亿身家，富可敌国。人们往往只能看到他光鲜亮丽的外表，嫉妒他上个世纪 90 年代初抓住中国互联网风口吃的红利，却很少有人看到他早年创业处处碰壁的窘境。人们总是将他的成功归功于红利和命运，殊不知当年还是穷苦学生的马云在西湖旁偶遇一个国外游人，此时，他命运的齿轮开始转动。他开始拼命的学习英文，学习西方的资本市场运作，学习西方先进的经济理论，寻找外资投资。妄想在中国这个千年以来背靠农业而起家的民族，发扬市场经济，搞西方那套资本的运行模式。90 年代，邓小平南巡提出“发展市场经济”的宏伟愿景，那个时代的中国，正是百废待兴，遍地是黄金的时代。后来事实证明，那个长相平庸的年轻人马云，抓住了机会，他做了个无比正确的选择。所以，马云成功的背后，有时代机遇的偶然，也有个人努力的必然。</p>
+<p>在人生道路上，不论是谁都不免会遇到一些挫折，有人认为“生死有命、富贵在天”，认为人的生死由天来决定了，不必做什么挣扎，不必奋斗，只要等着天公评判就好了，至于是否能获得荣华富贵就更不用奢求了，那都是上天注定的，所以自己这么悲惨的境地与自己无关，这也就是对自己的一种松懈，对自己责任的一种推卸。俗话说，“机会留给有准备的人”，可能当你懈怠、怨天尤人的时候，机遇就在你眼前偷偷溜走了。任何成功的偶然都离不开平时默默无闻时沉淀的力量，唯有孜孜不倦的充实自己，保持终身学习的信念，当自身力量足够大时，成功之偶然才会发生，失败之偶然才能避免。</p>
+<p>既然“成功的偶然”在于“必然的努力”，我们必须树立为目标潜心、为梦想奋斗的信念，唯有积极主动的实际行动才能消除保守的无谓等待。勇抓机遇，铸就成功，你只管努力，剩下的交给天意。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../碎碎念/freedom.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../碎碎念/福芝talk.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../碎碎念/freedom.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../碎碎念/福芝talk.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
