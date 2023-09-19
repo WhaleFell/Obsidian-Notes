@@ -14,11 +14,20 @@ banner_img:
 经过了前面 Javascript 和 Nodejs 前置知识的铺垫，我想我应该可以正式学习 Vue 这个前端框架了叭。
 
 先看视频放松下过一遍：  
+
 [【2023最新版】Vue3从入门到精通，零基础小白也能听得懂，写得出，web前端快速入门教程\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1Rs4y127j8/?)
 
-> 上面的视频虽然说得是 Vue3 但是是按照 **组合式 API** 讲解的，Vue3 文档推荐使用 **响应式 API** 编写代码。
+> 上面的视频虽然说得是 Vue3 但是是按照 **组合式 API** 讲解的，Vue3 文档推荐使用 **响应式 API** 编写代码。不过具体原理大同小异。
 
 reference：[创建一个 Vue 应用 | Vue.js](https://cn.vuejs.org/guide/essentials/application.html)
+
+需要用到的组件库、UI、AJAX 请求库 文档。
+
+1. Element-UI 组件库
+2. axios  /ˈæksɪos/  AJAX 请求库
+3. Vue Route 路由
+
+粗略的过了一遍上述文档就可以看这个 《Vue3 入门指南与实战案例》 ：[出版说明 | Vue3 入门指南与实战案例](https://vue3.chengpeiquan.com/)
 
 ## Fast Start
 
