@@ -3280,14 +3280,22 @@ jobs:
 </code></pre>
 <p>我移除了缩进错误，并确保所有步骤的格式正确。请注意，我没有更改步骤的顺序或内容，只是对整个 YAML 文件进行了格式化。</p>
 <div style="break-before: page; page-break-before: always;"></div><hr />
-<h2>title: 纪实、深度、冷门——中国独立纪录片推荐
+<p>title: 纪实、深度、冷门——中国独立纪录片推荐
 date: 2023-09-19 21:43:79
 updated: 2023-09-19 21:43:79
-categories: [Documentary, China, 中国, 纪录片, 中共]
-tags: 
+categories:</p>
+<ul>
+<li>Documentary
+tags:</li>
+<li>Documentary</li>
+<li>中共</li>
+<li>纪录片</li>
+<li>政治
 description: 
 thumbnail: 
-banner_img:</h2>
+banner_img:</li>
+</ul>
+<hr />
 <h1 id="纪实深度冷门中国独立纪录片推荐"><a class="header" href="#纪实深度冷门中国独立纪录片推荐">纪实、深度、冷门——中国独立纪录片推荐</a></h1>
 <h2 id="前"><a class="header" href="#前">前</a></h2>
 <p>每当我们把视角从北上广的车水马龙和琉璃光彩里抽离出来，很多纪实类影片的色彩就变得恍如隔世，似乎某一瞬间都不像这个时间线里的东西。</p>
@@ -8445,7 +8453,10 @@ Base.metadata.create_all(engine)
 </code></pre>
 <h3 id="table-reflection-表反射"><a class="header" href="#table-reflection-表反射">Table Reflection 表反射</a></h3>
 <p>用于识别已有数据库的映射。</p>
-<pre><code class="language-python"># 将创建一个新的 `Table` 对象 自动识别
+<pre><code class="language-python"># `MetaData` 对象是表的集合,元数据
+from sqlalchemy import MetaData
+metadata_obj = MetaData()
+# 将创建一个新的 `Table` 对象 自动识别
 some_table = Table(&quot;some_table&quot;, metadata_obj, autoload_with=engine)
 </code></pre>
 <h2 id="working-with-data-处理数据"><a class="header" href="#working-with-data-处理数据">Working with Data 处理数据</a></h2>
@@ -8507,8 +8518,6 @@ print(
 
 # ORDER BY 排序依据
 print(select(user_table).order_by(user_table.c.name))
-
-
 </code></pre>
 <h4 id="update-更新"><a class="header" href="#update-更新">Update 更新</a></h4>
 <pre><code class="language-python">from sqlalchemy import update

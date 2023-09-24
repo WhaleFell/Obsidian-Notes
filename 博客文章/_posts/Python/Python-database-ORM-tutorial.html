@@ -357,7 +357,10 @@ Base.metadata.create_all(engine)
 </code></pre>
 <h3 id="table-reflection-表反射"><a class="header" href="#table-reflection-表反射">Table Reflection 表反射</a></h3>
 <p>用于识别已有数据库的映射。</p>
-<pre><code class="language-python"># 将创建一个新的 `Table` 对象 自动识别
+<pre><code class="language-python"># `MetaData` 对象是表的集合,元数据
+from sqlalchemy import MetaData
+metadata_obj = MetaData()
+# 将创建一个新的 `Table` 对象 自动识别
 some_table = Table(&quot;some_table&quot;, metadata_obj, autoload_with=engine)
 </code></pre>
 <h2 id="working-with-data-处理数据"><a class="header" href="#working-with-data-处理数据">Working with Data 处理数据</a></h2>
@@ -419,8 +422,6 @@ print(
 
 # ORDER BY 排序依据
 print(select(user_table).order_by(user_table.c.name))
-
-
 </code></pre>
 <h4 id="update-更新"><a class="header" href="#update-更新">Update 更新</a></h4>
 <pre><code class="language-python">from sqlalchemy import update
