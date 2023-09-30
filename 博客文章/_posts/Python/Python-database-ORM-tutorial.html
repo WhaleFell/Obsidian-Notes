@@ -653,6 +653,7 @@ async def async_main() -&gt; None:
     # expire_on_commit - don't expire objects after transaction commit
     async_session = async_sessionmaker(engine, expire_on_commit=False)
 
+	# 异步使用同步方法
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
 
@@ -715,6 +716,33 @@ asyncio.run(async_main())
 <h3 id="optimize"><a class="header" href="#optimize">Optimize</a></h3>
 <p>数据库连接方面，可以避免出现 <code>sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2013, 'Lost connection to MySQL server during query')</code> 的错误，reference: <a href="https://www.cnblogs.com/goldsunshine/p/17304427.html">sqlalchemy 报错 Lost connection to MySQL server during query 解决 - 金色旭光 - 博客园</a></p>
 <pre><code class="language-python">engine = create_async_engine(DB_URL, pool_pre_ping=True, pool_recycle=600)
+</code></pre>
+<h3 id="relationship-延迟加载"><a class="header" href="#relationship-延迟加载"><code>relationship</code> 延迟加载</a></h3>
+<pre><code class="language-python">class User(Base):
+    __tablename__ = 'user'
+    __table_args__ = {'comment': '转载用户表'}
+
+    id: Mapped[str] = mapped_column(
+        String(20), primary_key=True, comment=&quot;用户 ID&quot;)
+        
+	# lazy='subquery'
+    configs: Mapped[List[&quot;TGForwardConfig&quot;]] = relationship(
+        'TGForwardConfig', backref='user', lazy='subquery')
+    
+    reg_at: Mapped[datetime] = mapped_column(
+        nullable=False, server_default=func.now(), comment='注册时间'
+    )
+
+    auth_time: Mapped[datetime] = mapped_column(
+        default=lambda: datetime.now() + timedelta(days=7), nullable=True, comment='授权时间')
+
+    def __repr__(self):
+        return f'&lt;User(user_id={self.id}, reg_at={self.reg_at}, auth_time={self.auth_time})&gt;'
+</code></pre>
+<h3 id="databaseurl-数据库-url"><a class="header" href="#databaseurl-数据库-url">DatabaseURL 数据库 URL</a></h3>
+<pre><code class="language-python"># SQLTIE3 sqlite+aiosqlite:///database.db  # 数据库文件名为 database.db 不存在的新建一个
+# 异步 mysql+aiomysql://user:password@host:port/dbname
+DB_URL = os.environ.get(&quot;DB_URL&quot;) or &quot;mysql+aiomysql://root:123456@localhost/tgforward?charset=utf8mb4&quot;
 </code></pre>
 
                     </main>

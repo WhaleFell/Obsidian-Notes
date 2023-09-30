@@ -184,6 +184,18 @@ banner_img:</h2>
 <h2 id="reference"><a class="header" href="#reference">Reference</a></h2>
 <p>Pydantic Official Document：<a href="https://docs.pydantic.dev/latest/">Welcome to Pydantic - Pydantic</a> <a href="https://docs.pydantic.dev/latest/usage/models/">Models - Pydantic</a></p>
 <p>Python <code>Typing</code> Official Document：<a href="https://docs.python.org/3/library/typing.html">typing — Support for type hints — Python 3.11.5 documentation</a></p>
+<h2 id="vscode-support-pydantic"><a class="header" href="#vscode-support-pydantic">Vscode Support Pydantic</a></h2>
+<p>使用 VS Code 的 <strong>Pylance</strong> 扩展。它是推荐的下一代 Python 官方 VS Code 插件。</p>
+<ul>
+<li>Open the &quot;User Settings&quot;<br />
+打开“用户设置”</li>
+<li>Search for <code>Type Checking Mode</code><br />
+搜索 <code>Type Checking Mode</code></li>
+<li>You will find an option under <code>Python › Analysis: Type Checking Mode</code><br />
+您将在 <code>Python › Analysis: Type Checking Mode</code> 下找到一个选项</li>
+<li>Set it to <code>basic</code> or <code>strict</code> (by default it's <code>off</code>)<br />
+将其设置为 <code>basic</code> 或 <code>strict</code> （默认情况下为 <code>off</code> ）</li>
+</ul>
 <h2 id="callable-回调函数签名注释"><a class="header" href="#callable-回调函数签名注释">Callable 回调函数签名注释</a></h2>
 <p><code>Callable[[int], str]</code> 表示采用 <code>int</code> 类型的单个参数并返回 <code>str</code> 的函数，例如可以注释以下函数。</p>
 <pre><code class="language-python">def callback(num: int) -&gt; str: ...

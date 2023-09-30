@@ -4153,12 +4153,13 @@ docker run                                            \
 </code></pre>
 <h2 id="nginx"><a class="header" href="#nginx">Nginx</a></h2>
 <p>docker running</p>
+<p>TODO: 这边的 Docker 部署还需要优化</p>
 <pre><code class="language-sh">docker run -d -p 8080:8080 \
---name nginx-proxy \
+--name nginx \
 --restart=always \
--v /root/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \
--v /root/nginx/www:/usr/share/nginx/html \
--v /root/nginx/cert:/usr/local/nginx/cert \
+-v /wfwork/nginx/conf/:/etc/nginx/ \
+-v /wfwork/nginx/www:/usr/share/nginx/html \
+-v /wfwork/nginx/cert:/usr/local/nginx/cert \
 nginx:latest
 </code></pre>
 <h3 id="调优-performance-tuning"><a class="header" href="#调优-performance-tuning">调优 Performance Tuning</a></h3>
@@ -4201,7 +4202,7 @@ http {
     gzip on;
 
     # include /etc/nginx/conf.d/*.conf;
-        server {
+    server {
         listen 80;
         server_name _;
 
@@ -8750,6 +8751,7 @@ async def async_main() -&gt; None:
     # expire_on_commit - don't expire objects after transaction commit
     async_session = async_sessionmaker(engine, expire_on_commit=False)
 
+	# 异步使用同步方法
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
 
@@ -8812,6 +8814,33 @@ asyncio.run(async_main())
 <h3 id="optimize"><a class="header" href="#optimize">Optimize</a></h3>
 <p>数据库连接方面，可以避免出现 <code>sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2013, 'Lost connection to MySQL server during query')</code> 的错误，reference: <a href="https://www.cnblogs.com/goldsunshine/p/17304427.html">sqlalchemy 报错 Lost connection to MySQL server during query 解决 - 金色旭光 - 博客园</a></p>
 <pre><code class="language-python">engine = create_async_engine(DB_URL, pool_pre_ping=True, pool_recycle=600)
+</code></pre>
+<h3 id="relationship-延迟加载"><a class="header" href="#relationship-延迟加载"><code>relationship</code> 延迟加载</a></h3>
+<pre><code class="language-python">class User(Base):
+    __tablename__ = 'user'
+    __table_args__ = {'comment': '转载用户表'}
+
+    id: Mapped[str] = mapped_column(
+        String(20), primary_key=True, comment=&quot;用户 ID&quot;)
+        
+	# lazy='subquery'
+    configs: Mapped[List[&quot;TGForwardConfig&quot;]] = relationship(
+        'TGForwardConfig', backref='user', lazy='subquery')
+    
+    reg_at: Mapped[datetime] = mapped_column(
+        nullable=False, server_default=func.now(), comment='注册时间'
+    )
+
+    auth_time: Mapped[datetime] = mapped_column(
+        default=lambda: datetime.now() + timedelta(days=7), nullable=True, comment='授权时间')
+
+    def __repr__(self):
+        return f'&lt;User(user_id={self.id}, reg_at={self.reg_at}, auth_time={self.auth_time})&gt;'
+</code></pre>
+<h3 id="databaseurl-数据库-url"><a class="header" href="#databaseurl-数据库-url">DatabaseURL 数据库 URL</a></h3>
+<pre><code class="language-python"># SQLTIE3 sqlite+aiosqlite:///database.db  # 数据库文件名为 database.db 不存在的新建一个
+# 异步 mysql+aiomysql://user:password@host:port/dbname
+DB_URL = os.environ.get(&quot;DB_URL&quot;) or &quot;mysql+aiomysql://root:123456@localhost/tgforward?charset=utf8mb4&quot;
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><hr />
 <p>title: Python Tkinter 框架学习
@@ -9036,6 +9065,18 @@ banner_img:</h2>
 <h2 id="reference-1"><a class="header" href="#reference-1">Reference</a></h2>
 <p>Pydantic Official Document：<a href="https://docs.pydantic.dev/latest/">Welcome to Pydantic - Pydantic</a> <a href="https://docs.pydantic.dev/latest/usage/models/">Models - Pydantic</a></p>
 <p>Python <code>Typing</code> Official Document：<a href="https://docs.python.org/3/library/typing.html">typing — Support for type hints — Python 3.11.5 documentation</a></p>
+<h2 id="vscode-support-pydantic"><a class="header" href="#vscode-support-pydantic">Vscode Support Pydantic</a></h2>
+<p>使用 VS Code 的 <strong>Pylance</strong> 扩展。它是推荐的下一代 Python 官方 VS Code 插件。</p>
+<ul>
+<li>Open the &quot;User Settings&quot;<br />
+打开“用户设置”</li>
+<li>Search for <code>Type Checking Mode</code><br />
+搜索 <code>Type Checking Mode</code></li>
+<li>You will find an option under <code>Python › Analysis: Type Checking Mode</code><br />
+您将在 <code>Python › Analysis: Type Checking Mode</code> 下找到一个选项</li>
+<li>Set it to <code>basic</code> or <code>strict</code> (by default it's <code>off</code>)<br />
+将其设置为 <code>basic</code> 或 <code>strict</code> （默认情况下为 <code>off</code> ）</li>
+</ul>
 <h2 id="callable-回调函数签名注释"><a class="header" href="#callable-回调函数签名注释">Callable 回调函数签名注释</a></h2>
 <p><code>Callable[[int], str]</code> 表示采用 <code>int</code> 类型的单个参数并返回 <code>str</code> 的函数，例如可以注释以下函数。</p>
 <pre><code class="language-python">def callback(num: int) -&gt; str: ...
@@ -11787,10 +11828,19 @@ banner_img:</h2>
 <p>需要用到的组件库、UI、AJAX 请求库 文档。</p>
 <ol>
 <li>Element-UI 组件库</li>
-<li>axios  <code>/ˈæksɪos/</code> AJAX 请求库</li>
+<li>axios  <code>/ˈæksɪos/</code> AJAX 请求库
+<ul>
+<li><a href="https://www.axios-http.cn/docs/example">基本用例 | Axios 中文文档 | Axios 中文网</a></li>
+<li><a href="https://www.koderhq.com/tutorial/vue/http-axios/">Vue.js 3 HTTP &amp; Axios Tutorial | KoderHQ</a></li>
+</ul>
+</li>
 <li>Vue Route 路由</li>
+<li>Pinia 全局状态管理，类似于 LocalStore ？<br />
+<a href="https://pinia.vuejs.org/zh/">Pinia | The intuitive store for Vue.js</a></li>
 </ol>
+<h2 id="how-to-study-vue"><a class="header" href="#how-to-study-vue">How to study vue?</a></h2>
 <p>粗略的过了一遍上述文档就可以看这个 《Vue3 入门指南与实战案例》 ：<a href="https://vue3.chengpeiquan.com/">出版说明 | Vue3 入门指南与实战案例</a></p>
+<p>但是上文没有介绍 axios 请求等操作，需要再补充下面的书籍：</p>
 <h2 id="fast-start"><a class="header" href="#fast-start">Fast Start</a></h2>
 <p>Install vue framework in NodeJS</p>
 <pre><code class="language-shell">npm install vue@latest -g # 全局安装
@@ -13032,6 +13082,7 @@ banner_img:</h2>
 <h1 id="typescript-快速入门北"><a class="header" href="#typescript-快速入门北">TypeScript 快速入门☞北</a></h1>
 <p>因为在学习 Vue Framework 的过程中，碰到了很多 TypeScript 之类的知识和语法以及 Vue 源码也是通过 ts 写的，所以有必要去了解一下 TypeScript 这个语言语法。</p>
 <p>reference: <a href="https://www.runoob.com/typescript/ts-tutorial.html">TypeScript 教程 | 菜鸟教程</a></p>
+<p>最近发现一本好书：<a href="http://ts.xcatliu.com/">TypeScript 入门教程</a></p>
 <ol>
 <li>TypeScript ==&gt; JavaScript 的一个 <strong>超集</strong>，支持 ECMAScript 6 标准</li>
 <li>TypeScript 由 <strong>微软</strong> 爸爸开发。</li>
