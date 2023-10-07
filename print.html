@@ -8886,7 +8886,114 @@ asyncio.run(async_main())
 # 异步 mysql+aiomysql://user:password@host:port/dbname
 DB_URL = os.environ.get(&quot;DB_URL&quot;) or &quot;mysql+aiomysql://root:123456@localhost/tgforward?charset=utf8mb4&quot;
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><hr />
+<h2 id="alembic-英-əlembɪk-蒸馏器-sqlalchemy-数据库迁移"><a class="header" href="#alembic-英-əlembɪk-蒸馏器-sqlalchemy-数据库迁移">Alembic [英 /ə'lembɪk/ 蒸馏器] sqlalchemy 数据库迁移</a></h2>
+<p>reference: </p>
+<ol>
+<li><a href="https://testdriven.io/blog/fastapi-sqlmodel/">FastAPI with Async SQLAlchemy, SQLModel, and Alembic | TestDriven.io</a></li>
+<li>using asyncio with alembic（异步支持）： <a href="https://alembic.sqlalchemy.org/en/latest/cookbook.html#using-asyncio-with-alembic">Cookbook — Alembic 1.12.0 documentation</a></li>
+<li>官方文档: <a href="https://alembic.sqlalchemy.org/en/latest/index.html">https://alembic.sqlalchemy.org/en/latest/index.html</a></li>
+<li>相关项目: <a href="https://github.com/python-gino/gino">https://github.com/python-gino/gino</a> - <a href="https://www.bookstack.cn/read/gino-1.0-zh/3d56d5fe80ab5932.md">文档</a></li>
+</ol>
+<p>alembic [英 /ə'lembɪk/] 是 sqlalchemy 的作者开发的。用来做 OMR 模型与数据库的迁移与映射。<code>alembic</code> 使用方式跟 <code>git</code> 有点了类似，表现在两个方面，第一个，<code>alembic</code> 的所有命令都是以 <code>alembic</code> 开头；第二，<code>alembic</code> 的迁移文件也是通过版本进行控制的。首先，通过 <code>pip install alembic</code> 进行安装。以下将解释 <code>alembic</code> 的用法：</p>
+<h3 id="初始化-alembic-仓库"><a class="header" href="#初始化-alembic-仓库">初始化 alembic 仓库</a></h3>
+<p>在终端中，<code>cd</code> 到你的项目目录中，然后执行命令 <code>alembic init alembic</code>，创建一个名叫 <code>alembic</code> 的仓库。</p>
+<h3 id="创建模型类"><a class="header" href="#创建模型类">创建模型类</a></h3>
+<p>创建一个 <code>models.py</code> 模块，然后在里面定义你的模型类，示例代码如下：</p>
+<pre><code class="language-python">import asyncio
+from typing import List, Dict, Optional, Mapping, Type, TypeVar, Tuple
+import typing
+from typing_extensions import Annotated
+from datetime import datetime, timedelta
+
+# sqlalchemy type
+import sqlalchemy.orm
+from sqlalchemy import (
+    ForeignKey,
+    func,
+    select,
+    update,
+    String,
+    DateTime,
+    Integer,
+    Float,
+    Boolean,
+)
+
+# sqlalchemy asynchronous support
+from sqlalchemy.ext.asyncio import (
+    AsyncAttrs,
+    async_sessionmaker,
+    AsyncSession,
+    create_async_engine,
+)
+
+# sqlalchemy ORM
+from sqlalchemy.orm import (
+    DeclarativeBase,
+    Mapped,
+    mapped_column,
+    relationship,
+)
+
+import inspect
+
+from .string_template import StringTemplate, CustomParam, getBeijingTime
+
+IDPK = Annotated[
+    int,
+    mapped_column(primary_key=True, autoincrement=True, comment=&quot;ID主键&quot;),
+]
+
+
+class Base(AsyncAttrs, DeclarativeBase):
+    &quot;&quot;&quot;ORM 基类 | 详见[1]、[3]&quot;&quot;&quot;
+
+    __table_args__ = {
+        &quot;mysql_engine&quot;: &quot;InnoDB&quot;,  # MySQL引擎
+        &quot;mysql_charset&quot;: &quot;utf8mb4&quot;,  # 设置表的字符集
+        &quot;mysql_collate&quot;: &quot;utf8mb4_general_ci&quot;,  # 设置表的校对集
+    }
+
+</code></pre>
+<h3 id="设置数据库连接"><a class="header" href="#设置数据库连接">设置数据库连接</a></h3>
+<p>在 <a href="https://alembic.sqlalchemy.org/en/latest/tutorial.html#editing-the-ini-file" title="alembic.ini">alembic.ini</a> 中设置数据库的连接，<code>sqlalchemy.url = driver://user:pass@localhost/dbname</code>，比如以 mysql 数据库为例，则配置后的代码为：</p>
+<p><code>sqlalchemy.url = mysql+mysqldb://root:root@localhost/alembic_demo?charset=utf8</code></p>
+<h3 id="设置-target_metadata"><a class="header" href="#设置-target_metadata">设置 target_metadata</a></h3>
+<p>为了使用模型类更新数据库，需要在 <code>env.py</code> 文件中设置 <a href="https://alembic.sqlalchemy.org/en/latest/ops.html?highlight=target_metadata#alembic.operations.Operations.f" title="target_metadata">target_metadata</a>，默认为 <code>target_metadata=None</code>。使用 <code>sys</code> 模块把当前项目的路径导入到 <code>path</code> 中：</p>
+<pre><code class="language-python"># add your model's MetaData object here
+# for 'autogenerate' support
+# from myapp import mymodel
+# target_metadata = mymodel.Base.metadata
+from app.database.model import Base
+target_metadata = Base.metadata
+</code></pre>
+<h3 id="自动生成迁移文件"><a class="header" href="#自动生成迁移文件">自动生成迁移文件</a></h3>
+<p>使用 <code>alembic revision --autogenerate -m &quot;message&quot;</code> 将当前模型中的状态生成迁移文件。</p>
+<p>异步 Base 支持：</p>
+<pre><code class="language-shell">alembic init -t async alembic
+</code></pre>
+<h3 id="更新数据库"><a class="header" href="#更新数据库">更新数据库</a></h3>
+<p>使用 <code>alembic upgrade head</code> 将刚刚生成的迁移文件，真正映射到数据库中。同理，如果要降级，那么使用 <code>alembic downgrade head</code>。</p>
+<h3 id="命令和参数解释"><a class="header" href="#命令和参数解释">命令和参数解释</a></h3>
+<ol>
+<li><code>init</code>：创建一个 alembic 仓库。</li>
+<li><code>revision</code>：创建一个新的版本文件。</li>
+<li><code>–autogenerate</code>：自动将当前模型的修改，生成迁移脚本。</li>
+<li><code>-m</code>：本次迁移做了哪些修改，用户可以指定这个参数，方便回顾。</li>
+<li><code>upgrade</code>：将指定版本的迁移文件映射到数据库中，会执行版本文件中的 upgrade 函数。如果有多个迁移脚本没有被映射到数据库中，那么会执行多个迁移脚本。</li>
+<li><code>[head]</code>：代表最新的迁移脚本的版本号。</li>
+<li><code>downgrade</code>：会执行指定版本的迁移文件中的 downgrade 函数。</li>
+<li><code>heads</code>：展示 head 指向的脚本文件版本号。</li>
+<li><code>history</code>：列出所有的迁移版本及其信息。</li>
+<li><code>current</code>：展示当前数据库中的版本号。</li>
+</ol>
+<p>另外，在你第一次执行 <code>upgrade</code> 的时候，就会在数据库中创建一个名叫 <code>alembic_version</code> 表，这个表只会有一条数据，记录当前数据库映射的是哪个版本的迁移文件。</p>
+<h3 id="经典错误"><a class="header" href="#经典错误">经典错误</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>错误描述</th><th>原因</th><th>解决办法</th></tr></thead><tbody>
+<tr><td><code>FAILED: Target database is not up to date.</code></td><td>主要是 <code>heads</code> 和 <code>current</code> 不相同。<code>current</code> 落后于 heads 的版本。</td><td>将 <code>current</code> 移动到 <code>head</code> 上。<code>alembic upgrade head</code></td></tr>
+<tr><td><code>FAILED: Can't locate revision identified by '77525ee61b5b'</code></td><td>数据库中存的版本号不在迁移脚本文件中</td><td>删除数据库的 <code>alembic_version</code> 表中的数据，重新执行 <code>alembic upgrade head</code></td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><hr />
 <p>title: Python Tkinter 框架学习
 date: 2021-08-18 19:37:48
 updated: 2021-08-18 19:37:48
