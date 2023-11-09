@@ -1,5 +1,5 @@
 ---
-title: 英语零基础学习记录 Record
+title: 英语零基础学习记录 Record 系列 —— 如何记忆单词 How to memorize words
 date: 2023-10-29 21:09:64
 updated: 2023-10-29 21:09:64
 categories:
@@ -13,24 +13,28 @@ thumbnail:
 banner_img:
 ---
 
-# 英语零基础学习记录 Record
+# 英语零基础学习记录 Record 系列 —— 如何记忆单词 How to memorize words
 
 ## 前言
 
-日常开发中经常碰到很多纯英文没有翻译的技术文档，使用 Google Translation 又比较 Low。所以，提高英语业务技能很重要。
+日常开发中经常碰到很多纯英文没有翻译的技术文档，使用 Google Translation 又比较 Low，所以需要大量的背单词。
 
-## 背单词
+在中国的传统应试教育下，笔者从小学到高中都是死记硬背，即一个个字母的拼写单词，早读也是一个个字母的拼读，这种方式效率低下，而且忘了又记，记了又忘。后面笔者干脆摆烂不记了，英语考试时看阅读题还看着看着睡着了。
 
-### Reference
+1. 学会音标，会根据单词表的音标正确的把单词拼出来。
+2. 掌握 **词根词缀构词法**，使用其背单词。
+3. 大量的背单词，推荐 APP：墨墨背单词，用一个笔记本写出单词的词根词缀、变形、联想记忆等
+
+## Reference 引用
 
 1. 英语兔 高考 3500 词汇：[全网最好的"高考英语3500单词"合集 (附下载链接)](https://www.bilibili.com/video/BV1qz4y1871a/?spm_id_from=333.337.search-card.all.click&vd_source=8b588c19ea4cd636da362bae86b1564a)
 2. 英语兔 英语构词法 背单词加速器：[英语构词法 (背单词必备)](https://www.bilibili.com/video/BV1r5411w7TY/?)
 3. 求助，怎样高效背单词？ - 注入爱的文章 - 知乎 <https://zhuanlan.zhihu.com/p/460268568?zpf=1700089435566256128>
 4. BiliBili 八哥 词根词缀：[<词根词缀> 12大前缀+3大词性后缀\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1Hi4y1Q7XN/?)
 
-### 音标工具
+## 音标工具
 
-### 词根词缀
+## 词根词缀
 
 > 源于英语的派生构词法
 
@@ -42,7 +46,7 @@ banner_img:
 
 欧路词典词根词缀查询 MDX 词典：[扩充词库下载 | 欧路软件官网](https://www.eudic.net/v4/en/home/dictionaryresource)
 
-#### 前缀 （词向）
+### 前缀 （词向）
 
 1. 外/出：`e/ex/ef` => **ex**port 出口
 2. 内/进：`in/im` => **in**ject 注射 **im**port 提高
@@ -78,7 +82,7 @@ banner_img:
 14. post 后  
 15. **数字类** mono-1 / bi、di-2 / tri-3 / hemi、semi - 半 / Poly- 多 / multi- 多  
 
-#### 后缀（词性）
+### 后缀（词性）
 
 #### V.动词后缀
 
@@ -105,7 +109,7 @@ banner_img:
 
 形容词转副词：adj. => adv. 通常加 `ly` 
 
-#### N. 名词后缀
+### N. 名词后缀
 
 - 形容词转名词：adj. => n. `-ity/-lty/-ness`
 	- electric adj.电动的 -> electric**ity**. n. 电力
@@ -140,7 +144,7 @@ lon/tion/ation/ness/ity/ality/meant/ **ence** 表状态 audi**ence** n. 听众 e
 19. ward(形/副 向…的，朝… 
 20. y(形 多…的，有…的
 
-#### 词根（词意）
+## 词根（词意）
 
 1. ced/cess=go 行走 
 2. cid/cis=cut,kill 切，杀 
@@ -159,8 +163,6 @@ lon/tion/ation/ness/ity/ality/meant/ **ence** 表状态 audi**ence** n. 听众 e
 15. vis/vid=see 看 
 16. viv=live 活
 
-### 背词 APP
+## 背词 APP
 
 墨墨背单词，交了 80 学费扩展了 8000 的单词上限量。
-
-## 语法
